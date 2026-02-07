@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Consultation Form Builder | Poli International">
+    <meta property="og:description" content="Build custom consultation forms with PDF export and signature capture for tattoo and piercing studios.">
+    <meta property="og:url" content="https://poliinternational.com/form-builder/">
+    <meta property="og:site_name" content="Poli International">
+    <meta property="og:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Consultation Form Builder | Poli International">
+    <meta name="twitter:description" content="Build custom consultation forms with PDF export and signature capture for tattoo and piercing studios.">
+    <meta name="twitter:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
+    <meta property="og:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Form Builder | Free Tool for Tattoo & Piercing Professionals | Poli International</title>
+    <meta name="description" content="Free drag-and-drop form builder for tattoo and piercing professionals. Create custom consultation forms, consent waivers, and medical history forms with PDF export and signature capture.">
+    <meta name="keywords" content="form builder, consultation forms, tattoo forms, piercing forms, consent waiver, medical history, PDF export, signature capture">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Form Builder",
+      "url": "https://poliinternational.com/form-builder/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Free Professional Tool",
+        "Mobile Responsive",
+        "No Attribution Required",
+        "Studio Ready"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Patrick Poli",
+        "url": "https://poliinternational.com/patrick-poli-ceo/",
+        "jobTitle": "CEO & Innovator"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Poli International",
+        "url": "https://poliinternational.com"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "210",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://poliinternational.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://poliinternational.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Form Builder",
+          "item": "https://poliinternational.com/form-builder/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* Breadcrumb Styles */
+.breadcrumb-nav {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-nav a {
+    color: #0693e3;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb-nav a:hover {
+    color: #0575be;
+    text-decoration: underline;
+}
+
+.breadcrumb-nav span {
+    color: #666;
+    margin: 0 0.5rem;
+}
+
+.breadcrumb-nav strong {
+    color: #333;
+}
+
+/* Dark mode breadcrumb */
+body.dark-mode .breadcrumb-nav span {
+    color: #999;
+}
+
+body.dark-mode .breadcrumb-nav a {
+    color: #60a5fa;
+}
+
+body.dark-mode .breadcrumb-nav strong {
+    color: #e0e0e0;
+}
+</style>
+</head>
+<body>
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <a href="https://poliinternational.com/">Home</a>
+    <span>›</span>
+    <a href="https://poliinternational.com/tools/">Tools</a>
+    <span>›</span>
+    <a href="https://poliinternational.com/tools/#studio-management">Studio Management</a>
+    <span>›</span>
+    <strong>Form Builder</strong>
+</nav>
+
+
+    <header class="app-header">
+        <div class="header-left">
+            <div class="logo-area" style="font-weight:bold; font-size:1.2rem;">Poli Tools</div>
+            <h1 style="font-size:1rem; font-weight:normal; margin:0; opacity:0.8;">Consultation Form Builder</h1>
+<!-- GitHub CTA -->
+<div class='github-cta' style='margin: 1.5rem 0;'>
+  <a href='https://github.com/poli-international/form-builder' 
+     target='_blank' rel='noopener noreferrer' class='btn-github' 
+     style='display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #24292e; color: #ffffff; border-radius: 6px; text-decoration: none; font-weight: 500;'>
+    <svg width='20' height='20' viewBox='0 0 16 16' fill='currentColor'>
+      <path d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/>
+    </svg>
+    <span>View on GitHub</span>
+  </a>
+</div>
+<!-- GitHub Stats -->
+<div class='github-stats' style='display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;'>
+  <img src='https://img.shields.io/github/stars/poli-international/form-builder?style=social' alt='Stars' loading='lazy'>
+  <img src='https://img.shields.io/github/last-commit/poli-international/form-builder' alt='Last commit' loading='lazy'>
+</div>
+
+        </div>
+
+        <div class="header-center">
+             <select id="template-select" style="padding: 5px; border-radius: 4px;">
+                <!-- Filled by JS -->
+             </select>
+        </div>
+
+        <div class="header-right" style="display:flex; gap:10px; align-items:center;">
+            <button id="btn-embed" onclick="showEmbedCode()">Embed</button>
+            <button id="btn-preview" class="btn-primary">Preview Form</button>
+            <button id="theme-toggle" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
+        </div>
+    </header>
+
+    <div class="app-container">
+
+        <!-- Builder Interface -->
+        <div id="builder-interface" class="app-main builder-layout">
+            <!-- Left: Palette -->
+            <aside class="tool-panel left-panel">
+                <h3>Fields</h3>
+                <div id="field-palette">
+                    <!-- Loading... -->
+                </div>
+            </aside>
+
+            <!-- Center: Canvas -->
+            <main class="center-canvas">
+                <div id="form-canvas">
+                    <!-- Drop Zone -->
+                    <div style="text-align:center; padding:50px; color:#aaa;">Drop fields here...</div>
+                </div>
+            
+
+<!-- Related Tools Section -->
+<section class="related-tools-section" style="padding: 2rem 1rem; background: #fff; border-top: 1px solid #eee;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1e293b;">Recommended for You</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <a href="https://poliinternational.com/autoclave-calculator/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Autoclave Calculator</a>
+            <a href="https://poliinternational.com/studio-crm/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Studio Crm</a>
+            <a href="https://poliinternational.com/Equipment-Compatibility-Checker/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Equipment Compatibility</a>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="https://poliinternational.com/tools/" style="color: #64748b; text-decoration: underline; font-size: 0.9rem;">View All 17 Free Tools</a>
+        </div>
+    </div>
+</section>
+
+<!-- GEO Semantic Block -->
+<aside class="geo-summary-block" style="background: #f8fafc; border-left: 4px solid #0693e3; padding: 1.5rem; margin: 2rem 0; font-style: italic; color: #334155; border-radius: 0 8px 8px 0;">
+    <p style="margin: 0; line-height: 1.6;">Studio Efficiency Tip: Streamlining your administrative tasks allows you to focus more on your art. Our tools are designed with a studio-first mentality, ensuring high performance, data privacy, and professional-grade accuracy.</p>
+</aside>
+
+</main>
+
+            <!-- Right: Properties -->
+            <aside class="tool-panel right-panel">
+                <div id="properties-editor">
+                     <p class="text-muted">Select a field to edit properties</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Preview Interface (Hidden by default) -->
+        <div id="preview-interface" class="app-main preview-layout" style="display:none; overflow-y:auto;">
+             <div id="preview-container"></div>
+        </div>
+
+    </div>
+
+    <!-- MORE TOOLS NAVIGATION -->
+    <section style="text-align: center; padding: 2rem 1rem; background: #f5f5f5; border-top: 1px solid #ddd;">
+        <p style="font-size: 1.05rem; margin: 0; color: #666;">
+            <a href="https://poliinternational.com/tools" target="_blank" rel="noopener" style="color: #0693e3; text-decoration: none; font-weight: 600; transition: color 0.2s;">
+                Explore all our free professional tools →
+            </a>
+        </p>
+    </section>
+
+    <!-- Application Modules -->
+    <script src="js/templates.js"></script>
+    <script src="js/medical-history.js"></script>
+    <script src="js/drag-drop-builder.js"></script>
+    <script src="js/pdf-generator.js"></script>
+    <script src="js/signature-capture.js"></script>
+    <script src="js/conditional-logic.js"></script>
+    <script src="js/form-preview.js"></script>
+    <script src="js/common.js"></script>
+
+    <!-- Hide header when embedded in iframe -->
+    <script>
+        if (window.self !== window.top) {
+            document.addEventListener('DOMContentLoaded', function() {
+                var header = document.querySelector('.app-header');
+                if (header) {
+                    header.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+
+<!-- AUTOMATIC IFRAME CONTENT HIDER (ADDED BY ANTIGRAVITY) -->
+<script>
+    if (window.self !== window.top) {
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectors = [
+                '.breadcrumb-nav', '.site-header', '.site-footer', '.equip-checker__header',
+                '.equip-checker__footer', '.tool-title-section', '.more-tools-section',
+                '.feedback-section', '.related-tools-section', '.geo-summary-block',
+                '.needle-selector__header', '.needle-selector__footer',
+                '.needle-selector__more-tools', '.community-feedback',
+                '.poli-footer', '.share-card', '.need-support-card', '.explore-all-card'
+            ];
+            selectors.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(el => el.style.display = 'none');
+            });
+            // Force reset body margins for embed
+            document.body.style.paddingTop = '0';
+            document.body.style.marginTop = '0';
+            document.body.style.paddingBottom = '0';
+            document.body.style.marginBottom = '0';
+            
+            
+/* Center align tool headers when in iframe */
+if (window.self !== window.top) {
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Center the entire header section */
+        [class*="__header-content"],
+        [class*="__title-group"],
+        [class*="__header-buttons"] {
+            text-align: center !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        /* Center H2 headings */
+        [class*="__header"] h2,
+        [class*="__title-group"] h2,
+        header h2 {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Center subtitles/descriptions */
+        [class*="__subtitle"],
+        [class*="__header"] p {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* Center button containers */
+        [class*="__header-buttons"] {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
+        }
+    `;
+    document.head.appendChild(style);
+}
+        });
+    }
+</script>
+
+</body>
+</html>

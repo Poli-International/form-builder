@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Form | Poli Tools</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+
+    <style>
+        /* Embed Overrides */
+        body {
+            background: transparent;
+        }
+
+        .app-container {
+            height: auto;
+            display: block;
+        }
+
+        .preview-form-wrapper {
+            margin: 0;
+            box-shadow: none;
+            max-width: 100%;
+            border-radius: 0;
+        }
+
+        .embed-footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 2px solid #e9ecef;
+        }
+
+        .embed-footer-content {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .embed-footer a {
+            color: #0693e3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .embed-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .kofi-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FF5E5B;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .kofi-button:hover {
+            background: #FF4E4B;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="embed-view">
+
+    <div id="embed-container" style="padding: 20px;">
+        <!-- Form Renders Here -->
+    </div>
+
+    <!-- Footer -->
+    <div class="embed-footer">
+        <div class="embed-footer-content">
+            <a href="https://poliinternational.com/wp-content/standalone-tools/form-builder/index.html" target="_blank">
+                🛠️ Open Full Form Builder
+            </a>
+            <span style="color: #ccc;">|</span>
+            <a href="https://ko-fi.com/patrickkofi" target="_blank" class="kofi-button">
+                ☕ Buy Me a Coffee
+            </a>
+            <span style="color: #ccc;">|</span>
+            <a href="https://poliinternational.com/tools" target="_blank">
+                Explore More Tools →
+            </a>
+        </div>
+        <p style="font-size: 0.75rem; color: #999; margin-top: 10px;">
+            Free tool by <a href="https://poliinternational.com" target="_blank">Poli International</a>
+        </p>
+    </div>
+
+    <!-- Modules -->
+    <script src="js/templates.js"></script>
+    <script src="js/medical-history.js"></script>
+    <script src="js/drag-drop-builder.js"></script>
+    <script src="js/pdf-generator.js"></script>
+    <script src="js/signature-capture.js"></script>
+    <script src="js/conditional-logic.js"></script>
+    <script src="js/form-preview.js"></script>
+    <script src="js/common.js"></script>
+
+    <script>
+        // Auto-load template from URL or default
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const templateId = params.get('template') || 'tattoo_standard';
+
+            if (window.FormTemplates && window.FormPreview) {
+                const tmpl = window.FormTemplates.TemplateManager.getTemplate(templateId);
+                if (tmpl) {
+                    const preview = new window.FormPreview('embed-container');
+                    preview.render(tmpl);
+                } else {
+                    document.getElementById('embed-container').innerHTML = '<div style="color:red">Template not found.</div>';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Form Builder | Free Tool for Tattoo & Piercing Professionals | Poli International</title>
+    <meta name="description" content="Free drag-and-drop form builder for tattoo and piercing professionals. Create custom consultation forms, consent waivers, and medical history forms with PDF export and signature capture.">
+    <meta name="keywords" content="form builder, consultation forms, tattoo forms, piercing forms, consent waiver, medical history, PDF export, signature capture">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Consultation Form Builder",
+        "description": "Free drag-and-drop form builder for creating custom consultation forms, consent waivers, and medical history forms for tattoo and piercing professionals.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Poli International Co., Ltd",
+            "url": "https://poliinternational.com"
+        },
+        "featureList": [
+            "Drag-and-drop form builder",
+            "Pre-built templates for tattoo and piercing consultations",
+            "PDF export with signature capture",
+            "Medical history forms",
+            "Consent and waiver forms",
+            "Custom field creation",
+            "Form preview",
+            "Embed code generation"
+        ],
+        "url": "https://poliinternational.com/wp-content/standalone-tools/form-builder/index.html"
+    }
+    </script>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-left">
+            <div class="logo-area" style="font-weight:bold; font-size:1.2rem;">Poli Tools</div>
+            <h1 style="font-size:1rem; font-weight:normal; margin:0; opacity:0.8;">Consultation Form Builder</h1>
+        </div>
+
+        <div class="header-center">
+             <select id="template-select" style="padding: 5px; border-radius: 4px;">
+                <!-- Filled by JS -->
+             </select>
+        </div>
+
+        <div class="header-right" style="display:flex; gap:10px; align-items:center;">
+            <button id="btn-embed" onclick="showEmbedCode()">Embed</button>
+            <button id="btn-preview" class="btn-primary">Preview Form</button>
+            <button id="theme-toggle" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
+        </div>
+    </header>
+
+    <div class="app-container">
+
+        <!-- Builder Interface -->
+        <div id="builder-interface" class="app-main builder-layout">
+            <!-- Left: Palette -->
+            <aside class="tool-panel left-panel">
+                <h3>Fields</h3>
+                <div id="field-palette">
+                    <!-- Loading... -->
+                </div>
+            </aside>
+
+            <!-- Center: Canvas -->
+            <main class="center-canvas">
+                <div id="form-canvas">
+                    <!-- Drop Zone -->
+                    <div style="text-align:center; padding:50px; color:#aaa;">Drop fields here...</div>
+                </div>
+            </main>
+
+            <!-- Right: Properties -->
+            <aside class="tool-panel right-panel">
+                <div id="properties-editor">
+                     <p class="text-muted">Select a field to edit properties</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Preview Interface (Hidden by default) -->
+        <div id="preview-interface" class="app-main preview-layout" style="display:none; overflow-y:auto;">
+             <div id="preview-container"></div>
+        </div>
+
+    </div>
+
+    <!-- MORE TOOLS NAVIGATION -->
+    <section style="text-align: center; padding: 2rem 1rem; background: #f5f5f5; border-top: 1px solid #ddd;">
+        <p style="font-size: 1.05rem; margin: 0; color: #666;">
+            <a href="https://poliinternational.com/tools" target="_blank" rel="noopener" style="color: #0693e3; text-decoration: none; font-weight: 600; transition: color 0.2s;">
+                Explore all our free professional tools →
+            </a>
+        </p>
+    </section>
+
+    <!-- Application Modules -->
+    <script src="js/templates.js"></script>
+    <script src="js/medical-history.js"></script>
+    <script src="js/drag-drop-builder.js"></script>
+    <script src="js/pdf-generator.js"></script>
+    <script src="js/signature-capture.js"></script>
+    <script src="js/conditional-logic.js"></script>
+    <script src="js/form-preview.js"></script>
+    <script src="js/common.js"></script>
+
+    <!-- Hide header when embedded in iframe -->
+    <script>
+        if (window.self !== window.top) {
+            document.addEventListener('DOMContentLoaded', function() {
+                var header = document.querySelector('.app-header');
+                if (header) {
+                    header.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
