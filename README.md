@@ -8,6 +8,8 @@
 
 **Live:** <https://poliinternational.com/form-builder/> · **Manual:** [`documentation.html`](documentation.html)
 
+🇬🇧 English · [🇫🇷 Français](README.fr.md) · [🇮🇹 Italiano](README.it.md) · [🇩🇪 Deutsch](README.de.md) · [🇪🇸 Español](README.es.md) · [🇳🇱 Nederlands](README.nl.md) · [🇵🇹 Português](README.pt.md)
+
 ![The builder: field palette, canvas and field properties](docs/screenshots/01-drag-drop-consent-form-builder-field-properties.jpg)
 
 ---
