@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Consultation Form Builder | Poli International</title>
+  <meta name="description" content="How to build, validate, translate and export tattoo and piercing consent forms with the Poli International Consultation Form Builder.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #1c2430;
+      --border: #2a3441;
+      --text: #d8dee9;
+      --heading: #ffffff;
+      --muted: #8b98a9;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.12);
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --code-bg: #0a0e14;
+      --radius: 10px;
+    }
+    body.light-mode, html[data-theme="light"] body {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface-2: #f0f2f5;
+      --border: #dde1e7;
+      --text: #26313f;
+      --heading: #0d1117;
+      --muted: #5d6b7c;
+      --accent: #0b62c4;
+      --accent-soft: rgba(11, 98, 196, 0.09);
+      --ok: #0f8f63;
+      --warn: #a86400;
+      --code-bg: #f0f2f5;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+    h1, h2, h3 { color: var(--heading); line-height: 1.25; }
+    h1 { font-size: 2rem; margin: 0 0 .5rem; letter-spacing: -.02em; }
+    h2 {
+      font-size: 1.4rem;
+      margin: 3rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 1rem;
+    }
+    h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+    p { margin: 0 0 1rem; }
+    a { color: var(--accent); }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+    li { margin-bottom: .4rem; }
+    strong { color: var(--heading); }
+    code {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .1em .4em;
+      font: 500 .875em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      overflow-x: auto;
+      font: 500 .85rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
+    .lede { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .topbar {
+      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center;
+      margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: .6rem 1.1rem; border-radius: 8px; font-weight: 600; font-size: .95rem;
+    }
+    .btn--ghost { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+
+    .callout {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.15rem;
+      margin: 1.5rem 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout--ok { background: rgba(52, 211, 153, .1); border-left-color: var(--ok); }
+    .callout--warn { background: rgba(251, 191, 36, .1); border-left-color: var(--warn); }
+
+    figure { margin: 1.5rem 0 2rem; }
+    figure img {
+      display: block; width: 100%; height: auto;
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    figcaption { color: var(--muted); font-size: .875rem; margin-top: .6rem; }
+
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .toc ol { columns: 2; column-gap: 2rem; margin: 0; }
+    @media (max-width: 620px) { .toc ol { columns: 1; } }
+
+    .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; }
+    table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: .93rem; }
+    th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--heading); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+    tbody tr:last-child td { border-bottom: 0; }
+    kbd {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-bottom-width: 2px; border-radius: 5px;
+      padding: .12em .45em; font: 600 .82em/1 ui-monospace, Menlo, Consolas, monospace;
+      color: var(--heading); white-space: nowrap;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.15rem; }
+    .card h3 { margin: 0 0 .35rem; font-size: .98rem; }
+    .card p { margin: 0; font-size: .9rem; color: var(--muted); }
+
+    footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .875rem; }
+  </style>
+</head>
+<body class="dark-mode">
+<div class="wrap">
+
+  <header>
+    <h1>Consultation Form Builder</h1>
+    <p class="lede">Build, validate and print tattoo and piercing consent forms. Everything runs in your browser, so no client health data ever leaves the device.</p>
+    <div class="topbar">
+      <a class="btn" href="index.html">Open the builder</a>
+      <a class="btn btn--ghost" href="/wiki/legal-compliance-standards/" target="_blank" rel="noopener">Legal &amp; compliance wiki</a>
+      <a class="btn btn--ghost" href="/tools/" target="_blank" rel="noopener">All free tools</a>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#start">Getting started</a></li>
+      <li><a href="#templates">Templates</a></li>
+      <li><a href="#fields">Field types</a></li>
+      <li><a href="#properties">Configuring a field</a></li>
+      <li><a href="#logic">Conditional logic</a></li>
+      <li><a href="#integrity">Data integrity checker</a></li>
+      <li><a href="#preview">Client view &amp; safety callouts</a></li>
+      <li><a href="#signature">Signatures &amp; PDF export</a></li>
+      <li><a href="#kiosk">Kiosk mode &amp; embedding</a></li>
+      <li><a href="#csv">CSV import &amp; CRM mapping</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#shortcuts">Keyboard shortcuts</a></li>
+      <li><a href="#privacy">Data &amp; privacy</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="start">Getting started</h2>
+  <p>The builder opens with a template already selected. Three steps get you to a usable form:</p>
+  <ol>
+    <li><strong>Pick a template</strong> from the <em>Template</em> dropdown in the header. It replaces the canvas with a complete, sectioned form.</li>
+    <li><strong>Edit on the canvas.</strong> Drag field types in from the left palette, reorder by dragging, and click any field to open its settings on the right.</li>
+    <li><strong>Preview and print.</strong> <em>Preview Form</em> switches to the client-facing view, where you can collect a signature and export a PDF.</li>
+  </ol>
+
+  <figure>
+    <img src="docs/screenshots/01-drag-drop-consent-form-builder-field-properties.jpg"
+         alt="The form builder with the field palette on the left, a piercing consent form on the canvas, and the field properties panel open on the right." loading="lazy">
+    <figcaption>Palette, canvas and field properties. Selecting a field opens its type, label, CRM alias and validation settings.</figcaption>
+  </figure>
+
+  <div class="callout">
+    <p><strong>Your work is saved automatically.</strong> The builder writes a draft to this browser after every change and offers to restore it when you come back. Clearing site data clears the draft, so export a JSON copy of anything you want to keep permanently (<em>Export &rarr; Export JSON</em>, or <kbd>Ctrl</kbd> + <kbd>S</kbd>).</p>
+  </div>
+
+  <h2 id="templates">Templates</h2>
+  <p>Eight starting points, each a complete form rather than a skeleton. The piercing consent template, for example, ships with 7 sections and 28 fields, 18 of them mandatory.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Template</th><th>Use it for</th></tr></thead>
+      <tbody>
+        <tr><td>Tattoo Consent &amp; Release Agreement</td><td>Standard tattoo appointments: studio and artist details, medical disclosure, release waiver.</td></tr>
+        <tr><td>Piercing Consent &amp; Release</td><td>Piercing appointments: anatomy and placement, jewellery material and gauge, sterilisation lot.</td></tr>
+        <tr><td>Medical History &amp; Health Screening Intake</td><td>A standalone health questionnaire when screening happens ahead of the appointment.</td></tr>
+        <tr><td>Multi-Session Tattoo Project Master Agreement</td><td>Large pieces booked across several sittings, with per-session tracking.</td></tr>
+        <tr><td>Minor Consent &amp; Legal Guardian Authorization</td><td>Where local law permits work on a minor with a guardian present and co-signing.</td></tr>
+        <tr><td>Cover-Up &amp; Rework Assessment</td><td>Assessing existing work before covering or reworking it.</td></tr>
+        <tr><td>PMU &amp; Cosmetic Tattoo Consultation</td><td>Permanent make-up and cosmetic tattoo consultations.</td></tr>
+        <tr><td>Blank Custom Form</td><td>Starting from nothing.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout--warn">
+    <p>Templates are a drafting aid, not legal advice. Consent requirements differ by country, state and municipality. Have your final wording reviewed by someone qualified in your jurisdiction before you use it with clients.</p>
+  </div>
+
+  <h2 id="fields">Field types</h2>
+  <p>Seventeen field types, grouped into categories in the palette. Use the search box (<kbd>Ctrl</kbd> + <kbd>F</kbd>) to filter them.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Basic input</h3>
+      <p>Short Text, Paragraph / Long Text, Email Address, Phone Number, Date Picker, Number / Quantity.</p>
+    </div>
+    <div class="card">
+      <h3>Choice &amp; options</h3>
+      <p>Checkbox, Checkbox Group, Radio Choices, Dropdown Menu.</p>
+    </div>
+    <div class="card">
+      <h3>Layout &amp; structure</h3>
+      <p>Section Header, Container / Panel, Section / Group.</p>
+    </div>
+    <div class="card">
+      <h3>Notices &amp; legal</h3>
+      <p>Notice / Header for standing text, and Digital Signature for the binding sign-off.</p>
+    </div>
+    <div class="card">
+      <h3>Clinical &amp; media</h3>
+      <p>Anatomical Body Map for marking placement, and Photo ID &amp; Document Upload.</p>
+    </div>
+  </div>
+  <p>The palette also has a <strong>Smart Suggest</strong> toggle. With it on, the top of the palette recommends fields your form is missing for the kind of work it describes.</p>
+
+  <h2 id="properties">Configuring a field</h2>
+  <p>Click a field on the canvas and the right panel switches from <em>Form Overview</em> to <em>Field Properties</em>:</p>
+  <ul>
+    <li><strong>Field type</strong> &mdash; change it in place without losing the label.</li>
+    <li><strong>Field label</strong> &mdash; the question as the client reads it.</li>
+    <li><strong>Internal field alias (CRM / API key)</strong> &mdash; a stable machine name such as <code>client_allergies_list</code>. Exports use the alias, so you can rename a question without breaking a spreadsheet or an integration.</li>
+    <li><strong>Required</strong> &mdash; blocks submission and PDF generation until answered.</li>
+    <li><strong>Validation</strong> &mdash; character limits, numeric bounds and regular-expression patterns.</li>
+  </ul>
+  <p>Select several fields with <kbd>Shift</kbd> + click to set required or hidden across all of them at once.</p>
+
+  <h2 id="logic">Conditional logic</h2>
+  <p>Any field can be shown only when another field has a particular answer, so a client answering "no" to a medical question never sees the six follow-ups underneath it. Set the parent question and the triggering value in the <em>Logic</em> section of the field's properties.</p>
+  <p>Deeply chained rules can accidentally form a loop, where A depends on B and B depends back on A, leaving both permanently hidden. The integrity checker below detects exactly that.</p>
+
+  <h2 id="integrity">Data integrity checker</h2>
+  <p><em>Validate Form</em> on the canvas toolbar runs a diagnostic scan and scores the form. It catches the mistakes that only show up once a client is standing in front of you:</p>
+  <ul>
+    <li>Circular logic dependencies that make fields unreachable.</li>
+    <li>Dropdowns, radios and checkbox groups with no options configured.</li>
+    <li>Duplicate option labels that make an answer ambiguous.</li>
+    <li>Inverted validation bounds, such as a minimum above the maximum.</li>
+    <li>Invalid regular-expression patterns.</li>
+    <li>Duplicate CRM aliases, which collide on export.</li>
+    <li>Missing labels and empty sections.</li>
+  </ul>
+
+  <figure>
+    <img src="docs/screenshots/03-form-data-integrity-logic-checker-diagnostics.jpg"
+         alt="The data integrity checker showing a 76 percent score, counters for critical logic, missing options and warnings, and an issue card with jump-to-field and quick-fix buttons." loading="lazy">
+    <figcaption>Each finding explains the consequence and offers <em>Jump to Field &amp; Fix</em>, or <em>Quick-Fix</em> where the repair is unambiguous. <em>Auto-Fix Safe Issues</em> applies every unambiguous fix at once.</figcaption>
+  </figure>
+
+  <h2 id="preview">Client view &amp; safety callouts</h2>
+  <p><em>Preview Form</em> renders the form exactly as a client sees it, with a completion meter showing how many mandatory fields remain.</p>
+  <p>As medical answers come in, the preview raises <strong>safety callouts</strong> above the form: disclosures that need artist awareness, a procedural precaution, or formal physician clearance. A disclosed latex allergy, for instance, produces a barrier alert naming the substitution required at that workstation.</p>
+
+  <figure>
+    <img src="docs/screenshots/02-medical-safety-callouts-client-consent-view.jpg"
+         alt="The client-facing consent form showing a completion progress bar at 96 percent and a medical safety callout panel flagging a disclosed latex allergy." loading="lazy">
+    <figcaption><em>Fill Sample Answers</em> populates the form with test data so you can see the callouts and the PDF output before going live.</figcaption>
+  </figure>
+
+  <h2 id="signature">Signatures &amp; PDF export</h2>
+  <p>The Digital Signature field accepts a mouse, stylus or fingertip and stamps the signing date. <em>PDF &amp; Print Settings</em> controls the export: paper size, margins, and a studio watermark or logo.</p>
+  <p><em>Print Form</em> opens the browser print dialog against a print stylesheet. Turn on <strong>Print after Signature</strong> if you want that to happen automatically the moment a client finishes signing.</p>
+  <p><em>Export CSV</em> writes the responses out with the CRM aliases as column headers, ready for a spreadsheet or an import into other software.</p>
+
+  <h2 id="kiosk">Kiosk mode &amp; embedding</h2>
+  <p><strong>Tablet Kiosk Mode</strong> (in <em>Options</em>, or from the preview toolbar) presents the form one step at a time with large touch targets, for handing a tablet to a client in the waiting area.</p>
+  <p><em>Options &rarr; Embed / QR Code</em> generates both an iframe snippet for your own website and a printable QR placard clients can scan on their own phone. The embed snippet looks like this:</p>
+  <pre><code>&lt;iframe src="https://poliinternational.com/tools/form-builder/index.html"
+        width="100%" height="1000" frameborder="0"
+        style="border-radius:12px;"&gt;&lt;/iframe&gt;</code></pre>
+
+  <h2 id="csv">CSV import &amp; CRM mapping</h2>
+  <p><em>Import &rarr; Bulk Import CSV</em> builds fields from a spreadsheet, which is the fastest way to move an existing paper or digital form across. Upload a file or paste rows directly. Expected columns:</p>
+  <pre><code>Label,Type,Required,HelperText,Options
+Emergency contact,text,true,Full legal name,
+Preferred language,select,false,Pick your main language,English;French;Thai
+Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code></pre>
+  <p><em>Export &rarr; Field ID Map</em> produces a reference of every question, its internal alias, data type and validation rule, as JSON, CSV or a sample webhook payload. That is the document to hand a developer wiring the form into other systems.</p>
+
+  <h2 id="languages">Languages</h2>
+  <p>The interface and the templates are available in seven languages: English, French, Italian, German, Spanish, Dutch and Portuguese. Use the <em>Language</em> dropdown in the header. Switching translates both the builder's own controls and the field labels of the form you are building, so you can hand a French client a French consent form.</p>
+  <p>Your choice is remembered in this browser. Fields you have written yourself stay exactly as you typed them.</p>
+
+  <h2 id="shortcuts">Keyboard shortcuts</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Keys</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>Undo the last action or field edit</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd> / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td><td>Redo</td></tr>
+        <tr><td><kbd>Shift</kbd> + click</td><td>Select multiple fields for bulk actions</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>D</kbd></td><td>Duplicate the selected field or block</td></tr>
+        <tr><td><kbd>Delete</kbd> / <kbd>Backspace</kbd></td><td>Delete the selected fields</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>Export the form schema as JSON</td></tr>
+        <tr><td><kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&larr;</kbd> <kbd>&rarr;</kbd></td><td>Nudge the selected fields by 5px</td></tr>
+        <tr><td><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd></td><td>Cycle through field configuration properties</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>Filter the palette or search field properties</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Deselect and return to Form Overview</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Deleted fields go to a <strong>Recently Deleted</strong> bin at the bottom of the canvas, so an accidental deletion is recoverable even after several more edits.</p>
+
+  <h2 id="privacy">Data &amp; privacy</h2>
+  <div class="callout callout--ok">
+    <p><strong>Nothing you type reaches our servers.</strong> The builder makes no network requests other than loading its own translation file. Forms, client answers, signatures and generated PDFs are created and stored in your browser only.</p>
+  </div>
+  <p>Practical consequences worth understanding:</p>
+  <ul>
+    <li>Drafts and submissions live in this browser's local storage. They are not synced between machines, and a different browser or a private window will not see them.</li>
+    <li>Clearing site data deletes them permanently. There is no server-side copy for us to restore.</li>
+    <li>Because records stay on your device, you remain the data controller for them. Your obligations under GDPR, PDPA or local health-records law are unchanged, and how you store the exported PDFs is your responsibility.</li>
+  </ul>
+  <p>Export a JSON copy of any form template you rely on, and archive completed consent PDFs wherever you already keep client records.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <h3>Is the tool free?</h3>
+  <p>Yes, with no account and no usage limit. You can also embed it on your own site at no cost.</p>
+
+  <h3>Does a digitally signed form hold up legally?</h3>
+  <p>Electronic signatures are widely recognised, but the standard of proof and the record-keeping requirements vary by jurisdiction. Treat the exported PDF as you would a signed paper form, and confirm the requirements that apply where you practise.</p>
+
+  <h3>Can I get my forms back on another computer?</h3>
+  <p>Only by moving them yourself. Use <em>Export &rarr; Export JSON</em> on the first machine and <em>Import &rarr; Import JSON</em> on the second.</p>
+
+  <h3>Why is a field greyed out or missing in the client view?</h3>
+  <p>Either it is hidden, or a conditional rule is keeping it hidden because its parent question has not been answered with the triggering value. Run <em>Validate Form</em>; if the parent no longer exists, the checker reports it as orphaned logic.</p>
+
+  <h3>The PDF is missing my logo.</h3>
+  <p>Upload it under <em>Options &rarr; PDF &amp; Print Settings</em>. Like everything else, it is stored in this browser, so it needs uploading again on another machine.</p>
+
+  <h3>Can I collect submissions online?</h3>
+  <p>Not through us, by design. The tool has no backend. If you need submissions delivered somewhere, use <em>Export &rarr; Field ID Map</em> to get the schema and sample webhook payload, and wire the form into your own system.</p>
+
+  <footer>
+    <p>Consultation Form Builder &mdash; part of the free professional tool suite from
+      <a href="https://poliinternational.com/" target="_blank" rel="noopener">Poli International</a>.
+      Questions or a bug to report? <a href="https://poliinternational.com/contact-us/" target="_blank" rel="noopener">Get in touch</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>

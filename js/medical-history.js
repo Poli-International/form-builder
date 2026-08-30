@@ -79,25 +79,69 @@ const medicalQuestions = {
 };
 
 const MedicalHistorySystem = {
-    getMedicalSection: () => {
-        // Return a section structure compatible with the Form Builder sections
+    getLocalizedQuestions: (lang = null) => {
+        const cloned = JSON.parse(JSON.stringify(medicalQuestions));
+        const curLang = lang || (window.i18n ? window.i18n.currentLanguage : 'en');
+        const medDict = (window.i18n && window.i18n.translations) ? (window.i18n.translations[curLang]?.medical) : null;
+
+        if (medDict) {
+            if (medDict.allergies) {
+                if (medDict.allergies.label) cloned.allergies.label = medDict.allergies.label;
+                if (Array.isArray(medDict.allergies.options)) cloned.allergies.options = medDict.allergies.options;
+            }
+            if (medDict.conditions) {
+                if (medDict.conditions.label) cloned.conditions.label = medDict.conditions.label;
+                if (Array.isArray(medDict.conditions.options)) cloned.conditions.options = medDict.conditions.options;
+            }
+            if (medDict.medications) {
+                if (medDict.medications.label) cloned.medications.label = medDict.medications.label;
+                if (medDict.medications.placeholder) cloned.medications.placeholder = medDict.medications.placeholder;
+            }
+            if (medDict.blood_thinners) {
+                if (medDict.blood_thinners.label) cloned.blood_thinners.label = medDict.blood_thinners.label;
+                if (Array.isArray(medDict.blood_thinners.options)) cloned.blood_thinners.options = medDict.blood_thinners.options;
+            }
+            if (medDict.pregnant) {
+                if (medDict.pregnant.label) cloned.pregnant.label = medDict.pregnant.label;
+                if (Array.isArray(medDict.pregnant.options)) cloned.pregnant.options = medDict.pregnant.options;
+            }
+            if (medDict.alcohol_24hrs) {
+                if (medDict.alcohol_24hrs.label) cloned.alcohol_24hrs.label = medDict.alcohol_24hrs.label;
+                if (Array.isArray(medDict.alcohol_24hrs.options)) cloned.alcohol_24hrs.options = medDict.alcohol_24hrs.options;
+            }
+            if (medDict.eaten_4hrs) {
+                if (medDict.eaten_4hrs.label) cloned.eaten_4hrs.label = medDict.eaten_4hrs.label;
+                if (Array.isArray(medDict.eaten_4hrs.options)) cloned.eaten_4hrs.options = medDict.eaten_4hrs.options;
+            }
+        }
+        return cloned;
+    },
+
+    getMedicalSection: (lang = null) => {
+        const questions = MedicalHistorySystem.getLocalizedQuestions(lang);
+        const curLang = lang || (window.i18n ? window.i18n.currentLanguage : 'en');
+        const title = (window.i18n && window.i18n.translations && window.i18n.translations[curLang]?.medical?.title)
+            ? window.i18n.translations[curLang].medical.title
+            : (window.i18n ? window.i18n.t('medical.title', 'Medical History') : 'Medical History');
         return {
             id: 'medical_history_generated',
-            title: 'Medical History',
-            fields: Object.values(medicalQuestions)
+            title: title,
+            fields: Object.values(questions)
         };
     },
 
-    validateMedicalHistory: (responses) => {
+    validateMedicalHistory: (responses, lang = null) => {
         const errors = [];
+        const questions = MedicalHistorySystem.getLocalizedQuestions(lang);
+        const prefix = (window.i18n ? window.i18n.t('medical.validation_prefix', 'Please answer:') : 'Please answer:');
+
         // Check critical fields
-        for (const key in medicalQuestions) {
-            const q = medicalQuestions[key];
+        for (const key in questions) {
+            const q = questions[key];
             if (q.required || q.critical) {
                 if (!responses[q.id] || responses[q.id] === '' || (Array.isArray(responses[q.id]) && responses[q.id].length === 0)) {
-                    // It's empty. Is it allowed?
                     if (q.required) {
-                        errors.push(`Please answer: ${q.label}`);
+                        errors.push(`${prefix} ${q.label}`);
                     }
                 }
             }
@@ -110,10 +154,11 @@ const MedicalHistorySystem = {
 
     // Helper to format for PDF usage
     // Returns an array of lines or objects { label, value }
-    formatForPDF: (responses) => {
+    formatForPDF: (responses, lang = null) => {
         const formatted = [];
-        for (const key in medicalQuestions) {
-            const q = medicalQuestions[key];
+        const questions = MedicalHistorySystem.getLocalizedQuestions(lang);
+        for (const key in questions) {
+            const q = questions[key];
             let val = responses[q.id] || 'N/A';
 
             if (Array.isArray(val)) {
@@ -133,5 +178,6 @@ const MedicalHistorySystem = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { medicalQuestions, MedicalHistorySystem };
 } else {
-    window.MedicalHistorySystem = { medicalQuestions, MedicalHistorySystem };
+    window.MedicalHistorySystem = MedicalHistorySystem;
+    window.medicalQuestions = medicalQuestions;
 }

@@ -19,7 +19,6 @@
 11. Digital signature capture for piercing waivers
 12. Conditional logic consent forms for body art
 13. Studio operations forms builder
-14. HIPAA compliant piercing intake forms
 
 ## Meta Title & Description
 
@@ -321,7 +320,6 @@ The PDF is generated using jsPDF library and exports as a standard PDF file. It 
 | Tattoo consultation best practices | https://poliinternational.com/blog/tattoo-consultation-checklist/ | Link from the "How to Use" section |
 | Digital signature legality for body art | https://poliinternational.com/blog/digital-signatures-consent-forms/ | Link from the FAQ about legally binding forms |
 | Studio management software | https://poliinternational.com/blog/studio-management-tools/ | Link from the "Who Should Use This" section for studio owners |
-| HIPAA compliance for piercing studios | https://poliinternational.com/blog/hipaa-piercing-studio/ | Link from the medical history section |
 | Minor consent laws by state | https://poliinternational.com/blog/minor-consent-tattoo-laws/ | Link from the Minor Consent Form template description |
 | Cover-up tattoo design guide | https://poliinternational.com/blog/cover-up-tattoo-design/ | Link from the Cover-Up Consultation use case |
 | Embedding forms on WordPress | https://poliinternational.com/blog/embed-forms-wordpress/ | Link from the embed code instructions |

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Open Graph Tags -->
     <meta property="og:type" content="website">
@@ -17,14 +17,12 @@
     <meta name="twitter:title" content="Consultation Form Builder | Poli International">
     <meta name="twitter:description" content="Build custom consultation forms with PDF export and signature capture for tattoo and piercing studios.">
     <meta name="twitter:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
-    <meta property="og:image" content="https://poliinternational.com/wp-content/uploads/poli-tools-preview.jpg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultation Form Builder | Free Tool for Tattoo & Piercing Professionals | Poli International</title>
     <meta name="description" content="Free drag-and-drop form builder for tattoo and piercing professionals. Create custom consultation forms, consent waivers, and medical history forms with PDF export and signature capture.">
     <meta name="keywords" content="form builder, consultation forms, tattoo forms, piercing forms, consent waiver, medical history, PDF export, signature capture">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
@@ -32,10 +30,13 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+    <!-- Libraries — served locally. The site CSP (next.config.js) allows scripts
+         from 'self' only, so jsdelivr/cdnjs loads are blocked in production.
+         Versions are pinned; update by re-downloading, not by editing the URL. -->
+    <script src="js/vendor/sortable.min.js"></script>
+    <script src="js/vendor/jspdf.umd.min.js"></script>
+    <script src="js/vendor/signature_pad.umd.min.js"></script>
+    <script src="js/vendor/d3.min.js"></script>
 
     <!-- Schema Markup -->
     <script type='application/ld+json'>
@@ -43,7 +44,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Studio Form Builder",
-  "url": "https://poliinternational.com/tools/form-builder/",
+  "url": "https://poliinternational.com",
   "description": "Create custom consent and intake forms for studios",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
@@ -72,7 +73,7 @@
     "name": "Poli International",
     "url": "https://poliinternational.com"
   },
-  "dateModified": "2026-02-07",
+  "dateModified": "2026-08-31",
   "license": "https://opensource.org/licenses/MIT",
   "isAccessibleForFree": true
 }
@@ -122,59 +123,245 @@ body.dark-mode .breadcrumb-nav strong {
 </head>
 <body>
 <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-    <a href="https://poliinternational.com/">Home</a>
+    <a href="https://poliinternational.com/" data-i18n="nav.home" target="_top">Home</a>
     <span>›</span>
-    <a href="https://poliinternational.com/tools/">Tools</a>
+    <a href="https://poliinternational.com/tools/" data-i18n="nav.tools" target="_top">Tools</a>
     <span>›</span>
-    <a href="https://poliinternational.com/tools/#studio-management">Studio Management</a>
+    <a href="https://poliinternational.com/tools/#studio-management" data-i18n="nav.studio_management" target="_top">Studio Management</a>
     <span>›</span>
-    <strong>Form Builder</strong>
+    <strong data-i18n="nav.form_builder">Form Builder</strong>
 </nav>
 
 
     <header class="app-header">
         <div class="header-left">
-            <div class="logo-area" style="font-weight:bold; font-size:1.2rem;">Poli Tools</div>
-            <h1 style="font-size:1rem; font-weight:normal; margin:0; opacity:0.8;">Consultation Form Builder</h1>
-<!-- GitHub CTA -->
-<div class='github-cta' style='margin: 1.5rem 0;'>
-  <a href='https://github.com/poli-international/form-builder' 
-     target='_blank' rel='noopener noreferrer' class='btn-github' 
-     style='display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: #24292e; color: #ffffff; border-radius: 6px; text-decoration: none; font-weight: 500;'>
-    <svg width='20' height='20' viewBox='0 0 16 16' fill='currentColor'>
-      <path d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/>
-    </svg>
-    <span>View on GitHub</span>
-  </a>
-</div>
-<!-- GitHub Stats -->
-<div class='github-stats' style='display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;'>
-  <img src='https://img.shields.io/github/stars/poli-international/form-builder?style=social' alt='Stars' loading='lazy'>
-  <img src='https://img.shields.io/github/last-commit/poli-international/form-builder' alt='Last commit' loading='lazy'>
-</div>
-
+            <div class="brand-title-wrap">
+                <div class="logo-area" data-i18n="app.brand">Poli Tools</div>
+                <div class="header-divider"></div>
+                <h1 class="app-title" data-i18n="app.title">Consultation Form Builder</h1>
+            </div>
         </div>
 
         <div class="header-center">
-             <select id="template-select" style="padding: 5px; border-radius: 4px;">
-                <!-- Filled by JS -->
-             </select>
+            <div class="header-template-selector">
+                <label for="template-select" class="header-control-label" data-i18n="header.template_label">Template:</label>
+                <select id="template-select" class="header-select">
+                    <!-- Filled by JS -->
+                </select>
+            </div>
+
+            <div class="header-language-selector">
+                <label for="global-language-select" class="header-control-label" data-i18n="header.language_label">Language:</label>
+                <select id="global-language-select" class="header-select" aria-label="Select Language">
+                    <option value="en">English (EN)</option>
+                    <option value="fr">Français (FR)</option>
+                    <option value="it">Italiano (IT)</option>
+                    <option value="de">Deutsch (DE)</option>
+                    <option value="es">Español (ES)</option>
+                    <option value="nl">Nederlands (NL)</option>
+                    <option value="pt">Português (PT)</option>
+                </select>
+            </div>
+
+            <div class="history-controls-group">
+                <button type="button" id="btn-undo" class="btn-toolbar" title="Undo change (Ctrl+Z)" data-i18n-title="header.undo_title" data-i18n="header.undo" disabled>
+                    <span>↩</span> Undo
+                </button>
+                <button type="button" id="btn-redo" class="btn-toolbar" title="Redo change (Ctrl+Y)" data-i18n-title="header.redo_title" data-i18n="header.redo" disabled>
+                    <span>↪</span> Redo
+                </button>
+            </div>
         </div>
 
-        <div class="header-right" style="display:flex; gap:10px; align-items:center;">
-            <button id="btn-embed" onclick="showEmbedCode()">Embed</button>
-            <button id="btn-preview" class="btn-primary">Preview Form</button>
-            <button id="theme-toggle" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
+        <div class="header-right">
+            <input type="file" id="file-import-json" accept=".json,application/json" style="display:none;">
+            <input type="file" id="file-import-csv" accept=".csv,text/csv" style="display:none;">
+            
+            <div class="header-dropdown-wrap" style="position:relative; display:inline-block;">
+                <button type="button" id="btn-import-menu" class="btn-secondary btn-header" title="Import JSON template or Bulk Import CSV fields" data-i18n-title="header.import_title">
+                    <span>📥</span> <span data-i18n="header.import">Import</span> <span style="font-size:0.6rem; margin-left:2px; opacity:0.8;">▼</span>
+                </button>
+                <div id="import-dropdown-menu" class="header-dropdown-menu" style="display:none;">
+                    <button type="button" id="btn-import-json-action" class="dropdown-item-btn">
+                        <span style="font-size:1.05rem;">📄</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.import_dropdown_json">Import JSON Template</strong>
+                            <small data-i18n="header.import_dropdown_json_desc">Load complete form schema JSON</small>
+                        </div>
+                    </button>
+                    <button type="button" id="btn-import-csv-action" class="dropdown-item-btn">
+                        <span style="font-size:1.05rem;">📊</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.import_dropdown_csv">Bulk Import Fields (CSV)</strong>
+                            <small data-i18n="header.import_dropdown_csv_desc">Generate fields from spreadsheet</small>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="header-dropdown-wrap" style="position:relative; display:inline-block;">
+                <button type="button" id="btn-export-menu" class="btn-secondary btn-header" title="Export form schema, CSV template, or schema mapping PDF" data-i18n-title="header.export_title">
+                    <span>📤</span> <span data-i18n="header.export">Export</span> <span style="font-size:0.6rem; margin-left:2px; opacity:0.8;">▼</span>
+                </button>
+                <div id="export-dropdown-menu" class="header-dropdown-menu" style="display:none;">
+                    <button type="button" id="btn-export-json" class="dropdown-item-btn" title="Export form configuration as JSON (Ctrl+S)" data-i18n-title="header.export_json_title">
+                        <span style="font-size:1.05rem;">💾</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.export_dropdown_json">Export JSON Template</strong>
+                            <small data-i18n="header.export_dropdown_json_desc">Save full form schema file (Ctrl+S)</small>
+                        </div>
+                    </button>
+                    <button type="button" id="btn-export-csv-template" class="dropdown-item-btn" title="Download CSV Template with form field labels as column headers for CRM migration" data-i18n-title="header.export_csv_template_title">
+                        <span style="font-size:1.05rem;">📋</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.export_dropdown_csv">Download CSV Template</strong>
+                            <small data-i18n="header.export_dropdown_csv_desc">Field headers for CRM migration</small>
+                        </div>
+                    </button>
+                    <button type="button" id="btn-export-schema-mapping" class="dropdown-item-btn" title="Download Schema Mapping PDF Guide explaining form structure and validation rules for clients" data-i18n-title="header.export_schema_mapping_title">
+                        <span style="font-size:1.05rem;">📑</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.export_dropdown_schema">Schema PDF Guide</strong>
+                            <small data-i18n="header.export_dropdown_schema_desc">Visual structure and validation map</small>
+                        </div>
+                    </button>
+                    <button type="button" id="btn-export-field-ids" class="dropdown-item-btn" title="Generate interactive visual map of all Field IDs and labels for CRM / Webhook integration" data-i18n-title="header.export_field_ids_title">
+                        <span style="font-size:1.05rem;">🗺️</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.export_dropdown_field_ids">Export Field IDs &amp; CRM Map</strong>
+                            <small data-i18n="header.export_dropdown_field_ids_desc">Visual variable map for HubSpot, Salesforce &amp; Webhooks</small>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Settings / Options Overflow Menu -->
+            <div class="header-dropdown-wrap" style="position:relative; display:inline-block;">
+                <button type="button" id="btn-options-menu" class="btn-secondary btn-header" title="Form builder options, PDF print setup, embed code, and theme customizer" data-i18n-title="header.options_title">
+                    <span>⚙️</span> <span data-i18n="header.options">Options</span> <span style="font-size:0.6rem; margin-left:2px; opacity:0.8;">▼</span>
+                </button>
+                <div id="options-dropdown-menu" class="header-dropdown-menu" style="display:none;">
+                    <button type="button" id="btn-header-kiosk" onclick="window.openTabletKioskMode && window.openTabletKioskMode()" class="dropdown-item-btn" title="Open Touch-Optimized Step-by-Step Tablet Kiosk Mode for client intake" data-i18n-title="header.kiosk_title">
+                        <span style="font-size:1.05rem;">📱</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.kiosk_mode">Tablet Kiosk Mode</strong>
+                            <small data-i18n="header.kiosk_mode_desc">Touch client check-in wizard &amp; step navigation</small>
+                        </div>
+                    </button>
+                    <button type="button" id="btn-open-pdf-settings" class="dropdown-item-btn" title="PDF &amp; Print Automation and Watermark Logo Settings" data-i18n-title="header.pdf_settings_title">
+                        <span style="font-size:1.05rem;">🖨️</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.pdf_settings">PDF Settings</strong>
+                            <small data-i18n="header.pdf_settings_desc">Print layout, page sizing &amp; studio logo</small>
+                        </div>
+                    </button>
+                    <button type="button" id="btn-theme-customizer" class="dropdown-item-btn" title="Customize primary colors, font sizes, and border-radius settings" data-i18n-title="header.theme_customizer_title">
+                        <span style="font-size:1.05rem;">🎨</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.theme_customizer">Theme Customizer</strong>
+                            <small data-i18n="header.theme_customizer_desc">Studio palette &amp; visual styles</small>
+                        </div>
+                    </button>
+                    <button type="button" id="btn-multisession-planner" class="dropdown-item-btn" title="Multi-Session Project Iterations &amp; Draft Versions" data-i18n-title="header.multisession_planner_title">
+                        <span style="font-size:1.05rem;">📅</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.multisession_planner">Multi-Session Planner</strong>
+                            <small data-i18n="header.multisession_planner_desc">Phased projects &amp; appointment history</small>
+                        </div>
+                    </button>
+                    <button type="button" id="btn-embed" onclick="showEmbedCode()" class="dropdown-item-btn" title="Embed form on your website or print intake QR placard" data-i18n-title="header.embed_title">
+                        <span style="font-size:1.05rem;">🔗</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.embed">Embed &amp; QR Placard</strong>
+                            <small data-i18n="header.embed_desc">Website iframe code &amp; desk placard</small>
+                        </div>
+                    </button>
+                    <a id="link-documentation" class="dropdown-item-btn" href="documentation.html" target="_top" title="Full guide: templates, logic, PDF, embedding" data-i18n-title="header.documentation_title">
+                        <span style="font-size:1.05rem;">📖</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.documentation">Documentation</strong>
+                            <small data-i18n="header.documentation_desc">Full guide: templates, logic, PDF, embedding</small>
+                        </div>
+                    </a>
+                    <button type="button" id="btn-shortcuts" class="dropdown-item-btn" title="Keyboard Shortcuts" data-i18n-title="header.shortcuts_title">
+                        <span style="font-size:1.05rem;">⌨️</span>
+                        <div class="dropdown-item-text">
+                            <strong data-i18n="header.shortcuts">Keyboard Shortcuts</strong>
+                            <small data-i18n="header.shortcuts_desc">Ctrl+Z, Ctrl+D, Shift+Click, Delete</small>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <button type="button" id="btn-preview" class="btn-primary btn-header" data-i18n="header.preview">
+                <span>👁️</span> Preview Form
+            </button>
+            <button type="button" id="theme-toggle" class="btn-icon-square" title="Toggle Light / Dark Mode" data-i18n-title="header.toggle_theme">
+                🌙
+            </button>
         </div>
     </header>
 
     <div class="app-container">
 
+        <!-- Mobile Builder Segmented Panel Tabs -->
+        <nav id="mobile-panel-tabs" class="mobile-panel-tabs" aria-label="Mobile Builder Navigation">
+            <button type="button" class="mobile-tab-btn" data-panel="left-panel" id="mobile-tab-palette">
+                <span>📦</span> <span data-i18n="palette.title">Fields</span>
+            </button>
+            <button type="button" class="mobile-tab-btn active" data-panel="center-canvas" id="mobile-tab-canvas">
+                <span>📝</span> <span data-i18n="header.canvas_tab">Canvas</span>
+            </button>
+            <button type="button" class="mobile-tab-btn" data-panel="right-panel" id="mobile-tab-properties">
+                <span>⚙️</span> <span data-i18n="properties.title">Properties</span>
+            </button>
+        </nav>
+
         <!-- Builder Interface -->
         <div id="builder-interface" class="app-main builder-layout">
             <!-- Left: Palette -->
             <aside class="tool-panel left-panel">
-                <h3>Fields</h3>
+                <div class="palette-header-wrap">
+                    <div class="palette-title-row">
+                        <div class="palette-title-left">
+                            <h3 data-i18n="palette.title">Fields</h3>
+                            <span id="palette-count-badge" class="palette-count-badge" title="Total available field types" data-i18n-title="palette.palette_count_title">15</span>
+                        </div>
+                        <div class="palette-smart-suggest-toggle-wrap">
+                            <label class="palette-smart-toggle-label" for="toggle-smart-suggest-palette" title="Toggle Smart Suggest recommended fields section" data-i18n-title="palette.smart_suggest_toggle_title">
+                                <span class="palette-toggle-text" data-i18n="palette.smart_suggest">Smart Suggest</span>
+                                <input type="checkbox" id="toggle-smart-suggest-palette" class="palette-smart-toggle-input" checked>
+                                <span class="palette-smart-toggle-switch"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="palette-search-box">
+                        <span class="palette-search-icon">🔍</span>
+                        <input type="text" id="palette-search-input" class="palette-search-input" placeholder="Filter fields... (Ctrl+F)" autocomplete="off" aria-label="Filter field types" data-i18n-placeholder="palette.search_placeholder" data-i18n-aria-label="palette.search_aria_label">
+                        <kbd class="palette-search-shortcut-badge" title="Press Ctrl+F or ⌘+F to jump to field filtering" data-i18n-title="palette.search_shortcut_title">Ctrl+F</kbd>
+                        <button type="button" id="btn-palette-search-clear" class="palette-search-clear" style="display:none;" title="Clear search" data-i18n-title="palette.clear_search">✕</button>
+                    </div>
+                    <div id="palette-search-results-count" class="palette-search-results-count" style="display:none;" aria-live="polite"></div>
+                </div>
+
+                <!-- Dynamic Recommended Fields Section -->
+                <div id="recommended-fields-section" class="recommended-fields-section">
+                    <div class="recommended-header">
+                        <div class="recommended-title">
+                            <span class="rec-sparkle-icon">✨</span>
+                            <span class="rec-heading-text" data-i18n="palette.recommended_fields">Recommended Fields</span>
+                        </div>
+                        <span class="recommended-badge" title="Dynamically recommended based on current form contents" data-i18n="palette.smart_suggest" data-i18n-title="palette.recommended_badge_title">Smart Suggest</span>
+                    </div>
+                    <div id="recommended-fields-container" class="recommended-fields-container">
+                        <!-- Populated dynamically based on current form fields -->
+                    </div>
+                </div>
+
+                <div class="palette-all-types-header">
+                    <span class="palette-section-subtitle" data-i18n="palette.all_field_types">All Field Types</span>
+                </div>
+
                 <div id="field-palette">
                     <!-- Loading... -->
                 </div>
@@ -182,30 +369,62 @@ body.dark-mode .breadcrumb-nav strong {
 
             <!-- Center: Canvas -->
             <main class="center-canvas">
+                <!-- Canvas Top Utility Toolbar -->
+                <div class="canvas-top-toolbar" id="canvas-top-toolbar">
+                    <div class="canvas-toolbar-left">
+                        <button type="button" id="btn-toggle-canvas-grid" class="btn-canvas-util" title="Toggle background alignment grid pattern for precision drag-and-drop alignment" data-i18n-title="canvas.grid_toggle_title" aria-pressed="false">
+                            <span class="grid-icon">📐</span>
+                            <span id="grid-toggle-text" data-i18n="canvas.grid_off">Grid: Off</span>
+                        </button>
+                        <button type="button" id="btn-toggle-smart-snap" class="btn-canvas-util btn-smart-snap-active" title="Toggle Smart Snap magnetic alignment guidelines when dragging fields" data-i18n-title="canvas.smart_snap_title" aria-pressed="true">
+                            <span class="snap-icon">🧲</span>
+                            <span id="smart-snap-toggle-text" data-i18n="canvas.snap_on">Smart Snap: ON</span>
+                        </button>
+                        <button type="button" id="btn-auto-sort-fields" class="btn-canvas-util" title="Auto-sort fields alphabetically by label (A-Z) within all sections" data-i18n-title="canvas.auto_sort_title">
+                            <span class="sort-icon">🔤</span>
+                            <span data-i18n="canvas.auto_sort">Auto-Sort</span>
+                        </button>
+                        <button type="button" id="btn-validate-form" class="btn-canvas-util btn-canvas-validate" title="Open Data Integrity Checker: Scan form for circular logic dependencies, missing mandatory options, and validation bounds" data-i18n-title="canvas.validate_form_title">
+                            <span class="validate-icon">🛡️</span>
+                            <span data-i18n="canvas.validate_form">Integrity Checker</span>
+                        </button>
+                    </div>
+                    <div class="canvas-toolbar-right">
+                        <div id="canvas-field-count-badge" class="canvas-field-count-badge" title="Total count of fields currently placed in the form" data-i18n-title="canvas.fields_placed_title">
+                            <span class="field-count-icon">📊</span>
+                            <span id="canvas-field-count-text" data-i18n="canvas.fields_placed">0 Fields Placed</span>
+                        </div>
+                        <div id="canvas-validation-status" class="canvas-validation-status-pill" title="Live field configuration validation status" data-i18n-title="canvas.validation_status_title">
+                            <span class="val-status-icon">✓</span>
+                            <span class="val-status-text" data-i18n="canvas.all_configured">All Fields Configured</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div id="form-canvas">
                     <!-- Drop Zone -->
-                    <div style="text-align:center; padding:50px; color:#aaa;">Drop fields here...</div>
+                    <div style="text-align:center; padding:50px; color:#aaa;" data-i18n="canvas.drop_here">Drop fields here...</div>
                 </div>
             
 
 <!-- Related Tools Section -->
 <section class="related-tools-section" style="padding: 2rem 1rem; background: #fff; border-top: 1px solid #eee;">
     <div style="max-width: 800px; margin: 0 auto;">
-        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1e293b;">Recommended for You</h3>
+        <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1e293b;" data-i18n="nav.recommended_title">Recommended for You</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-            <a href="https://poliinternational.com/autoclave-calculator/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Autoclave Calculator</a>
-            <a href="https://poliinternational.com/studio-crm/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Studio Crm</a>
-            <a href="https://poliinternational.com/Equipment-Compatibility-Checker/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;">Equipment Compatibility</a>
+            <a href="https://poliinternational.com/autoclave-calculator/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;" data-i18n="footer.tool_autoclave" target="_top">Autoclave Calculator</a>
+            <a href="https://poliinternational.com/studio-crm/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;" data-i18n="footer.tool_crm" target="_top">Studio CRM</a>
+            <a href="https://poliinternational.com/equipment-compatibility-checker/" style="display: block; padding: 1rem; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: #0693e3; font-weight: 500; text-align: center; transition: background 0.2s;" data-i18n="footer.tool_equipment" target="_top">Equipment Compatibility</a>
         </div>
         <div style="text-align: center; margin-top: 1.5rem;">
-            <a href="https://poliinternational.com/tools/" style="color: #64748b; text-decoration: underline; font-size: 0.9rem;">View All 17 Free Tools</a>
+            <a href="https://poliinternational.com/tools/" style="color: #64748b; text-decoration: underline; font-size: 0.9rem;" data-i18n="nav.view_all_tools" target="_top">View All 17 Free Tools</a>
         </div>
     </div>
 </section>
 
 <!-- GEO Semantic Block -->
 <aside class="geo-summary-block" style="background: #f8fafc; border-left: 4px solid #0693e3; padding: 1.5rem; margin: 2rem 0; font-style: italic; color: #334155; border-radius: 0 8px 8px 0;">
-    <p style="margin: 0; line-height: 1.6;">Studio Efficiency Tip: Streamlining your administrative tasks allows you to focus more on your art. Our tools are designed with a studio-first mentality, ensuring high performance, data privacy, and professional-grade accuracy.</p>
+    <p style="margin: 0; line-height: 1.6;" data-i18n="nav.efficiency_tip">Studio Efficiency Tip: Streamlining your administrative tasks allows you to focus more on your art. Our tools are designed with a studio-first mentality, ensuring high performance, data privacy, and professional-grade accuracy.</p>
 </aside>
 
 </main>
@@ -213,7 +432,7 @@ body.dark-mode .breadcrumb-nav strong {
             <!-- Right: Properties -->
             <aside class="tool-panel right-panel">
                 <div id="properties-editor">
-                     <p class="text-muted">Select a field to edit properties</p>
+                     <p class="text-muted" data-i18n="properties.select_field">Select a field to edit properties</p>
                 </div>
             </aside>
         </div>
@@ -223,39 +442,1018 @@ body.dark-mode .breadcrumb-nav strong {
              <div id="preview-container"></div>
         </div>
 
+        <!-- Floating Recently Deleted Bin (60-second recovery window) -->
+        <aside id="recently-deleted-bin" class="recently-deleted-bin" style="display:none;" aria-live="polite" aria-label="Recently Deleted Fields">
+            <div class="recently-deleted-header" id="recently-deleted-header">
+                <div class="deleted-header-title-wrap">
+                    <span class="deleted-bin-icon">🗑️</span>
+                    <strong class="deleted-bin-title" data-i18n="bin.title">Recently Deleted</strong>
+                    <span id="deleted-bin-count" class="deleted-bin-count-badge">0</span>
+                </div>
+                <div class="deleted-header-actions">
+                    <button type="button" id="btn-clear-deleted-bin" class="btn-bin-header-action" title="Clear all recently deleted items" data-i18n-title="bin.clear_all_title" data-i18n="bin.clear_all">Clear All</button>
+                    <button type="button" id="btn-toggle-deleted-bin" class="btn-bin-header-action" title="Minimize / Expand" data-i18n-title="builder.bin_toggle_tooltip" aria-label="Toggle Deleted Bin">▼</button>
+                </div>
+            </div>
+            <div id="recently-deleted-list" class="recently-deleted-list">
+                <!-- Dynamically populated with restoring countdown cards -->
+            </div>
+        </aside>
+
     </div>
 
     <!-- MORE TOOLS NAVIGATION -->
     <section style="text-align: center; padding: 2rem 1rem; background: #f5f5f5; border-top: 1px solid #ddd;">
         <p style="font-size: 1.05rem; margin: 0; color: #666;">
-            <a href="https://poliinternational.com/tools" target="_blank" rel="noopener" style="color: #0693e3; text-decoration: none; font-weight: 600; transition: color 0.2s;">
+            <a href="https://poliinternational.com/tools" target="_blank" rel="noopener" style="color: #0693e3; text-decoration: none; font-weight: 600; transition: color 0.2s;" data-i18n="nav.explore_more">
                 Explore all our free professional tools →
             </a>
         </p>
     </section>
 
+    <!-- Restore Session Modal -->
+    <div id="restore-session-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 data-i18n="autosave.restore_title">💾 Restore Previous Session?</h3>
+                <button type="button" id="close-restore-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body">
+                <p id="restore-session-desc" style="margin-bottom: 1rem; color: #475569;" data-i18n="autosave.restore_desc">
+                    We found an auto-saved draft from your previous session. Would you like to restore your work or start with a fresh template?
+                </p>
+                <div id="restore-session-meta" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.9rem; margin-bottom: 1rem;">
+                    <strong data-i18n="autosave.draft_label">Draft:</strong> <span id="restore-draft-name">Custom Form</span><br>
+                    <strong data-i18n="autosave.saved_label">Saved:</strong> <span id="restore-draft-time">Just now</span>
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                <button type="button" id="btn-discard-session" class="btn-secondary" data-i18n="autosave.discard">Discard & Start Fresh</button>
+                <button type="button" id="btn-restore-session" class="btn-primary" data-i18n="autosave.restore">Restore Session</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Results Dashboard Modal -->
+    <div id="results-dashboard-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-card modal-large">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.25rem;">📊</span>
+                    <h3 data-i18n="results.modal_title">Form Results Dashboard</h3>
+                </div>
+                <button type="button" id="close-results-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="results-dashboard-summary" id="results-summary-cards">
+                    <!-- Dynamic summary stats -->
+                </div>
+
+                <!-- 30-Day Submission Frequency Trend (D3 Sparkline) -->
+                <div id="results-submission-trend-container" class="results-trend-wrapper">
+                    <!-- Dynamic D3 Sparkline -->
+                </div>
+
+                <!-- Results Filter & Search Toolbar -->
+                <div class="results-filter-toolbar" style="display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 220px; position: relative;">
+                        <input type="text" id="results-search-input" placeholder="🔍 Search responses, field names, or values..." data-i18n-placeholder="results.search_placeholder" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.88rem;">
+                    </div>
+                    <div style="min-width: 160px;">
+                        <select id="results-section-filter" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.88rem;">
+                            <option value="" data-i18n="results.all_sections">All Sections</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="results-table-wrapper" style="max-height: 360px; overflow-y: auto; margin-top: 0.75rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    <table class="results-table" id="results-data-table" style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+                        <thead>
+                            <tr style="background: #f8fafc; text-align: left; position: sticky; top: 0; z-index: 1;">
+                                <th style="padding: 10px 14px; border-bottom: 1px solid #cbd5e1; font-weight: 600;" data-i18n="results.th_section">Section</th>
+                                <th style="padding: 10px 14px; border-bottom: 1px solid #cbd5e1; font-weight: 600;" data-i18n="results.th_field">Field</th>
+                                <th style="padding: 10px 14px; border-bottom: 1px solid #cbd5e1; font-weight: 600;" data-i18n="results.th_value">Client Response</th>
+                                <th style="padding: 10px 14px; border-bottom: 1px solid #cbd5e1; font-weight: 600; text-align: center;" data-i18n="results.th_status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-table-body">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <button type="button" id="btn-results-back" class="btn-secondary" data-i18n="results.back">Back to Form</button>
+                    <button type="button" id="btn-results-clear-all" class="btn-secondary" style="color: #dc2626; border-color: #fecaca; background: #fff5f5;" title="Securely purge all captured responses from local cache" data-i18n-title="results.clear_all_title" data-i18n="results.clear_all">
+                        🗑️ Clear All Responses
+                    </button>
+                </div>
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <button type="button" id="btn-results-download-json" class="btn-secondary" title="Export current filtered responses as a structured JSON backup file" data-i18n-title="results.export_filtered_json_title" data-i18n="results.export_filtered_json">
+                        💾 Export Filtered JSON
+                    </button>
+                    <button type="button" id="btn-results-download-csv" class="btn-secondary" data-i18n="results.download_csv">
+                        📊 Download CSV
+                    </button>
+                    <button type="button" id="btn-results-download-pdf" class="btn-primary" data-i18n="results.download_pdf">
+                        📄 Download PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clear All Responses Multi-Step Confirmation Modal -->
+    <div id="clear-responses-modal" class="modal-overlay" style="display: none; z-index: 100000;">
+        <div class="modal-card" style="max-width: 480px; border-top: 5px solid #dc2626;">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.3rem;">⚠️</span>
+                    <h3 style="color: #991b1b; margin: 0;" data-i18n="results.purge_modal_title">Purge All Responses?</h3>
+                </div>
+                <button type="button" id="btn-cancel-clear-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem 1.5rem;">
+                <div id="clear-step-1">
+                    <p style="color: #334155; font-size: 0.92rem; line-height: 1.5; margin-top: 0;" data-i18n="results.purge_step1_desc">
+                        You are about to securely purge <strong>all stored client responses and form entries</strong> from your browser's local cache.
+                    </p>
+                    <div style="background: #fef2f2; border: 1px solid #fee2e2; border-radius: 8px; padding: 0.85rem; margin: 1rem 0; font-size: 0.84rem; color: #991b1b;" data-i18n="results.purge_step1_warn">
+                        <strong>⚠️ Warning:</strong> This action cannot be undone. Make sure you have exported any required CSV, JSON, or PDF records before continuing.
+                    </div>
+                    <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.25rem;">
+                        <button type="button" id="btn-step1-cancel" class="btn-secondary" data-i18n="results.purge_step1_cancel">Cancel</button>
+                        <button type="button" id="btn-step1-proceed" class="btn-danger" style="background: #dc2626; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600;" data-i18n="results.purge_step1_proceed">Continue to Confirmation →</button>
+                    </div>
+                </div>
+
+                <div id="clear-step-2" style="display: none;">
+                    <p style="color: #334155; font-size: 0.92rem; line-height: 1.5; margin-top: 0;" data-i18n="results.purge_step2_prompt">
+                        To confirm permanent purging, please type <strong>CLEAR</strong> in the verification box below:
+                    </p>
+                    <div style="margin: 1rem 0;">
+                        <input type="text" id="clear-confirm-input" class="form-control" placeholder="Type CLEAR here" data-i18n-placeholder="results.purge_step2_placeholder" style="width: 100%; padding: 0.6rem; border: 2px solid #ef4444; border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-align: center; text-transform: uppercase;">
+                        <small id="clear-confirm-error" style="color: #dc2626; display: none; margin-top: 4px; font-size: 0.8rem;" data-i18n="results.purge_step2_error">Please type "CLEAR" exactly to confirm.</small>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem;">
+                        <button type="button" id="btn-step2-back" class="btn-secondary" data-i18n="results.purge_step2_back">← Back</button>
+                        <button type="button" id="btn-step2-execute" class="btn-danger" style="background: #b91c1c; color: white; border: none; padding: 0.55rem 1.2rem; border-radius: 6px; font-weight: 700;" data-i18n="results.purge_step2_execute">Permanently Purge Cache</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Studio Embed & QR Code Modal -->
+    <div id="embed-qr-modal" class="modal-overlay" style="display:none; z-index: 100004;">
+        <div class="modal-card modal-large qr-modal-card">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.25rem;">📱</span>
+                    <h3 id="embed-modal-title" data-i18n="embed_modal.title">Studio Intake QR Code &amp; Website Embed</h3>
+                </div>
+                <button type="button" id="close-embed-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem; overflow-y: auto; max-height: calc(88vh - 120px);">
+                <div class="embed-modal-layout">
+                    <!-- Left: QR Code Placard -->
+                    <div class="qr-placard-box" style="background: white; border: 2px solid #0f172a; border-radius: 12px; padding: 1.25rem 1rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center;">
+                        <div style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #0f172a; margin-bottom: 0.5rem;" data-i18n="embed_modal.desk_placard_title">Studio Client Intake</div>
+                        <div id="qr-code-canvas-container" style="display: flex; justify-content: center; margin: 0.5rem 0;">
+                            <canvas id="studio-qr-canvas" width="180" height="180" style="border: 1px solid #e2e8f0; border-radius: 8px; background: white; max-width: 100%; height: auto;"></canvas>
+                        </div>
+                        <p style="font-size: 0.75rem; color: #475569; margin: 0.4rem 0 0.75rem 0; line-height: 1.3;" data-i18n="embed_modal.scan_instructions">Scan with iPad or phone camera to complete consultation &amp; consent form</p>
+                        <button type="button" id="btn-print-qr-placard" class="btn-secondary" style="font-size: 0.78rem; width: 100%; padding: 0.4rem 0.5rem; justify-content: center;" data-i18n="embed_modal.print_placard">🖨️ Print Desk Placard</button>
+                    </div>
+
+                    <!-- Right: Links & Embed Code -->
+                    <div class="embed-details-box" style="display: flex; flex-direction: column; gap: 0.9rem; min-width: 0;">
+                        <div>
+                            <label style="display: block; font-size: 0.84rem; font-weight: 600; color: #1e293b; margin-bottom: 0.35rem;" data-i18n="embed_modal.direct_url_label">
+                                🌐 Direct Client Intake URL:
+                            </label>
+                            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                <input type="text" id="direct-intake-url" readonly style="flex: 1; min-width: 0; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #f8fafc;" aria-label="Direct Client Intake URL">
+                                <button type="button" id="btn-copy-direct-url" class="btn-primary" style="white-space: nowrap; flex-shrink: 0; font-size: 0.82rem; padding: 0.5rem 0.85rem; font-weight: 600;" title="Copy direct intake URL to clipboard" data-i18n-title="embed_modal.copy_link" data-i18n="embed_modal.copy_clipboard">
+                                    📋 Copy to Clipboard
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-size: 0.84rem; font-weight: 600; color: #1e293b; margin-bottom: 0.35rem;" data-i18n="embed_modal.iframe_label">
+                                💻 Responsive Website Embed Code (&lt;iframe&gt;):
+                            </label>
+                            <textarea id="embed-iframe-code" readonly rows="3" style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-family: monospace; font-size: 0.8rem; background: #f8fafc; resize: none; word-break: break-all;"></textarea>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
+                                <span style="font-size: 0.75rem; color: #64748b;" data-i18n="embed_modal.embed_code_desc">Place this code on your studio website or booking portal.</span>
+                                <button type="button" id="btn-copy-embed-code" class="btn-secondary" style="font-size: 0.78rem; padding: 0.3rem 0.65rem; white-space: nowrap;" data-i18n="embed_modal.copy_iframe">📋 Copy Iframe Code</button>
+                            </div>
+                        </div>
+
+                        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.82rem; color: #1e40af; line-height: 1.45;" data-i18n-html="embed_modal.reception_tip_html">
+                            💡 <strong>In-Studio Reception Tip:</strong> Print the desk placard and place it on your studio front counter so clients can scan and complete their health history and consent waivers directly on their mobile device before their session.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: flex-end; padding: 0.75rem 1.25rem; border-top: 1px solid #e2e8f0;">
+                <button type="button" id="btn-close-embed-done" class="btn-primary" data-i18n="embed_modal.done">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="shortcuts-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 data-i18n="shortcuts.modal_title">⌨️ Form Builder Keyboard Shortcuts</h3>
+                <button type="button" id="close-shortcuts-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="shortcuts-grid">
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>Ctrl</kbd> + <kbd>Z</kbd></span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.undo">Undo the last action or field edit</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>Ctrl</kbd> + <kbd>Y</kbd> / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.redo">Redo previously undone action</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>Shift</kbd> + Click</span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.select_multiple">Select multiple fields on canvas for bulk actions</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>Ctrl</kbd> + <kbd>D</kbd></span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.duplicate">Duplicate selected field(s) as a block</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>Delete</kbd> / <kbd>Backspace</kbd></span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.delete">Delete selected field(s) in bulk</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>Ctrl</kbd> + <kbd>S</kbd></span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.export">Quick Export form schema as JSON</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd></span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.nudge_desc">Nudge selected field(s) on canvas by 5px increments</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd></span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.tab_desc">Focus and cycle through field configuration properties</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>Ctrl</kbd> + <kbd>F</kbd> / <kbd>/</kbd></span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.filter_desc">Quick filter palette fields or search within field properties</span>
+                    </div>
+                    <div class="shortcut-row">
+                        <span class="shortcut-key"><kbd>Esc</kbd></span>
+                        <span class="shortcut-desc" data-i18n="shortcuts.deselect">Deselect field and view Form Overview</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-primary" onclick="document.getElementById('shortcuts-modal').style.display='none'" data-i18n="shortcuts.got_it">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Multi-Session Planner & Project Iterations Modal -->
+    <div id="multisession-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-card modal-large">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.25rem;">📅</span>
+                    <div>
+                        <h3 style="margin: 0;" data-i18n="multisession.modal_title">Multi-Session Planner &amp; Project Iterations</h3>
+                        <p style="margin: 0.2rem 0 0 0; font-size: 0.78rem; color: #64748b;" data-i18n="multisession.modal_subtitle">Save, switch, restore, and compare multiple draft versions of your studio form configurations.</p>
+                    </div>
+                </div>
+                <button type="button" id="close-multisession-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <!-- Snapshot Creation Box -->
+                <div class="multisession-create-box" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; padding: 1rem 1.25rem;">
+                    <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #1e293b; font-weight: 700;" data-i18n="multisession.snapshot_title">📸 Snapshot Current Form as a New Project Version</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.75rem; align-items: end;">
+                        <div>
+                            <label style="display: block; font-size: 0.78rem; font-weight: 600; color: #475569; margin-bottom: 0.25rem;" data-i18n="multisession.version_name_label">
+                                Version / Session Name *
+                            </label>
+                            <input type="text" id="new-version-name-input" placeholder="e.g. Session 1 - Outline &amp; Consultation" data-i18n-placeholder="planner.version_name_placeholder" class="form-control" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.78rem; font-weight: 600; color: #475569; margin-bottom: 0.25rem;" data-i18n="multisession.version_notes_label">
+                                Session Notes / Focus Area (Optional)
+                            </label>
+                            <input type="text" id="new-version-notes-input" placeholder="e.g. Stencil approved, shading scheduled for next visit" data-i18n-placeholder="planner.version_notes_placeholder" class="form-control" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                        </div>
+                        <div>
+                            <button type="button" id="btn-save-new-version" class="btn-primary" style="white-space: nowrap; padding: 0.45rem 0.9rem; font-size: 0.85rem;" data-i18n="multisession.save_version">💾 Save Version</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version List Search & Header -->
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h4 style="margin: 0; font-size: 0.95rem; font-weight: 700; color: #0f172a;" data-i18n="multisession.saved_versions_title">Saved Project Versions &amp; Draft Iterations</h4>
+                        <span id="multisession-count-badge" style="background: #e2e8f0; color: #334155; font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 9999px;">
+                            0 Saved Versions
+                        </span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <button type="button" id="btn-open-multisession-compare" class="btn-secondary" style="font-size: 0.82rem; padding: 0.35rem 0.75rem; display: flex; align-items: center; gap: 0.35rem;" title="Compare changes between two form iterations" data-i18n-title="multisession.compare_btn_title" data-i18n="multisession.compare_btn">
+                            🔍 Compare Iterations
+                        </button>
+                        <div style="width: 220px;">
+                            <input type="text" id="multisession-search-input" placeholder="🔍 Search versions..." data-i18n-placeholder="multisession.search_placeholder" class="form-control" style="width: 100%; padding: 0.4rem 0.65rem; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version List Scrollable Container -->
+                <div id="multisession-versions-container" style="max-height: 380px; overflow-y: auto; padding-right: 0.25rem;">
+                    <!-- Dynamically populated versions -->
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.78rem; color: #64748b;">
+                    💡 Draft snapshots are persisted securely to your browser storage.
+                </span>
+                <button type="button" id="btn-close-multisession-done" class="btn-primary" data-i18n="multisession.done">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Multi-Session Compare & Diff Modal -->
+    <div id="multisession-compare-modal" class="modal-overlay" style="display: none; z-index: 100001;">
+        <div class="modal-card modal-large" style="max-width: 860px;">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.3rem;">🔍</span>
+                    <div>
+                        <h3 style="margin: 0; font-size: 1.15rem; color: #0f172a;" data-i18n="multisession.compare_modal_title">Compare Form Iterations</h3>
+                        <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #64748b;" data-i18n="multisession.compare_modal_subtitle">Diff view highlighting fields added, modified, or removed across versions</p>
+                    </div>
+                </div>
+                <button type="button" id="btn-close-compare-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem 1.5rem;">
+                <!-- Comparison Selectors -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem; margin-bottom: 1.25rem;">
+                    <div>
+                        <label for="compare-version-a" style="display: block; font-size: 0.78rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.35rem;" data-i18n="multisession.baseline_version_label">
+                            Baseline Version (A)
+                        </label>
+                        <select id="compare-version-a" class="form-control" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.85rem; border-radius: 6px; border: 1px solid #cbd5e1;">
+                            <!-- Populated with version options -->
+                        </select>
+                    </div>
+
+                    <div style="font-size: 1.2rem; color: #64748b; font-weight: 700; padding: 0 0.5rem;">
+                        ➔
+                    </div>
+
+                    <div>
+                        <label for="compare-version-b" style="display: block; font-size: 0.78rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.35rem;" data-i18n="multisession.target_version_label">
+                            Comparison Target (B)
+                        </label>
+                        <select id="compare-version-b" class="form-control" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.85rem; border-radius: 6px; border: 1px solid #cbd5e1;">
+                            <!-- Populated with version options -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Diff Metrics Banner -->
+                <div id="compare-diff-stats" style="display: flex; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                    <!-- Dynamically populated summary tags -->
+                </div>
+
+                <!-- Diff Content Details -->
+                <div id="compare-diff-results" style="max-height: 400px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 8px; background: white; padding: 0.5rem;">
+                    <!-- Diff rows will render here -->
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+                <button type="button" id="btn-compare-back-to-list" class="btn-secondary" data-i18n="multisession.back_to_versions">← Back to Versions</button>
+                <button type="button" id="btn-close-compare-done" class="btn-primary" data-i18n="multisession.close_diff">Close Diff</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF & Print Automation Settings Modal -->
+    <div id="pdf-settings-modal" class="modal-overlay" style="display:none; z-index: 100002;">
+        <div class="modal-card" style="max-width: 540px;">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.3rem;">⚙️</span>
+                    <div>
+                        <h3 style="margin: 0; font-size: 1.15rem; color: #0f172a;" data-i18n="pdf_settings.modal_title">PDF &amp; Print Automation Settings</h3>
+                        <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #64748b;" data-i18n="pdf_settings.modal_subtitle">Configure studio watermark branding, automated printing, and export layout</p>
+                    </div>
+                </div>
+                <button type="button" id="btn-close-pdf-settings" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 1.15rem;">
+                
+                <!-- Studio Logo Watermark Upload -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                        <label style="font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0;" data-i18n="pdf_settings.logo_title">
+                            🖼️ Studio Logo &amp; Watermark
+                        </label>
+                        <span style="font-size: 0.7rem; color: #0284c7; background: #e0f2fe; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="pdf_settings.branding_badge">BRANDING</span>
+                    </div>
+                    <p style="margin: 0 0 0.75rem 0; font-size: 0.8rem; color: #64748b; line-height: 1.4;" data-i18n="pdf_settings.logo_desc">
+                        Upload your studio crest or logo to embed as an official background watermark across generated consent PDFs.
+                    </p>
+
+                    <!-- Watermark Enable Toggle -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px dashed #cbd5e1; margin-bottom: 0.75rem;">
+                        <label for="pdf-setting-watermark-enable" style="font-size: 0.82rem; font-weight: 600; color: #334155; cursor: pointer; margin-bottom: 0;" data-i18n="pdf_settings.watermark_enable">
+                            Apply Studio Logo as Watermark on PDF
+                        </label>
+                        <label class="switch" style="flex-shrink: 0;">
+                            <input type="checkbox" id="pdf-setting-watermark-enable" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Hidden File Input -->
+                    <input type="file" id="pdf-setting-logo-input" accept="image/png,image/jpeg,image/webp,image/svg+xml" style="display: none;">
+                    
+                    <!-- Dropzone & Upload Box -->
+                    <div id="pdf-logo-dropzone" class="pdf-logo-dropzone" style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 0.9rem; text-align: center; background: #ffffff; cursor: pointer; transition: all 0.2s ease;">
+                        <div id="pdf-logo-empty-view">
+                            <span style="font-size: 1.5rem; display: block; margin-bottom: 3px;">📤</span>
+                            <div style="font-size: 0.82rem; font-weight: 600; color: #1e293b;" data-i18n="pdf_settings.drag_logo">Click or Drag &amp; Drop Studio Logo</div>
+                            <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;" data-i18n="pdf_settings.logo_formats">PNG, JPEG, WebP, SVG (Transparent PNG recommended)</div>
+                        </div>
+
+                        <div id="pdf-logo-preview-view" style="display: none; align-items: center; justify-content: space-between; gap: 0.75rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; min-width: 0;">
+                                <div style="width: 48px; height: 48px; border: 1px solid #e2e8f0; border-radius: 6px; padding: 3px; background: #f8fafc; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                    <img id="pdf-logo-preview-img" src="" alt="Logo Preview" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                </div>
+                                <div style="text-align: left; min-width: 0;">
+                                    <div id="pdf-logo-filename" style="font-size: 0.82rem; font-weight: 700; color: #1e293b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">studio_logo.png</div>
+                                    <div id="pdf-logo-status" style="font-size: 0.72rem; color: #16a34a; font-weight: 600;" data-i18n="pdf_settings.active_logo">✓ Active watermark logo</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0.35rem; flex-shrink: 0;">
+                                <button type="button" id="btn-change-pdf-logo" class="btn-secondary" style="padding: 4px 8px; font-size: 0.75rem;" data-i18n="pdf_settings.btn_change">Change</button>
+                                <button type="button" id="btn-remove-pdf-logo" class="btn-secondary btn-danger" style="padding: 4px 8px; font-size: 0.75rem;" data-i18n="pdf_settings.btn_remove">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Watermark Opacity & Size Controls -->
+                    <div id="pdf-watermark-controls-wrap" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem;">
+                        <div>
+                            <label for="pdf-setting-watermark-opacity" style="display: block; font-size: 0.78rem; font-weight: 600; color: #475569; margin-bottom: 0.25rem;" data-i18n="pdf_settings.opacity_label">
+                                Watermark Opacity
+                            </label>
+                            <select id="pdf-setting-watermark-opacity" class="form-control" style="width: 100%; padding: 0.4rem 0.6rem; font-size: 0.82rem; border-radius: 6px; border: 1px solid #cbd5e1;">
+                                <option value="0.08" data-i18n="pdf_settings.opacity_subtle">Subtle (8% Opacity)</option>
+                                <option value="0.15" selected data-i18n="pdf_settings.opacity_standard">Standard (15% Opacity)</option>
+                                <option value="0.25" data-i18n="pdf_settings.opacity_medium">Medium (25% Opacity)</option>
+                                <option value="0.38" data-i18n="pdf_settings.opacity_bold">Bold (38% Opacity)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="pdf-setting-watermark-size" style="display: block; font-size: 0.78rem; font-weight: 600; color: #475569; margin-bottom: 0.25rem;" data-i18n="pdf_settings.diameter_label">
+                                Watermark Diameter
+                            </label>
+                            <select id="pdf-setting-watermark-size" class="form-control" style="width: 100%; padding: 0.4rem 0.6rem; font-size: 0.82rem; border-radius: 6px; border: 1px solid #cbd5e1;">
+                                <option value="55" data-i18n="pdf_settings.size_small">Small (55 mm)</option>
+                                <option value="80" selected data-i18n="pdf_settings.size_medium">Medium (80 mm)</option>
+                                <option value="110" data-i18n="pdf_settings.size_large">Large (110 mm)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Print After Signature Toggle -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+                    <div>
+                        <label for="pdf-setting-print-after-sig" style="display: block; font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 3px; cursor: pointer;" data-i18n="pdf_settings.print_after_sig_title">
+                            🖨️ Print after Signature
+                        </label>
+                        <p style="margin: 0; font-size: 0.8rem; color: #64748b; line-height: 1.4;" data-i18n="pdf_settings.print_after_sig_desc">
+                            Automatically open the browser's system print dialog as soon as a client completes their digital signature capture on screen.
+                        </p>
+                    </div>
+                    <label class="switch" style="flex-shrink: 0;">
+                        <input type="checkbox" id="pdf-setting-print-after-sig">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <!-- Studio Paper Size & Layout Preference -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                    <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #1e293b; margin-bottom: 0.4rem;" data-i18n="pdf_settings.paper_format_label">
+                        📄 PDF Standard Paper Format
+                    </label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                        <select id="pdf-setting-paper-size" class="form-control" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.85rem; border-radius: 6px; border: 1px solid #cbd5e1;">
+                            <option value="a4" selected data-i18n="pdf_settings.paper_a4">A4 (210 × 297 mm - Standard)</option>
+                            <option value="letter" data-i18n="pdf_settings.paper_letter">US Letter (8.5 × 11 in)</option>
+                        </select>
+                        <select id="pdf-setting-orientation" class="form-control" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.85rem; border-radius: 6px; border: 1px solid #cbd5e1;">
+                            <option value="portrait" selected data-i18n="pdf_settings.orient_portrait">Portrait (Standard)</option>
+                            <option value="landscape" data-i18n="pdf_settings.orient_landscape">Landscape</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- PDF Layout Options (Spacing & Density Toggle) -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                        <label style="font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0;" data-i18n="pdf_settings.density_title">
+                            📐 PDF Layout Options (Spacing &amp; Density)
+                        </label>
+                        <span style="font-size: 0.7rem; color: #059669; background: #dcfce7; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="pdf_settings.efficiency_badge">PAGE EFFICIENCY</span>
+                    </div>
+                    <p style="margin: 0 0 0.75rem 0; font-size: 0.8rem; color: #64748b; line-height: 1.4;" data-i18n="pdf_settings.density_desc">
+                        Select output spacing between Compact (dense row height, reduced margins to minimize page count) and Standard (spacious layout with relaxed margins).
+                    </p>
+                    <div class="pdf-density-toggle-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                        <label class="pdf-density-option-card active" id="label-density-standard" style="border: 2px solid #2563eb; background: #eff6ff; border-radius: 8px; padding: 0.75rem; cursor: pointer; display: flex; align-items: flex-start; gap: 0.6rem; transition: all 0.15s ease;">
+                            <input type="radio" name="pdf-setting-density" id="pdf-density-standard" value="standard" checked style="margin-top: 3px;">
+                            <div>
+                                <strong style="display: block; font-size: 0.84rem; color: #1e293b;" data-i18n="pdf_settings.margins_standard">Standard (Spacious)</strong>
+                                <span style="font-size: 0.73rem; color: #64748b; line-height: 1.35; display: block; margin-top: 2px;" data-i18n="pdf_settings.margins_standard_desc">Spacious 16mm margins, relaxed row height, and generous section separation.</span>
+                            </div>
+                        </label>
+                        <label class="pdf-density-option-card" id="label-density-compact" style="border: 2px solid #cbd5e1; background: #ffffff; border-radius: 8px; padding: 0.75rem; cursor: pointer; display: flex; align-items: flex-start; gap: 0.6rem; transition: all 0.15s ease;">
+                            <input type="radio" name="pdf-setting-density" id="pdf-density-compact" value="compact" style="margin-top: 3px;">
+                            <div>
+                                <strong style="display: block; font-size: 0.84rem; color: #1e293b;" data-i18n="pdf_settings.margins_compact">Compact (Dense)</strong>
+                                <span style="font-size: 0.73rem; color: #64748b; line-height: 1.35; display: block; margin-top: 2px;" data-i18n="pdf_settings.margins_compact_desc">Tight 10mm margins &amp; condensed row spacing to fit maximum fields per page.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Signature Styling Section (Ink Color & Line Thickness) -->
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                        <label style="font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0;" data-i18n="pdf_settings.sig_styling_title">
+                            ✒️ Signature Styling &amp; Ink Branding
+                        </label>
+                        <span style="font-size: 0.7rem; color: #7c3aed; background: #ede9fe; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="pdf_settings.sig_badge">STUDIO INK</span>
+                    </div>
+                    <p style="margin: 0 0 0.75rem 0; font-size: 0.8rem; color: #64748b; line-height: 1.4;" data-i18n="pdf_settings.sig_styling_desc">
+                        Choose signature ink color and line thickness for on-screen digital capture and exported PDF forms to match your studio branding.
+                    </p>
+
+                    <!-- Signature Ink Color -->
+                    <div style="margin-bottom: 0.75rem;">
+                        <label style="display: block; font-size: 0.78rem; font-weight: 600; color: #475569; margin-bottom: 0.35rem;" data-i18n="pdf_settings.sig_ink_label">
+                            Signature Ink Color
+                        </label>
+                        <div class="sig-ink-selector-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
+                            <label class="sig-ink-card active" id="label-ink-blue" style="border: 2px solid #2563eb; background: #eff6ff; border-radius: 6px; padding: 0.5rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <input type="radio" name="pdf-signature-ink" id="sig-ink-blue" value="blue" checked style="margin: 0;">
+                                <span style="width: 14px; height: 14px; border-radius: 50%; background: #1d4ed8; display: inline-block; flex-shrink: 0;"></span>
+                                <span style="font-size: 0.82rem; font-weight: 600; color: #1e293b;" data-i18n="pdf_settings.ink_blue">Blue</span>
+                            </label>
+                            <label class="sig-ink-card" id="label-ink-black" style="border: 2px solid #cbd5e1; background: #ffffff; border-radius: 6px; padding: 0.5rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <input type="radio" name="pdf-signature-ink" id="sig-ink-black" value="black" style="margin: 0;">
+                                <span style="width: 14px; height: 14px; border-radius: 50%; background: #000000; display: inline-block; flex-shrink: 0;"></span>
+                                <span style="font-size: 0.82rem; font-weight: 600; color: #1e293b;" data-i18n="pdf_settings.ink_black">Black</span>
+                            </label>
+                            <label class="sig-ink-card" id="label-ink-red" style="border: 2px solid #cbd5e1; background: #ffffff; border-radius: 6px; padding: 0.5rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                                <input type="radio" name="pdf-signature-ink" id="sig-ink-red" value="red" style="margin: 0;">
+                                <span style="width: 14px; height: 14px; border-radius: 50%; background: #dc2626; display: inline-block; flex-shrink: 0;"></span>
+                                <span style="font-size: 0.82rem; font-weight: 600; color: #1e293b;" data-i18n="pdf_settings.ink_red">Red</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Line Thickness -->
+                    <div style="margin-bottom: 0.75rem;">
+                        <label style="display: block; font-size: 0.78rem; font-weight: 600; color: #475569; margin-bottom: 0.35rem;" data-i18n="pdf_settings.sig_thickness_label">
+                            Stroke Line Thickness
+                        </label>
+                        <div class="sig-thickness-selector-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;">
+                            <label class="sig-thickness-card" id="label-thick-thin" style="border: 2px solid #cbd5e1; background: #ffffff; border-radius: 6px; padding: 0.5rem; cursor: pointer; display: flex; flex-direction: column; gap: 5px;">
+                                <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                    <input type="radio" name="pdf-signature-thickness" id="sig-thick-thin" value="thin" style="margin: 0;">
+                                    <span style="font-size: 0.8rem; font-weight: 600; color: #1e293b;" data-i18n="pdf_settings.thick_thin">Thin</span>
+                                </div>
+                                <div style="height: 2px; background: #64748b; border-radius: 1px; width: 100%;"></div>
+                            </label>
+                            <label class="sig-thickness-card active" id="label-thick-standard" style="border: 2px solid #2563eb; background: #eff6ff; border-radius: 6px; padding: 0.5rem; cursor: pointer; display: flex; flex-direction: column; gap: 5px;">
+                                <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                    <input type="radio" name="pdf-signature-thickness" id="sig-thick-standard" value="standard" checked style="margin: 0;">
+                                    <span style="font-size: 0.8rem; font-weight: 600; color: #1e293b;" data-i18n="pdf_settings.thick_standard">Standard</span>
+                                </div>
+                                <div style="height: 3px; background: #64748b; border-radius: 1.5px; width: 100%;"></div>
+                            </label>
+                            <label class="sig-thickness-card" id="label-thick-bold" style="border: 2px solid #cbd5e1; background: #ffffff; border-radius: 6px; padding: 0.5rem; cursor: pointer; display: flex; flex-direction: column; gap: 5px;">
+                                <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                    <input type="radio" name="pdf-signature-thickness" id="sig-thick-bold" value="bold" style="margin: 0;">
+                                    <span style="font-size: 0.8rem; font-weight: 600; color: #1e293b;" data-i18n="pdf_settings.thick_bold">Bold</span>
+                                </div>
+                                <div style="height: 5px; background: #64748b; border-radius: 2.5px; width: 100%;"></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Live Stroke Sample Box -->
+                    <div id="sig-styling-preview-box" style="background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 0.6rem 0.85rem; display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-size: 0.75rem; color: #64748b;" data-i18n="pdf_settings.sig_preview_sample">Signature Stroke Preview:</span>
+                        <div id="sig-sample-stroke-render" style="font-family: 'Brush Script MT', 'Dancing Script', cursive, sans-serif; font-size: 1.3rem; color: #1d4ed8; transform: rotate(-2deg); letter-spacing: 0.5px;">
+                            Alex Morgan ✍️
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.8rem; color: #1e40af;" data-i18n-html="pdf_settings.workflow_tip_html">
+                    💡 <strong>Studio Workflow Tip:</strong> Uploaded watermark logos and print automation preferences persist automatically across all client consultations.
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+                <button type="button" id="btn-save-pdf-settings" class="btn-primary" data-i18n="pdf_settings.save_settings">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Import Fields via CSV Modal -->
+    <div id="bulk-csv-import-modal" class="modal-overlay" style="display:none; z-index: 100003;">
+        <div class="modal-card modal-large" style="max-width: 780px;">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.35rem;">📊</span>
+                    <div>
+                        <h3 style="margin: 0; font-size: 1.15rem; color: #0f172a;" data-i18n="bulk_csv.modal_title">Bulk Import Fields via CSV</h3>
+                        <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #64748b;" data-i18n="bulk_csv.modal_subtitle">Rapidly generate form structures by importing spreadsheets containing field labels and types</p>
+                    </div>
+                </div>
+                <button type="button" id="btn-close-csv-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                
+                <!-- Upload Dropzone & Options Bar -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <!-- Dropzone -->
+                    <div id="csv-import-dropzone" class="csv-import-dropzone" style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 1.2rem; text-align: center; background: #f8fafc; cursor: pointer; transition: all 0.2s ease;">
+                        <span style="font-size: 1.75rem; display: block; margin-bottom: 4px;">📁</span>
+                        <strong style="font-size: 0.88rem; color: #1e293b; display: block;" data-i18n="bulk_csv.drag_csv">Click or Drag &amp; Drop CSV File</strong>
+                        <span style="font-size: 0.74rem; color: #64748b; margin-top: 2px; display: block;" data-i18n="bulk_csv.csv_supports">Supports .csv files with headers like Label, Type, Required, HelperText</span>
+                        <input type="file" id="bulk-csv-file-input" accept=".csv,text/csv" style="display: none;">
+                    </div>
+
+                    <!-- Destination Section & Controls -->
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <label for="csv-target-section-select" style="display: block; font-size: 0.82rem; font-weight: 700; color: #1e293b; margin-bottom: 0.35rem;" data-i18n="bulk_csv.target_destination_label">
+                                Target Destination Section
+                            </label>
+                            <select id="csv-target-section-select" class="form-control" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.82rem; border-radius: 6px; border: 1px solid #cbd5e1;">
+                                <option value="current" data-i18n="bulk_csv.append_current">Append to Current Active Section</option>
+                                <option value="new_section" selected data-i18n="bulk_csv.create_new_section">Create New Section ("Imported CSV Fields")</option>
+                            </select>
+                        </div>
+                        <div style="margin-top: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
+                            <button type="button" id="btn-download-sample-csv" class="btn-secondary" style="font-size: 0.78rem; padding: 0.35rem 0.65rem;" title="Download a pre-formatted sample CSV file" data-i18n-title="csv_importer.download_sample_tooltip" data-i18n="bulk_csv.download_sample_btn">
+                                📥 Download Sample CSV
+                            </button>
+                            <button type="button" id="btn-toggle-raw-csv" class="btn-secondary" style="font-size: 0.78rem; padding: 0.35rem 0.65rem;" data-i18n="bulk_csv.paste_raw_btn">
+                                ✍️ Paste Raw CSV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Raw CSV Textarea (Collapsible / Toggleable) -->
+                <div id="raw-csv-paste-container" style="display: none; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.9rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                        <label for="raw-csv-textarea" style="font-size: 0.82rem; font-weight: 700; color: #1e293b;" data-i18n="bulk_csv.paste_raw_label">
+                            Paste Raw CSV Data:
+                        </label>
+                        <button type="button" id="btn-parse-pasted-csv" class="btn-primary" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;" data-i18n="bulk_csv.parse_text_btn">
+                            Parse Text
+                        </button>
+                    </div>
+                    <textarea id="raw-csv-textarea" rows="4" placeholder="Label,Type,Required,HelperText,Options&#10;Emergency Contact,text,true,Full legal name of contact,&#10;Preferred Language,select,false,Select your primary language,English;Spanish;French&#10;Are you pregnant or nursing?,radio,true,Required for safety,Yes;No" data-i18n-placeholder="csv_importer.raw_csv_placeholder" class="form-control" style="width: 100%; font-family: monospace; font-size: 0.78rem; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px;"></textarea>
+                </div>
+
+                <!-- Parsed CSV Fields Preview Table -->
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <strong style="font-size: 0.88rem; color: #0f172a;" data-i18n="bulk_csv.parsed_preview">Parsed Fields Preview</strong>
+                            <span id="csv-parsed-count-badge" style="background: #e2e8f0; color: #334155; font-size: 0.74rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 9999px;">0 Fields Ready</span>
+                        </div>
+                        <span id="csv-parse-filename" style="font-size: 0.78rem; color: #059669; font-weight: 600;"></span>
+                    </div>
+
+                    <div id="csv-preview-table-wrap" style="max-height: 240px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 6px; background: white;">
+                        <div id="csv-preview-empty-state" style="padding: 2rem; text-align: center; color: #94a3b8; font-size: 0.82rem;">
+                            No CSV file loaded. Upload a .csv file above or paste raw CSV text to preview parsed fields.
+                        </div>
+                        <table id="csv-preview-table" style="width: 100%; border-collapse: collapse; font-size: 0.8rem; display: none;">
+                            <thead>
+                                <tr style="background: #f1f5f9; border-bottom: 1px solid #cbd5e1; text-align: left; color: #475569; font-size: 0.74rem; text-transform: uppercase;">
+                                    <th style="padding: 6px 10px;">#</th>
+                                    <th style="padding: 6px 10px;" data-i18n="bulk_csv.th_label">Field Label</th>
+                                    <th style="padding: 6px 10px;" data-i18n="bulk_csv.th_type">Type</th>
+                                    <th style="padding: 6px 10px;" data-i18n="bulk_csv.th_required">Required</th>
+                                    <th style="padding: 6px 10px;" data-i18n="bulk_csv.th_helper">Helper Text</th>
+                                    <th style="padding: 6px 10px;" data-i18n="bulk_csv.th_options">Options</th>
+                                </tr>
+                            </thead>
+                            <tbody id="csv-preview-tbody">
+                                <!-- Dynamically populated rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.78rem; color: #166534;">
+                    💡 <strong>Column Header Auto-Detection:</strong> Supports standard CSV columns: <code>Label</code> (or <code>Name</code>), <code>Type</code> (text, email, tel, date, number, select, radio, checkbox, textarea), <code>Required</code> (true/false), <code>HelperText</code>, and <code>Options</code> (separated by semicolons).
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+                <button type="button" id="btn-cancel-bulk-csv" class="btn-secondary" data-i18n="bulk_csv.cancel">Cancel</button>
+                <button type="button" id="btn-execute-bulk-import" class="btn-primary" disabled data-i18n="bulk_csv.import_execute_btn">
+                    Import Fields into Form
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Customization Modal -->
+    <div id="theme-customizer-modal" class="modal" style="display:none;">
+        <div class="modal-content theme-customizer-modal-content" style="max-width: 640px;">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.35rem;">🎨</span>
+                    <div>
+                        <h3 style="margin:0; font-size: 1.15rem; font-weight: 700;" data-i18n="theme.modal_title">Theme & Styling Customization</h3>
+                        <p style="margin: 0; font-size: 0.8rem; color: #64748b;" data-i18n="theme.modal_subtitle">Customize primary accent colors, font sizes, and border-radius settings</p>
+                    </div>
+                </div>
+                <button type="button" class="close-modal" id="btn-close-theme-modal">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1.25rem;">
+                
+                <!-- Primary Color Selection -->
+                <div class="theme-option-section">
+                    <label style="font-weight: 700; font-size: 0.88rem; display: block; margin-bottom: 0.4rem; color: #1e293b;" data-i18n="theme.brand_color_label">
+                        Primary Brand Color
+                    </label>
+                    <p style="font-size: 0.78rem; color: #64748b; margin-top: 0; margin-bottom: 0.6rem;" data-i18n="theme.brand_color_desc">
+                        Used for submit buttons, section headers, active checkboxes, focus rings, and PDF accents.
+                    </p>
+                    <div class="theme-color-swatches" id="theme-color-swatches" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <button type="button" class="theme-swatch-btn active" data-color="#2563eb" style="--swatch-color: #2563eb;" title="Sapphire Navy (Default)" data-i18n-title="theme.swatch_sapphire_title">
+                            <span class="swatch-circle" style="background: #2563eb;"></span>
+                            <span class="swatch-name" data-i18n="theme.swatch_sapphire">Sapphire</span>
+                        </button>
+                        <button type="button" class="theme-swatch-btn" data-color="#059669" style="--swatch-color: #059669;" title="Emerald Ink" data-i18n-title="theme.swatch_emerald_title">
+                            <span class="swatch-circle" style="background: #059669;"></span>
+                            <span class="swatch-name" data-i18n="theme.swatch_emerald">Emerald</span>
+                        </button>
+                        <button type="button" class="theme-swatch-btn" data-color="#4f46e5" style="--swatch-color: #4f46e5;" title="Midnight Indigo" data-i18n-title="theme.swatch_indigo_title">
+                            <span class="swatch-circle" style="background: #4f46e5;"></span>
+                            <span class="swatch-name" data-i18n="theme.swatch_indigo">Indigo</span>
+                        </button>
+                        <button type="button" class="theme-swatch-btn" data-color="#dc2626" style="--swatch-color: #dc2626;" title="Crimson Tattoo" data-i18n-title="theme.swatch_crimson_title">
+                            <span class="swatch-circle" style="background: #dc2626;"></span>
+                            <span class="swatch-name" data-i18n="theme.swatch_crimson">Crimson</span>
+                        </button>
+                        <button type="button" class="theme-swatch-btn" data-color="#7c3aed" style="--swatch-color: #7c3aed;" title="Royal Violet" data-i18n-title="theme.swatch_violet_title">
+                            <span class="swatch-circle" style="background: #7c3aed;"></span>
+                            <span class="swatch-name" data-i18n="theme.swatch_violet">Violet</span>
+                        </button>
+                        <button type="button" class="theme-swatch-btn" data-color="#0f172a" style="--swatch-color: #0f172a;" title="Obsidian Slate" data-i18n-title="theme.swatch_obsidian_title">
+                            <span class="swatch-circle" style="background: #0f172a;"></span>
+                            <span class="swatch-name" data-i18n="theme.swatch_obsidian">Obsidian</span>
+                        </button>
+                        <button type="button" class="theme-swatch-btn" data-color="#d97706" style="--swatch-color: #d97706;" title="Amber Studio" data-i18n-title="theme.swatch_amber_title">
+                            <span class="swatch-circle" style="background: #d97706;"></span>
+                            <span class="swatch-name" data-i18n="theme.swatch_amber">Amber</span>
+                        </button>
+                        <button type="button" class="theme-swatch-btn" data-color="#e11d48" style="--swatch-color: #e11d48;" title="Rose Blossom" data-i18n-title="theme.swatch_rose_title">
+                            <span class="swatch-circle" style="background: #e11d48;"></span>
+                            <span class="swatch-name" data-i18n="theme.swatch_rose">Rose</span>
+                        </button>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.6rem;">
+                        <span style="font-size: 0.78rem; color: #64748b;" data-i18n="theme.custom_hex">Or custom hex:</span>
+                        <input type="color" id="theme-custom-color-picker" value="#2563eb" style="width: 32px; height: 32px; border: none; border-radius: 6px; cursor: pointer; padding: 0;">
+                        <input type="text" id="theme-custom-color-text" value="#2563eb" placeholder="#2563eb" maxlength="7" class="form-control" style="width: 100px; padding: 0.35rem 0.5rem; font-size: 0.82rem; font-family: monospace;">
+                    </div>
+                </div>
+
+                <!-- Font Size Scale -->
+                <div class="theme-option-section">
+                    <label style="font-weight: 700; font-size: 0.88rem; display: block; margin-bottom: 0.4rem; color: #1e293b;" data-i18n="theme.font_scale_label">
+                        Typography Font Size Scale
+                    </label>
+                    <div class="theme-pill-selector" id="theme-font-size-group" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem;">
+                        <button type="button" class="theme-pill-btn" data-size="14px">
+                            <strong data-i18n="theme.compact">Compact</strong>
+                            <small data-i18n="theme.compact_sub">14px base</small>
+                        </button>
+                        <button type="button" class="theme-pill-btn active" data-size="16px">
+                            <strong data-i18n="theme.standard">Standard</strong>
+                            <small data-i18n="theme.standard_sub">16px base</small>
+                        </button>
+                        <button type="button" class="theme-pill-btn" data-size="18px">
+                            <strong data-i18n="theme.large">Large</strong>
+                            <small data-i18n="theme.large_sub">18px base</small>
+                        </button>
+                        <button type="button" class="theme-pill-btn" data-size="20px">
+                            <strong data-i18n="theme.spacious">Spacious</strong>
+                            <small data-i18n="theme.spacious_sub">20px base</small>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Border Radius Scale -->
+                <div class="theme-option-section">
+                    <label style="font-weight: 700; font-size: 0.88rem; display: block; margin-bottom: 0.4rem; color: #1e293b;" data-i18n="theme.radius_scale_label">
+                        Border Radius &amp; Corner Smoothness
+                    </label>
+                    <div class="theme-pill-selector" id="theme-radius-group" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.4rem;">
+                        <button type="button" class="theme-pill-btn" data-radius="0px">
+                            <strong data-i18n="theme.sharp">Sharp</strong>
+                            <small data-i18n="theme.sharp_sub">0px</small>
+                        </button>
+                        <button type="button" class="theme-pill-btn" data-radius="4px">
+                            <strong data-i18n="theme.subtle">Subtle</strong>
+                            <small data-i18n="theme.subtle_sub">4px</small>
+                        </button>
+                        <button type="button" class="theme-pill-btn active" data-radius="8px">
+                            <strong data-i18n="theme.rounded">Rounded</strong>
+                            <small data-i18n="theme.rounded_sub">8px</small>
+                        </button>
+                        <button type="button" class="theme-pill-btn" data-radius="12px">
+                            <strong data-i18n="theme.smooth">Smooth</strong>
+                            <small data-i18n="theme.smooth_sub">12px</small>
+                        </button>
+                        <button type="button" class="theme-pill-btn" data-radius="20px">
+                            <strong data-i18n="theme.pill">Pill</strong>
+                            <small data-i18n="theme.pill_sub">20px</small>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Dynamic Preview Box -->
+                <div class="theme-preview-box" id="theme-live-preview-box" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 0.75rem;" data-i18n="theme.live_preview">
+                        Live Interactive Theme Preview
+                    </div>
+                    <div class="theme-sample-elements" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div class="theme-sample-header" style="border-left: 4px solid var(--preview-sample-primary, #2563eb); padding-left: 0.6rem;">
+                            <strong style="color: #0f172a; font-size: 0.95rem;" data-i18n="theme.sample_section_title">Client Consultation &amp; Intake Section</strong>
+                            <p style="margin: 0; font-size: 0.78rem; color: #64748b;" data-i18n="theme.sample_section_desc">Sample section header with dynamic accent styling</p>
+                        </div>
+                        <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+                            <input type="text" value="Sample client entry..." readonly style="flex: 1; min-width: 160px; padding: 0.45rem 0.75rem; border: 1.5px solid var(--preview-sample-primary, #2563eb); border-radius: var(--preview-sample-radius, 8px); font-size: 0.85rem; background: #ffffff;" data-i18n-value="theme.sample_input_placeholder">
+                            <button type="button" style="background: var(--preview-sample-primary, #2563eb); color: #ffffff; border: none; padding: 0.45rem 1rem; border-radius: var(--preview-sample-radius, 8px); font-weight: 600; font-size: 0.85rem; cursor: default;" data-i18n="theme.sample_submit_btn">
+                                Submit Intake
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 1.25rem; border-top: 1px solid #e2e8f0;">
+                <button type="button" id="btn-reset-theme-defaults" class="btn-secondary" style="font-size: 0.85rem;" data-i18n="theme.reset_defaults">Reset to Studio Defaults</button>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button type="button" id="btn-cancel-theme-modal" class="btn-secondary" style="font-size: 0.85rem;" data-i18n="theme.cancel">Cancel</button>
+                    <button type="button" id="btn-apply-theme-modal" class="btn-primary" style="font-size: 0.85rem;" data-i18n="theme.apply_theme">✨ Apply Theme</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Integrity Checker & Logic Audit Modal -->
+    <div id="data-integrity-modal" class="modal-overlay" style="display:none; z-index: 100004;">
+        <div class="modal-card modal-large" style="max-width: 840px;">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <span style="font-size: 1.4rem;">🛡️</span>
+                    <div>
+                        <h3 style="margin: 0; font-size: 1.15rem;" id="data-integrity-modal-title" data-i18n="integrity.modal_title">Form Data Integrity &amp; Logic Checker</h3>
+                        <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #64748b;" id="data-integrity-modal-subtitle" data-i18n="integrity.modal_subtitle">Comprehensive diagnostic scan for circular logic loops, missing choice options, and validation bounds</p>
+                    </div>
+                </div>
+                <button type="button" id="btn-close-integrity-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body" style="padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 1.15rem; max-height: 70vh; overflow-y: auto;">
+                
+                <!-- Health Score & Summary Bar -->
+                <div class="integrity-health-summary" id="integrity-health-summary">
+                    <!-- Dynamic Health Meter -->
+                </div>
+
+                <!-- Category Filters -->
+                <div class="integrity-filter-tabs" id="integrity-filter-tabs">
+                    <!-- Dynamic Filter Tabs -->
+                </div>
+
+                <!-- Issue Cards List -->
+                <div class="integrity-issues-container" id="integrity-issues-container">
+                    <!-- Dynamic Diagnostic Cards -->
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; padding: 0.9rem 1.25rem; border-top: 1px solid #e2e8f0;">
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <button type="button" id="btn-auto-fix-integrity" class="btn-primary" style="font-size: 0.85rem; background: #059669; border-color: #059669;" data-i18n="integrity.autofix_btn">
+                        ✨ Auto-Fix Safe Issues
+                    </button>
+                    <button type="button" id="btn-copy-integrity-report" class="btn-secondary" style="font-size: 0.85rem;" data-i18n="integrity.copy_report_btn">
+                        📋 Copy Report
+                    </button>
+                </div>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <button type="button" id="btn-recheck-integrity" class="btn-secondary" style="font-size: 0.85rem;" data-i18n="integrity.rescan_btn">
+                        🔄 Re-scan Form
+                    </button>
+                    <button type="button" id="btn-close-integrity-done" class="btn-primary" style="font-size: 0.85rem;" data-i18n="integrity.done_btn">
+                        Done
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Field IDs & CRM Mapping Visual Modal -->
+    <div id="export-field-ids-modal" class="modal-overlay" style="display:none; z-index: 100004;">
+        <div class="modal-card modal-xl">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <span style="font-size: 1.35rem;">🗺️</span>
+                    <div>
+                        <h3 style="margin: 0;" data-i18n="field_ids_map.modal_title">Field IDs &amp; CRM Integration Map</h3>
+                        <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #64748b;" data-i18n="field_ids_map.modal_subtitle">
+                            Visual dictionary mapping unique field IDs to studio labels, data types, and webhook payload variables for CRM systems.
+                        </p>
+                    </div>
+                </div>
+                <button type="button" id="btn-close-field-ids-modal" class="modal-close-btn">✕</button>
+            </div>
+            <div class="modal-body" style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Summary Metrics Bar & Search -->
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem;">
+                    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;" id="field-ids-stats-bar">
+                        <!-- Stats dynamically generated -->
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center; min-width: 240px;">
+                        <input type="text" id="field-ids-search-input" placeholder="🔍 Search field ID, label, or section..." data-i18n-placeholder="field_ids_map.search_placeholder" class="form-control" style="width: 100%; padding: 0.4rem 0.65rem; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                    </div>
+                </div>
+
+                <!-- Field Mapping Table Container -->
+                <div class="field-map-table-wrap" id="field-map-table-container">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                    <button type="button" id="btn-copy-field-ids-json" class="btn-secondary" style="font-size: 0.82rem;" data-i18n="field_ids_map.btn_copy_json">
+                        📋 Copy JSON Map
+                    </button>
+                    <button type="button" id="btn-download-field-ids-json" class="btn-secondary" style="font-size: 0.82rem;" data-i18n="field_ids_map.btn_download_json">
+                        💾 Download JSON Map
+                    </button>
+                    <button type="button" id="btn-copy-webhook-payload" class="btn-secondary" style="font-size: 0.82rem;" data-i18n="field_ids_map.btn_copy_webhook">
+                        ⚡ Copy Sample Payload
+                    </button>
+                    <button type="button" id="btn-download-field-ids-csv" class="btn-primary" style="font-size: 0.82rem; background: #0284c7; border-color: #0284c7;" data-i18n="field_ids_map.btn_download_csv">
+                        📥 Download CSV Map
+                    </button>
+                </div>
+                <button type="button" id="btn-close-field-ids-done" class="btn-primary" style="font-size: 0.82rem;" data-i18n="field_ids_map.btn_done">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Application Modules -->
+    <script src="js/i18n.js"></script>
+    <script src="js/form-translator.js"></script>
     <script src="js/templates.js"></script>
     <script src="js/medical-history.js"></script>
+    <script src="js/body-map-annotator.js"></script>
     <script src="js/drag-drop-builder.js"></script>
     <script src="js/pdf-generator.js"></script>
     <script src="js/signature-capture.js"></script>
     <script src="js/conditional-logic.js"></script>
+    <script src="js/multisession-planner.js"></script>
     <script src="js/form-preview.js"></script>
     <script src="js/common.js"></script>
-
-    <!-- Hide header when embedded in iframe -->
-    <script>
-        if (window.self !== window.top) {
-            document.addEventListener('DOMContentLoaded', function() {
-                var header = document.querySelector('.app-header');
-                if (header) {
-                    header.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
 
 <!-- AUTOMATIC IFRAME CONTENT HIDER (ADDED BY ANTIGRAVITY) -->
 <script>
