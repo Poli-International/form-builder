@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+if (window.self !== window.top) {
+    var poliRoot = document.documentElement;
+    var poliApply = function (light) {
+        poliRoot.setAttribute('data-theme', light ? 'light' : 'dark');
+        var b = document.body;
+        if (b) {
+            b.classList.toggle('dark-mode', !light);
+            b.classList.toggle('light-mode', !!light);
+        }
+    };
+    poliApply(false);
+    document.addEventListener('DOMContentLoaded', function () {
+        poliApply(poliRoot.getAttribute('data-theme') === 'light');
+    });
+    window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'poli-theme') {
+            poliApply(!!e.data.light);
+        }
+    });
+}
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Documentation — Consultation Form Builder | Poli International</title>
   <meta name="description" content="How to build, validate, translate and export tattoo and piercing consent forms with the Poli International Consultation Form Builder.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/tools/shared/a11y.css">
   <style>
     :root {
       --bg: #0d1117;
@@ -140,9 +164,9 @@
     <h1>Consultation Form Builder</h1>
     <p class="lede">Build, validate and print tattoo and piercing consent forms. Everything runs in your browser, so no client health data ever leaves the device.</p>
     <div class="topbar">
-      <a class="btn" href="index.html">Open the builder</a>
-      <a class="btn btn--ghost" href="/wiki/legal-compliance-standards/" target="_blank" rel="noopener">Legal &amp; compliance wiki</a>
-      <a class="btn btn--ghost" href="/tools/" target="_blank" rel="noopener">All free tools</a>
+      <a class="btn" href="/tools/form-builder/index.html" target="_top">Open the builder</a>
+      <a class="btn btn--ghost" href="/wiki/legal-compliance-standards/" target="_top">Legal &amp; compliance wiki</a>
+      <a class="btn btn--ghost" href="/tools/" target="_top">All free tools</a>
     </div>
   </header>
 
@@ -175,7 +199,7 @@
   </ol>
 
   <figure>
-    <img src="docs/screenshots/01-drag-drop-consent-form-builder-field-properties.jpg"
+    <img src="/public-uploads/tools/form-builder/01-drag-drop-consent-form-builder-field-properties.jpg"
          alt="The form builder with the field palette on the left, a piercing consent form on the canvas, and the field properties panel open on the right." loading="lazy">
     <figcaption>Palette, canvas and field properties. Selecting a field opens its type, label, CRM alias and validation settings.</figcaption>
   </figure>
@@ -259,7 +283,7 @@
   </ul>
 
   <figure>
-    <img src="docs/screenshots/03-form-data-integrity-logic-checker-diagnostics.jpg"
+    <img src="/public-uploads/tools/form-builder/03-form-data-integrity-logic-checker-diagnostics.jpg"
          alt="The data integrity checker showing a 76 percent score, counters for critical logic, missing options and warnings, and an issue card with jump-to-field and quick-fix buttons." loading="lazy">
     <figcaption>Each finding explains the consequence and offers <em>Jump to Field &amp; Fix</em>, or <em>Quick-Fix</em> where the repair is unambiguous. <em>Auto-Fix Safe Issues</em> applies every unambiguous fix at once.</figcaption>
   </figure>
@@ -269,7 +293,7 @@
   <p>As medical answers come in, the preview raises <strong>safety callouts</strong> above the form: disclosures that need artist awareness, a procedural precaution, or formal physician clearance. A disclosed latex allergy, for instance, produces a barrier alert naming the substitution required at that workstation.</p>
 
   <figure>
-    <img src="docs/screenshots/02-medical-safety-callouts-client-consent-view.jpg"
+    <img src="/public-uploads/tools/form-builder/02-medical-safety-callouts-client-consent-view.jpg"
          alt="The client-facing consent form showing a completion progress bar at 96 percent and a medical safety callout panel flagging a disclosed latex allergy." loading="lazy">
     <figcaption><em>Fill Sample Answers</em> populates the form with test data so you can see the callouts and the PDF output before going live.</figcaption>
   </figure>
@@ -351,8 +375,8 @@ Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code><
 
   <footer>
     <p>Consultation Form Builder &mdash; part of the free professional tool suite from
-      <a href="https://poliinternational.com/" target="_blank" rel="noopener">Poli International</a>.
-      Questions or a bug to report? <a href="https://poliinternational.com/contact-us/" target="_blank" rel="noopener">Get in touch</a>.</p>
+      <a href="https://poliinternational.com/" target="_top">Poli International</a>.
+      Questions or a bug to report? <a href="https://poliinternational.com/contact-us/" target="_top">Get in touch</a>.</p>
   </footer>
 
 </div>
