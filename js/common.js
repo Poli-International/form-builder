@@ -390,11 +390,17 @@ function initApp() {
         // Setup Template Selector logic
         const templateSelect = document.getElementById('template-select');
         if (templateSelect && window.FormTemplates && window.FormTemplates.TemplateManager) {
+            // Declared out here because it is read further down, after this
+            // if/else. It used to live inside the else branch, so whenever
+            // updateTemplateSelectOptions existed (it always does) the later
+            // `templates.length` threw a ReferenceError and killed initApp.
+            // That only surfaced for a visitor with no autosaved draft, since
+            // `!loaded` short-circuits the check for everyone else.
+            const templates = window.FormTemplates.TemplateManager.getAllTemplates();
             if (window.i18n && typeof window.i18n.updateTemplateSelectOptions === 'function') {
                 window.i18n.updateTemplateSelectOptions();
             } else {
                 templateSelect.innerHTML = '';
-                const templates = window.FormTemplates.TemplateManager.getAllTemplates();
                 
                 templates.forEach(t => {
                     const opt = document.createElement('option');
