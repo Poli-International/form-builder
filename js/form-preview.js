@@ -1,3 +1,20 @@
+
+// A sentence with computed values in it. The key carries positional holes so
+// each language can put the numbers where its own grammar wants them; a hole a
+// translation omits is simply dropped.
+//
+// THE GLOBAL IS NOT THE SAME IN EVERY TOOL. The coverage calculator exposes
+// window.I18N; the form builder exposes window.i18n. Hardcoding I18N made all
+// nineteen calls in the form builder fall back to English, silently, in all six
+// languages, because a fallback that works is exactly what hides a lookup that
+// does not.
+function TP(key, fallback) {
+  var vals = Array.prototype.slice.call(arguments, 2);
+  var api = (typeof window !== 'undefined' && ((window.I18N && window.I18N.t && window.I18N) || (window.i18n && window.i18n.t && window.i18n))) || null;
+  var s = api ? api.t(key, fallback) : fallback;
+  if (s === undefined || s === null || s === key) s = fallback;
+  return String(s).replace(/\{(\d+)\}/g, function (m, i) { return vals[Number(i)] === undefined ? '' : vals[Number(i)]; });
+}
 /**
  * Form Preview, Testing & CSV / PDF Export Engine
  * Poli International - Studio Consultation Form Builder
@@ -581,10 +598,10 @@ class FormPreview {
         badge.style.display = 'inline-flex';
         if (ageInfo.isMinor) {
             badge.className = 'date-age-calculated-badge badge-minor-alert';
-            badge.innerHTML = `⚠️ <strong>Calculated Age: ${ageInfo.years} yrs (${ageInfo.months} mos) — Minor Client</strong> (Legal Guardian Authorization Required)`;
+            badge.innerHTML = TP("x.calculated_age_yrs_mos_minor_client", "⚠️ <strong>Calculated Age: {0} yrs ({1} mos) — Minor Client</strong> (Legal Guardian Authorization Required)", ageInfo.years, ageInfo.months);
         } else {
             badge.className = 'date-age-calculated-badge badge-adult-verified';
-            badge.innerHTML = `✅ <strong>Calculated Age: ${ageInfo.years} yrs</strong> (Verified Adult • 18+)`;
+            badge.innerHTML = TP("x.calculated_age_yrs_verified_adult_18", "✅ <strong>Calculated Age: {0} yrs</strong> (Verified Adult • 18+)", ageInfo.years);
         }
 
         this.evaluateMinorAlerts();
@@ -1637,9 +1654,9 @@ class FormPreview {
             if (totalRequired === 0) {
                 countEl.textContent = 'All fields optional / ready';
             } else if (percent === 100) {
-                countEl.textContent = `All ${totalRequired} mandatory fields completed! Ready for submission`;
+                countEl.textContent = TP("x.all_mandatory_fields_completed_ready_for", "All {0} mandatory fields completed! Ready for submission", totalRequired);
             } else {
-                countEl.textContent = `${completedRequired} of ${totalRequired} mandatory fields completed`;
+                countEl.textContent = TP("x.of_mandatory_fields_completed", "{0} of {1} mandatory fields completed", completedRequired, totalRequired);
             }
         }
 
