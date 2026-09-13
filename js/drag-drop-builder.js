@@ -1,3 +1,20 @@
+
+// A sentence with computed values in it. The key carries positional holes so
+// each language can put the numbers where its own grammar wants them; a hole a
+// translation omits is simply dropped.
+//
+// THE GLOBAL IS NOT THE SAME IN EVERY TOOL. The coverage calculator exposes
+// window.I18N; the form builder exposes window.i18n. Hardcoding I18N made all
+// nineteen calls in the form builder fall back to English, silently, in all six
+// languages, because a fallback that works is exactly what hides a lookup that
+// does not.
+function TP(key, fallback) {
+  var vals = Array.prototype.slice.call(arguments, 2);
+  var api = (typeof window !== 'undefined' && ((window.I18N && window.I18N.t && window.I18N) || (window.i18n && window.i18n.t && window.i18n))) || null;
+  var s = api ? api.t(key, fallback) : fallback;
+  if (s === undefined || s === null || s === key) s = fallback;
+  return String(s).replace(/\{(\d+)\}/g, function (m, i) { return vals[Number(i)] === undefined ? '' : vals[Number(i)]; });
+}
 /**
  * Form Builder Drag & Drop Logic, State Engine & Property Editor
  * Poli International - Studio Consultation Form Builder
@@ -141,9 +158,9 @@ class FormBuilder {
         const countBadgeEl = document.getElementById('canvas-field-count-badge');
         if (!countTextEl) return;
         const total = this.getTotalFieldCount();
-        countTextEl.textContent = `${total} Field${total === 1 ? '' : 's'} Placed`;
+        countTextEl.textContent = TP("x.field_placed", "{0} Field{1} Placed", total, total === 1 ? '' : 's');
         if (countBadgeEl) {
-            countBadgeEl.title = `Total: ${total} field${total === 1 ? '' : 's'} currently placed across all form sections`;
+            countBadgeEl.title = TP("x.total_field_currently_placed_across_all", "Total: {0} field{1} currently placed across all form sections", total, total === 1 ? '' : 's');
         }
     }
 
@@ -442,7 +459,7 @@ class FormBuilder {
             const timerEl = document.getElementById(`del-timer-${item.id}`);
             const progressEl = document.getElementById(`del-progress-${item.id}`);
             if (timerEl) {
-                timerEl.textContent = `⏳ ${secondsLeft}s left`;
+                timerEl.textContent = TP("x.s_left", "⏳ {0}s left", secondsLeft);
             }
             if (progressEl) {
                 const percent = Math.max(0, Math.min(100, (secondsLeft / 60) * 100));
@@ -1457,7 +1474,7 @@ class FormBuilder {
         if (audit.stats.total > 0) {
             const hasCriticalOrError = audit.stats.critical > 0 || audit.stats.error > 0;
             statusEl.className = `canvas-validation-status-pill ${hasCriticalOrError ? 'val-warning' : 'val-info'}`;
-            statusEl.title = `Data Integrity: ${audit.stats.total} diagnostic issue(s) detected. Click to inspect.`;
+            statusEl.title = TP("x.data_integrity_diagnostic_issue_s_detected", "Data Integrity: {0} diagnostic issue(s) detected. Click to inspect.", audit.stats.total);
             statusEl.innerHTML = `
                 <span class="val-status-icon">${hasCriticalOrError ? '⚠️' : 'ℹ️'}</span>
                 <span class="val-status-text">Health: ${audit.score}% (${audit.stats.total} Issue${audit.stats.total === 1 ? '' : 's'})</span>
@@ -1520,7 +1537,7 @@ class FormBuilder {
                 if (indicator) {
                     const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
                     indicator.className = 'autosave-badge autosave-saved';
-                    indicator.innerHTML = `<span class="autosave-dot green"></span> <span class="autosave-text">Auto-saved ${timeStr}</span>`;
+                    indicator.innerHTML = TP("x.auto_saved", "<span class=\"autosave-dot green\"></span> <span class=\"autosave-text\">Auto-saved {0}</span>", timeStr);
                 }
 
                 this.showAutoSaveToast();
@@ -1544,7 +1561,7 @@ class FormBuilder {
         }
 
         const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        toast.innerHTML = `<span class="autosave-toast-icon">💾</span> <span>Auto-saved <small style="opacity:0.75; font-size:0.75rem; margin-left:3px;">${timeStr}</small></span>`;
+        toast.innerHTML = TP("x.auto_saved_2", "<span class=\"autosave-toast-icon\">💾</span> <span>Auto-saved <small style=\"opacity:0.75; font-size:0.75rem; margin-left:3px;\">{0}</small></span>", timeStr);
         toast.classList.add('show');
 
         if (this.autoSaveToastTimeout) clearTimeout(this.autoSaveToastTimeout);
@@ -1673,12 +1690,12 @@ class FormBuilder {
         if (undoBtn) {
             undoBtn.disabled = !canUndo;
             undoBtn.classList.toggle('disabled', !canUndo);
-            undoBtn.title = canUndo ? `Undo (Ctrl+Z): ${this.history[this.historyIndex]?.action || ''}` : 'Nothing to undo';
+            undoBtn.title = canUndo ? TP("x.undo_ctrl_z", "Undo (Ctrl+Z): {0}", this.history[this.historyIndex]?.action || '') : 'Nothing to undo';
         }
         if (redoBtn) {
             redoBtn.disabled = !canRedo;
             redoBtn.classList.toggle('disabled', !canRedo);
-            redoBtn.title = canRedo ? `Redo (Ctrl+Y): ${this.history[this.historyIndex + 1]?.action || ''}` : 'Nothing to redo';
+            redoBtn.title = canRedo ? TP("x.redo_ctrl_y", "Redo (Ctrl+Y): {0}", this.history[this.historyIndex + 1]?.action || '') : 'Nothing to redo';
         }
     }
 
@@ -1762,7 +1779,7 @@ class FormBuilder {
         // Normalize section and field attributes
         formData.sections.forEach((sec, sIdx) => {
             if (!sec.id) sec.id = `sec_${Date.now()}_${sIdx}`;
-            if (!sec.title) sec.title = `Section ${sIdx + 1}`;
+            if (!sec.title) sec.title = TP("x.section", "Section {0}", sIdx + 1);
             if (sec.collapsed === undefined) sec.collapsed = false;
             if (sec.hidden === undefined) sec.hidden = false;
             if (!Array.isArray(sec.fields) && sec.type !== 'medical_section') {
@@ -1970,7 +1987,7 @@ class FormBuilder {
         const info = document.getElementById('canvas-nudge-info');
         if (!hud || !info) return;
 
-        info.innerHTML = `<strong>${this.escapeHtml(fieldLabel)}</strong> ➔ X: ${x > 0 ? '+' : ''}${x}px, Y: ${y > 0 ? '+' : ''}${y}px`;
+        info.innerHTML = TP("x.x_px_y_px", "<strong>{0}</strong> ➔ X: {1}{2}px, Y: {3}{4}px", this.escapeHtml(fieldLabel), x > 0 ? '+' : '', x, y > 0 ? '+' : '', y);
         hud.classList.add('show');
 
         clearTimeout(this._nudgeHudTimeout);
@@ -3024,7 +3041,12 @@ class FormBuilder {
                 if (sec.type === 'medical_section') return;
                 const opt = document.createElement('option');
                 opt.value = sec.id;
-                opt.textContent = `Append to: ${sec.title || `Section ${idx + 1}`} (${(sec.fields || []).length} fields)`;
+                // Nested template literal, so the wiring script refused it and
+                // left it for a person. The inner default reuses x.section, the
+                // same key the section headings already use.
+                opt.textContent = TP('x.append_to_fields', 'Append to: {0} ({1} fields)',
+                    sec.title || TP('x.section', 'Section {0}', idx + 1),
+                    (sec.fields || []).length);
                 if (sec.id === this.selectedSectionId) {
                     opt.selected = true;
                 }
@@ -3195,8 +3217,8 @@ class FormBuilder {
             return;
         }
 
-        if (countBadge) countBadge.textContent = `${fields.length} Fields Ready`;
-        if (filename) filename.textContent = sourceName ? `Source: ${sourceName}` : '';
+        if (countBadge) countBadge.textContent = TP("x.fields_ready", "{0} Fields Ready", fields.length);
+        if (filename) filename.textContent = sourceName ? TP("x.source", "Source: {0}", sourceName) : '';
         if (emptyState) emptyState.style.display = 'none';
         if (table) table.style.display = 'table';
         tbody.innerHTML = '';
