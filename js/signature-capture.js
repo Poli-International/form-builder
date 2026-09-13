@@ -1,3 +1,20 @@
+
+// A sentence with computed values in it. The key carries positional holes so
+// each language can put the numbers where its own grammar wants them; a hole a
+// translation omits is simply dropped.
+//
+// THE GLOBAL IS NOT THE SAME IN EVERY TOOL. The coverage calculator exposes
+// window.I18N; the form builder exposes window.i18n. Hardcoding I18N made all
+// nineteen calls in the form builder fall back to English, silently, in all six
+// languages, because a fallback that works is exactly what hides a lookup that
+// does not.
+function TP(key, fallback) {
+  var vals = Array.prototype.slice.call(arguments, 2);
+  var api = (typeof window !== 'undefined' && ((window.I18N && window.I18N.t && window.I18N) || (window.i18n && window.i18n.t && window.i18n))) || null;
+  var s = api ? api.t(key, fallback) : fallback;
+  if (s === undefined || s === null || s === key) s = fallback;
+  return String(s).replace(/\{(\d+)\}/g, function (m, i) { return vals[Number(i)] === undefined ? '' : vals[Number(i)]; });
+}
 /**
  * Digital Signature Capture
  * Poli International - Studio Consultation Form Builder
@@ -114,7 +131,7 @@ class SignatureManager {
                 hour: '2-digit', minute: '2-digit', second: '2-digit'
             });
             badgeEl.style.display = 'inline-flex';
-            badgeEl.innerHTML = `<span class="sig-verified-icon">✓</span> Digitally Signed &amp; Timestamped: <strong>${timeStr}</strong>`;
+            badgeEl.innerHTML = TP("x.digitally_signed_amp_timestamped", "<span class=\"sig-verified-icon\">✓</span> Digitally Signed &amp; Timestamped: <strong>{0}</strong>", timeStr);
         } else {
             badgeEl.style.display = 'none';
             badgeEl.innerHTML = '';
