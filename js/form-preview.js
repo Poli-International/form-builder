@@ -488,7 +488,7 @@ class FormPreview {
             const clearBtnId = `clear-sig-${fieldId}`;
 
             if (window.SignatureManager) {
-                const manager = new window.SignatureManager(canvas.id, clearBtnId);
+                const manager = new window.SignatureManager(canvas.id, clearBtnId, rootEl);
                 manager.init();
                 manager.setOnChange(() => {
                     this.updateProgress();
@@ -822,7 +822,37 @@ class FormPreview {
         if (kioskOverlay) kioskOverlay.style.display = 'none';
         document.body.classList.remove('kiosk-mode-active');
         if (this.container) {
+            // render() starts a blank form: keep what the client entered and signed in the kiosk.
+            const responses = this.responses;
+            const signed = this.signatureManagers;
             this.render(this.formData);
+            this.responses = responses;
+            this.restoreResponses(this.container);
+            for (const id in signed) {
+                if (signed[id].isEmpty && !signed[id].isEmpty()) this.signatureManagers[id] = signed[id];
+            }
+            this.runLogic();
+            this.updateProgress();
+        }
+    }
+
+    // Writes the recorded answers back into the inputs under root.
+    restoreResponses(root) {
+        for (const [key, val] of Object.entries(this.responses)) {
+            if (Array.isArray(val)) {
+                root.querySelectorAll(`input[name="${key}[]"]`).forEach(cb => { cb.checked = val.includes(cb.value); });
+                continue;
+            }
+            const input = root.querySelector(`[name="${key}"]`);
+            if (!input) continue;
+            if (input.type === 'checkbox') {
+                input.checked = !!val;
+            } else if (input.type === 'radio') {
+                const r = root.querySelector(`input[name="${key}"][value="${val}"]`);
+                if (r) r.checked = true;
+            } else {
+                input.value = val;
+            }
         }
     }
 
@@ -940,6 +970,7 @@ class FormPreview {
         this.initSignatures(kioskOverlay);
         this.initBodyMaps(kioskOverlay);
         this.initPhotoUploads(kioskOverlay);
+        this.restoreResponses(kioskOverlay);
         this.initDateAgeCalculations(kioskOverlay);
         this.autoPopulateStudioDefaults(false, kioskOverlay);
 
@@ -953,21 +984,6 @@ class FormPreview {
             this.updateData(e.target);
             this.updateProgress();
         };
-
-        // Restore responses to inputs
-        for (const [key, val] of Object.entries(this.responses)) {
-            const input = kioskOverlay.querySelector(`[name="${key}"]`);
-            if (input) {
-                if (input.type === 'checkbox') {
-                    input.checked = !!val;
-                } else if (input.type === 'radio') {
-                    const r = kioskOverlay.querySelector(`input[name="${key}"][value="${val}"]`);
-                    if (r) r.checked = true;
-                } else {
-                    input.value = val;
-                }
-            }
-        }
     }
 
     nextKioskStep() {
@@ -1105,7 +1121,7 @@ class FormPreview {
 
         if (target.type === 'checkbox' && target.name.endsWith('[]')) {
             const realName = target.name.replace('[]', '');
-            const checked = Array.from(this.container.querySelectorAll('input[type="checkbox"]:checked'))
+            const checked = Array.from((target.closest('#tablet-kiosk-modal') || this.container).querySelectorAll('input[type="checkbox"]:checked'))
                 .filter(el => el.name === target.name)
                 .map(el => el.value);
             this.responses[realName] = checked;
@@ -2586,7 +2602,8 @@ class FormPreview {
             const idLower = fieldId.toLowerCase();
 
             // Date population
-            if (inp.type === 'date' || idLower.includes('date') || labelText.includes('date')) {
+            const isBirthDate = /birth|dob/.test(idLower + ' ' + labelText);
+            if (!isBirthDate && (inp.type === 'date' || idLower.includes('date') || labelText.includes('date'))) {
                 if (force || !inp.value) {
                     inp.value = todayStr;
                     this.responses[fieldId] = todayStr;
