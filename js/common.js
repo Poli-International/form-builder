@@ -651,6 +651,9 @@ function initPdfSettingsModal() {
  * Helper: Copy text to clipboard with multi-device fallback
  */
 async function copyTextToClipboard(text, btnElement, successLabel = '✓ Copied to Clipboard!') {
+    // some callers pass the message to show instead of the button
+    const message = typeof btnElement === 'string' ? btnElement : 'Copied to clipboard!';
+    if (typeof btnElement === 'string') btnElement = null;
     let copied = false;
     try {
         if (navigator.clipboard && window.isSecureContext) {
@@ -693,7 +696,7 @@ async function copyTextToClipboard(text, btnElement, successLabel = '✓ Copied 
     }
 
     if (window.FormBuilderApp && typeof window.FormBuilderApp.showToast === 'function') {
-        window.FormBuilderApp.showToast(copied ? 'Copied to clipboard!' : 'Failed to copy text', copied ? 'success' : 'error');
+        window.FormBuilderApp.showToast(copied ? message : 'Failed to copy text', copied ? 'success' : 'error');
     }
     return copied;
 }
