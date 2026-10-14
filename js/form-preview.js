@@ -885,7 +885,7 @@ class FormPreview {
                             <h3 class="kiosk-doc-title">Tablet Kiosk Mode</h3>
                         </div>
                         <div class="kiosk-top-right">
-                            <button type="button" class="btn-exit-kiosk" onclick="window.ActiveFormPreview && window.ActiveFormPreview.exitKioskMode()">✕ Exit Kiosk</button>
+                            <button type="button" class="btn-exit-kiosk" onclick="window.ActiveFormPreview && window.ActiveFormPreview.requestKioskExit()">✕ Exit Kiosk</button>
                         </div>
                     </div>
                     <div class="kiosk-content-area" style="text-align:center; padding:3rem 1.5rem;">
@@ -932,7 +932,7 @@ class FormPreview {
                         <div class="kiosk-step-title">${this.escapeHtml(currentSec.title)}</div>
                     </div>
                     <div class="kiosk-top-right">
-                        <button type="button" class="btn-exit-kiosk" onclick="window.ActiveFormPreview && window.ActiveFormPreview.exitKioskMode()">✕ Exit Kiosk</button>
+                        <button type="button" class="btn-exit-kiosk" onclick="window.ActiveFormPreview && window.ActiveFormPreview.requestKioskExit()">✕ Exit Kiosk</button>
                     </div>
                 </div>
 
@@ -986,6 +986,79 @@ class FormPreview {
         };
     }
 
+    // ---- Kiosk lock (Settings > Tablet Kiosk PIN): the client cannot leave the form on their own ----
+    kioskPinHash(pin) {
+        let h = 0;
+        for (const c of 'poli-kiosk:' + String(pin)) h = (h * 31 + c.charCodeAt(0)) | 0;
+        return 'h' + (h >>> 0).toString(36);
+    }
+
+    kioskPin() {
+        try { return localStorage.getItem('poli_kiosk_exit_pin') || ''; } catch (e) { return ''; }
+    }
+
+    // asks for the PIN when one is set, then runs `then` (by default: leave the kiosk)
+    requestKioskExit(then) {
+        const leave = typeof then === 'function' ? then : () => this.exitKioskMode();
+        const pin = this.kioskPin();
+        if (!pin) { leave(); return; }
+        const overlay = document.getElementById('tablet-kiosk-modal');
+        if (!overlay) { leave(); return; }
+        let box = document.getElementById('kiosk-pin-lock');
+        if (box) box.remove();
+        box = document.createElement('div');
+        box.id = 'kiosk-pin-lock';
+        box.setAttribute('role', 'dialog');
+        box.setAttribute('aria-label', 'Staff PIN');
+        box.style.cssText = 'position:absolute;inset:0;background:rgba(15,23,42,0.92);display:flex;align-items:center;justify-content:center;z-index:10;';
+        box.innerHTML = `
+            <form style="background:#fff;color:#0f172a;border-radius:14px;padding:22px;width:min(90vw,340px);display:flex;flex-direction:column;gap:10px;text-align:center;">
+                <strong style="font-size:1.1rem;">Staff only</strong>
+                <span style="font-size:0.9rem;color:#475569;">Enter the kiosk PIN to leave the form.</span>
+                <input type="password" inputmode="numeric" autocomplete="off" aria-label="Kiosk PIN" style="font-size:1.4rem;text-align:center;padding:10px;border:1px solid #cbd5e1;border-radius:8px;letter-spacing:0.3em;" />
+                <span class="kiosk-pin-error" role="alert" style="color:#dc2626;font-size:0.85rem;min-height:1.1em;"></span>
+                <div style="display:flex;gap:8px;">
+                    <button type="button" class="kiosk-pin-cancel" style="flex:1;padding:10px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;cursor:pointer;">Cancel</button>
+                    <button type="submit" style="flex:1;padding:10px;border:none;background:#2563eb;color:#fff;border-radius:8px;font-weight:700;cursor:pointer;">Unlock</button>
+                </div>
+            </form>`;
+        overlay.appendChild(box);
+        const input = box.querySelector('input');
+        box.querySelector('.kiosk-pin-cancel').addEventListener('click', () => box.remove());
+        box.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (this.kioskPinHash(input.value) !== pin) {
+                box.querySelector('.kiosk-pin-error').textContent = 'Wrong PIN';
+                input.value = '';
+                return;
+            }
+            box.remove();
+            leave();
+        });
+        input.focus();
+    }
+
+    // after a locked kiosk form is saved: the client sees this, and only the PIN leaves it
+    showKioskThankYou() {
+        let overlay = document.getElementById('tablet-kiosk-modal');
+        if (!overlay) return;
+        overlay.style.display = 'flex';
+        document.body.classList.add('kiosk-mode-active');
+        overlay.innerHTML = `
+            <div class="kiosk-frame" style="position:relative;">
+                <div class="kiosk-content-area" style="text-align:center;padding:4rem 1.5rem;">
+                    <div style="font-size:3rem;">✅</div>
+                    <h2 style="margin:0.5rem 0;">Thank you</h2>
+                    <p style="font-size:1.1rem;color:#475569;">Your form has been submitted. Please hand the tablet back to the studio.</p>
+                    <button type="button" class="btn-kiosk-staff-exit" style="margin-top:2rem;padding:10px 18px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;cursor:pointer;">Staff: exit</button>
+                </div>
+            </div>`;
+        overlay.querySelector('.btn-kiosk-staff-exit').addEventListener('click', () => this.requestKioskExit(() => {
+            overlay.style.display = 'none';
+            document.body.classList.remove('kiosk-mode-active');
+        }));
+    }
+
     nextKioskStep() {
         const sections = this.getKioskSections();
         if (this.currentKioskStep < sections.length - 1) {
@@ -993,6 +1066,20 @@ class FormPreview {
             this.renderKioskStep();
             const content = document.getElementById('kiosk-content-area');
             if (content) content.scrollTop = 0;
+        } else if (this.kioskPin()) {
+            const missing = this.validateAll();
+            if (missing.length) {
+                const content = document.getElementById('kiosk-content-area');
+                const note = document.createElement('div');
+                note.setAttribute('role', 'alert');
+                note.style.cssText = 'background:#fef2f2;border:1px solid #fca5a5;color:#991b1b;padding:12px;border-radius:8px;margin-bottom:12px;';
+                note.textContent = 'Please complete: ' + [...new Set(missing.map((e) => e.fieldLabel))].slice(0, 6).join(', ') + (missing.length > 6 ? ' and more' : '');
+                if (content) { content.prepend(note); content.scrollTop = 0; }
+                return;
+            }
+            this.exitKioskMode();
+            this.handleExport();
+            this.showKioskThankYou();
         } else {
             this.exitKioskMode();
             this.handleExport();
