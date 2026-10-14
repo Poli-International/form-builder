@@ -1585,6 +1585,9 @@ class FormPreview {
 
             const input = wrapper.querySelector('input:not([type="hidden"]), textarea, select, canvas');
             if (input) {
+                // a signature pad is a canvas, which takes no focus unless told it may: without this
+                // "Go to field" left the keyboard and a screen reader where they were
+                if (input.tagName === 'CANVAS' && !input.hasAttribute('tabindex')) input.tabIndex = -1;
                 input.focus();
             }
         }
