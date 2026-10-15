@@ -1352,29 +1352,6 @@
       "session_iteration": "Session {0} - {1} (Iteration)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Digitally Signed &amp; Timestamped: <strong>{0}</strong>",
       "append_to_fields": "Append to: {0} ({1} fields)"
-    },
-    "kiosk": {
-      "mode_title": "Tablet Kiosk Mode",
-      "exit": "Exit Kiosk",
-      "no_sections": "No sections found in current form. Please add sections to the form in the editor.",
-      "back_to_editor": "Back to Editor",
-      "review": "Please review and complete the fields below",
-      "staff_pin": "Staff PIN",
-      "staff_only": "Staff only",
-      "enter_pin": "Enter the kiosk PIN to leave the form.",
-      "pin": "Kiosk PIN",
-      "cancel": "Cancel",
-      "unlock": "Unlock",
-      "wrong_pin": "Wrong PIN",
-      "thank_you": "Thank you",
-      "submitted": "Your form has been submitted. Please hand the tablet back to the studio.",
-      "staff_exit": "Staff: exit",
-      "step_of": "Step {current} of {total}",
-      "previous": "Previous Step",
-      "complete": "Complete & Review PDF",
-      "next": "Next Step",
-      "please_complete": "Please complete:",
-      "and_more": "and more"
     }
   },
   "fr": {
@@ -2730,29 +2707,6 @@
       "session_iteration": "Séance {0} - {1} (répétition)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Signé numériquement et horodaté : <strong>{0}</strong>",
       "append_to_fields": "Ajouter à : {0} ({1} champs)"
-    },
-    "kiosk": {
-      "mode_title": "Mode kiosque tablette",
-      "exit": "Quitter le kiosque",
-      "no_sections": "Aucune section dans ce formulaire. Ajoutez des sections dans l'éditeur.",
-      "back_to_editor": "Retour à l'éditeur",
-      "review": "Veuillez vérifier et remplir les champs ci-dessous",
-      "staff_pin": "Code PIN du personnel",
-      "staff_only": "Réservé au personnel",
-      "enter_pin": "Saisissez le code PIN du kiosque pour quitter le formulaire.",
-      "pin": "Code PIN du kiosque",
-      "cancel": "Annuler",
-      "unlock": "Déverrouiller",
-      "wrong_pin": "Code PIN incorrect",
-      "thank_you": "Merci",
-      "submitted": "Votre formulaire a été envoyé. Merci de rendre la tablette au studio.",
-      "staff_exit": "Personnel : quitter",
-      "step_of": "Étape {current} sur {total}",
-      "previous": "Étape précédente",
-      "complete": "Terminer et voir le PDF",
-      "next": "Étape suivante",
-      "please_complete": "Veuillez remplir :",
-      "and_more": "et d'autres"
     }
   },
   "it": {
@@ -4108,29 +4062,6 @@
       "session_iteration": "Seduta {0} - {1} (ripetizione)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Firmato digitalmente e con marca temporale: <strong>{0}</strong>",
       "append_to_fields": "Aggiungi a: {0} ({1} campi)"
-    },
-    "kiosk": {
-      "mode_title": "Modalità chiosco tablet",
-      "exit": "Esci dal chiosco",
-      "no_sections": "Nessuna sezione in questo modulo. Aggiungete sezioni nell'editor.",
-      "back_to_editor": "Torna all'editor",
-      "review": "Controllate e completate i campi qui sotto",
-      "staff_pin": "PIN del personale",
-      "staff_only": "Solo personale",
-      "enter_pin": "Inserite il PIN del chiosco per uscire dal modulo.",
-      "pin": "PIN del chiosco",
-      "cancel": "Annulla",
-      "unlock": "Sblocca",
-      "wrong_pin": "PIN errato",
-      "thank_you": "Grazie",
-      "submitted": "Il modulo è stato inviato. Restituite il tablet allo studio.",
-      "staff_exit": "Personale: esci",
-      "step_of": "Passo {current} di {total}",
-      "previous": "Passo precedente",
-      "complete": "Completa e vedi il PDF",
-      "next": "Passo successivo",
-      "please_complete": "Completate:",
-      "and_more": "e altri"
     }
   },
   "de": {
@@ -5486,29 +5417,6 @@
       "session_iteration": "Sitzung {0} - {1} (Wiederholung)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Digital signiert und mit Zeitstempel versehen: <strong>{0}</strong>",
       "append_to_fields": "Anhängen an: {0} ({1} Felder)"
-    },
-    "kiosk": {
-      "mode_title": "Tablet-Kiosk-Modus",
-      "exit": "Kiosk verlassen",
-      "no_sections": "Dieses Formular hat keine Abschnitte. Fügen Sie im Editor Abschnitte hinzu.",
-      "back_to_editor": "Zurück zum Editor",
-      "review": "Bitte prüfen und füllen Sie die Felder unten aus",
-      "staff_pin": "Personal-PIN",
-      "staff_only": "Nur für Personal",
-      "enter_pin": "Geben Sie die Kiosk-PIN ein, um das Formular zu verlassen.",
-      "pin": "Kiosk-PIN",
-      "cancel": "Abbrechen",
-      "unlock": "Entsperren",
-      "wrong_pin": "Falsche PIN",
-      "thank_you": "Vielen Dank",
-      "submitted": "Ihr Formular wurde gesendet. Bitte geben Sie das Tablet dem Studio zurück.",
-      "staff_exit": "Personal: beenden",
-      "step_of": "Schritt {current} von {total}",
-      "previous": "Vorheriger Schritt",
-      "complete": "Abschließen und PDF ansehen",
-      "next": "Nächster Schritt",
-      "please_complete": "Bitte ausfüllen:",
-      "and_more": "und weitere"
     }
   },
   "es": {
@@ -6864,29 +6772,6 @@
       "session_iteration": "Sesión {0} - {1} (repetición)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Firmado digitalmente y con sello de tiempo: <strong>{0}</strong>",
       "append_to_fields": "Añadir a: {0} ({1} campos)"
-    },
-    "kiosk": {
-      "mode_title": "Modo quiosco de tableta",
-      "exit": "Salir del quiosco",
-      "no_sections": "Este formulario no tiene secciones. Añada secciones en el editor.",
-      "back_to_editor": "Volver al editor",
-      "review": "Revise y complete los campos siguientes",
-      "staff_pin": "PIN del personal",
-      "staff_only": "Solo personal",
-      "enter_pin": "Introduzca el PIN del quiosco para salir del formulario.",
-      "pin": "PIN del quiosco",
-      "cancel": "Cancelar",
-      "unlock": "Desbloquear",
-      "wrong_pin": "PIN incorrecto",
-      "thank_you": "Gracias",
-      "submitted": "Su formulario se ha enviado. Devuelva la tableta al estudio.",
-      "staff_exit": "Personal: salir",
-      "step_of": "Paso {current} de {total}",
-      "previous": "Paso anterior",
-      "complete": "Completar y ver el PDF",
-      "next": "Paso siguiente",
-      "please_complete": "Complete:",
-      "and_more": "y más"
     }
   },
   "nl": {
@@ -8242,29 +8127,6 @@
       "session_iteration": "Sessie {0} - {1} (herhaling)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Digitaal ondertekend en van tijdstempel voorzien: <strong>{0}</strong>",
       "append_to_fields": "Toevoegen aan: {0} ({1} velden)"
-    },
-    "kiosk": {
-      "mode_title": "Tabletkioskmodus",
-      "exit": "Kiosk verlaten",
-      "no_sections": "Dit formulier heeft geen secties. Voeg secties toe in de editor.",
-      "back_to_editor": "Terug naar de editor",
-      "review": "Controleer en vul de velden hieronder in",
-      "staff_pin": "Pincode personeel",
-      "staff_only": "Alleen personeel",
-      "enter_pin": "Voer de kioskpincode in om het formulier te verlaten.",
-      "pin": "Kioskpincode",
-      "cancel": "Annuleren",
-      "unlock": "Ontgrendelen",
-      "wrong_pin": "Verkeerde pincode",
-      "thank_you": "Dank u",
-      "submitted": "Uw formulier is verzonden. Geef de tablet terug aan de studio.",
-      "staff_exit": "Personeel: afsluiten",
-      "step_of": "Stap {current} van {total}",
-      "previous": "Vorige stap",
-      "complete": "Afronden en pdf bekijken",
-      "next": "Volgende stap",
-      "please_complete": "Vul nog in:",
-      "and_more": "en meer"
     }
   },
   "pt": {
@@ -9620,29 +9482,6 @@
       "session_iteration": "Sessão {0} - {1} (repetição)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Assinado digitalmente e com selo temporal: <strong>{0}</strong>",
       "append_to_fields": "Acrescentar a: {0} ({1} campos)"
-    },
-    "kiosk": {
-      "mode_title": "Modo quiosque do tablet",
-      "exit": "Sair do quiosque",
-      "no_sections": "Este formulário não tem secções. Adicione secções no editor.",
-      "back_to_editor": "Voltar ao editor",
-      "review": "Reveja e preencha os campos abaixo",
-      "staff_pin": "PIN da equipa",
-      "staff_only": "Só para a equipa",
-      "enter_pin": "Introduza o PIN do quiosque para sair do formulário.",
-      "pin": "PIN do quiosque",
-      "cancel": "Cancelar",
-      "unlock": "Desbloquear",
-      "wrong_pin": "PIN errado",
-      "thank_you": "Obrigado",
-      "submitted": "O seu formulário foi enviado. Devolva o tablet ao estúdio.",
-      "staff_exit": "Equipa: sair",
-      "step_of": "Passo {current} de {total}",
-      "previous": "Passo anterior",
-      "complete": "Concluir e ver o PDF",
-      "next": "Passo seguinte",
-      "please_complete": "Preencha:",
-      "and_more": "e mais"
     }
   }
 }
