@@ -1,7 +1,7 @@
 /**
  * Internationalization (i18n) Module
  * Poli International - Studio Consultation Form Builder
- * Supports: English (en), French (fr), Italian (it), German (de), Spanish (es), Dutch (nl), Portuguese (pt)
+ * Supports: English (en), French (fr), Italian (it), German (de), Spanish (es), Dutch (nl), Portuguese (pt), Thai (th)
  */
 
 (function () {
@@ -16,7 +16,7 @@
         constructor() {
             this.currentLanguage = 'en';
             this.storageKey = 'poli_form_builder_lang';
-            this.supportedLanguages = ['en', 'fr', 'it', 'de', 'es', 'nl', 'pt'];
+            this.supportedLanguages = ['en', 'fr', 'it', 'de', 'es', 'nl', 'pt', 'th'];
             this.translations = {};
             this.isLoaded = false;
         }
