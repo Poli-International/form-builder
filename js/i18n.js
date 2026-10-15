@@ -23,8 +23,7 @@
 
         async init() {
             // Determine initial language
-            // its own choice first, then the language the Studio CRM and the other tools share
-            const storedLang = localStorage.getItem(this.storageKey) || localStorage.getItem('poli_tools_language');
+            const storedLang = localStorage.getItem(this.storageKey);
             if (storedLang && this.supportedLanguages.includes(storedLang)) {
                 this.currentLanguage = storedLang;
             } else {
