@@ -1528,11 +1528,7 @@ class FormBuilder {
 
         this.autoSaveTimer = setTimeout(() => {
             try {
-                const payload = {
-                    timestamp: Date.now(),
-                    form: this.currentForm
-                };
-                localStorage.setItem(this.autoSaveKey, JSON.stringify(payload));
+                this.saveDraftNow();
                 
                 if (indicator) {
                     const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -1570,9 +1566,18 @@ class FormBuilder {
         }, 2200);
     }
 
-    getAutoSavedData() {
+    // Writes the form being edited to the "last worked on" slot and to its own slot.
+    saveDraftNow() {
+        if (!this.currentForm) return;
+        const payload = JSON.stringify({ timestamp: Date.now(), form: this.currentForm });
+        localStorage.setItem(this.autoSaveKey, payload);
+        if (this.currentForm.id) localStorage.setItem(this.autoSaveKey + ':' + this.currentForm.id, payload);
+    }
+
+    // The draft of one form (formId given), or the form last worked on.
+    getAutoSavedData(formId) {
         try {
-            const raw = localStorage.getItem(this.autoSaveKey);
+            const raw = localStorage.getItem(formId ? this.autoSaveKey + ':' + formId : this.autoSaveKey);
             if (!raw) return null;
             return JSON.parse(raw);
         } catch (e) {
@@ -1582,6 +1587,7 @@ class FormBuilder {
 
     clearAutoSave() {
         localStorage.removeItem(this.autoSaveKey);
+        if (this.currentForm && this.currentForm.id) localStorage.removeItem(this.autoSaveKey + ':' + this.currentForm.id);
         const indicator = document.getElementById('autosave-indicator');
         if (indicator) {
             indicator.className = 'autosave-badge';
