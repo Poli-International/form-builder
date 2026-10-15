@@ -22,11 +22,9 @@ function TP(key, fallback) {
  */
 
 class SignatureManager {
-    constructor(canvasId, clearBtnId, root) {
+    constructor(canvasId, clearBtnId) {
         this.canvasId = canvasId;
         this.clearBtnId = clearBtnId;
-        // Tablet kiosk mode shows a second copy of the form: look inside the copy that was asked for.
-        this.root = root || document;
         this.signaturePad = null;
         this.resizeHandler = null;
         this.signedAt = null;
@@ -34,12 +32,8 @@ class SignatureManager {
         this.onSignatureCompleteCallback = null;
     }
 
-    find(id) {
-        return this.root.querySelector('#' + CSS.escape(id));
-    }
-
     init() {
-        const canvas = this.find(this.canvasId);
+        const canvas = document.getElementById(this.canvasId);
         if (!canvas) {
             console.warn(`SignatureManager: Canvas #${this.canvasId} not found.`);
             return;
@@ -90,7 +84,7 @@ class SignatureManager {
         window.addEventListener('resize', this.resizeHandler);
 
         // Setup Clear button
-        const clearBtn = this.find(this.clearBtnId);
+        const clearBtn = document.getElementById(this.clearBtnId);
         if (clearBtn) {
             clearBtn.addEventListener('click', () => {
                 this.clear();
@@ -128,7 +122,7 @@ class SignatureManager {
 
     updateVerificationBadge() {
         const fieldId = this.canvasId.replace('sig-canvas-', '');
-        const badgeEl = this.find(`sig-verification-${fieldId}`);
+        const badgeEl = document.getElementById(`sig-verification-${fieldId}`);
         if (!badgeEl) return;
 
         if (!this.isEmpty() && this.signedAt) {
