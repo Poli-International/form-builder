@@ -215,8 +215,6 @@ const MultiSessionPlanner = {
         }
     },
 
-    getVersion: (versionId) => MultiSessionPlanner.getAllVersions().find(v => v.id === versionId) || null,
-
     saveVersion: (versionName, notes = '', explicitFormData = null) => {
         const currentForm = explicitFormData || (window.FormBuilderApp && window.FormBuilderApp.currentForm);
         if (!currentForm) {
