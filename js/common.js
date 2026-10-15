@@ -412,19 +412,6 @@ function initApp() {
 
             templateSelect.addEventListener('change', (e) => {
                 const tmpl = window.FormTemplates.TemplateManager.getTemplate(e.target.value);
-                // Keep the changes made to the form being left (an edit from the last half second
-                // is not saved yet), and come back to this form's own draft if it has one.
-                if (window.FormBuilderApp && window.FormBuilderApp.autoSaveTimer) {
-                    clearTimeout(window.FormBuilderApp.autoSaveTimer);
-                    try { window.FormBuilderApp.saveDraftNow(); } catch (err) { /* storage full or blocked */ }
-                }
-                const draft = window.FormBuilderApp ? window.FormBuilderApp.getAutoSavedData(e.target.value) : null;
-                if (draft && draft.form && draft.form.sections && draft.form.sections.length > 0) {
-                    window.FormBuilderApp.loadForm(draft.form, 'Restore Auto-save Draft');
-                    const savedAt = new Date(draft.timestamp).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' });
-                    window.FormBuilderApp.showToast(`Your changes to "${draft.form.name || (tmpl && tmpl.name) || 'this form'}" from ${savedAt} were restored`, 'info');
-                    return;
-                }
                 if (window.FormBuilderApp && tmpl) {
                     window.FormBuilderApp.loadForm(tmpl, `Loaded ${tmpl.name}`);
                     const toastMsg = window.i18n ? window.i18n.t('messages.template_loaded', { name: tmpl.name }, `Template "${tmpl.name}" loaded`) : `Template "${tmpl.name}" loaded`;
@@ -651,9 +638,6 @@ function initPdfSettingsModal() {
  * Helper: Copy text to clipboard with multi-device fallback
  */
 async function copyTextToClipboard(text, btnElement, successLabel = '✓ Copied to Clipboard!') {
-    // some callers pass the message to show instead of the button
-    const message = typeof btnElement === 'string' ? btnElement : 'Copied to clipboard!';
-    if (typeof btnElement === 'string') btnElement = null;
     let copied = false;
     try {
         if (navigator.clipboard && window.isSecureContext) {
@@ -696,7 +680,7 @@ async function copyTextToClipboard(text, btnElement, successLabel = '✓ Copied 
     }
 
     if (window.FormBuilderApp && typeof window.FormBuilderApp.showToast === 'function') {
-        window.FormBuilderApp.showToast(copied ? message : 'Failed to copy text', copied ? 'success' : 'error');
+        window.FormBuilderApp.showToast(copied ? 'Copied to clipboard!' : 'Failed to copy text', copied ? 'success' : 'error');
     }
     return copied;
 }
