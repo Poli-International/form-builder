@@ -1,7 +1,7 @@
 /**
  * Poli International - Studio Consultation Form Automated Translator
  * Translates Form Schema (Titles, Labels, Placeholders, Descriptions, Options, Help Texts)
- * Supports: English (en), French (fr), Italian (it), German (de), Spanish (es), Dutch (nl), Portuguese (pt)
+ * Supports: English (en), French (fr), Italian (it), German (de), Spanish (es), Dutch (nl), Portuguese (pt), Thai (th)
  */
 
 (function () {
@@ -15,7 +15,8 @@
         "de": "Adresse, Telefon, E-Mail & Genehmigungs-Nr.",
         "es": "Dirección, Teléfono, Correo y N° de permiso",
         "nl": "Adres, Telefoon, E-mail & Vergunning nr.",
-        "pt": "Endereço, Telefone, E-mail e N° de licença"
+        "pt": "Endereço, Telefone, E-mail e N° de licença",
+        "th": "ที่อยู่, เบอร์โทรศัพท์, อีเมล และเลขที่ใบอนุญาต"
 },
     "Physician Name, Clinic & Clearance Date": {
         "en": "Physician Name, Clinic & Clearance Date",
@@ -24,7 +25,8 @@
         "de": "Arztname, Klinik & Datum der Freigabe",
         "es": "Nombre del médico, Clínica y Fecha de autorización",
         "nl": "Naam arts, Kliniek & Datum goedkeuring",
-        "pt": "Nome do médico, Clínica e Data de autorização"
+        "pt": "Nome do médico, Clínica e Data de autorização",
+        "th": "ชื่อแพทย์, คลินิก และวันที่ออกใบรับรองแพทย์"
 },
     "Tattoo Design & Procedure Specifications": {
         "en": "Tattoo Design & Procedure Specifications",
@@ -33,7 +35,8 @@
         "de": "Spezifikationen für Tattoo-Design & Verfahren",
         "es": "Especificaciones del diseño y procedimiento de tatuaje",
         "nl": "Specificaties voor tattoo-ontwerp & procedure",
-        "pt": "Especificações do desenho e procedimento de tatuagem"
+        "pt": "Especificações do desenho e procedimento de tatuagem",
+        "th": "รายละเอียดแบบสักและข้อกำหนดการสัก"
 },
     "Description of Tattoo Design / Concept": {
         "en": "Description of Tattoo Design / Concept",
@@ -42,7 +45,8 @@
         "de": "Beschreibung des Tattoo-Designs / Konzepts",
         "es": "Descripción del diseño / concepto del tatuaje",
         "nl": "Beschrijving van tattoo-ontwerp / concept",
-        "pt": "Descrição do desenho / conceito da tatuagem"
+        "pt": "Descrição do desenho / conceito da tatuagem",
+        "th": "คำอธิบายแบบสัก / แนวคิด"
 },
     "Exact Anatomical Placement": {
         "en": "Exact Anatomical Placement",
@@ -51,7 +55,8 @@
         "de": "Genaue anatomische Platzierung",
         "es": "Ubicación anatómica exacta",
         "nl": "Exacte anatomische plaatsing",
-        "pt": "Localização anatômica exata"
+        "pt": "Localização anatômica exata",
+        "th": "ตำแหน่งบนร่างกายที่ต้องการสัก"
 },
     "Approximate Dimensions (Width x Height)": {
         "en": "Approximate Dimensions (Width x Height)",
@@ -60,7 +65,8 @@
         "de": "Ungefähre Abmessungen (Breite x Höhe)",
         "es": "Dimensiones aproximadas (Ancho x Alto)",
         "nl": "Geschatte afmetingen (Breedte x Hoogte)",
-        "pt": "Dimensões aproximadas (Largura x Altura)"
+        "pt": "Dimensões aproximadas (Largura x Altura)",
+        "th": "ขนาดโดยประมาณ (กว้าง x สูง)"
 },
     "Color Palette Preference": {
         "en": "Color Palette Preference",
@@ -69,7 +75,8 @@
         "de": "Farbpaletten-Präferenz",
         "es": "Preferencia de paleta de colores",
         "nl": "Voorkeur voor kleurenpalet",
-        "pt": "Preferência de paleta de cores"
+        "pt": "Preferência de paleta de cores",
+        "th": "โทนสีที่ต้องการ"
 },
     "I confirm that I will inspect and approve the placement, size, and spelling of the stencil before ink application begins.": {
         "en": "I confirm that I will inspect and approve the placement, size, and spelling of the stencil before ink application begins.",
@@ -78,7 +85,8 @@
         "de": "Ich bestätige, dass ich Platzierung, Größe und Rechtschreibung der Schablone vor Beginn der Tätowierung überprüfe und genehmige.",
         "es": "Confirmo que inspeccionaré y aprobaré la ubicación, el tamaño y la ortografía de la plantilla antes de que comience la aplicación de tinta.",
         "nl": "Ik bevestig dat ik de plaatsing, grootte en spelling van de stencil zal inspecteren en goedkeuren voordat het tatoeëren begint.",
-        "pt": "Confirmo que irei inspecionar e aprovar o posicionamento, tamanho e ortografia do decalque antes de iniciar a aplicação de tinta."
+        "pt": "Confirmo que irei inspecionar e aprovar o posicionamento, tamanho e ortografia do decalque antes de iniciar a aplicação de tinta.",
+        "th": "ข้าพเจ้ายืนยันว่าจะตรวจสอบและอนุมัติตำแหน่ง ขนาด และตัวอักษรของลายลอก (stencil) ก่อนเริ่มทำการลงหมึกสัก"
 },
     "Legal Waiver, Capacity of Reflection & Aftercare Agreement": {
         "en": "Legal Waiver, Capacity of Reflection & Aftercare Agreement",
@@ -87,7 +95,8 @@
         "de": "Haftungsverzicht, Reflexionsfähigkeit & Nachsorgevereinbarung",
         "es": "Descargo legal, capacidad de reflexión y acuerdo de cuidados posteriores",
         "nl": "Juridische vrijwaring, reflectievermogen & nazorgovereenkomst",
-        "pt": "Isenção legal, capacidade de discernimento e termo de cuidados pós-procedimento"
+        "pt": "Isenção legal, capacidade de discernimento e termo de cuidados pós-procedimento",
+        "th": "หนังสือยินยอมสละสิทธิ์ทางกฎหมาย สติสัมปชัญญะ และข้อตกลงการดูแลหลังสัก"
 },
     "I certify that I am at least 18 years of age and have provided valid government-issued photographic identification.": {
         "en": "I certify that I am at least 18 years of age and have provided valid government-issued photographic identification.",
@@ -96,7 +105,8 @@
         "de": "Ich bestätige, dass ich mindestens 18 Jahre alt bin und einen gültigen amtlichen Lichtbildausweis vorgelegt habe.",
         "es": "Certifico que tengo al menos 18 años y he proporcionado una identificación oficial con fotografía válida.",
         "nl": "Ik verklaar dat ik ten minste 18 jaar oud ben en een geldig door de overheid uitgegeven legitimatiebewijs met foto heb verstrekt.",
-        "pt": "Declaro que tenho pelo menos 18 anos de idade e apresentei um documento de identidade oficial válido com foto."
+        "pt": "Declaro que tenho pelo menos 18 anos de idade e apresentei um documento de identidade oficial válido com foto.",
+        "th": "ข้าพเจ้าขอรับรองว่าข้าพเจ้ามีอายุไม่ต่ำกว่า 18 ปีบริบูรณ์ และได้แสดงบัตรประจำตัวที่มีรูปถ่ายซึ่งออกโดยหน่วยงานราชการที่ยังไม่หมดอายุ"
 },
     "DECLARATION OF CAPACITY: I declare and affirm that I am in full capacity of my own mental reflection, judgment, and free will, and that I am NOT under the influence of alcohol, drugs, or mind-altering medications.": {
         "en": "DECLARATION OF CAPACITY: I declare and affirm that I am in full capacity of my own mental reflection, judgment, and free will, and that I am NOT under the influence of alcohol, drugs, or mind-altering medications.",
@@ -105,7 +115,8 @@
         "de": "FÄHIGKEITSERKLÄRUNG: Ich erkläre und bestätige, dass ich im Vollbesitz meiner geistigen Kräfte, Urteilsfähigkeit und meines freien Willens bin und NICHT unter dem Einfluss von Alkohol, Drogen oder bewusstseinsverändernden Medikamenten stehe.",
         "es": "DECLARACIÓN DE CAPACIDAD: Declaro y afirmo que estoy en plena capacidad de reflexión mental, juicio y libre albedrío, y que NO estoy bajo la influencia de alcohol, drogas o medicamentos que alteren la mente.",
         "nl": "BEKWAAMHEIDSVERKLARING: Ik verklaar en bevestig dat ik volledig wilsbekwaam ben, over mijn eigen oordeelsvermogen beschik en NIET onder invloed ben van alcohol, drugs of geestverruimende medicijnen.",
-        "pt": "DECLARAÇÃO DE CAPACIDADE: Declaro e afirmo que estou em plena posse de minhas faculdades mentais, julgamento e livre arbítrio, e que NÃO estou sob a influência de álcool, drogas ou medicamentos que alterem a mente."
+        "pt": "DECLARAÇÃO DE CAPACIDADE: Declaro e afirmo que estou em plena posse de minhas faculdades mentais, julgamento e livre arbítrio, e que NÃO estou sob a influência de álcool, drogas ou medicamentos que alterem a mente.",
+        "th": "การแสดงเจตนาด้านสติสัมปชัญญะ: ข้าพเจ้าขอยืนยันและรับรองว่าข้าพเจ้ามีสติสัมปชัญญะ ความสามารถในการตัดสินใจ และเจตนาอันอิสระอย่างสมบูรณ์ และไม่ได้อยู่ภายใต้ฤทธิ์ของแอลกอฮอล์ สารเสพติด หรือยาที่มีผลต่อจิตประสาท"
 },
     "PRE-PROCEDURE AFTERCARE CONFIRMATION: I confirm that prior to this procedure, I have received comprehensive verbal and written advice on aftercare, hygiene, and healing instructions from the artist.": {
         "en": "PRE-PROCEDURE AFTERCARE CONFIRMATION: I confirm that prior to this procedure, I have received comprehensive verbal and written advice on aftercare, hygiene, and healing instructions from the artist.",
@@ -114,7 +125,8 @@
         "de": "BESTÄTIGUNG DER NACHSORGE VOR DEM EINGRIFF: Ich bestätige, dass ich vor diesem Eingriff umfassende mündliche und schriftliche Anweisungen zu Nachsorge, Hygiene und Heilung vom Künstler erhalten habe.",
         "es": "CONFIRMACIÓN DE CUIDADOS PREVIOS: Confirmo que antes de este procedimiento, he recibido asesoramiento verbal y escrito completo sobre cuidados posteriores, higiene e instrucciones de cicatrización por parte del artista.",
         "nl": "BEVESTIGING VAN NAZORG VOORAF: Ik bevestig dat ik voorafgaand aan deze ingreep uitgebreid mondeling en schriftelijk advies heb ontvangen over nazorg, hygiëne en genezingsinstructies van de artiest.",
-        "pt": "CONFIRMAÇÃO DE CUIDADOS PRÉ-PROCEDIMENTO: Confirmo que, antes deste procedimento, recebi orientações verbais e escritas abrangentes sobre cuidados posteriores, higiene e cicatrização do profissional."
+        "pt": "CONFIRMAÇÃO DE CUIDADOS PRÉ-PROCEDIMENTO: Confirmo que, antes deste procedimento, recebi orientações verbais e escritas abrangentes sobre cuidados posteriores, higiene e cicatrização do profissional.",
+        "th": "การยืนยันการรับทราบการดูแลหลังบริการ: ข้าพเจ้ายืนยันว่าก่อนเริ่มการรับบริการ ข้าพเจ้าได้รับคำแนะนำและคำอธิบายอย่างครบถ้วนทั้งทางวาจาและลายลักษณ์อักษรเกี่ยวกับการดูแลหลังสัก สุขอานามัย และขั้นตอนการรักษาแผลจากช่างสักแล้ว"
 },
     "I understand the inherent risks of tattooing including temporary swelling, redness, infection, allergic reaction, scarring, and permanent skin alteration.": {
         "en": "I understand the inherent risks of tattooing including temporary swelling, redness, infection, allergic reaction, scarring, and permanent skin alteration.",
@@ -123,7 +135,8 @@
         "de": "Ich verstehe die inhärenten Risiken des Tätowierens, einschließlich vorübergehender Schwellung, Rötung, Infektion, allergischer Reaktion, Narbenbildung und dauerhafter Hautveränderung.",
         "es": "Entiendo los riesgos inherentes del tatuaje, incluidos hinchazón temporal, enrojecimiento, infección, reacción alérgica, cicatrización y alteración cutánea permanente.",
         "nl": "Ik begrijp de inherente risico's van tatoeëren, waaronder tijdelijke zwelling, roodheid, infectie, allergische reactie, littekenvorming en permanente huidverandering.",
-        "pt": "Compreendo os riscos inerentes da tatuagem, incluindo inchaço temporário, vermelhidão, infecção, reação alérgica, cicatrizes e alteração permanente da pele."
+        "pt": "Compreendo os riscos inerentes da tatuagem, incluindo inchaço temporário, vermelhidão, infecção, reação alérgica, cicatrizes e alteração permanente da pele.",
+        "th": "ข้าพเจ้าเข้าใจถึงความเสี่ยงที่อาจเกิดขึ้นจากการสัก ซึ่งรวมถึงอาการบวมชั่วคราว รอยแดง การติดเชื้อ อาการแพ้ การเกิดแผลเป็น และการเปลี่ยนแปลงของผิวหนังอย่างถาวร"
 },
     "I grant permission for photographs of the completed artwork to be taken and used for studio portfolio, educational, or promotional purposes.": {
         "en": "I grant permission for photographs of the completed artwork to be taken and used for studio portfolio, educational, or promotional purposes.",
@@ -132,7 +145,8 @@
         "de": "Ich erteile die Erlaubnis, Fotos des fertigen Kunstwerks aufzunehmen und für das Studio-Portfolio sowie für Bildungs- oder Werbezwecke zu verwenden.",
         "es": "Doy permiso para que se tomen fotografías de la obra completada y se utilicen para el portafolio del estudio, fines educativos o promocionales.",
         "nl": "Ik geef toestemming om foto's te maken van het voltooide kunstwerk en deze te gebruiken voor het portfolio van de studio, educatieve of promotionele doeleinden.",
-        "pt": "Autorizo a captura de fotografias do trabalho concluído e seu uso no portfólio do estúdio, para fins educacionais ou promocionais."
+        "pt": "Autorizo a captura de fotografias do trabalho concluído e seu uso no portfólio do estúdio, para fins educacionais ou promocionais.",
+        "th": "ข้าพเจ้ายินยอมให้ถ่ายภาพผลงานที่เสร็จสมบูรณ์เพื่อนำไปใช้ในแฟ้มสะสมผลงานของสตูดิโอ การศึกษา หรือเพื่อการประชาสัมพันธ์ได้"
 },
     "Formal Client Signature & Date": {
         "en": "Formal Client Signature & Date",
@@ -141,7 +155,8 @@
         "de": "Formelle Kundenunterschrift & Datum",
         "es": "Firma formal del cliente y Fecha",
         "nl": "Formele handtekening van de klant & Datum",
-        "pt": "Assinatura formal do cliente e Data"
+        "pt": "Assinatura formal do cliente e Data",
+        "th": "ลายเซ็นลูกค้าและวันที่อย่างเป็นทางการ"
 },
     "Client Signature (Sound Mind & Legal Acknowledgment)": {
         "en": "Client Signature (Sound Mind & Legal Acknowledgment)",
@@ -150,7 +165,8 @@
         "de": "Kundenunterschrift (Freier Wille & rechtliche Anerkennung)",
         "es": "Firma del cliente (Pleno uso de facultades y reconocimiento legal)",
         "nl": "Handtekening van de klant (Wilsbekwaam & juridische erkenning)",
-        "pt": "Assinatura do cliente (Plena capacidade mental e reconhecimento legal)"
+        "pt": "Assinatura do cliente (Plena capacidade mental e reconhecimento legal)",
+        "th": "ลายเซ็นลูกค้า (การรับรองสติสัมปชัญญะและการรับทราบทางกฎหมาย)"
 },
     "Signature Date": {
         "en": "Signature Date",
@@ -159,7 +175,8 @@
         "de": "Datum der Unterschrift",
         "es": "Fecha de la firma",
         "nl": "Datum van ondertekening",
-        "pt": "Data da assinatura"
+        "pt": "Data da assinatura",
+        "th": "วันที่เซ็นชื่อ"
 },
     "Studio Address, Phone & Health Permit": {
         "en": "Studio Address, Phone & Health Permit",
@@ -168,7 +185,8 @@
         "de": "Studio-Adresse, Telefon & Gesundheitsgenehmigung",
         "es": "Dirección del estudio, Teléfono y Permiso sanitario",
         "nl": "Studio-adres, Telefoon & Gezondheidsvergunning",
-        "pt": "Endereço do estúdio, Telefone e Licença sanitária"
+        "pt": "Endereço do estúdio, Telefone e Licença sanitária",
+        "th": "ที่อยู่สตูดิโอ, เบอร์โทรศัพท์ และใบอนุญาตด้านสุขอนามัย"
 },
     "qualified professional piercer Name": {
         "en": "qualified professional piercer Name",
@@ -177,7 +195,8 @@
         "de": "Name des qualifizierten professionellen Piercers",
         "es": "Nombre del piercer profesional calificado",
         "nl": "Naam van de gekwalificeerde professionele piercer",
-        "pt": "Nome do piercer profissional qualificado"
+        "pt": "Nome do piercer profissional qualificado",
+        "th": "ชื่อช่างเจาะมืออาชีพผู้มีคุณสมบัติ"
 },
     "Emergency Contact Name & Phone": {
         "en": "Emergency Contact Name & Phone",
@@ -186,7 +205,8 @@
         "de": "Name & Telefon des Notfallkontakts",
         "es": "Nombre y Teléfono del contacto de emergencia",
         "nl": "Naam en telefoon van noodcontact",
-        "pt": "Nome e Telefone do contato de emergência"
+        "pt": "Nome e Telefone do contato de emergência",
+        "th": "ชื่อและเบอร์โทรศัพท์ติดต่อฉุกเฉิน"
 },
     "Medical History & Health Check": {
         "en": "Medical History & Health Check",
@@ -195,7 +215,8 @@
         "de": "Medizinische Anamnese & Gesundheitsprüfung",
         "es": "Historial médico y Evaluación de salud",
         "nl": "Medische geschiedenis en Gezondheidscontrole",
-        "pt": "Histórico médico e Avaliação de saúde"
+        "pt": "Histórico médico e Avaliação de saúde",
+        "th": "ประวัติทางการแพทย์และการตรวจสุขภาพ"
 },
     "Physician Authorization Disclosure": {
         "en": "Physician Authorization Disclosure",
@@ -204,7 +225,8 @@
         "de": "Erklärung zur ärztlichen Genehmigung",
         "es": "Declaración de autorización médica",
         "nl": "Verklaring van medische toestemming",
-        "pt": "Declaração de autorização médica"
+        "pt": "Declaração de autorização médica",
+        "th": "การเปิดเผยหนังสือรับรองจากแพทย์"
 },
     "Do any of your medical conditions require doctor authorization?": {
         "en": "Do any of your medical conditions require doctor authorization?",
@@ -213,7 +235,8 @@
         "de": "Erfordert eine Ihrer Erkrankungen eine vorherige ärztliche Genehmigung?",
         "es": "¿Alguna de sus condiciones médicas requiere autorización de un médico?",
         "nl": "Vereist een van uw medische aandoeningen toestemming van een arts?",
-        "pt": "Alguma de suas condições médicas requer autorização de um médico?"
+        "pt": "Alguma de suas condições médicas requer autorização de um médico?",
+        "th": "ภาวะทางสุขภาพของคุณจำเป็นต้องได้รับอนุญาตจากแพทย์หรือไม่?"
 },
     "Conch / Tragus / Rook / Daith": {
         "en": "Conch / Tragus / Rook / Daith",
@@ -222,7 +245,8 @@
         "de": "Conch / Tragus / Rook / Daith",
         "es": "Conch / Tragus / Rook / Daith",
         "nl": "Conch / Tragus / Rook / Daith",
-        "pt": "Conch / Tragus / Rook / Daith"
+        "pt": "Conch / Tragus / Rook / Daith",
+        "th": "Conch / Tragus / Rook / Daith"
 },
     "Side / Placement": {
         "en": "Side / Placement",
@@ -231,7 +255,8 @@
         "de": "Seite / Platzierung",
         "es": "Lado / Ubicación",
         "nl": "Zijde / Plaatsing",
-        "pt": "Lado / Posicionamento"
+        "pt": "Lado / Posicionamento",
+        "th": "ข้าง / ตำแหน่ง"
 },
     "Consent, Capacity of Reflection & Aftercare Acknowledgment": {
         "en": "Consent, Capacity of Reflection & Aftercare Acknowledgment",
@@ -240,7 +265,8 @@
         "de": "Einwilligung, Reflexionsfähigkeit & Bestätigung der Nachsorge",
         "es": "Consentimiento, capacidad de reflexión y reconocimiento de cuidados",
         "nl": "Toestemming, reflectievermogen & erkenning van nazorg",
-        "pt": "Consentimento, capacidade de discernimento e termo de cuidados"
+        "pt": "Consentimento, capacidade de discernimento e termo de cuidados",
+        "th": "หนังสือยินยอม สติสัมปชัญญะ และการรับทราบการดูแลหลังบริการ"
 },
     "Date": {
         "en": "Date",
@@ -249,7 +275,8 @@
         "de": "Datum",
         "es": "Fecha",
         "nl": "Datum",
-        "pt": "Data"
+        "pt": "Data",
+        "th": "วันที่"
 },
     "Studio & Clinical Practitioner Information": {
         "en": "Studio & Clinical Practitioner Information",
@@ -258,7 +285,8 @@
         "de": "Informationen zu Studio & klinischem Behandler",
         "es": "Información del estudio y profesional clínico",
         "nl": "Informatie over studio & klinisch behandelaar",
-        "pt": "Informações do estúdio e do profissional clínico"
+        "pt": "Informações do estúdio e do profissional clínico",
+        "th": "ข้อมูลสตูดิโอและผู้ให้บริการ"
 },
     "Consulting Artist / Practitioner Name": {
         "en": "Consulting Artist / Practitioner Name",
@@ -267,7 +295,8 @@
         "de": "Name des beratenden Künstlers / Behandlers",
         "es": "Nombre del artista / profesional consultor",
         "nl": "Naam van adviserende artiest / behandelaar",
-        "pt": "Nome do artista / profissional consultor"
+        "pt": "Nome do artista / profissional consultor",
+        "th": "ชื่อช่างสัก / ผู้ให้บริการที่ให้คำปรึกษา"
 },
     "Licensed Practitioner Name": {
         "en": "Licensed Practitioner Name",
@@ -276,7 +305,8 @@
         "de": "Name des lizenzierten Behandlers",
         "es": "Nombre del profesional con licencia",
         "nl": "Naam van bevoegde behandelaar",
-        "pt": "Nome do profissional habilitado"
+        "pt": "Nome do profissional habilitado",
+        "th": "ชื่อผู้ให้บริการที่ได้รับใบอนุญาต"
 },
     "Surface / Microdermal": {
         "en": "Surface / Microdermal",
@@ -285,7 +315,8 @@
         "de": "Surface / Microdermal",
         "es": "Superficie / Microdermal",
         "nl": "Surface / Microdermal",
-        "pt": "Superfície / Microdermal"
+        "pt": "Superfície / Microdermal",
+        "th": "Surface / Microdermal"
 },
     "Ombré / Powder Brows": {
         "en": "Ombré / Powder Brows",
@@ -294,7 +325,8 @@
         "de": "Ombré- / Puder-Augenbrauen",
         "es": "Cejas Ombré / Powder Brows",
         "nl": "Ombré / Powder Brows",
-        "pt": "Sobrancelhas Ombré / Powder Brows"
+        "pt": "Sobrancelhas Ombré / Powder Brows",
+        "th": "สักคิ้ว Ombré / Powder Brows"
 },
     "Navel": {
         "en": "Navel",
@@ -303,7 +335,8 @@
         "de": "Bauchnabel",
         "es": "Ombligo",
         "nl": "Navel",
-        "pt": "Umbigo"
+        "pt": "Umbigo",
+        "th": "สะดือ"
 },
     "Lip / Labret / Medusa": {
         "en": "Lip / Labret / Medusa",
@@ -312,7 +345,8 @@
         "de": "Lippe / Labret / Medusa",
         "es": "Labio / Labret / Medusa",
         "nl": "Lip / Labret / Medusa",
-        "pt": "Lábio / Labret / Medusa"
+        "pt": "Lábio / Labret / Medusa",
+        "th": "ริมฝีปาก / Labret / Medusa"
 },
     "Studio & Client Details": {
         "en": "Studio & Client Details",
@@ -321,7 +355,8 @@
         "de": "Details zu Studio & Kunde",
         "es": "Detalles del estudio y cliente",
         "nl": "Gegevens van studio & klant",
-        "pt": "Detalhes do estúdio e do cliente"
+        "pt": "Detalhes do estúdio e do cliente",
+        "th": "รายละเอียดสตูดิโอและลูกค้า"
 },
     "[Section Title]": {
         "en": "[Section Title]",
@@ -330,7 +365,8 @@
         "de": "[Abschnittstitel]",
         "es": "[Título de la sección]",
         "nl": "[Sectietitel]",
-        "pt": "[Título da Seção]"
+        "pt": "[Título da Seção]",
+        "th": "[หัวข้อส่วน]"
 },
     "section.new_section_title": {
         "en": "[Section Title]",
@@ -339,7 +375,8 @@
         "de": "[Abschnittstitel]",
         "es": "[Título de la sección]",
         "nl": "[Sectietitel]",
-        "pt": "[Título da Seção]"
+        "pt": "[Título da Seção]",
+        "th": "[หัวข้อส่วน]"
 },
     "New Consultation Section": {
         "en": "[Section Title]",
@@ -348,7 +385,8 @@
         "de": "[Abschnittstitel]",
         "es": "[Título de la sección]",
         "nl": "[Sectietitel]",
-        "pt": "[Título da Seção]"
+        "pt": "[Título da Seção]",
+        "th": "[หัวข้อส่วน]"
 },
     "Start from scratch to build custom forms for your studio.": {
         "en": "Start from scratch to build custom forms for your studio.",
@@ -357,7 +395,8 @@
         "de": "Beginnen Sie von Grund auf, um individuelle Formulare für Ihr Studio zu erstellen.",
         "es": "Comience desde cero para crear formularios personalizados para su estudio.",
         "nl": "Begin vanaf nul om aangepaste formulieren te maken voor uw studio.",
-        "pt": "Comece do zero para criar formulários personalizados para o seu estúdio."
+        "pt": "Comece do zero para criar formulários personalizados para o seu estúdio.",
+        "th": "เริ่มสร้างฟอร์มแบบกำหนดเองสำหรับสตูดิโอของคุณตั้งแต่เริ่มต้น"
 },
     "Client legal name": {
         "en": "Client legal name",
@@ -366,7 +405,8 @@
         "de": "Offizieller Name des Kunden",
         "es": "Nombre legal del cliente",
         "nl": "Officiële naam van de klant",
-        "pt": "Nome legal do cliente"
+        "pt": "Nome legal do cliente",
+        "th": "ชื่อ-นามสกุลตามกฎหมายของลูกค้า"
 },
 
     "Tattoo Consent & Release Agreement": {
@@ -376,7 +416,8 @@
         "de": "Tattoo-Einwilligung & Haftungsfreistellung",
         "es": "Acuerdo de consentimiento y descargo para tatuaje",
         "nl": "Toestemmings- en vrijwaringsovereenkomst voor tatoeage",
-        "pt": "Termo de consentimento e isenção de responsabilidade para tatuagem"
+        "pt": "Termo de consentimento e isenção de responsabilidade para tatuagem",
+        "th": "หนังสือยินยอมและสละสิทธิ์สำหรับการสัก"
     },
     "Piercing Consent & Release": {
         "en": "Piercing Consent & Release",
@@ -385,7 +426,8 @@
         "de": "Piercing-Einwilligung & Freistellung",
         "es": "Consentimiento y descargo para piercing",
         "nl": "Toestemming en vrijwaring voor piercing",
-        "pt": "Consentimento e isenção para piercing"
+        "pt": "Consentimento e isenção para piercing",
+        "th": "หนังสือยินยอมและสละสิทธิ์สำหรับการเจาะ"
     },
     "Medical History & Health Screening Intake": {
         "en": "Medical History & Health Screening Intake",
@@ -394,7 +436,8 @@
         "de": "Medizinische Anamnese & Gesundheitsprüfung",
         "es": "Historial médico y evaluación de salud",
         "nl": "Medische geschiedenis en gezondheidsscreening",
-        "pt": "Histórico médico e triagem de saúde"
+        "pt": "Histórico médico e triagem de saúde",
+        "th": "แบบบันทึกประวัติทางการแพทย์และการคัดกรองสุขภาพ"
     },
     "Multi-Session Tattoo Project Master Agreement": {
         "en": "Multi-Session Tattoo Project Master Agreement",
@@ -403,7 +446,8 @@
         "de": "Rahmenvereinbarung für mehrteilige Tattoo-Projekte",
         "es": "Acuerdo marco para proyecto de tatuaje multisesión",
         "nl": "Hoofdovereenkomst voor tatoeageproject met meerdere sessies",
-        "pt": "Contrato mestre para projeto de tatuagem em várias sessões"
+        "pt": "Contrato mestre para projeto de tatuagem em várias sessões",
+        "th": "สัญญาหลักสำหรับการสักโปรเจกต์หลายครั้ง"
     },
     "Minor Consent & Legal Guardian Authorization Form": {
         "en": "Minor Consent & Legal Guardian Authorization Form",
@@ -412,7 +456,8 @@
         "de": "Einwilligung für Minderjährige & Vollmacht des Erziehungsberechtigten",
         "es": "Formulario de consentimiento para menores y autorización de tutor legal",
         "nl": "Toestemming voor minderjarigen en machtiging wettelijke voogd",
-        "pt": "Formulário de consentimento de menor e autorização de responsável legal"
+        "pt": "Formulário de consentimento de menor e autorização de responsável legal",
+        "th": "หนังสือยินยอมสำหรับผู้เยาว์และใบมอบอำนาจจากผู้ปกครองตามกฎหมาย"
     },
     "Cover-Up & Rework Assessment Form": {
         "en": "Cover-Up & Rework Assessment Form",
@@ -421,7 +466,8 @@
         "de": "Bewertungsformular für Cover-Up & Überarbeitung",
         "es": "Formulario de evaluación para cover-up y retoque",
         "nl": "Beoordelingsformulier voor cover-up en revisie",
-        "pt": "Formulário de avaliação para cobertura e retrabalho"
+        "pt": "Formulário de avaliação para cobertura e retrabalho",
+        "th": "แบบประเมินการสักทับลายเดิม (Cover-Up) และการแก้ไขงาน"
     },
     "PMU & Cosmetic Tattoo Consultation": {
         "en": "PMU & Cosmetic Tattoo Consultation",
@@ -430,7 +476,8 @@
         "de": "Beratung für Permanent-Make-up & kosmetische Tätowierung",
         "es": "Consulta para micropigmentación y tatuaje cosmético",
         "nl": "Consultatie voor permanente make-up en cosmetische tatoeage",
-        "pt": "Consulta para maquiagem definitiva e tatuagem estética"
+        "pt": "Consulta para maquiagem definitiva e tatuagem estética",
+        "th": "การปรึกษาการสักเพื่อความงามและฝังสีใบหน้า (PMU)"
     },
     "Blank Custom Form": {
         "en": "Blank Custom Form",
@@ -439,7 +486,8 @@
         "de": "Leeres benutzerdefiniertes Formular",
         "es": "Formulario personalizado en blanco",
         "nl": "Leeg aangepast formulier",
-        "pt": "Formulário personalizado em branco"
+        "pt": "Formulário personalizado em branco",
+        "th": "ฟอร์มเปล่าแบบกำหนดเอง"
     },
     "Emergency Contact (Name & Phone)": {
         "en": "Emergency Contact (Name & Phone)",
@@ -448,7 +496,8 @@
         "de": "Notfallkontakt (Name & Telefon)",
         "es": "Contacto de emergencia (Nombre y Teléfono)",
         "nl": "Noodcontact (Naam en telefoon)",
-        "pt": "Contato de emergência (Nome e Telefone)"
+        "pt": "Contato de emergência (Nome e Telefone)",
+        "th": "ผู้ติดต่อฉุกเฉิน (ชื่อและเบอร์โทรศัพท์)"
 },
     "Pairs with Intake Profile": {
         "en": "Pairs with Intake Profile",
@@ -457,7 +506,8 @@
         "de": "Ergänzt das Aufnahmeprofil",
         "es": "Se combina con el perfil de ingreso",
         "nl": "Past bij intake-profiel",
-        "pt": "Combina com o perfil de entrada"
+        "pt": "Combina com o perfil de entrada",
+        "th": "จับคู่กับโปรไฟล์ประวัติแรกรับ"
 },
     "Known Medical Conditions & Allergies": {
         "en": "Known Medical Conditions & Allergies",
@@ -466,7 +516,8 @@
         "de": "Bekannte Vorerkrankungen & Allergien",
         "es": "Afecciones médicas conocidas y alergias",
         "nl": "Bekende medische aandoeningen en allergieën",
-        "pt": "Condições médicas conhecidas e alergias"
+        "pt": "Condições médicas conhecidas e alergias",
+        "th": "โรคประจำตัวและการแพ้ยา/อาหารที่ทราบ"
 },
     "Safety Best Practice": {
         "en": "Safety Best Practice",
@@ -475,7 +526,8 @@
         "de": "Sicherheits-Best-Practice",
         "es": "Mejor práctica de seguridad",
         "nl": "Beste veiligheidspraktijk",
-        "pt": "Melhor prática de segurança"
+        "pt": "Melhor prática de segurança",
+        "th": "แนวทางปฏิบัติที่ดีที่สุดเพื่อความปลอดภัย"
 },
     "I confirm all information provided is accurate and agree to studio policies.": {
         "en": "I confirm all information provided is accurate and agree to studio policies.",
@@ -484,7 +536,8 @@
         "de": "Ich bestätige die Richtigkeit aller Angaben und stimme den Studio-Richtlinien zu.",
         "es": "Confirmo que toda la información proporcionada es precisa y acepto las políticas del estudio.",
         "nl": "Ik bevestig dat alle verstrekte informatie juist is en ga akkoord met het beleid van de studio.",
-        "pt": "Confirmo que todas as informações fornecidas são precisas e concordo com as políticas do estúdio."
+        "pt": "Confirmo que todas as informações fornecidas são precisas e concordo com as políticas do estúdio.",
+        "th": "ข้าพเจ้ายืนยันว่าข้อมูลทั้งหมดที่ระบุไว้มีความถูกต้องและตกลงยอมรับนโยบายของสตูดิโอ"
 },
     "Legal Consent Shield": {
         "en": "Legal Consent Shield",
@@ -493,7 +546,8 @@
         "de": "Rechtlicher Einwilligungsschutz",
         "es": "Protección de consentimiento legal",
         "nl": "Juridische toestemmingsbescherming",
-        "pt": "Proteção de consentimento legal"
+        "pt": "Proteção de consentimento legal",
+        "th": "การคุ้มครองตามหนังสือยินยอมทางกฎหมาย"
 },
     "Core Identity Requirement": {
         "en": "Core Identity Requirement",
@@ -502,7 +556,8 @@
         "de": "Grundlegende Identitätsanforderung",
         "es": "Requisito de identidad fundamental",
         "nl": "Basis identiteitsvereiste",
-        "pt": "Requisito de identidade fundamental"
+        "pt": "Requisito de identidade fundamental",
+        "th": "ข้อมูลยืนยันตัวตนที่จำเป็น"
 },
     "Essential for Legal Consent": {
         "en": "Essential for Legal Consent",
@@ -511,7 +566,8 @@
         "de": "Unerlässlich für die rechtliche Einwilligung",
         "es": "Esencial para el consentimiento legal",
         "nl": "Essentieel voor juridische toestemming",
-        "pt": "Essencial para consentimento legal"
+        "pt": "Essencial para consentimento legal",
+        "th": "จำเป็นสำหรับหนังสือยินยอมทางกฎหมาย"
 },
     "Pairs with Street Address": {
         "en": "Pairs with Street Address",
@@ -520,7 +576,8 @@
         "de": "Ergänzt die Straßenadresse",
         "es": "Se combina con la dirección",
         "nl": "Past bij straatadres",
-        "pt": "Combina com o endereço"
+        "pt": "Combina com o endereço",
+        "th": "จับคู่กับที่อยู่ถนน/บ้านเลขที่"
 },
     "Intake Essential": {
         "en": "Intake Essential",
@@ -529,7 +586,8 @@
         "de": "Aufnahme-Grundlage",
         "es": "Esencial para el ingreso",
         "nl": "Intake-essentieel",
-        "pt": "Essencial para a entrada"
+        "pt": "Essencial para a entrada",
+        "th": "สิ่งจำเป็นสำหรับแบบบันทึกประวัติ"
 },
     "Consent Essential": {
         "en": "Consent Essential",
@@ -538,7 +596,8 @@
         "de": "Einwilligung erforderlich",
         "es": "Esencial para el consentimiento",
         "nl": "Toestemming essentieel",
-        "pt": "Consentimento essencial"
+        "pt": "Consentimento essencial",
+        "th": "สิ่งจำเป็นสำหรับหนังสือยินยอม"
 },
     "Commonly paired with Full Name": {
         "en": "Commonly paired with Full Name",
@@ -547,7 +606,8 @@
         "de": "Häufig mit vollständigem Namen kombiniert",
         "es": "Comúnmente combinado con el nombre completo",
         "nl": "Vaak gecombineerd met volledige naam",
-        "pt": "Comumente combinado com o nome completo"
+        "pt": "Comumente combinado com o nome completo",
+        "th": "มักจับคู่กับชื่อ-นามสกุล"
 },
     "Latex Allergy": {
         "en": "Latex Allergy",
@@ -556,7 +616,8 @@
         "de": "Latexallergie",
         "es": "Alergia al látex",
         "nl": "Latexallergie",
-        "pt": "Alergia ao látex"
+        "pt": "Alergia ao látex",
+        "th": "อาการแพ้ยางธรรมชาติ"
 },
     "Blood Thinning Medications": {
         "en": "Blood Thinning Medications",
@@ -565,7 +626,8 @@
         "de": "Blutverdünnende Medikamente",
         "es": "Medicamentos anticoagulantes",
         "nl": "Bloedverdunnende medicijnen",
-        "pt": "Medicamentos anticoagulantes"
+        "pt": "Medicamentos anticoagulantes",
+        "th": "ยาต้านการแข็งตัวของเลือด"
 },
     "Skin Conditions / Eczema": {
         "en": "Skin Conditions / Eczema",
@@ -574,7 +636,8 @@
         "de": "Hauterkrankungen / Ekzeme",
         "es": "Afecciones cutáneas / Eczema",
         "nl": "Huidaandoeningen / Eczeem",
-        "pt": "Condições de pele / Eczema"
+        "pt": "Condições de pele / Eczema",
+        "th": "โรคผิวหนัง / ผื่นผิวหนังอักเสบ"
 },
     "Fainting / Vasovagal Episodes": {
         "en": "Fainting / Vasovagal Episodes",
@@ -583,7 +646,8 @@
         "de": "Ohnmacht / Vasovagale Episoden",
         "es": "Desmayos / Episodios vasovagales",
         "nl": "Flauwvallen / Vasovagale episoden",
-        "pt": "Desmaios / Episódios vasovagais"
+        "pt": "Desmaios / Episódios vasovagais",
+        "th": "อาการหน้ามืด เป็นลม / ภาวะวูบ"
 },
     "None": {
         "en": "None",
@@ -592,7 +656,8 @@
         "de": "Keine",
         "es": "Ninguno",
         "nl": "Geen",
-        "pt": "Nenhum"
+        "pt": "Nenhum",
+        "th": "ไม่มี"
 },
     "Full Legal Name": {
         "en": "Full Legal Name",
@@ -601,7 +666,8 @@
         "de": "Vollständiger amtlicher Name",
         "es": "Nombre legal completo",
         "nl": "Volledige wettelijke naam",
-        "pt": "Nome legal completo"
+        "pt": "Nome legal completo",
+        "th": "ชื่อ-นามสกุลตามกฎหมาย"
 },
     "Date of Birth": {
         "en": "Date of Birth",
@@ -610,7 +676,8 @@
         "de": "Geburtsdatum",
         "es": "Fecha de nacimiento",
         "nl": "Geboortedatum",
-        "pt": "Data de nascimento"
+        "pt": "Data de nascimento",
+        "th": "วัน/เดือน/ปี เกิด"
 },
     "Phone Number": {
         "en": "Phone Number",
@@ -619,7 +686,8 @@
         "de": "Telefonnummer",
         "es": "Número de teléfono",
         "nl": "Telefoonnummer",
-        "pt": "Número de telefone"
+        "pt": "Número de telefone",
+        "th": "หมายเลขโทรศัพท์"
 },
     "Email Address": {
         "en": "Email Address",
@@ -628,7 +696,8 @@
         "de": "E-Mail-Adresse",
         "es": "Correo electrónico",
         "nl": "E-mailadres",
-        "pt": "Endereço de e-mail"
+        "pt": "Endereço de e-mail",
+        "th": "อีเมล"
 },
     "Digital Client Signature": {
         "en": "Digital Client Signature",
@@ -637,7 +706,8 @@
         "de": "Digitale Kundenunterschrift",
         "es": "Firma digital del cliente",
         "nl": "Digitale klanthandtekening",
-        "pt": "Assinatura digital do cliente"
+        "pt": "Assinatura digital do cliente",
+        "th": "ลายเซ็นดิจิทัลของลูกค้า"
 },
     "Postal / Zip Code": {
         "en": "Postal / Zip Code",
@@ -646,7 +716,8 @@
         "de": "Postleitzahl",
         "es": "Código postal",
         "nl": "Postcode",
-        "pt": "Código postal / CEP"
+        "pt": "Código postal / CEP",
+        "th": "รหัสไปรษณีย์"
 },
     "Required for client identification and age verification": {
         "en": "Required for client identification and age verification",
@@ -655,7 +726,8 @@
         "de": "Erforderlich zur Kundenidentifikation und Altersprüfung",
         "es": "Requerido para la identificación del cliente y verificación de edad",
         "nl": "Vereist voor klantidentificatie en leeftijdsverificatie",
-        "pt": "Obrigatório para identificação do cliente e verificação de idade"
+        "pt": "Obrigatório para identificação do cliente e verificação de idade",
+        "th": "จำเป็นสำหรับการยืนยันตัวตนและการตรวจสอบอายุของลูกค้า"
 },
     "Direct telephone contact for appointment reminders": {
         "en": "Direct telephone contact for appointment reminders",
@@ -664,7 +736,8 @@
         "de": "Direkter Telefonkontakt für Terminerinnerungen",
         "es": "Contacto telefónico directo para recordatorios de citas",
         "nl": "Direct telefonisch contact voor afspraakherinneringen",
-        "pt": "Contato telefônico direto para lembretes de agendamento"
+        "pt": "Contato telefônico direto para lembretes de agendamento",
+        "th": "เบอร์โทรศัพท์ติดต่อโดยตรงสำหรับแจ้งเตือนนัดหมาย"
 },
     "For appointment confirmations and digital receipt delivery": {
         "en": "For appointment confirmations and digital receipt delivery",
@@ -673,7 +746,8 @@
         "de": "Für Terminbestätigungen und digitale Belege",
         "es": "Para confirmaciones de citas y entrega de recibos digitales",
         "nl": "Voor afspraakbevestigingen en digitale kwitanties",
-        "pt": "Para confirmações de agendamento e envio de recibos digitais"
+        "pt": "Para confirmações de agendamento e envio de recibos digitais",
+        "th": "สำหรับการยืนยันนัดหมายและจัดส่งใบเสร็จดิจิทัล"
 },
     "As printed on government-issued photo ID": {
         "en": "As printed on government-issued photo ID",
@@ -682,7 +756,8 @@
         "de": "Wie auf dem amtlichen Lichtbildausweis angegeben",
         "es": "Como figura en el documento de identidad oficial con foto",
         "nl": "Zoals vermeld op een geldig identiteitsbewijs met foto",
-        "pt": "Conforme impresso no documento oficial de identificação com foto"
+        "pt": "Conforme impresso no documento oficial de identificação com foto",
+        "th": "ตรงตามที่ปรากฏบนบัตรประจำตัวประชาชนหรือเอกสารทางราชการที่มีรูปถ่าย"
 },
     "Legally binding digital touch/stylus signature attestation": {
         "en": "Legally binding digital touch/stylus signature attestation",
@@ -691,7 +766,8 @@
         "de": "Rechtsverbindliche digitale Touch-/Stiftunterschrift",
         "es": "Atestación de firma digital táctil con validez legal",
         "nl": "Rechtsgeldige digitale handtekening via touchscreen of stylus",
-        "pt": "Atestação de assinatura digital com validade legal via toque ou caneta"
+        "pt": "Atestação de assinatura digital com validade legal via toque ou caneta",
+        "th": "การรับรองลายมือชื่อดิจิทัลผ่านหน้าจอสัมผัส/ปากกาสไตลัสซึ่งมีผลผูกพันทางกฎหมาย"
 },
     "Designated contact person in case of a medical emergency": {
         "en": "Designated contact person in case of a medical emergency",
@@ -700,7 +776,8 @@
         "de": "Benannte Kontaktperson für medizinische Notfälle",
         "es": "Persona de contacto designada en caso de emergencia médica",
         "nl": "Aangewezen contactpersoon in geval van een medische noodsituatie",
-        "pt": "Pessoa de contato designada em caso de emergência médica"
+        "pt": "Pessoa de contato designada em caso de emergência médica",
+        "th": "บุคคลติดต่อฉุกเฉินในกรณีเกิดเหตุฉุกเฉินทางการแพทย์"
 },
     "Check all conditions that apply to ensure safe procedure execution": {
         "en": "Check all conditions that apply to ensure safe procedure execution",
@@ -709,7 +786,8 @@
         "de": "Alle zutreffenden Punkte ankreuzen für eine sichere Durchführung",
         "es": "Marca todas las condiciones aplicables para garantizar una sesión segura",
         "nl": "Vink alle van toepassing zijnde aandoeningen aan voor een veilige behandeling",
-        "pt": "Marque todas as condições aplicáveis para garantir a segurança do procedimento"
+        "pt": "Marque todas as condições aplicáveis para garantir a segurança do procedimento",
+        "th": "โปรดทำเครื่องหมายในทุกข้อที่ตรงกับท่าน เพื่อความปลอดภัยในการทำหัตถการ"
 },
     "Mandatory declaration before procedure commencement": {
         "en": "Mandatory declaration before procedure commencement",
@@ -718,7 +796,8 @@
         "de": "Verpflichtende Erklärung vor Beginn des Eingriffs",
         "es": "Declaración obligatoria antes de comenzar el procedimiento",
         "nl": "Verplichte verklaring vóór aanvang van de behandeling",
-        "pt": "Declaração obrigatória antes do início do procedimento"
+        "pt": "Declaração obrigatória antes do início do procedimento",
+        "th": "การแถลงข้อมูลที่จำเป็นก่อนเริ่มทำหัตถการ"
 },
 
     "Studio & Tattooist Information": {
@@ -728,7 +807,8 @@
         "de": "Studio- & Tätowierer-Informationen",
         "es": "Información del estudio y del tatuador",
         "nl": "Studio- en tatoeëerdergegevens",
-        "pt": "Informações do estúdio e do tatuador"
+        "pt": "Informações do estúdio e do tatuador",
+        "th": "ข้อมูลสตูดิโอและช่างสัก"
     },
     "Studio & Piercer Information": {
         "en": "Studio & Piercer Information",
@@ -737,7 +817,8 @@
         "de": "Studio- & Piercer-Informationen",
         "es": "Información del estudio y del anillador",
         "nl": "Studio- en piercergegevens",
-        "pt": "Informações do estúdio e do body piercer"
+        "pt": "Informações do estúdio e do body piercer",
+        "th": "ข้อมูลสตูดิโอและช่างเจาะ"
     },
     "Studio & qualified professional piercer Information": {
         "en": "Studio & qualified professional piercer Information",
@@ -746,7 +827,8 @@
         "de": "Informationen zu Studio & qualifiziertem Piercer",
         "es": "Información del estudio y del anillador profesional cualificado",
         "nl": "Informatie over studio en gekwalificeerde piercer",
-        "pt": "Informações do estúdio e do body piercer profissional qualificado"
+        "pt": "Informações do estúdio e do body piercer profissional qualificado",
+        "th": "ข้อมูลสตูดิโอและช่างเจาะมืออาชีพผู้เชี่ยวชาญ"
     },
     "Studio & Lead Tattooist Information": {
         "en": "Studio & Lead Tattooist Information",
@@ -755,7 +837,8 @@
         "de": "Studio- & Chef-Tätowierer-Informationen",
         "es": "Información del estudio y tatuador principal",
         "nl": "Studio- en hoofdtatoeëerdergegevens",
-        "pt": "Informações do estúdio e do tatuador responsável"
+        "pt": "Informações do estúdio e do tatuador responsável",
+        "th": "ข้อมูลสตูดิโอและหัวหน้าช่างสัก"
     },
     "Studio & Practitioner Information": {
         "en": "Studio & Practitioner Information",
@@ -764,7 +847,8 @@
         "de": "Studio- & Behandler-Informationen",
         "es": "Información del estudio y del profesional",
         "nl": "Studio- en behandelaarsgegevens",
-        "pt": "Informações do estúdio e do profissional"
+        "pt": "Informações do estúdio e do profissional",
+        "th": "ข้อมูลสตูดิโอและผู้ให้บริการ"
     },
     "Studio & PMU Practitioner Information": {
         "en": "Studio & PMU Practitioner Information",
@@ -773,7 +857,8 @@
         "de": "Studio- & PMU-Spezialisten-Informationen",
         "es": "Información del estudio y especialista en PMU",
         "nl": "Studio- en PMU-specialistgegevens",
-        "pt": "Informações do estúdio e do profissional de PMU"
+        "pt": "Informações do estúdio e do profissional de PMU",
+        "th": "ข้อมูลสตูดิโอและช่างสัก PMU"
     },
     "Studio & Client Details": {
         "en": "Studio & Client Details",
@@ -782,7 +867,8 @@
         "de": "Studio- und Kundendaten",
         "es": "Detalles del estudio y del cliente",
         "nl": "Studio- en klantgegevens",
-        "pt": "Dados do estúdio e do cliente"
+        "pt": "Dados do estúdio e do cliente",
+        "th": "รายละเอียดสตูดิโอและลูกค้า"
     },
     "Client Personal Information": {
         "en": "Client Personal Information",
@@ -791,7 +877,8 @@
         "de": "Persönliche Angaben des Kunden",
         "es": "Datos personales del cliente",
         "nl": "Persoonsgegevens van de klant",
-        "pt": "Dados pessoais do cliente"
+        "pt": "Dados pessoais do cliente",
+        "th": "ข้อมูลส่วนบุคคลของลูกค้า"
     },
     "Client Information": {
         "en": "Client Information",
@@ -800,7 +887,8 @@
         "de": "Kundeninformationen",
         "es": "Información del cliente",
         "nl": "Klantinformatie",
-        "pt": "Informações do cliente"
+        "pt": "Informações do cliente",
+        "th": "ข้อมูลลูกค้า"
     },
     "Client Profile": {
         "en": "Client Profile",
@@ -809,7 +897,8 @@
         "de": "Kundenprofil",
         "es": "Perfil del cliente",
         "nl": "Klantprofiel",
-        "pt": "Perfil do cliente"
+        "pt": "Perfil do cliente",
+        "th": "โปรไฟล์ลูกค้า"
     },
     "Client Identity & Emergency Details": {
         "en": "Client Identity & Emergency Details",
@@ -818,7 +907,8 @@
         "de": "Kundenidentität & Notfallkontaktdaten",
         "es": "Identidad del cliente y datos de emergencia",
         "nl": "Identiteit van de klant en noodcontact",
-        "pt": "Identidade do cliente e contato de emergência"
+        "pt": "Identidade do cliente e contato de emergência",
+        "th": "ข้อมูลตัวตนและผู้ติดต่อฉุกเฉินของลูกค้า"
     },
     "Minor Client Information": {
         "en": "Minor Client Information",
@@ -827,7 +917,8 @@
         "de": "Angaben zum minderjährigen Kunden",
         "es": "Información del cliente menor de edad",
         "nl": "Gegevens van de minderjarige klant",
-        "pt": "Informações do cliente menor de idade"
+        "pt": "Informações do cliente menor de idade",
+        "th": "ข้อมูลลูกค้าผู้เยาว์"
     },
     "Parent / Legal Guardian Information": {
         "en": "Parent / Legal Guardian Information",
@@ -836,7 +927,8 @@
         "de": "Angaben zu Eltern / Erziehungsberechtigten",
         "es": "Información del padre/madre o tutor legal",
         "nl": "Gegevens van ouder / wettelijke voogd",
-        "pt": "Informações dos pais ou responsável legal"
+        "pt": "Informações dos pais ou responsável legal",
+        "th": "ข้อมูลผู้ปกครอง / ผู้แทนโดยชอบธรรมตามกฎหมาย"
     },
     "Medical History & Health Disclosures": {
         "en": "Medical History & Health Disclosures",
@@ -845,7 +937,8 @@
         "de": "Medizinische Vorgeschichte & Gesundheitsangaben",
         "es": "Historial médico y declaraciones de salud",
         "nl": "Medische voorgeschiedenis & gezondheidsverklaringen",
-        "pt": "Histórico médico e declarações de saúde"
+        "pt": "Histórico médico e declarações de saúde",
+        "th": "ประวัติทางการแพทย์และการเปิดเผยข้อมูลสุขภาพ"
     },
     "Comprehensive Health & Medical Disclosures": {
         "en": "Comprehensive Health & Medical Disclosures",
@@ -854,7 +947,8 @@
         "de": "Vollständige gesundheitliche & medizinische Auskunft",
         "es": "Declaraciones médicas y de salud integrales",
         "nl": "Uitgebreide medische & gezondheidsverklaringen",
-        "pt": "Histórico médico e declarações completas de saúde"
+        "pt": "Histórico médico e declarações completas de saúde",
+        "th": "การเปิดเผยข้อมูลสุขภาพและประวัติทางการแพทย์โดยละเอียด"
     },
     "Minor Medical History & Health Disclosures": {
         "en": "Minor Medical History & Health Disclosures",
@@ -863,7 +957,8 @@
         "de": "Medizinische Vorgeschichte des Minderjährigen",
         "es": "Historial médico y salud del menor",
         "nl": "Medische voorgeschiedenis van de minderjarige",
-        "pt": "Histórico médico e declarações de saúde do menor"
+        "pt": "Histórico médico e declarações de saúde do menor",
+        "th": "ประวัติทางการแพทย์และการเปิดเผยข้อมูลสุขภาพของผู้เยาว์"
     },
     "Mandatory Physician / Doctor Clearance": {
         "en": "Mandatory Physician / Doctor Clearance",
@@ -872,7 +967,8 @@
         "de": "Erforderliche ärztliche Unbedenklichkeitsbescheinigung",
         "es": "Autorización médica previa obligatoria",
         "nl": "Verplichte medische goedkeuring van de arts",
-        "pt": "Autorização médica prévia obrigatória"
+        "pt": "Autorização médica prévia obrigatória",
+        "th": "ใบรับรองแพทย์ / การรับรองจากแพทย์ที่จำเป็น"
     },
     "Physician Authorization & Physical Readiness": {
         "en": "Physician Authorization & Physical Readiness",
@@ -881,7 +977,8 @@
         "de": "Ärztliche Freigabe & körperliche Belastbarkeit",
         "es": "Autorización médica y aptitud física",
         "nl": "Doktersverklaring & fysieke geschiktheid",
-        "pt": "Autorização médica e aptidão física"
+        "pt": "Autorização médica e aptidão física",
+        "th": "การอนุมัติจากแพทย์และความพร้อมทางร่างกาย"
     },
     "Mandatory Physician Authorization Clause": {
         "en": "Mandatory Physician Authorization Clause",
@@ -890,7 +987,8 @@
         "de": "Klausel zur verpflichtenden ärztlichen Freigabe",
         "es": "Cláusula de autorización médica obligatoria",
         "nl": "Verplichte doktersautorisatieclausule",
-        "pt": "Cláusula de autorização médica obrigatória"
+        "pt": "Cláusula de autorização médica obrigatória",
+        "th": "ข้อกำหนดการขออนุญาตจากแพทย์ที่จำเป็น"
     },
     "Physician Authorization & Clearance Clause": {
         "en": "Physician Authorization & Clearance Clause",
@@ -899,7 +997,8 @@
         "de": "Ärztliche Freigabe- und Genehmigungsklausel",
         "es": "Cláusula de autorización y visto bueno médico",
         "nl": "Doktersautorisatie- & goedkeuringsclausule",
-        "pt": "Cláusula de autorização e liberação médica"
+        "pt": "Cláusula de autorização e liberação médica",
+        "th": "ข้อกำหนดการอนุมัติและใบรับรองจากแพทย์"
     },
     "Tattoo Procedure Details & Design Specifications": {
         "en": "Tattoo Procedure Details & Design Specifications",
@@ -908,7 +1007,8 @@
         "de": "Tattoo-Prozedurdetails & Motiv-Spezifikationen",
         "es": "Detalles del procedimiento de tatuaje y especificaciones de diseño",
         "nl": "Tatoeageprocedure en ontwerpspecificaties",
-        "pt": "Detalhes do procedimento de tatuagem e especificações do desenho"
+        "pt": "Detalhes do procedimento de tatuagem e especificações do desenho",
+        "th": "รายละเอียดขั้นตอนการสักและข้อกำหนดแบบสัก"
     },
     "Piercing Location & Objective Material / Gauge Specifications": {
         "en": "Piercing Location & Objective Material / Gauge Specifications",
@@ -917,7 +1017,8 @@
         "de": "Piercing-Platzierung & Spezifikationen zu Material und Drahtstärke (Gauge)",
         "es": "Ubicación de la perforación y especificaciones de material y calibre",
         "nl": "Piercinglocatie en objectieve specificaties van materiaal en dikte (gauge)",
-        "pt": "Local do piercing e especificações de material e espessura (gauge)"
+        "pt": "Local do piercing e especificações de material e espessura (gauge)",
+        "th": "ตำแหน่งเจาะและข้อกำหนดวัสดุ / ขนาดจิว (Gauge)"
     },
     "Project Scope & Multi-Session Structure": {
         "en": "Project Scope & Multi-Session Structure",
@@ -926,7 +1027,8 @@
         "de": "Projektumfang & Mehrtermin-Struktur",
         "es": "Alcance del proyecto y estructura multisesión",
         "nl": "Projectomvang en planning van meerdere sessies",
-        "pt": "Escopo do projeto e estrutura em múltiplas sessões"
+        "pt": "Escopo do projeto e estrutura em múltiplas sessões",
+        "th": "ขอบเขตงานและโครงสร้างการรับบริการหลายครั้ง"
     },
     "Authorized Procedure Specifications": {
         "en": "Authorized Procedure Specifications",
@@ -935,7 +1037,8 @@
         "de": "Spezifikation der autorisierten Dienstleistung",
         "es": "Especificaciones del procedimiento autorizado",
         "nl": "Specificaties van de goedgekeurde behandeling",
-        "pt": "Especificações do procedimento autorizado"
+        "pt": "Especificações do procedimento autorizado",
+        "th": "ข้อกำหนดขั้นตอนการบริการที่ได้รับอนุมัติ"
     },
     "Existing Tattoo Details & Laser History": {
         "en": "Existing Tattoo Details & Laser History",
@@ -944,7 +1047,8 @@
         "de": "Angaben zum bestehenden Tattoo & Laser-Behandlungen",
         "es": "Detalles del tatuaje existente e historial de láser",
         "nl": "Gegevens van de bestaande tatoeage en laserhistorie",
-        "pt": "Detalhes da tatuagem existente e histórico de laser"
+        "pt": "Detalhes da tatuagem existente e histórico de laser",
+        "th": "รายละเอียดรอยสักเดิมและประวัติการลบด้วยเลเซอร์"
     },
     "Cover-Up Design Goals & Agreements": {
         "en": "Cover-Up Design Goals & Agreements",
@@ -953,7 +1057,8 @@
         "de": "Ziele & Vereinbarungen zum Cover-Up-Entwurf",
         "es": "Objetivos de diseño y acuerdos de cobertura",
         "nl": "Doelen en afspraken voor het cover-up ontwerp",
-        "pt": "Objetivos de design e acordos para o cover-up"
+        "pt": "Objetivos de design e acordos para o cover-up",
+        "th": "เป้าหมายและข้อตกลงในการออกแบบงานสักทับ (Cover-Up)"
     },
     "Cosmetic Medical Screening & Contraindications": {
         "en": "Cosmetic Medical Screening & Contraindications",
@@ -962,7 +1067,8 @@
         "de": "Kosmetische Voruntersuchung & Kontraindikationen",
         "es": "Evaluación médica estética y contraindicaciones",
         "nl": "Medische screening en contra-indicaties voor PMU",
-        "pt": "Triagem médica estética e contraindicações"
+        "pt": "Triagem médica estética e contraindicações",
+        "th": "การคัดกรองทางการแพทย์และข้อห้ามสำหรับการสักเพื่อความงาม"
     },
     "Cosmetic Contraindications & Physician Release": {
         "en": "Cosmetic Contraindications & Physician Release",
@@ -971,7 +1077,8 @@
         "de": "Kosmetische Kontraindikationen & ärztliche Freigabe",
         "es": "Contraindicaciones estéticas y visto bueno médico",
         "nl": "Cosmetische contra-indicaties & doktersverklaring",
-        "pt": "Contraindicações estéticas e liberação médica"
+        "pt": "Contraindicações estéticas e liberação médica",
+        "th": "ข้อห้ามสำหรับการสักเพื่อความงามและหนังสือยินยอมจากแพทย์"
     },
     "Medical History & Scar Tissue Evaluation": {
         "en": "Medical History & Scar Tissue Evaluation",
@@ -980,7 +1087,8 @@
         "de": "Medizinische Vorgeschichte & Narbengewebe-Prüfung",
         "es": "Historial médico y evaluación de tejido cicatricial",
         "nl": "Medische anamnese en evaluatie van littekenweefsel",
-        "pt": "Histórico médico e avaliação de tecido cicatricial"
+        "pt": "Histórico médico e avaliação de tecido cicatricial",
+        "th": "ประวัติทางการแพทย์และการประเมินเนื้อเยื่อแผลเป็น"
     },
     "Current Medications, Anticoagulants & Sensitivities": {
         "en": "Current Medications, Anticoagulants & Sensitivities",
@@ -989,7 +1097,8 @@
         "de": "Aktuelle Medikamente, Antikoagulanzien & Allergien",
         "es": "Medicamentos actuales, anticoagulantes y sensibilidades",
         "nl": "Huidige medicatie, bloedverdunners en gevoeligheden",
-        "pt": "Medicamentos atuais, anticoagulantes e sensibilidades"
+        "pt": "Medicamentos atuais, anticoagulantes e sensibilidades",
+        "th": "ยาที่ใช้ในปัจจุบัน ยาต้านการแข็งตัวของเลือด และภาวะไวต่อการแพ้"
     },
     "Capacity, Reflection, Sound Mind & Legal Consent": {
         "en": "Capacity, Reflection, Sound Mind & Legal Consent",
@@ -998,7 +1107,8 @@
         "de": "Urteilsfähigkeit, Aufklärung & rechtsgültige Einwilligung",
         "es": "Capacidad de reflexión, juicio cabal y consentimiento legal",
         "nl": "Wilsbekwaamheid, weloverwogen besluit & wettelijke toestemming",
-        "pt": "Capacidade de reflexão, discernimento e consentimento legal"
+        "pt": "Capacidade de reflexão, discernimento e consentimento legal",
+        "th": "ความสามารถตามกฎหมาย การไตร่ตรอง สติสัมปชัญญะ และการให้ความยินยอมตามกฎหมาย"
     },
     "Consent, Capacity & Pre-Procedure Aftercare Agreement": {
         "en": "Consent, Capacity & Pre-Procedure Aftercare Agreement",
@@ -1007,7 +1117,8 @@
         "de": "Einwilligung, Urteilsfähigkeit & Nachsorge-Vereinbarung",
         "es": "Consentimiento, discernimiento y acuerdo de cuidados previos",
         "nl": "Toestemming, wilsbekwaamheid en afspraken over nazorg",
-        "pt": "Consentimento, discernimento e acordo de cuidados prévios"
+        "pt": "Consentimento, discernimento e acordo de cuidados prévios",
+        "th": "ความยินยอม ความสามารถตามกฎหมาย และข้อตกลงการดูแลหลังบริการก่อนทำหัตถการ"
     },
     "Capacity, Reflection & Pre-Procedure Aftercare Agreement": {
         "en": "Capacity, Reflection & Pre-Procedure Aftercare Agreement",
@@ -1016,7 +1127,8 @@
         "de": "Reflexion, Urteilsfähigkeit & Nachsorge-Vereinbarung",
         "es": "Capacidad de reflexión y acuerdo de cuidados previos",
         "nl": "Wilsbekwaamheid en bevestiging van voorafgaande nazorg",
-        "pt": "Capacidade de reflexão e acordo de cuidados pós-procedimento"
+        "pt": "Capacidade de reflexão e acordo de cuidados pós-procedimento",
+        "th": "ความสามารถตามกฎหมาย การไตร่ตรอง และข้อตกลงการดูแลหลังบริการก่อนทำหัตถการ"
     },
     "Guardian Consent, Capacity of Reflection & Aftercare Acknowledgment": {
         "en": "Guardian Consent, Capacity of Reflection & Aftercare Acknowledgment",
@@ -1025,7 +1137,8 @@
         "de": "Zustimmung des Vormunds, Urteilsfähigkeit & Nachsorge-Pflicht",
         "es": "Consentimiento del tutor, discernimiento y compromiso de cuidados",
         "nl": "Toestemming voogd, wilsbekwaamheid en toezicht op nazorg",
-        "pt": "Consentimento do responsável, discernimento e compromisso com os cuidados"
+        "pt": "Consentimento do responsável, discernimento e compromisso com os cuidados",
+        "th": "ความยินยอมของผู้ปกครอง การไตร่ตรอง และการรับทราบการดูแลหลังบริการ"
     },
     "Legal Disclaimer, Sound Mind & Health Certification": {
         "en": "Legal Disclaimer, Sound Mind & Health Certification",
@@ -1034,7 +1147,8 @@
         "de": "Haftungsausschluss, Urteilsfähigkeit & Gesundheitsbescheinigung",
         "es": "Descargo legal, discernimiento y certificación de salud",
         "nl": "Juridische disclaimer, wilsbekwaamheid en gezondheidsverklaring",
-        "pt": "Termo de responsabilidade, discernimento e atestado de saúde"
+        "pt": "Termo de responsabilidade, discernimento e atestado de saúde",
+        "th": "ข้อปฏิเสธความรับผิดทางกฎหมาย การรับรองสติสัมปชัญญะและสุขภาพ"
     },
     "Digital Signature & Identity Verification": {
         "en": "Digital Signature & Identity Verification",
@@ -1043,7 +1157,8 @@
         "de": "Digitale Signatur & Identitätsprüfung",
         "es": "Firma digital y verificación de identidad",
         "nl": "Digitale handtekening en identiteitsverificatie",
-        "pt": "Assinatura digital e verificação de identidade"
+        "pt": "Assinatura digital e verificação de identidade",
+        "th": "ลายเซ็นดิจิทัลและการยืนยันตัวตน"
     },
     "Signatures & Dual Identity Verification": {
         "en": "Signatures & Dual Identity Verification",
@@ -1052,7 +1167,8 @@
         "de": "Unterschriften & doppelte Identitätsprüfung",
         "es": "Firmas y verificación de doble identidad",
         "nl": "Handtekeningen en dubbele identiteitscontrole",
-        "pt": "Assinaturas e dupla verificação de identidade"
+        "pt": "Assinaturas e dupla verificação de identidade",
+        "th": "การลงลายมือชื่อและการยืนยันตัวตนทั้งสองฝ่าย"
     },
     "Client Signature & Date": {
         "en": "Client Signature & Date",
@@ -1061,7 +1177,8 @@
         "de": "Unterschrift des Kunden & Datum",
         "es": "Firma del cliente y fecha",
         "nl": "Handtekening van de klant en datum",
-        "pt": "Assinatura do cliente e data"
+        "pt": "Assinatura do cliente e data",
+        "th": "ลายเซ็นลูกค้าและวันที่"
     },
     "Master Agreement Signature": {
         "en": "Master Agreement Signature",
@@ -1070,7 +1187,8 @@
         "de": "Unterschrift der Rahmenvereinbarung",
         "es": "Firma del acuerdo marco",
         "nl": "Handtekening van de hoofdovereenkomst",
-        "pt": "Assinatura do contrato principal"
+        "pt": "Assinatura do contrato principal",
+        "th": "ลายเซ็นสัญญาหลัก"
     },
     "Studio Name": {
         "en": "Studio Name",
@@ -1079,7 +1197,8 @@
         "de": "Name des Studios",
         "es": "Nombre del estudio",
         "nl": "Naam van de studio",
-        "pt": "Nome do estúdio"
+        "pt": "Nome do estúdio",
+        "th": "ชื่อสตูดิโอ"
     },
     "Studio Address & Contact": {
         "en": "Studio Address & Contact",
@@ -1088,7 +1207,8 @@
         "de": "Studio-Adresse & Kontaktdaten",
         "es": "Dirección y contacto del estudio",
         "nl": "Studio-adres en contactgegevens",
-        "pt": "Endereço e contato do estúdio"
+        "pt": "Endereço e contato do estúdio",
+        "th": "ที่อยู่และข้อมูลติดต่อสตูดิโอ"
     },
     "Address & Contact": {
         "en": "Address & Contact",
@@ -1097,7 +1217,8 @@
         "de": "Adresse & Kontakt",
         "es": "Dirección y contacto",
         "nl": "Adres en contact",
-        "pt": "Endereço e contato"
+        "pt": "Endereço e contato",
+        "th": "ที่อยู่และข้อมูลติดต่อ"
     },
     "Studio Address & Business Contact": {
         "en": "Studio Address & Business Contact",
@@ -1106,7 +1227,8 @@
         "de": "Studio-Adresse & Geschäftskontakt",
         "es": "Dirección del estudio y contacto comercial",
         "nl": "Studio-adres en zakelijk contact",
-        "pt": "Endereço do estúdio e contato comercial"
+        "pt": "Endereço do estúdio e contato comercial",
+        "th": "ที่อยู่และข้อมูลติดต่อสตูดิโอ"
     },
     "Studio Address, Telephone & Permit": {
         "en": "Studio Address, Telephone & Permit",
@@ -1115,7 +1237,8 @@
         "de": "Studio-Adresse, Telefon & Betriebserlaubnis",
         "es": "Dirección, teléfono y permiso del estudio",
         "nl": "Studio-adres, telefoon en vergunning",
-        "pt": "Endereço, telefone e alvará do estúdio"
+        "pt": "Endereço, telefone e alvará do estúdio",
+        "th": "ที่อยู่ หมายเลขโทรศัพท์ และใบอนุญาตสตูดิโอ"
     },
     "Studio / Aesthetic Clinic Name": {
         "en": "Studio / Aesthetic Clinic Name",
@@ -1124,7 +1247,8 @@
         "de": "Name des Studios oder der Schönheitsklinik",
         "es": "Nombre del estudio o clínica estética",
         "nl": "Naam van de studio of esthetische kliniek",
-        "pt": "Nome do estúdio ou clínica de estética"
+        "pt": "Nome do estúdio ou clínica de estética",
+        "th": "ชื่อสตูดิโอ / คลินิกเสริมความงาม"
     },
     "Studio / Practice Name": {
         "en": "Studio / Practice Name",
@@ -1133,7 +1257,8 @@
         "de": "Name des Studios oder der Praxis",
         "es": "Nombre del estudio o consulta",
         "nl": "Naam van de studio of praktijk",
-        "pt": "Nome do estúdio ou consultório"
+        "pt": "Nome do estúdio ou consultório",
+        "th": "ชื่อสตูดิโอ / สถานประกอบการ"
     },
     "Health Facility Permit # & Location": {
         "en": "Health Facility Permit # & Location",
@@ -1142,7 +1267,8 @@
         "de": "Gesundheitsamt-Genehmigungs-Nr. & Standort",
         "es": "N.º de registro sanitario y ubicación",
         "nl": "Gezondheidsvergunning nr. & locatie",
-        "pt": "N.º de registro de vigilância sanitária e local"
+        "pt": "N.º de registro de vigilância sanitária e local",
+        "th": "เลขที่ใบอนุญาตประกอบการเพื่อสุขภาพ และสถานที่ตั้ง"
     },
     "Tattooist (Artist) Name": {
         "en": "Tattooist (Artist) Name",
@@ -1151,7 +1277,8 @@
         "de": "Name des Tätowierers (Künstlers)",
         "es": "Nombre del tatuador (artista)",
         "nl": "Naam van de tatoeëerder (artiest)",
-        "pt": "Nome do tatuador (artista)"
+        "pt": "Nome do tatuador (artista)",
+        "th": "ชื่อช่างสัก"
     },
     "Tattooist Name": {
         "en": "Tattooist Name",
@@ -1160,7 +1287,8 @@
         "de": "Name des Tätowierers",
         "es": "Nombre del tatuador",
         "nl": "Naam van de tatoeëerder",
-        "pt": "Nome do tatuador"
+        "pt": "Nome do tatuador",
+        "th": "ชื่อช่างสัก"
     },
     "Lead Tattooist / Master Artist": {
         "en": "Lead Tattooist / Master Artist",
@@ -1169,7 +1297,8 @@
         "de": "Leitender Tätowierer / Master Artist",
         "es": "Tatuador principal / Artista maestro",
         "nl": "Hoofdtatoeëerder / Meestertatoeëerder",
-        "pt": "Tatuador principal / Artista master"
+        "pt": "Tatuador principal / Artista master",
+        "th": "หัวหน้าช่างสัก / Master Artist"
     },
     "Practitioner (Piercer / Artist) Name": {
         "en": "Practitioner (Piercer / Artist) Name",
@@ -1178,7 +1307,8 @@
         "de": "Name des Behandlers (Piercers / Tätowierers)",
         "es": "Nombre del profesional (anillador / artista)",
         "nl": "Naam van de behandelaar (piercer / artiest)",
-        "pt": "Nome do profissional (piercer / artista)"
+        "pt": "Nome do profissional (piercer / artista)",
+        "th": "ชื่อผู้ให้บริการ (ช่างเจาะ / ช่างสัก)"
     },
     "Certified PMU Practitioner Name": {
         "en": "Certified PMU Practitioner Name",
@@ -1187,7 +1317,8 @@
         "de": "Name der zertifizierten PMU-Fachkraft",
         "es": "Nombre del especialista certificado en PMU",
         "nl": "Naam van de gecertificeerde PMU-specialist",
-        "pt": "Nome do profissional certificado em micropigmentação"
+        "pt": "Nome do profissional certificado em micropigmentação",
+        "th": "ชื่อช่างฝักสักคิ้ว/แต่งหน้ากึ่งถาวรที่ได้รับใบรับรอง (PMU)"
     },
     "Workstation / Sterilization Lot #": {
         "en": "Workstation / Sterilization Lot #",
@@ -1196,7 +1327,8 @@
         "de": "Arbeitsplatz / Sterilisations-Chargennummer",
         "es": "Estación de trabajo / N.º de lote de esterilización",
         "nl": "Werkplek / Sterilisatie lotnummer",
-        "pt": "Bancada de trabalho / N.º do lote de esterilização"
+        "pt": "Bancada de trabalho / N.º do lote de esterilização",
+        "th": "หมายเลขโต๊ะปฏิบัติงาน / ล็อตการฆ่าเชื้อ"
     },
     "Needle & Jewelry Sterilization Lot # / Autoclave Cycle": {
         "en": "Needle & Jewelry Sterilization Lot # / Autoclave Cycle",
@@ -1205,7 +1337,8 @@
         "de": "Chargennummer Nadel-/Schmucksterilisation & Autoklavenzyklus",
         "es": "N.º de lote de esterilización de agujas/joyería y ciclo de autoclave",
         "nl": "Sterilisatie lotnummer naalden/sieraden & autoclavecyclus",
-        "pt": "N.º do lote de esterilização de agulhas e joias / Ciclo de autoclave"
+        "pt": "N.º do lote de esterilização de agulhas e joias / Ciclo de autoclave",
+        "th": "หมายเลขล็อตการฆ่าเชื้อเข็มและจิวเวลรี่ / รอบการเข้าตู้อบฆ่าเชื้อ (Autoclave)"
     },
     "Pigment Brand, Shade & Lot Number": {
         "en": "Pigment Brand, Shade & Lot Number",
@@ -1214,7 +1347,8 @@
         "de": "Pigmentmarke, Farbton & Chargennummer",
         "es": "Marca, tono y número de lote del pigmento",
         "nl": "Pigmentmerk, tint en batchnummer",
-        "pt": "Marca do pigmento, tonalidade e número do lote"
+        "pt": "Marca do pigmento, tonalidade e número do lote",
+        "th": "แบรนด์ เฉดสี และหมายเลขล็อตของหมึกสัก"
     },
     "Full Legal Name": {
         "en": "Full Legal Name",
@@ -1223,7 +1357,8 @@
         "de": "Vollständiger bürgerlicher Name",
         "es": "Nombre y apellidos legales completos",
         "nl": "Volledige officiële naam",
-        "pt": "Nome civil completo"
+        "pt": "Nome civil completo",
+        "th": "ชื่อ-นามสกุลตามกฎหมาย"
     },
     "Client Full Legal Name": {
         "en": "Client Full Legal Name",
@@ -1232,7 +1367,8 @@
         "de": "Vollständiger bürgerlicher Name des Kunden",
         "es": "Nombre legal completo del cliente",
         "nl": "Volledige officiële naam van de klant",
-        "pt": "Nome civil completo do cliente"
+        "pt": "Nome civil completo do cliente",
+        "th": "ชื่อ-นามสกุลตามกฎหมายของผู้รับบริการ"
     },
     "Client Full Name": {
         "en": "Client Full Name",
@@ -1241,7 +1377,8 @@
         "de": "Vollständiger Name des Kunden",
         "es": "Nombre completo del cliente",
         "nl": "Volledige naam van de klant",
-        "pt": "Nome completo do cliente"
+        "pt": "Nome completo do cliente",
+        "th": "ชื่อ-นามสกุลของผู้รับบริการ"
     },
     "Minor Full Legal Name": {
         "en": "Minor Full Legal Name",
@@ -1250,7 +1387,8 @@
         "de": "Vollständiger Name des Minderjährigen",
         "es": "Nombre legal completo del menor",
         "nl": "Volledige officiële naam van de minderjarige",
-        "pt": "Nome civil completo do menor"
+        "pt": "Nome civil completo do menor",
+        "th": "ชื่อ-นามสกุลตามกฎหมายของผู้เยาว์"
     },
     "Parent / Legal Guardian Full Legal Name": {
         "en": "Parent / Legal Guardian Full Legal Name",
@@ -1259,7 +1397,8 @@
         "de": "Vollständiger Name des Elternteils / Erziehungsberechtigten",
         "es": "Nombre legal completo del padre/madre o tutor legal",
         "nl": "Volledige officiële naam van ouder of voogd",
-        "pt": "Nome civil completo do pai, mãe ou responsável legal"
+        "pt": "Nome civil completo do pai, mãe ou responsável legal",
+        "th": "ชื่อ-นามสกุลตามกฎหมายของผู้ปกครอง / ผู้แทนโดยชอบธรรม"
     },
     "Date of Birth": {
         "en": "Date of Birth",
@@ -1268,7 +1407,8 @@
         "de": "Geburtsdatum",
         "es": "Fecha de nacimiento",
         "nl": "Geboortedatum",
-        "pt": "Data de nascimento"
+        "pt": "Data de nascimento",
+        "th": "วัน/เดือน/ปี เกิด"
     },
     "Minor Date of Birth": {
         "en": "Minor Date of Birth",
@@ -1277,7 +1417,8 @@
         "de": "Geburtsdatum des Minderjährigen",
         "es": "Fecha de nacimiento del menor",
         "nl": "Geboortedatum van de minderjarige",
-        "pt": "Data de nascimento do menor"
+        "pt": "Data de nascimento do menor",
+        "th": "วันเดือนปีเกิดของผู้เยาว์"
     },
     "Minor Current Age": {
         "en": "Minor Current Age",
@@ -1286,7 +1427,8 @@
         "de": "Aktuelles Alter des Minderjährigen",
         "es": "Edad actual del menor",
         "nl": "Leeftijd van de minderjarige",
-        "pt": "Idade atual do menor"
+        "pt": "Idade atual do menor",
+        "th": "อายุปัจจุบันของผู้เยาว์"
     },
     "Email Address": {
         "en": "Email Address",
@@ -1295,7 +1437,8 @@
         "de": "E-Mail-Adresse",
         "es": "Correo electrónico",
         "nl": "E-mailadres",
-        "pt": "Endereço de e-mail"
+        "pt": "Endereço de e-mail",
+        "th": "อีเมล"
     },
     "Guardian Email Address": {
         "en": "Guardian Email Address",
@@ -1304,7 +1447,8 @@
         "de": "E-Mail-Adresse des Erziehungsberechtigten",
         "es": "Correo electrónico del tutor",
         "nl": "E-mailadres van de voogd",
-        "pt": "E-mail do responsável legal"
+        "pt": "E-mail do responsável legal",
+        "th": "อีเมลของผู้ปกครอง"
     },
     "Phone Number": {
         "en": "Phone Number",
@@ -1313,7 +1457,8 @@
         "de": "Telefonnummer",
         "es": "Número de teléfono",
         "nl": "Telefoonnummer",
-        "pt": "Número de telefone"
+        "pt": "Número de telefone",
+        "th": "หมายเลขโทรศัพท์"
     },
     "Mobile Phone": {
         "en": "Mobile Phone",
@@ -1322,7 +1467,8 @@
         "de": "Mobiltelefon",
         "es": "Teléfono móvil",
         "nl": "Mobiel telefoonnummer",
-        "pt": "Telefone celular"
+        "pt": "Telefone celular",
+        "th": "โทรศัพท์มือถือ"
     },
     "Mobile Telephone": {
         "en": "Mobile Telephone",
@@ -1331,7 +1477,8 @@
         "de": "Mobilnummer",
         "es": "Teléfono móvil",
         "nl": "Mobiele telefoon",
-        "pt": "Telefone celular"
+        "pt": "Telefone celular",
+        "th": "โทรศัพท์มือถือ"
     },
     "Guardian Contact Telephone": {
         "en": "Guardian Contact Telephone",
@@ -1340,7 +1487,8 @@
         "de": "Telefonnummer des Erziehungsberechtigten",
         "es": "Teléfono de contacto del tutor",
         "nl": "Telefoonnummer van de voogd",
-        "pt": "Telefone de contato do responsável"
+        "pt": "Telefone de contato do responsável",
+        "th": "หมายเลขโทรศัพท์ติดต่อของผู้ปกครอง"
     },
     "Residential Address": {
         "en": "Residential Address",
@@ -1349,7 +1497,8 @@
         "de": "Wohnanschrift",
         "es": "Dirección de residencia",
         "nl": "Woonadres",
-        "pt": "Endereço residencial"
+        "pt": "Endereço residencial",
+        "th": "ที่อยู่ตามทะเบียนบ้าน/ที่อยู่อาศัย"
     },
     "Emergency Contact (Name & Relationship & Phone)": {
         "en": "Emergency Contact (Name & Relationship & Phone)",
@@ -1358,7 +1507,8 @@
         "de": "Notfallkontakt (Name, Beziehung & Telefon)",
         "es": "Contacto de emergencia (Nombre, Parentesco y Teléfono)",
         "nl": "Noodcontact (Naam, Relatie en Telefoonnummer)",
-        "pt": "Contato de emergência (Nome, Parentesco e Telefone)"
+        "pt": "Contato de emergência (Nome, Parentesco e Telefone)",
+        "th": "บุคคลติดต่อฉุกเฉิน (ชื่อ ความสัมพันธ์ และโทรศัพท์)"
     },
     "Emergency Contact (Name, Relationship & Phone)": {
         "en": "Emergency Contact (Name, Relationship & Phone)",
@@ -1367,7 +1517,8 @@
         "de": "Notfallkontakt (Name, Verwandtschaftsgrad & Telefon)",
         "es": "Contacto de emergencia (Nombre, Relación y Teléfono)",
         "nl": "Noodcontact (Naam, Verwantschap & Telefoon)",
-        "pt": "Contato de emergência (Nome, Grau de parentesco e Telefone)"
+        "pt": "Contato de emergência (Nome, Grau de parentesco e Telefone)",
+        "th": "บุคคลติดต่อฉุกเฉิน (ชื่อ ความสัมพันธ์ และโทรศัพท์)"
     },
     "Emergency Contact Name & Telephone": {
         "en": "Emergency Contact Name & Telephone",
@@ -1376,7 +1527,8 @@
         "de": "Name & Telefonnummer des Notfallkontakts",
         "es": "Nombre y teléfono del contacto de emergencia",
         "nl": "Naam en telefoon van het noodcontact",
-        "pt": "Nome e telefone do contato de emergência"
+        "pt": "Nome e telefone do contato de emergência",
+        "th": "ชื่อและหมายเลขโทรศัพท์ของบุคคลติดต่อฉุกเฉิน"
     },
     "Government ID (Driver License / Passport #)": {
         "en": "Government ID (Driver License / Passport #)",
@@ -1385,7 +1537,8 @@
         "de": "Amtlicher Lichtbildausweis (Führerschein-/Pass-Nr.)",
         "es": "Documento de identidad (DNI / Licencia / Pasaporte)",
         "nl": "Officieel identiteitsbewijs (Rijbewijs / Paspoort nr.)",
-        "pt": "Documento oficial de identificação (RG / CNH / Passaporte)"
+        "pt": "Documento oficial de identificação (RG / CNH / Passaporte)",
+        "th": "เอกสารแสดงตนที่ออกโดยรัฐ (ใบขับขี่ / หมายเลขพาสปอร์ต)"
     },
     "Minor Identification (Birth Certificate / School ID / Passport)": {
         "en": "Minor Identification (Birth Certificate / School ID / Passport)",
@@ -1394,7 +1547,8 @@
         "de": "Ausweisdokument des Minderjährigen (Geburtsurkunde / Schülerausweis / Pass)",
         "es": "Identificación del menor (Acta de nacimiento / Carnet / Pasaporte)",
         "nl": "Identiteitsbewijs van de minderjarige (Geboorteakte / Schoolpas / Paspoort)",
-        "pt": "Identificação do menor (Certidão de nascimento / Documento escolar / Passaporte)"
+        "pt": "Identificação do menor (Certidão de nascimento / Documento escolar / Passaporte)",
+        "th": "เอกสารแสดงตนของผู้เยาว์ (สูติบัตร / บัตรนักเรียน / พาสปอร์ต)"
     },
     "Guardian Government ID (Driver License / Passport #)": {
         "en": "Guardian Government ID (Driver License / Passport #)",
@@ -1403,7 +1557,8 @@
         "de": "Ausweisdokument des Vormunds (Führerschein-/Pass-Nr.)",
         "es": "Documento de identidad del tutor (DNI / Licencia / Pasaporte)",
         "nl": "Identiteitsbewijs van de voogd (Rijbewijs / Paspoort nr.)",
-        "pt": "Documento oficial do responsável legal (RG / CNH / Passaporte)"
+        "pt": "Documento oficial do responsável legal (RG / CNH / Passaporte)",
+        "th": "เอกสารแสดงตนที่ออกโดยรัฐของผู้ปกครอง (ใบขับขี่ / หมายเลขพาสปอร์ต)"
     },
     "Legal Relationship to Minor": {
         "en": "Legal Relationship to Minor",
@@ -1412,7 +1567,8 @@
         "de": "Rechtliches Verwandtschaftsverhältnis zum Minderjährigen",
         "es": "Relación o parentesco legal con el menor",
         "nl": "Juridische relatie tot de minderjarige",
-        "pt": "Grau de parentesco ou vínculo legal com o menor"
+        "pt": "Grau de parentesco ou vínculo legal com o menor",
+        "th": "ความสัมพันธ์ตามกฎหมายกับผู้เยาว์"
     },
     "Primary Care Physician / Clinic Name & Phone": {
         "en": "Primary Care Physician / Clinic Name & Phone",
@@ -1421,7 +1577,8 @@
         "de": "Hausarzt / Praxisname & Telefonnummer",
         "es": "Médico de cabecera / Centro de salud y teléfono",
         "nl": "Huisarts / Praktijknaam en telefoonnummer",
-        "pt": "Médico de referência / Nome da clínica e telefone"
+        "pt": "Médico de referência / Nome da clínica e telefone",
+        "th": "ชื่อและหมายเลขโทรศัพท์ของแพทย์ประจำตัว / คลินิก"
     },
     "Health Condition Physician Clearance Notice": {
         "en": "Health Condition Physician Clearance Notice",
@@ -1430,7 +1587,8 @@
         "de": "Hinweis zur ärztlichen Unbedenklichkeitsbescheinigung",
         "es": "Aviso de autorización médica según condición de salud",
         "nl": "Kennisgeving medische goedkeuring bij gezondheidsaandoeningen",
-        "pt": "Aviso de autorização médica para condições de saúde"
+        "pt": "Aviso de autorização médica para condições de saúde",
+        "th": "หนังสือแจ้งการรับรองจากแพทย์เกี่ยวกับสภาวะสุขภาพ"
     },
     "IMPORTANT: Clients with conditions such as cardiovascular disease, diabetes, epilepsy, bleeding disorders/hemophilia, hepatitis, compromised immune system, or active skin conditions are legally required to obtain written authorization from their physician prior to procedure.": {
         "en": "IMPORTANT: Clients with conditions such as cardiovascular disease, diabetes, epilepsy, bleeding disorders/hemophilia, hepatitis, compromised immune system, or active skin conditions are legally required to obtain written authorization from their physician prior to procedure.",
@@ -1439,7 +1597,8 @@
         "de": "WICHTIG: Kunden mit Herz-Kreislauf-Erkrankungen, Diabetes, Epilepsie, Blutgerinnungsstörungen, Hepatitis, geschwächtem Immunsystem oder akuten Hauterkrankungen benötigen vor dem Eingriff eine schriftliche ärztliche Unbedenklichkeitsbescheinigung.",
         "es": "IMPORTANTE: Los clientes con enfermedades cardiovasculares, diabetes, epilepsia, trastornos de la coagulación/hemofilia, hepatitis, inmunodeficiencia o problemas cutáneos activos deben obtener autorización médica por escrito antes del procedimiento.",
         "nl": "BELANGRIJK: Klanten met aandoeningen zoals hart- en vaatziekten, diabetes, epilepsie, stollingsstoornissen, hepatitis, verminderde immuniteit of huiduitslag zijn wettelijk verplicht vooraf schriftelijke toestemming van hun arts te overleggen.",
-        "pt": "IMPORTANTE: Clientes com doenças cardiovasculares, diabetes, epilepsia, distúrbios hemorrágicos/hemofilia, hepatite, imunidade comprometida ou lesões ativas de pele devem obrigatoriamente apresentar autorização médica por escrito antes do procedimento."
+        "pt": "IMPORTANTE: Clientes com doenças cardiovasculares, diabetes, epilepsia, distúrbios hemorrágicos/hemofilia, hepatite, imunidade comprometida ou lesões ativas de pele devem obrigatoriamente apresentar autorização médica por escrito antes do procedimento.",
+        "th": "ข้อสำคัญ: ผู้รับบริการที่มีภาวะสุขภาพ เช่น โรคหัวใจและหลอดเลือด โรคเบาหวาน โรคลมชัก ภาวะเลือดออกผิดปกติ/ฮีโมฟีเลีย โรคตับอักเสบ ระบบภูมิคุ้มกันบกพร่อง หรือมีอาการโรคผิวหนังที่ยังไม่หาย ต้องได้รับหนังสือยินยอมเป็นลายลักษณ์อักษรจากแพทย์ประจำตัวก่อนรับการบริการตามที่กฎหมายกำหนด"
     },
     "Do you have any medical condition that requires physician clearance before tattooing?": {
         "en": "Do you have any medical condition that requires physician clearance before tattooing?",
@@ -1448,7 +1607,8 @@
         "de": "Bestehen bei Ihnen Vorerkrankungen, die vor dem Tätowieren eine ärztliche Freigabe erfordern?",
         "es": "¿Padece alguna afección médica que requiera autorización médica antes de tatuarse?",
         "nl": "Heeft u een medische aandoening waarvoor vooraf doktersgoedkeuring vereist is?",
-        "pt": "Você possui alguma condição médica que exija autorização médica antes de se tatuar?"
+        "pt": "Você possui alguma condição médica que exija autorização médica antes de se tatuar?",
+        "th": "ท่านมีภาวะทางสุขภาพใดๆ ที่ต้องได้รับการรับรองจากแพทย์ก่อนการสักหรือไม่?"
     },
     "No - I have no high-risk contraindicating conditions": {
         "en": "No - I have no high-risk contraindicating conditions",
@@ -1457,7 +1617,8 @@
         "de": "Nein - Keine risikobehafteten Kontraindikationen",
         "es": "No - No presento condiciones de riesgo ni contraindicaciones",
         "nl": "Nee - Geen risicovolle contra-indicaties",
-        "pt": "Não - Não possuo condições contraindicadas de alto risco"
+        "pt": "Não - Não possuo condições contraindicadas de alto risco",
+        "th": "ไม่มี - ข้าพเจ้าไม่มีภาวะข้อห้ามที่เป็นความเสี่ยงสูง"
     },
     "Yes - I have obtained written clearance from my doctor": {
         "en": "Yes - I have obtained written clearance from my doctor",
@@ -1466,7 +1627,8 @@
         "de": "Ja - Schriftliche ärztliche Freigabe liegt vor",
         "es": "Sí - Dispongo de la autorización escrita de mi médico",
         "nl": "Ja - Ik heb schriftelijke goedkeuring van mijn arts verkregen",
-        "pt": "Sim - Obtive autorização por escrito do meu médico"
+        "pt": "Sim - Obtive autorização por escrito do meu médico",
+        "th": "มี - ข้าพเจ้าได้รับหนังสือรับรองเป็นลายลักษณ์อักษรจากแพทย์แล้ว"
     },
     "Yes - Pending doctor consultation": {
         "en": "Yes - Pending doctor consultation",
@@ -1475,7 +1637,8 @@
         "de": "Ja - Ärztliche Konsultation noch ausstehend",
         "es": "Sí - Pendiente de consulta médica",
         "nl": "Ja - In afwachting van doktersconsult",
-        "pt": "Sim - Em avaliação/consulta médica pendente"
+        "pt": "Sim - Em avaliação/consulta médica pendente",
+        "th": "มี - อยู่ระหว่างรอการปรึกษาแพทย์"
     },
     "Physician Name & Clearance Document Details": {
         "en": "Physician Name & Clearance Document Details",
@@ -1484,7 +1647,8 @@
         "de": "Name des Arztes & Angaben zum Attest",
         "es": "Nombre del médico y detalles del documento de autorización",
         "nl": "Naam van de arts & details van de goedkeuringsverklaring",
-        "pt": "Nome do médico e dados do comprovante de liberação"
+        "pt": "Nome do médico e dados do comprovante de liberação",
+        "th": "ชื่อแพทย์และรายละเอียดเอกสารใบรับรอง"
     },
     "Tattoo Placement / Body Location": {
         "en": "Tattoo Placement / Body Location",
@@ -1493,7 +1657,8 @@
         "de": "Tattoo-Platzierung / Körperstelle",
         "es": "Ubicación del tatuaje / Zona anatómica",
         "nl": "Plaatsing van de tatoeage / Lichaamslocatie",
-        "pt": "Local do tatuagem / Região do corpo"
+        "pt": "Local do tatuagem / Região do corpo",
+        "th": "ตำแหน่งที่จะสัก / บริเวณร่างกาย"
     },
     "Detailed Design Concept & Subject Matter": {
         "en": "Detailed Design Concept & Subject Matter",
@@ -1502,7 +1667,8 @@
         "de": "Detaillierte Motivbeschreibung & Designkonzept",
         "es": "Concepto detallado del diseño y tema",
         "nl": "Gedetailleerde beschrijving van het ontwerp en thema",
-        "pt": "Conceito detalhado do desenho e tema"
+        "pt": "Conceito detalhado do desenho e tema",
+        "th": "แนวคิดการออกแบบและรายละเอียดรูปแบบงาน"
     },
     "Approximate Dimensions (Inches or Centimeters)": {
         "en": "Approximate Dimensions (Inches or Centimeters)",
@@ -1511,7 +1677,8 @@
         "de": "Ungefähre Abmessungen (Zentimeter oder Zoll)",
         "es": "Dimensiones aproximadas (centímetros o pulgadas)",
         "nl": "Geschatte afmetingen (centimeters of inches)",
-        "pt": "Dimensões aproximadas (centímetros ou polegadas)"
+        "pt": "Dimensões aproximadas (centímetros ou polegadas)",
+        "th": "ขนาดโดยประมาณ (นิ้ว หรือ เซนติเมตร)"
     },
     "Color Palette & Shading Style": {
         "en": "Color Palette & Shading Style",
@@ -1520,7 +1687,8 @@
         "de": "Farbpalette & Schattierungsstil",
         "es": "Paleta de colores y estilo de sombreado",
         "nl": "Kleurenpalet en schaduwstijl",
-        "pt": "Paleta de cores e estilo de sombreamento"
+        "pt": "Paleta de cores e estilo de sombreamento",
+        "th": "โทนสีและสไตล์การแรเงา"
     },
     "Solid Black & Grey Shading": {
         "en": "Solid Black & Grey Shading",
@@ -1529,7 +1697,8 @@
         "de": "Black & Grey (Schwarz-Grau Schattierung)",
         "es": "Negro y gris (Black & Grey)",
         "nl": "Zwart-grijs (Black & Grey)",
-        "pt": "Preto e cinza (Black & Grey)"
+        "pt": "Preto e cinza (Black & Grey)",
+        "th": "งานดำแน่นและการลงเงาดำเทา (Black & Grey)"
     },
     "Full Color": {
         "en": "Full Color",
@@ -1538,7 +1707,8 @@
         "de": "Vollfarbe (Full Color)",
         "es": "A todo color (Full Color)",
         "nl": "Volledig in kleur",
-        "pt": "Colorido (Full Color)"
+        "pt": "Colorido (Full Color)",
+        "th": "สีเต็มรูปแบบ (Full Color)"
     },
     "Blackwork / Linework Only": {
         "en": "Blackwork / Linework Only",
@@ -1547,7 +1717,8 @@
         "de": "Reines Linework & Blackwork",
         "es": "Solo líneas y relleno negro (Blackwork / Linework)",
         "nl": "Enkel lijnen en zwartwerk (Linework/Blackwork)",
-        "pt": "Apenas traços e preenchimento sólido (Blackwork / Linework)"
+        "pt": "Apenas traços e preenchimento sólido (Blackwork / Linework)",
+        "th": "งานเส้นและงานดำล้วน (Blackwork / Linework)"
     },
     "Watercolor / Painterly": {
         "en": "Watercolor / Painterly",
@@ -1556,7 +1727,8 @@
         "de": "Aquarell (Watercolor) / Malerisch",
         "es": "Acuarela (Watercolor) / Pictórico",
         "nl": "Aquarel (Watercolor) / Schilderachtig",
-        "pt": "Aquarela (Watercolor) / Pictórico"
+        "pt": "Aquarela (Watercolor) / Pictórico",
+        "th": "สีน้ำ / สไตล์ภาพวาด (Watercolor)"
     },
     "Fine Line Single Needle": {
         "en": "Fine Line Single Needle",
@@ -1565,7 +1737,8 @@
         "de": "Fine Line / Feine Nadel (Single Needle)",
         "es": "Línea fina (Fine Line) / Aguja única",
         "nl": "Fine Line / Enkele naald (Single Needle)",
-        "pt": "Traço fino (Fine Line) / Agulha única"
+        "pt": "Traço fino (Fine Line) / Agulha única",
+        "th": "เส้นบาง เข็มเล่มเดียว (Fine Line Single Needle)"
     },
     "Other Custom Blend": {
         "en": "Other Custom Blend",
@@ -1574,7 +1747,8 @@
         "de": "Anderer individueller Stilmix",
         "es": "Otra combinación o estilo personalizado",
         "nl": "Andere aangepaste stijlcombinatie",
-        "pt": "Outra combinação ou estilo personalizado"
+        "pt": "Outra combinação ou estilo personalizado",
+        "th": "สไตล์ผสมผสานแบบกำหนดเองอื่นๆ"
     },
     "Reference Material & Sketches Attached": {
         "en": "Reference Material & Sketches Attached",
@@ -1583,7 +1757,8 @@
         "de": "Referenzbilder und Skizzen beigefügt",
         "es": "Material de referencia y bocetos adjuntos",
         "nl": "Referentiemateriaal en schetsen bijgevoegd",
-        "pt": "Imagens de referência e esboços anexados"
+        "pt": "Imagens de referência e esboços anexados",
+        "th": "มีภาพอ้างอิงและภาพร่างแนบไว้"
     },
     "Piercing Anatomy / Location": {
         "en": "Piercing Anatomy / Location",
@@ -1592,7 +1767,8 @@
         "de": "Piercing-Anatomie / Platzierung",
         "es": "Anatomía / Ubicación de la perforación",
         "nl": "Piercing-anatomie / Plaatsing",
-        "pt": "Anatomia / Local do piercing"
+        "pt": "Anatomia / Local do piercing",
+        "th": "ตำแหน่งการเจาะ / บริเวณร่างกาย"
     },
     "Lobe (Single / Double / Triple)": {
         "en": "Lobe (Single / Double / Triple)",
@@ -1601,7 +1777,8 @@
         "de": "Ohrläppchen (Einfach / Zweifach / Dreifach)",
         "es": "Lóbulo (Simple / Doble / Triple)",
         "nl": "Oorlel (Enkel / Dubbel / Drievoudig)",
-        "pt": "Lóbulo (Simples / Duplo / Triplo)"
+        "pt": "Lóbulo (Simples / Duplo / Triplo)",
+        "th": "ติ่งหู (รูเดียว / สองรู / สามรู)"
     },
     "Helix / Cartilage": {
         "en": "Helix / Cartilage",
@@ -1610,7 +1787,8 @@
         "de": "Helix / Knorpel",
         "es": "Hélix / Cartílago",
         "nl": "Helix / Kraakbeen",
-        "pt": "Hélix / Cartilagem"
+        "pt": "Hélix / Cartilagem",
+        "th": "กระดูกอ่อนหู (Helix / กระดูกอ่อน)"
     },
     "Conch / Tragus / Rook / Daith": {
         "en": "Conch / Tragus / Rook / Daith",
@@ -1619,7 +1797,8 @@
         "de": "Conch / Tragus / Rook / Daith",
         "es": "Conch / Tragus / Rook / Daith",
         "nl": "Conch / Tragus / Rook / Daith",
-        "pt": "Conch / Tragus / Rook / Daith"
+        "pt": "Conch / Tragus / Rook / Daith",
+        "th": "Conch / Tragus / Rook / Daith"
     },
     "Nostril / Septum": {
         "en": "Nostril / Septum",
@@ -1628,7 +1807,8 @@
         "de": "Nasenflügel (Nostril) / Septum",
         "es": "Nariz (Nostril) / Septum",
         "nl": "Neusvleugel (Nostril) / Septum",
-        "pt": "Nostril (Aba nasal) / Septo"
+        "pt": "Nostril (Aba nasal) / Septo",
+        "th": "ปีกจมูก / ผนังกั้นช่องจมูก (Septum)"
     },
     "Navel": {
         "en": "Navel",
@@ -1637,7 +1817,8 @@
         "de": "Bauchnabel",
         "es": "Ombligo",
         "nl": "Navel",
-        "pt": "Umbigo"
+        "pt": "Umbigo",
+        "th": "สะดือ"
     },
     "Eyebrow / Bridge": {
         "en": "Eyebrow / Bridge",
@@ -1646,7 +1827,8 @@
         "de": "Augenbraue / Bridge",
         "es": "Ceja / Bridge (Puente nasal)",
         "nl": "Wenkbrauw / Bridge",
-        "pt": "Sobrancelha / Bridge"
+        "pt": "Sobrancelha / Bridge",
+        "th": "คิ้ว / ดั้งจมูก (Bridge)"
     },
     "Lip / Labret / Medusa": {
         "en": "Lip / Labret / Medusa",
@@ -1655,7 +1837,8 @@
         "de": "Lippe / Labret / Medusa",
         "es": "Labio / Labret / Medusa",
         "nl": "Lip / Labret / Medusa",
-        "pt": "Lábio / Labret / Medusa"
+        "pt": "Lábio / Labret / Medusa",
+        "th": "ริมฝีปาก / Labret / Medusa"
     },
     "Tongue / Oral": {
         "en": "Tongue / Oral",
@@ -1664,7 +1847,8 @@
         "de": "Zunge / Mundbereich",
         "es": "Lengua / Oral",
         "nl": "Tong / Oraal",
-        "pt": "Língua / Bucal"
+        "pt": "Língua / Bucal",
+        "th": "ลิ้น / ช่องปาก"
     },
     "Nipple": {
         "en": "Nipple",
@@ -1673,7 +1857,8 @@
         "de": "Brustwarze",
         "es": "Pezón",
         "nl": "Tepel",
-        "pt": "Mamilo"
+        "pt": "Mamilo",
+        "th": "หัวนม"
     },
     "Surface / Microdermal": {
         "en": "Surface / Microdermal",
@@ -1682,7 +1867,8 @@
         "de": "Surface / Mikrodermal-Anker",
         "es": "Superficie / Microdermal",
         "nl": "Surface / Microdermal implantaat",
-        "pt": "Superfície / Microdermal"
+        "pt": "Superfície / Microdermal",
+        "th": "Surface / Microdermal"
     },
     "Other Piercing Location": {
         "en": "Other Piercing Location",
@@ -1691,7 +1877,8 @@
         "de": "Andere Piercing-Stelle",
         "es": "Otra ubicación de perforación",
         "nl": "Andere piercinglocatie",
-        "pt": "Outro local de piercing"
+        "pt": "Outro local de piercing",
+        "th": "ตำแหน่งเจาะอื่นๆ"
     },
     "Side / Orientation": {
         "en": "Side / Orientation",
@@ -1700,7 +1887,8 @@
         "de": "Seite / Ausrichtung",
         "es": "Lado / Orientación",
         "nl": "Zijde / Richting",
-        "pt": "Lado / Orientação"
+        "pt": "Lado / Orientação",
+        "th": "ด้าน / ทิศทาง"
     },
     "Left": {
         "en": "Left",
@@ -1709,7 +1897,8 @@
         "de": "Links",
         "es": "Izquierda",
         "nl": "Links",
-        "pt": "Esquerda"
+        "pt": "Esquerda",
+        "th": "ซ้าย"
     },
     "Right": {
         "en": "Right",
@@ -1718,7 +1907,8 @@
         "de": "Rechts",
         "es": "Derecha",
         "nl": "Rechts",
-        "pt": "Direita"
+        "pt": "Direita",
+        "th": "ขวา"
     },
     "Center / Bilateral": {
         "en": "Center / Bilateral",
@@ -1727,7 +1917,8 @@
         "de": "Mitte / Beidseitig (Bilateral)",
         "es": "Centro / Bilateral",
         "nl": "Midden / Bilateraal",
-        "pt": "Centro / Bilateral"
+        "pt": "Centro / Bilateral",
+        "th": "ตรงกลาง / สองข้าง"
     },
     "N/A": {
         "en": "N/A",
@@ -1736,7 +1927,8 @@
         "de": "N/A (Nicht zutreffend)",
         "es": "N/A (No aplicable)",
         "nl": "N.v.t.",
-        "pt": "N/A (Não se aplica)"
+        "pt": "N/A (Não se aplica)",
+        "th": "N/A"
     },
     "Initial Jewelry Material & Certified Alloy Grade": {
         "en": "Initial Jewelry Material & Certified Alloy Grade",
@@ -1745,7 +1937,8 @@
         "de": "Erstschmuck-Material & zertifizierte Legierungsgüte",
         "es": "Material y grado de aleación certificada de la joyería inicial",
         "nl": "Materiaal & gecertificeerde legeringsgraad van het initiële sieraad",
-        "pt": "Material e classificação de liga certificada da joia inicial"
+        "pt": "Material e classificação de liga certificada da joia inicial",
+        "th": "วัสดุจิวเวลรี่ชิ้นแรกและเกรดโลหะผสมที่ได้รับการรับรอง"
     },
     "Implant Grade ASTM F-136 Titanium (Ti6Al4V ELI)": {
         "en": "Implant Grade ASTM F-136 Titanium (Ti6Al4V ELI)",
@@ -1754,7 +1947,8 @@
         "de": "Implantatfähiges Titan ASTM F-136 (Ti6Al4V ELI)",
         "es": "Titanio grado implante ASTM F-136 (Ti6Al4V ELI)",
         "nl": "Implant-grade titanium ASTM F-136 (Ti6Al4V ELI)",
-        "pt": "Titânio grau implante ASTM F-136 (Ti6Al4V ELI)"
+        "pt": "Titânio grau implante ASTM F-136 (Ti6Al4V ELI)",
+        "th": "ไทเทเนียมสำหรับฝังในร่างกายเกรด ASTM F-136 (Ti6Al4V ELI)"
     },
     "Implant Grade ASTM F-138 Stainless Steel (316LVM)": {
         "en": "Implant Grade ASTM F-138 Stainless Steel (316LVM)",
@@ -1763,7 +1957,8 @@
         "de": "Implantatfähiger Edelstahl ASTM F-138 (316LVM)",
         "es": "Acero inoxidable grado implante ASTM F-138 (316LVM)",
         "nl": "Implant-grade roestvrij staal ASTM F-138 (316LVM)",
-        "pt": "Aço inoxidável grau implante ASTM F-138 (316LVM)"
+        "pt": "Aço inoxidável grau implante ASTM F-138 (316LVM)",
+        "th": "สแตนเลสสำหรับฝังในร่างกายเกรด ASTM F-138 (316LVM)"
     },
     "14k / 18k Solid Nickel-Free Gold (Biocompatible)": {
         "en": "14k / 18k Solid Nickel-Free Gold (Biocompatible)",
@@ -1772,7 +1967,8 @@
         "de": "14k / 18k nickelfreies Echtgold (biokompatibel)",
         "es": "Oro macizo 14k / 18k libre de níquel (biocompatible)",
         "nl": "14k / 18k massief nikkelvrij goud (biocompatibel)",
-        "pt": "Ouro maciço 14k / 18k livre de níquel (biocompatível)"
+        "pt": "Ouro maciço 14k / 18k livre de níquel (biocompatível)",
+        "th": "ทองคำแท้ 14k / 18k ปราศจากนิเกิล (เข้ากันได้ทางชีวภาพ)"
     },
     "Unalloyed ASTM F-67 Titanium": {
         "en": "Unalloyed ASTM F-67 Titanium",
@@ -1781,7 +1977,8 @@
         "de": "Unlegiertes Reintitan ASTM F-67",
         "es": "Titanio no aleado ASTM F-67",
         "nl": "Ongelegeerd zuiver titanium ASTM F-67",
-        "pt": "Titânio puro não ligado ASTM F-67"
+        "pt": "Titânio puro não ligado ASTM F-67",
+        "th": "ไทเทเนียมบริสุทธิ์เกรด ASTM F-67"
     },
     "High Purity Niobium (ASTM B392 / 99.9%)": {
         "en": "High Purity Niobium (ASTM B392 / 99.9%)",
@@ -1790,7 +1987,8 @@
         "de": "Reinst-Niob (ASTM B392 / 99,9%)",
         "es": "Niobio de alta pureza (ASTM B392 / 99,9 %)",
         "nl": "Zuiver niobium (ASTM B392 / 99,9%)",
-        "pt": "Nióbio de alta pureza (ASTM B392 / 99,9%)"
+        "pt": "Nióbio de alta pureza (ASTM B392 / 99,9%)",
+        "th": "ไนโอเบียมความบริสุทธิ์สูง (ASTM B392 / 99.9%)"
     },
     "Biocompatible Polymers (PTFE ASTM F754 / Medical Grade)": {
         "en": "Biocompatible Polymers (PTFE ASTM F754 / Medical Grade)",
@@ -1799,7 +1997,8 @@
         "de": "Biokompatible Polymere (PTFE ASTM F754 / Medizinischer Grad)",
         "es": "Polímeros biocompatibles (PTFE ASTM F754 / Grado médico)",
         "nl": "Biocompatibele polymeren (PTFE ASTM F754 / Medische kwaliteit)",
-        "pt": "Polímeros biocompatíveis (PTFE ASTM F754 / Grau médico)"
+        "pt": "Polímeros biocompatíveis (PTFE ASTM F754 / Grau médico)",
+        "th": "โพลีเมอร์ที่เข้ากันได้ทางชีวภาพ (PTFE ASTM F754 / เกรดการแพทย์)"
     },
     "Wire Gauge (AWG / Metric) & Post Length / Diameter": {
         "en": "Wire Gauge (AWG / Metric) & Post Length / Diameter",
@@ -1808,7 +2007,8 @@
         "de": "Drahtstärke (AWG / Metrisch) & Stablänge / Durchmesser",
         "es": "Calibre del alambre (AWG / métrico) y longitud / diámetro",
         "nl": "Dikte (AWG / Metrisch) en staaflengte / diameter",
-        "pt": "Espessura do fio (AWG / Métrico) e comprimento / diâmetro"
+        "pt": "Espessura do fio (AWG / Métrico) e comprimento / diâmetro",
+        "th": "ขนาดความหนาของก้าน (AWG / เมตริก) และความยาวก้าน / เส้นผ่านศูนย์กลาง"
     },
     "I certify that I am at least 18 years of age (or legal guardian present with ID).": {
         "en": "I certify that I am at least 18 years of age (or legal guardian present with ID).",
@@ -1817,7 +2017,8 @@
         "de": "Ich bestätige, dass ich mindestens 18 Jahre alt bin (oder der Erziehungsberechtigte mit Ausweis anwesend ist).",
         "es": "Certifico que tengo al menos 18 años de edad (o que mi tutor legal está presente con documento de identidad).",
         "nl": "Ik verklaar dat ik ten minste 18 jaar oud ben (of dat mijn wettelijke voogd met identiteitsbewijs aanwezig is).",
-        "pt": "Declaro que tenho pelo menos 18 anos de idade (ou que meu responsável legal está presente com documento oficial)."
+        "pt": "Declaro que tenho pelo menos 18 anos de idade (ou que meu responsável legal está presente com documento oficial).",
+        "th": "ข้าพเจ้าขอรับรองว่าข้าพเจ้ามีอายุอย่างน้อย 18 ปีบริบูรณ์ (หรือมีผู้ปกครองตามกฎหมายมาด้วยพร้อม ID)"
     },
     "DECLARATION OF CAPACITY: I declare that I am in full capacity of my own reflection, judgment, and sound mind, and am not under the influence of drugs, alcohol, or narcotics.": {
         "en": "DECLARATION OF CAPACITY: I declare that I am in full capacity of my own reflection, judgment, and sound mind, and am not under the influence of drugs, alcohol, or narcotics.",
@@ -1826,7 +2027,8 @@
         "de": "ERKLÄRUNG ZUR URTEILSFÄHIGKEIT: Ich erkläre, dass ich bei vollem Bewusstsein und im Vollbesitz meiner geistigen Kräfte bin und nicht unter dem Einfluss von Drogen, Alkohol oder Rauschmitteln stehe.",
         "es": "DECLARACIÓN DE DISCERNIMIENTO: Declaro que me encuentro en pleno uso de mis facultades mentales y capacidad de reflexión, y que no estoy bajo la influencia de drogas, alcohol ni estupefacientes.",
         "nl": "VERKLARING VAN WILBEKWAAMHEID: Ik verklaar dat ik volledig wilsbekwaam en bij vol bewustzijn ben en niet onder invloed verkeer van alcohol, drugs of verdovende middelen.",
-        "pt": "DECLARAÇÃO DE DISCERNIMENTO: Declaro estar em plena capacidade de reflexão, discernimento e consciência, e não estar sob a influência de álcool, drogas ou entorpecentes."
+        "pt": "DECLARAÇÃO DE DISCERNIMENTO: Declaro estar em plena capacidade de reflexão, discernimento e consciência, e não estar sob a influência de álcool, drogas ou entorpecentes.",
+        "th": "คำแถลงความสามารถทางกฎหมาย: ข้าพเจ้าขอรับรองว่าข้าพเจ้ามีสติสัมปชัญญะสมบูรณ์ มีความสามารถในการยั้งคิดและตัดสินใจด้วยตนเองอย่างเต็มที่ และไม่ได้อยู่ภายใต้อิทธิพลของยา สุรา หรือสารเสพติดใดๆ"
     },
     "CAPACITY OF REFLECTION: I affirm that I am of sound mind, in full mental capacity of my decisions, and not under the influence of any drugs, alcohol, or narcotics.": {
         "en": "CAPACITY OF REFLECTION: I affirm that I am of sound mind, in full mental capacity of my decisions, and not under the influence of any drugs, alcohol, or narcotics.",
@@ -1835,7 +2037,8 @@
         "de": "URTEILSFÄHIGKEIT: Ich bestätige, dass ich im Vollbesitz meiner geistigen Kräfte und entscheidungsfähig bin sowie nicht unter dem Einfluss von Drogen, Alkohol oder Betäubungsmitteln stehe.",
         "es": "CAPACIDAD DE REFLEXIÓN: Afirmo que estoy en pleno uso de mis facultades mentales, con total capacidad de decisión y sin estar bajo la influencia de drogas, alcohol ni narcóticos.",
         "nl": "WILSBEKWAAMHEID: Ik bevestig dat ik bij mijn volle verstand ben, volledig wilsbekwaam ben in mijn beslissingen en niet onder invloed ben van alcohol, drugs of medicijnen.",
-        "pt": "CAPACIDADE DE REFLEXÃO: Afirmo estar lúcido, em plena capacidade mental de decisão e não estar sob a influência de quaisquer substâncias psicoativas, álcool ou entorpecentes."
+        "pt": "CAPACIDADE DE REFLEXÃO: Afirmo estar lúcido, em plena capacidade mental de decisão e não estar sob a influência de quaisquer substâncias psicoativas, álcool ou entorpecentes.",
+        "th": "ความสามารถในการตัดสินใจ: ข้าพเจ้ายืนยันว่าข้าพเจ้ามีสติสัมปชัญญะสมบูรณ์ มีความสามารถทางจิตในการตัดสินใจอย่างเต็มที่ และไม่ได้อยู่ภายใต้อิทธิพลของยา สุรา หรือสารเสพติดใดๆ"
     },
     "CAPACITY OF REFLECTION: I affirm that I am in full capacity of reflection, sound judgment, and entering into this aesthetic procedure of my own free will.": {
         "en": "CAPACITY OF REFLECTION: I affirm that I am in full capacity of reflection, sound judgment, and entering into this aesthetic procedure of my own free will.",
@@ -1844,7 +2047,8 @@
         "de": "URTEILSFÄHIGKEIT: Ich bestätige, dass ich im Vollbesitz meiner Urteilskraft bin und diese ästhetische Behandlung aus freiem Willen durchführen lasse.",
         "es": "CAPACIDAD DE REFLEXIÓN: Afirmo que me encuentro en plena capacidad de reflexión, con sano juicio y accediendo a este procedimiento estético por mi propia voluntad.",
         "nl": "WILSBEKWAAMHEID: Ik bevestig dat ik over volledig oordeelsvermogen beschik en deze esthetische behandeling uit vrije wil onderga.",
-        "pt": "CAPACIDADE DE REFLEXÃO: Afirmo estar em plena capacidade de discernimento e bom senso, realizando este procedimento estético por minha livre e espontânea vontade."
+        "pt": "CAPACIDADE DE REFLEXÃO: Afirmo estar em plena capacidade de discernimento e bom senso, realizando este procedimento estético por minha livre e espontânea vontade.",
+        "th": "ความสามารถในการตัดสินใจ: ข้าพเจ้ายืนยันว่าข้าพเจ้ามีความสามารถในการยั้งคิด มีการตัดสินใจที่สมบูรณ์ และเข้ารับการทำหัตถการความงามนี้ด้วยความสมัครใจของข้าพเจ้าเอง"
     },
     "DECLARATION OF REFLECTION: I affirm that I am of sound mind, in full capacity of reflection, not under the influence of any drugs/alcohol, and fully committed to completing this extensive project.": {
         "en": "DECLARATION OF REFLECTION: I affirm that I am of sound mind, in full capacity of reflection, not under the influence of any drugs/alcohol, and fully committed to completing this extensive project.",
@@ -1853,7 +2057,8 @@
         "de": "REFLEXIONSERKLÄRUNG: Ich bestätige, dass ich im Vollbesitz meiner geistigen Kräfte bin, nicht unter Alkoholeinfluss/Drogen stehe und mich voll zur Durchführung dieses Großprojekts verpflichte.",
         "es": "DECLARACIÓN DE DISCERNIMIENTO: Afirmo que estoy en pleno uso de mis facultades, con capacidad de reflexión y plenamente comprometido/a a completar este extenso proyecto.",
         "nl": "VERKLARING VAN REFLECTIE: Ik bevestig dat ik wilsbekwaam ben, niet onder invloed verkeer en mij volledig inzet voor het voltooien van dit omvangrijke project.",
-        "pt": "DECLARAÇÃO DE REFLEXÃO: Afirmo estar lúcido, em plena capacidade de reflexão, sem estar sob a influência de álcool/drogas e totalmente comprometido em concluir este grande projeto."
+        "pt": "DECLARAÇÃO DE REFLEXÃO: Afirmo estar lúcido, em plena capacidade de reflexão, sem estar sob a influência de álcool/drogas e totalmente comprometido em concluir este grande projeto.",
+        "th": "คำแถลงการยั้งคิดไตร่ตรอง: ข้าพเจ้ายืนยันว่าข้าพเจ้ามีสติสัมปชัญญะสมบูรณ์ มีความสามารถในการยั้งคิด ไม่ได้อยู่ภายใต้อิทธิพลของยา/สุรา และมีความตั้งใจอย่างเต็มที่ที่จะดำเนินโครงการงานสักขนาดใหญ่นี้ให้เสร็จสิ้น"
     },
     "PRE-PROCEDURE AFTERCARE ADVICE: I confirm that I have been provided with detailed verbal and written aftercare instructions conforming to professional body piercing standards (sterile saline spray 0.9% USP, non-touch technique, downsizing timeline) prior to the piercing.": {
         "en": "PRE-PROCEDURE AFTERCARE ADVICE: I confirm that I have been provided with detailed verbal and written aftercare instructions conforming to professional body piercing standards (sterile saline spray 0.9% USP, non-touch technique, downsizing timeline) prior to the piercing.",
@@ -1862,7 +2067,8 @@
         "de": "NACHSORGEAUFKLÄRUNG VOR DEM EINGRIFF: Ich bestätige, dass ich vor dem Piercing ausführliche mündliche und schriftliche Nachsorgeanweisungen gemäß professionellen Bodypiercing-Standards (sterile Kochsalzlösung 0,9% USP, No-Touch-Technik, Downsizing-Plan) erhalten habe.",
         "es": "CONSEJOS DE CUIDADOS PREVIOS: Confirmo que he recibido instrucciones detalladas verbales y escritas conformes a los Estándares Profesionales de Piercing (suero salino estéril 0,9% USP, técnica sin contacto, calendario de cambio a barra más corta) antes del procedimiento.",
         "nl": "VOORAFGAAND NAZORGADVIES: Ik bevestig dat ik voorafgaand aan het piercen uitgebreide mondelinge en schriftelijke nazorginstructies heb ontvangen conform professionele bodypiercing-normen (steriele zoutspray 0,9% USP, non-touch techniek, downsizing-schema).",
-        "pt": "INSTRUÇÕES DE CUIDADOS PRÉVIOS: Confirmo que recebi orientações verbais e escritas detalhadas em conformidade com os Padrões Profissionais de Body Piercing (soro fisiológico estéril 0,9% USP, técnica sem toque, cronograma de downsizing) antes da perfuração."
+        "pt": "INSTRUÇÕES DE CUIDADOS PRÉVIOS: Confirmo que recebi orientações verbais e escritas detalhadas em conformidade com os Padrões Profissionais de Body Piercing (soro fisiológico estéril 0,9% USP, técnica sem toque, cronograma de downsizing) antes da perfuração.",
+        "th": "คำแนะนำการดูแลหลังทำก่อนเริ่มหัตถการ: ข้าพเจ้ายืนยันว่าข้าพเจ้าได้รับคำแนะนำรายละเอียดการดูแลหลังเจาะทั้งทางวาจาและลายลักษณ์อักษร ซึ่งเป็นไปตามมาตรฐานการเจาะร่างกายระดับมืออาชีพ (สเปรย์น้ำเกลือปราศจากเชื้อ 0.9% USP, เทคนิคการไม่สัมผัสแผล, กรอบเวลาการเปลี่ยนก้านจิวเวลรี่ให้สั้นลง) ก่อนทำการเจาะเรียบร้อยแล้ว"
     },
     "PRE-PROCEDURE AFTERCARE CONFIRMATION: I confirm that prior to this procedure, I have received comprehensive verbal and written advice on aftercare, hygiene, and healing instructions.": {
         "en": "PRE-PROCEDURE AFTERCARE CONFIRMATION: I confirm that prior to this procedure, I have received comprehensive verbal and written advice on aftercare, hygiene, and healing instructions.",
@@ -1871,7 +2077,8 @@
         "de": "BESTÄTIGUNG DER NACHSORGEAUFKLÄRUNG: Ich bestätige, dass ich vor dem Eingriff eine umfassende mündliche und schriftliche Beratung zu Hygiene und Nachsorge erhalten habe.",
         "es": "CONFIRMACIÓN DE CUIDADOS PREVIOS: Confirmo que antes de este procedimiento he recibido asesoramiento exhaustivo verbal y escrito sobre higiene, cuidados y cicatrización.",
         "nl": "BEVESTIGING VOORAFGAANDE NAZORG: Ik bevestig dat ik voorafgaand aan deze behandeling uitgebreid mondeling en schriftelijk advies over hygiëne en wondverzorging heb gekregen.",
-        "pt": "CONFIRMAÇÃO DE CUIDADOS PRÉVIOS: Confirmo que, antes deste procedimento, recebi orientações completas verbais e escritas sobre higiene, cuidados e cicatrização."
+        "pt": "CONFIRMAÇÃO DE CUIDADOS PRÉVIOS: Confirmo que, antes deste procedimento, recebi orientações completas verbais e escritas sobre higiene, cuidados e cicatrização.",
+        "th": "การยืนยันคำแนะนำการดูแลหลังทำก่อนเริ่มหัตถการ: ข้าพเจ้ายืนยันว่าก่อนเริ่มหัตถการนี้ ข้าพเจ้าได้รับคำแนะนำอย่างครบถ้วนทั้งทางวาจาและลายลักษณ์อักษรเกี่ยวกับการดูแลหลังทำ สุขอนามัย และขั้นตอนการฟื้นตัวของแผล"
     },
     "TRUTHFUL DISCLOSURE CERTIFICATION: I solemnly declare under penalty of false statement that all medical disclosures made in this form are accurate, complete, and true to the best of my knowledge.": {
         "en": "TRUTHFUL DISCLOSURE CERTIFICATION: I solemnly declare under penalty of false statement that all medical disclosures made in this form are accurate, complete, and true to the best of my knowledge.",
@@ -1880,7 +2087,8 @@
         "de": "WAHRHEITSERKLÄRUNG: Ich erkläre feierlich, dass alle in diesem Formular gemachten gesundheitlichen Angaben nach bestem Wissen und Gewissen richtig und vollständig sind.",
         "es": "CERTIFICACIÓN DE VERACIDAD: Declaro solemnemente que todas las declaraciones médicas contenidas en este formulario son exactas, completas y verídicas.",
         "nl": "VERKLARING NAAR WAARHEID: Ik verklaar plechtig dat alle in dit formulier verstrekte medische gegevens naar waarheid en volledig zijn ingevuld.",
-        "pt": "DECLARAÇÃO DE VERACIDADE: Declaro solenemente, sob as penas da lei, que todas as informações médicas prestadas neste formulário são exatas, completas e verdadeiras."
+        "pt": "DECLARAÇÃO DE VERACIDADE: Declaro solenemente, sob as penas da lei, que todas as informações médicas prestadas neste formulário são exatas, completas e verdadeiras.",
+        "th": "การรับรองการเปิดเผยข้อมูลตามจริง: ข้าพเจ้าขอแจ้งและรับรองว่าข้อมูลประวัติทางการแพทย์ทั้งหมดที่ระบุในแบบฟอร์มนี้มีความถูกต้อง ครบถ้วน และเป็นความจริงทุกประการ"
     },
     "RELEASE OF LIABILITY: I release the studio, practitioner, and staff from any liability resulting from undisclosed, concealed, or misrepresented medical conditions or allergies.": {
         "en": "RELEASE OF LIABILITY: I release the studio, practitioner, and staff from any liability resulting from undisclosed, concealed, or misrepresented medical conditions or allergies.",
@@ -1889,7 +2097,8 @@
         "de": "HAFTUNGSFREISTELLUNG: Ich stelle das Studio, den Behandler und das Personal von jeglicher Haftung frei, die auf verschwiegene oder falsche medizinische Angaben zurückzuführen ist.",
         "es": "EXENCIÓN DE RESPONSABILIDAD: Eximo al estudio, al profesional y al personal de toda responsabilidad derivada de afecciones médicas o alergias no declaradas o falsificadas.",
         "nl": "VRIJWARING VAN AANSPRAKELIJKHEID: Ik vrijwaar de studio, behandelaar en medewerkers van elke aansprakelijkheid voortvloeiend uit niet-gemelde of verzwegen medische aandoeningen.",
-        "pt": "ISENÇÃO DE RESPONSABILIDADE: Isento o estúdio, o profissional e a equipe de qualquer responsabilidade decorrente de condições médicas ou alergias omitidas ou falsificadas."
+        "pt": "ISENÇÃO DE RESPONSABILIDADE: Isento o estúdio, o profissional e a equipe de qualquer responsabilidade decorrente de condições médicas ou alergias omitidas ou falsificadas.",
+        "th": "การปลดภาระรับผิดชอบ: ข้าพเจ้ายินยอมปลดเว้นความรับผิดของสตูดิโอ ผู้ให้บริการ และพนักงาน จากความเสียหายหรือความผิดพลาดใดๆ ที่เกิดจากการปกปิด ซ่อนเร้น หรือให้ข้อมูลเท็จเกี่ยวกับสภาวะทางร่างกายหรือการแพ้ของข้าพเจ้า"
     },
     "I understand the risks including localized swelling, jewelry rejection/migration, infection if improperly cleaned, and scarring.": {
         "en": "I understand the risks including localized swelling, jewelry rejection/migration, infection if improperly cleaned, and scarring.",
@@ -1898,7 +2107,8 @@
         "de": "Ich verstehe die Risiken einschließlich lokaler Schwellungen, Schmuckabstoßung/Migration, Infektionen bei mangelnder Pflege und Narbenbildung.",
         "es": "Comprendo los riesgos inherentes, incluidos hinchazón localizada, rechazo/migración de la joya, infecciones por mala higiene y cicatrices.",
         "nl": "Ik begrijp de risico's waaronder lokale zwelling, afstoting/migratie van het sieraad, infectie bij onjuiste reiniging en littekenvorming.",
-        "pt": "Compreendo os riscos, incluindo inchaço localizado, rejeição/migração da joia, infecção em caso de higiene inadequada e cicatrizes."
+        "pt": "Compreendo os riscos, incluindo inchaço localizado, rejeição/migração da joia, infecção em caso de higiene inadequada e cicatrizes.",
+        "th": "ข้าพเจ้าเข้าใจถึงความเสี่ยงต่างๆ ซึ่งรวมถึงอาการบวมเฉพาะที่ การต่อต้าน/การเคลื่อนตำแหน่งของจิวเวลรี่ การติดเชื้อหากทำความสะอาดไม่ถูกต้อง และการเกิดแผลเป็น"
     },
     "LEGAL CUSTODY CERTIFICATION: I solemnly certify under penalty of perjury that I am the biological parent or court-appointed legal guardian with legal custody of the minor named above.": {
         "en": "LEGAL CUSTODY CERTIFICATION: I solemnly certify under penalty of perjury that I am the biological parent or court-appointed legal guardian with legal custody of the minor named above.",
@@ -1907,7 +2117,8 @@
         "de": "SORGERICHTLICHE VERSICHERUNG: Ich versichere an Eides statt, dass ich der leibliche Elternteil oder der gerichtlich bestellte Vormund des genannten Minderjährigen bin.",
         "es": "CERTIFICACIÓN DE CUSTODIA LEGAL: Certifico solemnemente bajo pena de perjurio que soy el progenitor biológico o tutor legal con custodia legal del menor antes nombrado.",
         "nl": "VERKLARING OUDERLIJK GEZAG: Ik verklaar op erewoord dat ik de biologische ouder of wettelijk benoemde voogd met het gezag over de bovengenoemde minderjarige ben.",
-        "pt": "CERTIFICAÇÃO DE GUARDA LEGAL: Declaro solenemente, sob as penas da lei, que sou o pai/mãe biológico(a) ou tutor legal detentor da guarda do menor acima qualificado."
+        "pt": "CERTIFICAÇÃO DE GUARDA LEGAL: Declaro solenemente, sob as penas da lei, que sou o pai/mãe biológico(a) ou tutor legal detentor da guarda do menor acima qualificado.",
+        "th": "การรับรองสิทธิ์การปกครองตามกฎหมาย: ข้าพเจ้าขอรับรองว่าข้าพเจ้าเป็นบิดามารดาโดยกำเนิด หรือเป็นผู้ปกครองตามกฎหมายที่ได้รับการแต่งตั้งจากศาลซึ่งมีอำนาจปกครองผู้เยาว์ที่มีรายชื่อข้างต้น"
     },
     "I agree to remain present in the studio facility during the entire duration of the procedure.": {
         "en": "I agree to remain present in the studio facility during the entire duration of the procedure.",
@@ -1916,7 +2127,8 @@
         "de": "Ich verpflichte mich, während der gesamten Dauer des Eingriffs in den Studioräumlichkeiten anwesend zu bleiben.",
         "es": "Acepto permanecer presente en las instalaciones del estudio durante toda la duración del procedimiento.",
         "nl": "Ik ga ermee akkoord tijdens de gehele behandeling in de studio aanwezig te blijven.",
-        "pt": "Concordo em permanecer presente nas dependências do estúdio durante todo o procedimento."
+        "pt": "Concordo em permanecer presente nas dependências do estúdio durante todo o procedimento.",
+        "th": "ข้าพเจ้ายินยอมที่จะอยู่อำนวยความสะดวกและเฝ้าสังเกตการณ์ภายในบริเวณสตูดิโอตลอดระยะเวลาของการทำหัตถการ"
     },
     "DESIGN FLEXIBILITY: I understand that successful cover-ups require significant flexibility in size, darker tones, and placement expansion.": {
         "en": "DESIGN FLEXIBILITY: I understand that successful cover-ups require significant flexibility in size, darker tones, and placement expansion.",
@@ -1925,7 +2137,8 @@
         "de": "DESIGNFLEXIBILITÄT: Ich verstehe, dass ein erfolgreiches Cover-Up erhebliche Flexibilität bei Größe, dunkleren Farbtönen und Platzierungserweiterung erfordert.",
         "es": "FLEXIBILIDAD DE DISEÑO: Entiendo que una cobertura exitosa requiere gran flexibilidad en tamaño, tonos más oscuros y ampliación del área.",
         "nl": "ONTWERPFLEXIBILITEIT: Ik begrijp dat een succesvolle cover-up aanzienlijke flexibiliteit vereist in afmetingen, donkere tonen en uitbreiding van de plaatsing.",
-        "pt": "FLEXIBILIDADE DE DESIGN: Compreendo que uma cobertura bem-sucedida requer flexibilidade em relação ao tamanho, tons mais escuros e expansão da área."
+        "pt": "FLEXIBILIDADE DE DESIGN: Compreendo que uma cobertura bem-sucedida requer flexibilidade em relação ao tamanho, tons mais escuros e expansão da área.",
+        "th": "ความยืดหยุ่นในการออกแบบ: ข้าพเจ้าเข้าใจดีว่าการสักทับรอยสักเดิม (Cover-up) ที่ประสบผลสำเร็จนั้นจำเป็นต้องมีความยืดหยุ่นอย่างมากในเรื่องของขนาด โทนสีที่เข้มขึ้น และการขยายพื้นที่ตำแหน่งสัก"
     },
     "I agree to thoroughly inspect and approve the facial mapping, symmetry, and color swatch before pigment implantation.": {
         "en": "I agree to thoroughly inspect and approve the facial mapping, symmetry, and color swatch before pigment implantation.",
@@ -1934,7 +2147,8 @@
         "de": "Ich stimme zu, die Vorzeichnung, Symmetrie und Farbauswahl vor der Pigmentierung sorgfältig zu prüfen und freizugeben.",
         "es": "Acepto revisar y aprobar minuciosamente el diseño previo, la simmetría y la muestra de color antes de la implantación del pigmento.",
         "nl": "Ik ga ermee akkoord de voortekening, symmetrie en kleurstalen grondig te controleren en goed te keuren vóór het pigmenteren.",
-        "pt": "Concordo em inspecionar e aprovar minuciosamente o desenho prévio, a simetria e a tonalidade antes da implantação do pigmento."
+        "pt": "Concordo em inspecionar e aprovar minuciosamente o desenho prévio, a simetria e a tonalidade antes da implantação do pigmento.",
+        "th": "ข้าพเจ้ายินยอมที่จะตรวจสอบและอนุมัติการวาดโครงร่างบนใบหน้า (Facial mapping) ความสมมาตร และการเทียบสีอย่างละเอียดก่อนเริ่มลงเข็มฝังสี"
     },
     "I grant the artist professional creative liberty to adapt anatomical composition for optimum aesthetic longevity.": {
         "en": "I grant the artist professional creative liberty to adapt anatomical composition for optimum aesthetic longevity.",
@@ -1943,7 +2157,8 @@
         "de": "Ich gewähre dem Künstler gestalterische Freiheit zur anatomischen Anpassung für optimale ästhetische Haltbarkeit.",
         "es": "Otorgo al artista libertad creativa profesional para adaptar la composición anatómica logrando la mejor longevidad estética.",
         "nl": "Ik verleen de artiest artistieke vrijheid om de compositie anatomisch aan te passen voor een optimaal esthetisch resultaat.",
-        "pt": "Concedo ao artista liberdade criativa profissional para adaptar a composição à anatomia, visando durabilidade e qualidade estética."
+        "pt": "Concedo ao artista liberdade criativa profissional para adaptar a composição à anatomia, visando durabilidade e qualidade estética.",
+        "th": "ข้าพเจ้ายินยอมให้ช่างสักมีอิสระในการสร้างสรรค์ทางวิชาชีพในการปรับแต่งองค์ประกอบตามสรีรวิทยา เพื่อความสวยงามและคงทนยาวนานที่สุด"
     },
     "I agree to the multi-session cancellation and deposit rollover policy (minimum 48hr notice for reschedule).": {
         "en": "I agree to the multi-session cancellation and deposit rollover policy (minimum 48hr notice for reschedule).",
@@ -1952,7 +2167,8 @@
         "de": "Ich akzeptiere die Stornierungs- und Anzahlungsbedingungen für Mehrterminprojekte (mindestens 48 Std. Vorankündigung).",
         "es": "Acepto la política de cancelación y mantenimiento de depósito para multisesiones (aviso mínimo de 48 horas).",
         "nl": "Ik ga akkoord met het annulerings- en aanbetalingsbeleid voor meerdere sessies (minimaal 48 uur vooraf melden).",
-        "pt": "Concordo com a política de cancelamento e transferência de sinal para múltiplas sessões (aviso prévio de pelo menos 48h)."
+        "pt": "Concordo com a política de cancelamento e transferência de sinal para múltiplas sessões (aviso prévio de pelo menos 48h).",
+        "th": "ข้าพเจ้ายินยอมรับเงื่อนไขนโยบายการยกเลิกและการยกยอดเงินมัดจำสำหรับงานสักหลายรอบ (ต้องแจ้งล่วงหน้าอย่างน้อย 48 ชั่วโมงหากต้องการเลื่อนวันนัดหมาย)"
     },
     "I confirm that I am in suitable physical health for long multi-hour tattoo sessions and have disclosed all medical conditions or obtained required physician clearance.": {
         "en": "I confirm that I am in suitable physical health for long multi-hour tattoo sessions and have disclosed all medical conditions or obtained required physician clearance.",
@@ -1961,7 +2177,8 @@
         "de": "Ich bestätige meine körperliche Eignung für mehrstündige Tattoositzungen und habe alle Vorerkrankungen offengelegt oder ärztliche Freigaben eingeholt.",
         "es": "Confirmo que mi estado físico es apto para sesiones prolongadas de varias horas y que he declarado todas mis afecciones o cuento con visto bueno médico.",
         "nl": "Ik bevestig dat mijn fysieke conditie geschikt is voor lange tatoeagesessies en dat ik alle medische aandoeningen heb gemeld of doktersgoedkeuring heb.",
-        "pt": "Confirmo estar em condições físicas adequadas para longas sessões de tatuagem e ter informado todo o histórico de saúde ou obtido liberação médica."
+        "pt": "Confirmo estar em condições físicas adequadas para longas sessões de tatuagem e ter informado todo o histórico de saúde ou obtido liberação médica.",
+        "th": "ข้าพเจ้ายืนยันว่าข้าพเจ้ามีสุขภาพร่างกายที่สมบูรณ์พร้อมสำหรับการสักต่อเนื่องหลายชั่วโมง และได้เปิดเผยข้อมูลประวัติทางการแพทย์ทั้งหมด หรือได้รับใบอนุญาตจากแพทย์ตามที่กำหนดเรียบร้อยแล้ว"
     },
     "Complete Project Concept & Subject Scope": {
         "en": "Complete Project Concept & Subject Scope",
@@ -1970,7 +2187,8 @@
         "de": "Gesamtkonzept des Projekts & Motivbeschreibung",
         "es": "Concepto integral del proyecto y temática",
         "nl": "Volledig projectconcept & beschrijving van het onderwerp",
-        "pt": "Conceito completo do projeto e escopo do tema"
+        "pt": "Conceito completo do projeto e escopo do tema",
+        "th": "แนวคิดของโครงการและขอบเขตงานทั้งหมด"
     },
     "Body Anatomy Coverage": {
         "en": "Body Anatomy Coverage",
@@ -1979,7 +2197,8 @@
         "de": "Körperabdeckung & Platzierung",
         "es": "Cobertura anatómica corporal",
         "nl": "Anatomische lichaamsdekking",
-        "pt": "Cobertura anatômica corporal"
+        "pt": "Cobertura anatômica corporal",
+        "th": "บริเวณร่างกายที่ครอบคลุม"
     },
     "Estimated Total Sessions & Hours": {
         "en": "Estimated Total Sessions & Hours",
@@ -1988,7 +2207,8 @@
         "de": "Geschätzte Gesamtsitzungen & Stundenzahl",
         "es": "Estimación total de sesiones y horas",
         "nl": "Geschat totaal aantal sessies en uren",
-        "pt": "Estimativa total de sessões e horas"
+        "pt": "Estimativa total de sessões e horas",
+        "th": "ประมาณการจำนวนรอบและจำนวนชั่วโมงทั้งหมด"
     },
     "Hourly Rate / Day Rate & Deposit Structure": {
         "en": "Hourly Rate / Day Rate & Deposit Structure",
@@ -1997,7 +2217,8 @@
         "de": "Stundensatz / Tagessatz & Anzahlungsstruktur",
         "es": "Tarifa por hora / por día y estructura de depósito",
         "nl": "Uurtarief / dagtarief & aanbetalingsvoorwaarden",
-        "pt": "Valor da hora / diária e estrutura do sinal"
+        "pt": "Valor da hora / diária e estrutura do sinal",
+        "th": "อัตราค่าบริการรายชั่วโมง / รายวัน และโครงสร้างเงินมัดจำ"
     },
     "Biological Mother": {
         "en": "Biological Mother",
@@ -2006,7 +2227,8 @@
         "de": "Leibliche Mutter",
         "es": "Madre biológica",
         "nl": "Biologische moeder",
-        "pt": "Mãe biológica"
+        "pt": "Mãe biológica",
+        "th": "มารดาโดยกำเนิด"
     },
     "Biological Father": {
         "en": "Biological Father",
@@ -2015,7 +2237,8 @@
         "de": "Leiblicher Vater",
         "es": "Padre biológico",
         "nl": "Biologische vader",
-        "pt": "Pai biológico"
+        "pt": "Pai biológico",
+        "th": "บิดาโดยกำเนิด"
     },
     "Legal Court-Appointed Guardian": {
         "en": "Legal Court-Appointed Guardian",
@@ -2024,7 +2247,8 @@
         "de": "Gerichtlich bestellter Vormund",
         "es": "Tutor legal nombrado judicialmente",
         "nl": "Gerechtelijk benoemde voogd",
-        "pt": "Tutor legal nomeado judicialmente"
+        "pt": "Tutor legal nomeado judicialmente",
+        "th": "ผู้ปกครองตามกฎหมายที่แต่งตั้งโดยศาล"
     },
     "Adoptive Parent": {
         "en": "Adoptive Parent",
@@ -2033,7 +2257,8 @@
         "de": "Adoptivelternteil",
         "es": "Padre / Madre adoptivo(a)",
         "nl": "Adoptieouder",
-        "pt": "Pai / Mãe adotivo(a)"
+        "pt": "Pai / Mãe adotivo(a)",
+        "th": "บิดามารดาบุญธรรม"
     },
     "Other Authorized Legal Custodian": {
         "en": "Other Authorized Legal Custodian",
@@ -2042,7 +2267,8 @@
         "de": "Sonstiger sorgeberechtigter gesetzlicher Vertreter",
         "es": "Otro custodio legal autorizado",
         "nl": "Andere bevoegde wettelijke vertegenwoordiger",
-        "pt": "Outro responsável legal autorizado"
+        "pt": "Outro responsável legal autorizado",
+        "th": "ผู้มีอำนาจปกครองตามกฎหมายอื่น"
     },
     "Physician Clearance Warning for Minors": {
         "en": "Physician Clearance Warning for Minors",
@@ -2051,7 +2277,8 @@
         "de": "Ärztlicher Freigabehinweis für Minderjährige",
         "es": "Aviso de autorización médica para menores",
         "nl": "Waarschuwing doktersgoedkeuring voor minderjarigen",
-        "pt": "Aviso de liberação médica para menores"
+        "pt": "Aviso de liberação médica para menores",
+        "th": "คำเตือนเรื่องใบรับรองแพทย์สำหรับผู้เยาว์"
     },
     "Minors experiencing allergies, hemophilia/bleeding tendencies, diabetes, cardiac conditions, or fainting history require a formal written authorization letter from a licensed pediatrician/doctor prior to undergoing procedures.": {
         "en": "Minors experiencing allergies, hemophilia/bleeding tendencies, diabetes, cardiac conditions, or fainting history require a formal written authorization letter from a licensed pediatrician/doctor prior to undergoing procedures.",
@@ -2060,7 +2287,8 @@
         "de": "Minderjährige mit Allergien, Blutungsneigung/Hämophilie, Diabetes, Herzproblemen oder Ohnmachtsneigung benötigen ein schriftliches Attest des Kinderarztes/Arztes.",
         "es": "Los menores con alergias, hemofilia/problemas de coagulación, diabetes, cardiopatías o historial de desmayos requieren autorización formal por escrito de su pediatra o médico.",
         "nl": "Minderjarigen met allergieën, bloedingsneiging/hemofilie, diabetes, hartaandoeningen of neiging tot flauwvallen moeten vooraf een schriftelijke doktersverklaring overleggen.",
-        "pt": "Menores com alergias, hemofilia/distúrbios de coagulação, diabetes, problemas cardíacos ou histórico de desmaios necessitam de autorização formal por escrito de médico ou pediatra."
+        "pt": "Menores com alergias, hemofilia/distúrbios de coagulação, diabetes, problemas cardíacos ou histórico de desmaios necessitam de autorização formal por escrito de médico ou pediatra.",
+        "th": "ผู้เยาว์ที่มีประวัติโรคภูมิแพ้ โรคเลือดไหลไม่หยุด/ภาวะเลือดออกง่าย โรคเบาหวาน โรคหัวใจ หรือมีประวัติเป็นลมบ่อย จำเป็นต้องมีหนังสือยินยอมและอนุญาตเป็นลายลักษณ์อักษรจากกุมารแพทย์หรือแพทย์ผู้เชี่ยวชาญก่อนเข้ารับการทำหัตถการ"
     },
     "Physician Authorization Status for Minor": {
         "en": "Physician Authorization Status for Minor",
@@ -2069,7 +2297,8 @@
         "de": "Status der ärztlichen Freigabe für Minderjährige",
         "es": "Estado de la autorización médica para el menor",
         "nl": "Status van de medische goedkeuring voor de minderjarige",
-        "pt": "Status da autorização médica do menor"
+        "pt": "Status da autorização médica do menor",
+        "th": "สถานะใบอนุญาตจากแพทย์สำหรับผู้เยาว์"
     },
     "Minor has no underlying medical contraindications": {
         "en": "Minor has no underlying medical contraindications",
@@ -2078,7 +2307,8 @@
         "de": "Der Minderjährige hat keine medizinischen Vorerkrankungen/Kontraindikationen",
         "es": "El menor no tiene contraindicaciones médicas subyacentes",
         "nl": "De minderjarige heeft geen onderliggende medische contra-indicaties",
-        "pt": "O menor não apresenta contraindicações médicas subjacentes"
+        "pt": "O menor não apresenta contraindicações médicas subjacentes",
+        "th": "ผู้เยาว์ไม่มีข้อห้ามใช้หรือสภาวะทางการแพทย์ที่เป็นอุปสรรค"
     },
     "Written doctor authorization has been verified and provided": {
         "en": "Written doctor authorization has been verified and provided",
@@ -2087,7 +2317,8 @@
         "de": "Schriftliches ärztliches Attest wurde geprüft und vorgelegt",
         "es": "La autorización escrita del médico ha sido verificada y entregada",
         "nl": "Schriftelijke doktersgoedkeuring is gecontroleerd en overgelegd",
-        "pt": "A autorização médica por escrito foi verificada e apresentada"
+        "pt": "A autorização médica por escrito foi verificada e apresentada",
+        "th": "ได้รับการตรวจสอบและแนบหนังสืออนุญาตจากแพทย์เรียบร้อยแล้ว"
     },
     "Doctor authorization not applicable": {
         "en": "Doctor authorization not applicable",
@@ -2096,7 +2327,8 @@
         "de": "Ärztliche Freigabe nicht erforderlich",
         "es": "Autorización médica no aplicable",
         "nl": "Doktersautorisatie niet van toepassing",
-        "pt": "Autorização médica não aplicável"
+        "pt": "Autorização médica não aplicável",
+        "th": "ไม่ต้องใช้หนังสืออนุญาตจากแพทย์"
     },
     "Exact Authorized Procedure & Location": {
         "en": "Exact Authorized Procedure & Location",
@@ -2105,7 +2337,8 @@
         "de": "Genaue autorisierte Dienstleistung & Platzierung",
         "es": "Procedimiento exacto autorizado y ubicación",
         "nl": "Exacte goedgekeurde behandeling en locatie",
-        "pt": "Procedimento exato autorizado e local anatômico"
+        "pt": "Procedimento exato autorizado e local anatômico",
+        "th": "หัตถการและตำแหน่งที่ได้รับอนุญาตอย่างชัดเจน"
     },
     "Sterilized Jewelry Material & Wire Gauge (AWG/Metric)": {
         "en": "Sterilized Jewelry Material & Wire Gauge (AWG/Metric)",
@@ -2114,7 +2347,8 @@
         "de": "Material des sterilen Schmucks & Drahtstärke (AWG/Metrisch)",
         "es": "Material de la joya esterilizada y calibre (AWG/Métrico)",
         "nl": "Materiaal van het gesteriliseerde sieraad & draaddikte (AWG/Metrisch)",
-        "pt": "Material da joia esterilizada e espessura da haste (AWG/Métrico)"
+        "pt": "Material da joia esterilizada e espessura da haste (AWG/Métrico)",
+        "th": "วัสดุจิวเวลรี่ผ่านการฆ่าเชื้อและขนาดความหนาของก้าน (AWG/เมตริก)"
     },
     "Parent / Legal Guardian Signature": {
         "en": "Parent / Legal Guardian Signature",
@@ -2123,7 +2357,8 @@
         "de": "Unterschrift der Eltern / des Erziehungsberechtigten",
         "es": "Firma del padre/madre o tutor legal",
         "nl": "Handtekening van ouder of voogd",
-        "pt": "Assinatura do pai, mãe ou responsável legal"
+        "pt": "Assinatura do pai, mãe ou responsável legal",
+        "th": "ลายเซ็นผู้ปกครอง / ผู้มีอำนาจปกครองตามกฎหมาย"
     },
     "Minor Client Signature (Assent)": {
         "en": "Minor Client Signature (Assent)",
@@ -2132,7 +2367,8 @@
         "de": "Unterschrift des Minderjährigen (Einwilligung)",
         "es": "Firma del cliente menor (Asentimiento)",
         "nl": "Handtekening van de minderjarige (Instemming)",
-        "pt": "Assinatura do cliente menor (Assentimento)"
+        "pt": "Assinatura do cliente menor (Assentimento)",
+        "th": "ลายเซ็นลูกค้ารุ่นเยาว์ (การให้ความยินยอม)"
     },
     "Date of Authorization": {
         "en": "Date of Authorization",
@@ -2141,7 +2377,8 @@
         "de": "Datum der Genehmigung",
         "es": "Fecha de autorización",
         "nl": "Datum van goedkeuring",
-        "pt": "Data da autorização"
+        "pt": "Data da autorização",
+        "th": "วันที่ให้การยินยอมอนุญาต"
     },
     "Description of Existing Tattoo to Cover": {
         "en": "Description of Existing Tattoo to Cover",
@@ -2150,7 +2387,8 @@
         "de": "Beschreibung des zu überdeckenden bestehenden Tattoos",
         "es": "Descripción del tatuaje previo que se desea cubrir",
         "nl": "Beschrijving van de te coveren bestaande tatoeage",
-        "pt": "Descrição da tatuagem existente a ser coberta"
+        "pt": "Descrição da tatuagem existente a ser coberta",
+        "th": "รายละเอียดของรอยสักเดิมที่จะทำการสักทับ"
     },
     "Age of Existing Tattoo (Years/Months)": {
         "en": "Age of Existing Tattoo (Years/Months)",
@@ -2159,7 +2397,8 @@
         "de": "Alter des bestehenden Tattoos (Jahre/Monate)",
         "es": "Antigüedad del tatuaje existente (Años/Meses)",
         "nl": "Leeftijd van de bestaande tatoeage (Jaren/Maanden)",
-        "pt": "Idade da tatuagem existente (Anos/Meses)"
+        "pt": "Idade da tatuagem existente (Anos/Meses)",
+        "th": "อายุของรอยสักเดิม (ปี/เดือน)"
     },
     "Has this area undergone laser tattoo removal / lightening treatments?": {
         "en": "Has this area undergone laser tattoo removal / lightening treatments?",
@@ -2168,7 +2407,8 @@
         "de": "Wurde diese Stelle bereits mit Laser behandelt (Entfernung oder Aufhellung)?",
         "es": "¿Ha recibido esta zona tratamientos con láser para eliminar o aclarar el tatuaje?",
         "nl": "Is dit gebied behandeld met laser (verwijdering of oplichten)?",
-        "pt": "Esta região já passou por sessões de laser para remoção ou clareamento?"
+        "pt": "Esta região já passou por sessões de laser para remoção ou clareamento?",
+        "th": "บริเวณนี้เคยผ่านการเลเซอร์ลบรอยสัก / การทำให้สีจางลงหรือไม่?"
     },
     "No laser treatments": {
         "en": "No laser treatments",
@@ -2177,7 +2417,8 @@
         "de": "Keine Laserbehandlung",
         "es": "Sin tratamientos láser",
         "nl": "Geen laserbehandelingen ondergaan",
-        "pt": "Nenhum tratamento a laser realizado"
+        "pt": "Nenhum tratamento a laser realizado",
+        "th": "ไม่เคยผ่านการทำเลเซอร์"
     },
     "Yes - Completed laser sessions (skin healed >8 weeks)": {
         "en": "Yes - Completed laser sessions (skin healed >8 weeks)",
@@ -2186,7 +2427,8 @@
         "de": "Ja - Laserbehandlung abgeschlossen (Haut seit >8 Wochen verheilt)",
         "es": "Sí - Sesiones de láser finalizadas (piel cicatrizada >8 semanas)",
         "nl": "Ja - Laserbehandelingen afgerond (huid >8 weken genezen)",
-        "pt": "Sim - Sessões de laser concluídas (pele cicatrizada há mais de 8 semanas)"
+        "pt": "Sim - Sessões de laser concluídas (pele cicatrizada há mais de 8 semanas)",
+        "th": "เคย - ทำเลเซอร์เสร็จสิ้นแล้ว (ผิวหนังฟื้นตัวหายดี >8 สัปดาห์)"
     },
     "Yes - Active laser treatments ongoing": {
         "en": "Yes - Active laser treatments ongoing",
@@ -2195,7 +2437,8 @@
         "de": "Ja - Laufende Laserbehandlungen aktiv",
         "es": "Sí - Tratamiento con láser activo en curso",
         "nl": "Ja - Momenteel nog bezig met laserbehandelingen",
-        "pt": "Sim - Tratamento a laser em andamento"
+        "pt": "Sim - Tratamento a laser em andamento",
+        "th": "เคย - อยู่ระหว่างการรักษาด้วยเลเซอร์อย่างต่อเนื่อง"
     },
     "Ideas & Preferred Imagery for Cover-Up": {
         "en": "Ideas & Preferred Imagery for Cover-Up",
@@ -2204,7 +2447,8 @@
         "de": "Ideen & Wunschmotive für das Cover-Up",
         "es": "Ideas y motivos preferidos para la cobertura",
         "nl": "Ideeën & voorkeursontwerpen voor de cover-up",
-        "pt": "Ideias e imagens de preferência para a cobertura"
+        "pt": "Ideias e imagens de preferência para a cobertura",
+        "th": "แนวคิดและรูปแบบภาพที่ต้องการสำหรับการสักทับ"
     },
     "Cosmetic Tattoo Contraindications": {
         "en": "Cosmetic Tattoo Contraindications",
@@ -2213,7 +2457,8 @@
         "de": "Kontraindikationen für kosmetische Pigmentierung",
         "es": "Contraindicaciones del tatuaje cosmético",
         "nl": "Contra-indicaties voor permanente make-up",
-        "pt": "Contraindicações para maquiagem definitiva/PMU"
+        "pt": "Contraindicações para maquiagem definitiva/PMU",
+        "th": "ข้อห้ามสำหรับการสักความงาม"
     },
     "Accutane (within 12 months), Retin-A/Retinol (within 14 days), chemical peels, botox/fillers (within 3 weeks), pregnancy/nursing, or active cold sores (lip blush) require prior medical consultation or procedure postponement.": {
         "en": "Accutane (within 12 months), Retin-A/Retinol (within 14 days), chemical peels, botox/fillers (within 3 weeks), pregnancy/nursing, or active cold sores (lip blush) require prior medical consultation or procedure postponement.",
@@ -2222,7 +2467,8 @@
         "de": "Roaccutan (<12 Monate), Retinol (<14 Tage), chemische Peelings, Botox/Filler (<3 Wochen), Schwangerschaft/Stillzeit oder akuter Herpes erfordern eine Verschiebung oder ärztliche Freigabe.",
         "es": "Accutane (<12 meses), Retin-A/Retinol (<14 días), peelings químicos, botox/rellenos (<3 semanas), embarazo/lactancia o herpes activo requieren consulta médica previa o posponer la cita.",
         "nl": "Roaccutane (<12 mnd), Retinol (<14 dgn), chemische peelings, botox/fillers (<3 wkn), zwangerschap/borstvoeding of koortslip vereisen doktersadvies of uitstel.",
-        "pt": "Roacutan (<12 meses), Retinol/Retin-A (<14 dias), peelings químicos, botox/preenchedores (<3 semanas), gravidez/amamentação ou herpes ativo exigem consulta médica ou adiamento."
+        "pt": "Roacutan (<12 meses), Retinol/Retin-A (<14 dias), peelings químicos, botox/preenchedores (<3 semanas), gravidez/amamentação ou herpes ativo exigem consulta médica ou adiamento.",
+        "th": "การใช้ยา Accutane (ภายใน 12 เดือน), Retin-A/Retinol (ภายใน 14 วัน), การผลัดเซลล์ผิวด้วยสารเคมี, โบท็อกซ์/ฟิลเลอร์ (ภายใน 3 สัปดาห์), การตั้งครรภ์/ให้นมบุตร หรือการเป็นเริม (สำหรับการสักปาก) จำเป็นต้องปรึกษาแพทย์ก่อนหรือเลื่อนการทำหัตถการออกไป"
     },
     "Have you used Accutane, Retin-A, or had chemical peels recently?": {
         "en": "Have you used Accutane, Retin-A, or had chemical peels recently?",
@@ -2231,7 +2477,8 @@
         "de": "Haben Sie kürzlich Roaccutan oder Retinol verwendet bzw. Peelings erhalten?",
         "es": "¿Ha utilizado recientemente Roaccutane, Retin-A o se ha realizado peelings químicos?",
         "nl": "Heeft u recent Roaccutane of Retinol gebruikt, of een chemische peeling gehad?",
-        "pt": "Você utilizou Roacutan, Retinol ou fez peelings químicos recentemente?"
+        "pt": "Você utilizou Roacutan, Retinol ou fez peelings químicos recentemente?",
+        "th": "ท่านเคยใช้ Accutane, Retin-A หรือทำเคมีพีลลิ่ง (ผลัดเซลล์ผิว) เมื่อเร็วๆ นี้หรือไม่?"
     },
     "No - None in contraindicated timeframe": {
         "en": "No - None in contraindicated timeframe",
@@ -2240,7 +2487,8 @@
         "de": "Nein - Keine Anwendung im kritischen Zeitraum",
         "es": "No - Ninguno en el período contraindicado",
         "nl": "Nee - Geen binnen de contra-geïndiceerde periode",
-        "pt": "Não - Nenhum produto no intervalo contraindicado"
+        "pt": "Não - Nenhum produto no intervalo contraindicado",
+        "th": "ไม่เคย - ไม่มีในช่วงเวลาที่เป็นข้อห้าม"
     },
     "Yes - Over 12 months ago for Accutane / 4 weeks for Retinol": {
         "en": "Yes - Over 12 months ago for Accutane / 4 weeks for Retinol",
@@ -2249,7 +2497,8 @@
         "de": "Ja - Vor über 12 Monaten (Roaccutan) / vor über 4 Wochen (Retinol)",
         "es": "Sí - Hace más de 12 meses (Accutane) / 4 semanas (Retinol)",
         "nl": "Ja - Meer dan 12 maanden geleden voor Roaccutane / 4 weken voor Retinol",
-        "pt": "Sim - Há mais de 12 meses para Roacutan / 4 semanas para Retinol"
+        "pt": "Sim - Há mais de 12 meses para Roacutan / 4 semanas para Retinol",
+        "th": "เคย - เกิน 12 เดือนแล้วสำหรับ Accutane / เกิน 4 สัปดาห์แล้วสำหรับ Retinol"
     },
     "Yes - Currently using (Requires rescheduling)": {
         "en": "Yes - Currently using (Requires rescheduling)",
@@ -2258,7 +2507,8 @@
         "de": "Ja - Aktuelle Anwendung (Terminverschiebung erforderlich)",
         "es": "Sí - En uso actualmente (Requiere reprogramar la cita)",
         "nl": "Ja - Momenteel in gebruik (Afspraak moet worden verzet)",
-        "pt": "Sim - Em uso atualmente (Necessita de reagendamento)"
+        "pt": "Sim - Em uso atualmente (Necessita de reagendamento)",
+        "th": "ใช่ - กำลังใช้อยู่ในปัจจุบัน (จำเป็นต้องเลื่อนนัด)"
     },
     "PMU Treatment Type": {
         "en": "PMU Treatment Type",
@@ -2267,7 +2517,8 @@
         "de": "Art der PMU-Behandlung",
         "es": "Tipo de tratamiento de micropigmentación",
         "nl": "Type PMU-behandeling",
-        "pt": "Tipo de procedimento de PMU"
+        "pt": "Tipo de procedimento de PMU",
+        "th": "ประเภทการสักเพื่อความงาม (PMU)"
     },
     "Microblading Eyebrows": {
         "en": "Microblading Eyebrows",
@@ -2276,7 +2527,8 @@
         "de": "Microblading Augenbrauen",
         "es": "Microblading de cejas",
         "nl": "Microblading wenkbrauwen",
-        "pt": "Microblading de sobrancelhas"
+        "pt": "Microblading de sobrancelhas",
+        "th": "สักคิ้วลายเส้น (Microblading)"
     },
     "Ombré / Powder Brows": {
         "en": "Ombré / Powder Brows",
@@ -2285,7 +2537,8 @@
         "de": "Ombré / Powder Brows",
         "es": "Cejas efecto polvo / Ombré brows",
         "nl": "Ombré / Powder brows",
-        "pt": "Sobrancelhas efeito pó / Ombré brows"
+        "pt": "Sobrancelhas efeito pó / Ombré brows",
+        "th": "สักคิ้ว Ombré / Powder Brows"
     },
     "Combo Brows (Blade & Shade)": {
         "en": "Combo Brows (Blade & Shade)",
@@ -2294,7 +2547,8 @@
         "de": "Combo Brows (Kombi aus Härchen & Schattierung)",
         "es": "Cejas combinadas (Blade & Shade)",
         "nl": "Combo brows (Microblading & Schaduw)",
-        "pt": "Sobrancelhas combinadas (Fio a fio & Sombra)"
+        "pt": "Sobrancelhas combinadas (Fio a fio & Sombra)",
+        "th": "สักคิ้วคอมโบ (ลายเส้นและเฉดดิ้ง)"
     },
     "Lip Blush / Full Lip Tint": {
         "en": "Lip Blush / Full Lip Tint",
@@ -2303,7 +2557,8 @@
         "de": "Lip Blush / Vollschattierung der Lippen",
         "es": "Lip Blush / Coloración completa de labios",
         "nl": "Lip Blush / Volledige lipkleuring",
-        "pt": "Lip Blush / Pigmentação labial completa"
+        "pt": "Lip Blush / Pigmentação labial completa",
+        "th": "สักปากชมพู / สักเปลี่ยนสีปาก"
     },
     "Lash Enhancement / Permanent Eyeliner": {
         "en": "Lash Enhancement / Permanent Eyeliner",
@@ -2312,7 +2567,8 @@
         "de": "Wimpernkranzverdichtung / Eyeliner",
         "es": "Delineado de ojos permanente / Realce de pestañas",
         "nl": "Wimperrandversterking / Permanente eyeliner",
-        "pt": "Delineador definitivo / Realce de cílios"
+        "pt": "Delineador definitivo / Realce de cílios",
+        "th": "สักอินเนอร์ตา / สักอายไลเนอร์ถาวร"
     },
     "Freckles / Beauty Marks": {
         "en": "Freckles / Beauty Marks",
@@ -2321,7 +2577,8 @@
         "de": "Sommersprossen / Schönheitsflecken",
         "es": "Pecas / Lunares estéticos",
         "nl": "Sproeten / Schoonheidsvlekjes",
-        "pt": "Sardas / Sinais de beleza"
+        "pt": "Sardas / Sinais de beleza",
+        "th": "สักกระ / สักไฝเสน่ห์"
     },
     "Areola Restorative Tattoo": {
         "en": "Areola Restorative Tattoo",
@@ -2330,7 +2587,8 @@
         "de": "Medizinische Areola-Rekonstruktionspigmentierung",
         "es": "Micropigmentación reconstructiva de areola mamaria",
         "nl": "Tatoeage voor herstel van de tepelhof (Areola)",
-        "pt": "Dermopigmentação reconstrutiva de aréola mamária"
+        "pt": "Dermopigmentação reconstrutiva de aréola mamária",
+        "th": "สักปรับแต่งปานนม"
     },
     "PMU Client Signature": {
         "en": "PMU Client Signature",
@@ -2339,7 +2597,8 @@
         "de": "Unterschrift der Kundin / des Kunden (PMU)",
         "es": "Firma del cliente (PMU / Micropigmentación)",
         "nl": "Handtekening van de PMU-klant",
-        "pt": "Assinatura do cliente de micropigmentação"
+        "pt": "Assinatura do cliente de micropigmentação",
+        "th": "ลายเซ็นลูกค้า (สักเพื่อความงาม PMU)"
     },
     "Clinical Clearance Notice": {
         "en": "Clinical Clearance Notice",
@@ -2348,7 +2607,8 @@
         "de": "Klinischer Freigabehinweis",
         "es": "Aviso de autorización médica clínica",
         "nl": "Kennisgeving van klinische goedkeuring",
-        "pt": "Aviso de liberação clínica especializada"
+        "pt": "Aviso de liberação clínica especializada",
+        "th": "หนังสือแจ้งรับรองทางการแพทย์"
     },
     "Clients with severe chronic ailments, artificial heart valves, bleeding disorders, compromised immunity, or active skin lesions require written authorization from their attending medical doctor before undergoing invasive body modification procedures.": {
         "en": "Clients with severe chronic ailments, artificial heart valves, bleeding disorders, compromised immunity, or active skin lesions require written authorization from their attending medical doctor before undergoing invasive body modification procedures.",
@@ -2357,7 +2617,8 @@
         "de": "Kunden mit schweren chronischen Erkrankungen, künstlichen Herzklappen, Blutgerinnungsstörungen, Immunschwäche oder akuten Hautläsionen benötigen vor dem Eingriff eine schriftliche ärztliche Freigabe.",
         "es": "Los clientes con enfermedades crónicas graves, válvulas cardíacas artificiales, trastornos de coagulación, inmunodepresión o lesiones cutáneas activas deben presentar autorización médica por escrito antes del procedimiento.",
         "nl": "Klanten met ernstige chronische aandoeningen, kunsthartkleppen, bloedingsstoornissen, verminderde immuniteit of actieve huidlaesies moeten vooraf een schriftelijke doktersverklaring overleggen.",
-        "pt": "Clientes com doenças crônicas graves, válvulas cardíacas artificiais, distúrbios hemorrágicos, imunodeficiência ou lesões ativas de pele devem apresentar autorização médica por escrito antes do procedimento."
+        "pt": "Clientes com doenças crônicas graves, válvulas cardíacas artificiais, distúrbios hemorrágicos, imunodeficiência ou lesões ativas de pele devem apresentar autorização médica por escrito antes do procedimento.",
+        "th": "ลูกค้าที่มีโรคประจำตัวเรื้อรังรุนแรง, ใส่ลิ้นหัวใจเทียม, มีภาวะเลือดออกผิดปกติ, มีภูมิคุ้มกันบกพร่อง หรือมีแผลรอยโรคที่ผิวหนัง จำเป็นต้องได้รับใบรับรองยินยอมเป็นลายลักษณ์อักษรจากแพทย์ผู้ดูแลก่อนเข้ารับบริการหัตถการดัดแปลงร่างกาย"
     },
     "Do you require or have you received physician clearance for body modification?": {
         "en": "Do you require or have you received physician clearance for body modification?",
@@ -2366,7 +2627,8 @@
         "de": "Benötigen oder besitzen Sie eine ärztliche Unbedenklichkeitsbescheinigung für diesen Eingriff?",
         "es": "¿Requiere o ha obtenido autorización médica para esta modificación corporal?",
         "nl": "Heeft u een doktersverklaring nodig of reeds verkregen voor deze behandeling?",
-        "pt": "Você necessita ou já obteve liberação médica para esta modificação corporal?"
+        "pt": "Você necessita ou já obteve liberação médica para esta modificação corporal?",
+        "th": "คุณต้องใช้หรือได้รับการอนุมัติจากแพทย์สำหรับการดัดแปลงร่างกายหรือไม่?"
     },
     "Yes - Pending medical evaluation": {
         "en": "Yes - Pending medical evaluation",
@@ -2375,7 +2637,8 @@
         "de": "Ja - Ärztliche Untersuchung noch ausstehend",
         "es": "Sí - Pendiente de evaluación médica",
         "nl": "Ja - In afwachting van medische beoordeling",
-        "pt": "Sim - Em avaliação médica pendente"
+        "pt": "Sim - Em avaliação médica pendente",
+        "th": "ใช่ - อยู่ระหว่างรอการประเมินทางการแพทย์"
     },
     "Physician Name, Clinic & Clearance Date (if applicable)": {
         "en": "Physician Name, Clinic & Clearance Date (if applicable)",
@@ -2384,7 +2647,8 @@
         "de": "Name des Arztes, Praxis & Datum der Freigabe (falls zutreffend)",
         "es": "Nombre del médico, clínica y fecha de autorización (si corresponde)",
         "nl": "Naam van de arts, kliniek & datum van goedkeuring (indien van toepassing)",
-        "pt": "Nome do médico, clínica e data da liberação (se aplicável)"
+        "pt": "Nome do médico, clínica e data da liberação (se aplicável)",
+        "th": "ชื่อแพทย์, คลินิก และวันที่ได้รับใบรับรอง (หากมี)"
     },
     "List all prescribed medications, over-the-counter drugs, or vitamins taken in the past 14 days": {
         "en": "List all prescribed medications, over-the-counter drugs, or vitamins taken in the past 14 days",
@@ -2393,7 +2657,8 @@
         "de": "Alle in den letzten 14 Tagen eingenommenen verschreibungspflichtigen/freien Medikamente und Vitamine",
         "es": "Lista de medicamentos recetados, de venta libre o vitaminas tomados en los últimos 14 días",
         "nl": "Overzicht van voorgeschreven medicijnen, zelfzorgmiddelen of vitamines van de afgelopen 14 dagen",
-        "pt": "Relação de medicamentos prescritos, de venda livre ou suplementos vitamínicos tomados nos últimos 14 dias"
+        "pt": "Relação de medicamentos prescritos, de venda livre ou suplementos vitamínicos tomados nos últimos 14 dias",
+        "th": "ระบุยาตามแพทย์สั่ง ยาซื้อรับประทานเอง หรือวิตามินทั้งหมดที่รับประทานในช่วง 14 วันที่ผ่านมา"
     },
     "Do you have a history of vasovagal fainting, lightheadedness, or dizziness during medical procedures or injections?": {
         "en": "Do you have a history of vasovagal fainting, lightheadedness, or dizziness during medical procedures or injections?",
@@ -2402,7 +2667,8 @@
         "de": "Neigen Sie bei medizinischen Eingriffen oder Spritzen zu Kreislaufproblemen, Schwindel oder Ohnmacht (Vasovagale Synkope)?",
         "es": "¿Tiene antecedentes de síncope vasovagal, mareos o desvanecimientos durante procedimientos médicos o inyecciones?",
         "nl": "Heeft u een geschiedenis van vasovagaal flauwvallen, duizeligheid of licht in het hoofd bij medische ingrepen of injecties?",
-        "pt": "Você tem histórico de desmaio vasovagal, tontura ou vertigem durante procedimentos médicos ou injeções?"
+        "pt": "Você tem histórico de desmaio vasovagal, tontura ou vertigem durante procedimentos médicos ou injeções?",
+        "th": "คุณมีประวัติเป็นลมจากภาวะ Vasovagal, หน้ามืด หรือเวียนศีรษะระหว่างทำหัตถการทางการแพทย์หรือการฉีดยาหรือไม่?"
     },
     "No history of fainting": {
         "en": "No history of fainting",
@@ -2411,7 +2677,8 @@
         "de": "Keine Neigung zu Ohnmacht oder Kreislaufkollaps",
         "es": "Sin antecedentes de desmayos",
         "nl": "Geen geschiedenis van flauwvallen",
-        "pt": "Sem histórico de desmaios"
+        "pt": "Sem histórico de desmaios",
+        "th": "ไม่มีประวัติเป็นลม"
     },
     "Yes - Occasionally prone to lightheadedness": {
         "en": "Yes - Occasionally prone to lightheadedness",
@@ -2420,7 +2687,8 @@
         "de": "Ja - Gelegentlich anfällig für Schwindelgefühle",
         "es": "Sí - Propenso/a ocasionalmente a mareos",
         "nl": "Ja - Soms gevoelig voor duizeligheid",
-        "pt": "Sim - Ocasionalmente propenso(a) a tonturas"
+        "pt": "Sim - Ocasionalmente propenso(a) a tonturas",
+        "th": "ใช่ - มีอาการหน้ามืดเป็นบางครั้ง"
     },
     "Yes - Known vasovagal syncope history": {
         "en": "Yes - Known vasovagal syncope history",
@@ -2429,7 +2697,8 @@
         "de": "Ja - Bekannte vasovagale Synkopen-Neigung",
         "es": "Sí - Historial conocido de síncope vasovagal",
         "nl": "Ja - Bekend met vasovagale syncope",
-        "pt": "Sim - Histórico comprovado de síncope vasovagal"
+        "pt": "Sim - Histórico comprovado de síncope vasovagal",
+        "th": "ใช่ - มีประวัติภาวะวูบหมดสติจาก Vasovagal syncope"
     },
     "Is the intended skin area free of active sunburn, rashes, eczema, cuts, or infections?": {
         "en": "Is the intended skin area free of active sunburn, rashes, eczema, cuts, or infections?",
@@ -2438,7 +2707,8 @@
         "de": "Ist die betroffene Hautpartie frei von Sonnenbrand, Hautausschlägen, Ekzemen, Schnittwunden oder Infektionen?",
         "es": "¿La zona cutánea prevista está libre de quemaduras solares, erupciones, eccemas, cortes o infecciones?",
         "nl": "Is de te behandelen huid vrij van zonnebrand, uitslag, eczeem, wondjes of infecties?",
-        "pt": "A área da pele a ser trabalhada está livre de queimaduras de sol, erupções, eczema, cortes ou infecções ativas?"
+        "pt": "A área da pele a ser trabalhada está livre de queimaduras de sol, erupções, eczema, cortes ou infecções ativas?",
+        "th": "ผิวหนังบริเวณที่จะทำหัตถการ ปราศจากไหม้แดด ผื่น แผลเปื่อย รอยตัด หรือการติดเชื้อใช่หรือไม่?"
     },
     "Yes - Skin is fully healthy and unbroken": {
         "en": "Yes - Skin is fully healthy and unbroken",
@@ -2447,7 +2717,8 @@
         "de": "Ja - Die Haut ist vollständig gesund und intakt",
         "es": "Sí - La piel está completamente sana e intacta",
         "nl": "Ja - De huid is volledig gezond en onbeschadigd",
-        "pt": "Sim - A pele está totalmente saudável e íntegra"
+        "pt": "Sim - A pele está totalmente saudável e íntegra",
+        "th": "ใช่ - ผิวหนังสมบูรณ์แข็งแรงดีและไม่มีแผล"
     },
     "No - Skin has active redness, irritation, or trauma": {
         "en": "No - Skin has active redness, irritation, or trauma",
@@ -2456,7 +2727,8 @@
         "de": "Nein - Haut weist Rötungen, Reizungen oder Verletzungen auf",
         "es": "No - La piel presenta enrojecimiento, irritación o traumatismo activo",
         "nl": "Nee - De huid vertoont roodheid, irritatie of beschadiging",
-        "pt": "Não - A pele apresenta vermelhidão, irritação ou lesão ativa"
+        "pt": "Não - A pele apresenta vermelhidão, irritação ou lesão ativa",
+        "th": "ไม่ - ผิวหนังมีรอยแดง อาการระคายเคือง หรือบาดแผล"
     },
     "Client Signature (Legal Health Certification)": {
         "en": "Client Signature (Legal Health Certification)",
@@ -2465,7 +2737,8 @@
         "de": "Unterschrift des Kunden (Rechtliche Gesundheitsbescheinigung)",
         "es": "Firma del cliente (Certificación legal de salud)",
         "nl": "Handtekening van de klant (Wettelijke gezondheidsverklaring)",
-        "pt": "Assinatura do cliente (Declaração legal de saúde)"
+        "pt": "Assinatura do cliente (Declaração legal de saúde)",
+        "th": "ลายเซ็นลูกค้า (การรับรองสุขภาพทางกฎหมาย)"
     },
     "Client Signature": {
         "en": "Client Signature",
@@ -2474,7 +2747,8 @@
         "de": "Unterschrift des Kunden",
         "es": "Firma del cliente",
         "nl": "Handtekening van de klant",
-        "pt": "Assinatura do cliente"
+        "pt": "Assinatura do cliente",
+        "th": "ลายเซ็นลูกค้า"
     },
     "Date": {
         "en": "Date",
@@ -2483,7 +2757,8 @@
         "de": "Datum",
         "es": "Fecha",
         "nl": "Datum",
-        "pt": "Data"
+        "pt": "Data",
+        "th": "วันที่"
     },
     "Date Signed": {
         "en": "Date Signed",
@@ -2492,7 +2767,8 @@
         "de": "Unterzeichnungsdatum",
         "es": "Fecha de la firma",
         "nl": "Datum van ondertekening",
-        "pt": "Data da assinatura"
+        "pt": "Data da assinatura",
+        "th": "วันที่เซ็น"
     },
     "Heart condition, pacemaker, high blood pressure, or mitral valve prolapse": {
         "en": "Heart condition, pacemaker, high blood pressure, or mitral valve prolapse",
@@ -2501,7 +2777,8 @@
         "de": "Herzerkrankungen, Herzschrittmacher, Bluthochdruck oder Mitralklappenprolaps",
         "es": "Cardiopatías, marcapasos, hipertensión arterial o prolapso de la válvula mitral",
         "nl": "Hartaandoeningen, pacemaker, hoge bloeddruk of mitralisklepprolaps",
-        "pt": "Doenças cardíacas, marca-passo, hipertensão arterial ou prolapso da válvula mitral"
+        "pt": "Doenças cardíacas, marca-passo, hipertensão arterial ou prolapso da válvula mitral",
+        "th": "โรคหัวใจ, ใส่เครื่องกระตุ้นหัวใจ, ความดันโลหิตสูง หรือลิ้นหัวใจไมตรัลหย่อน"
     },
     "Doctor clearance recommended for invasive procedures": {
         "en": "Doctor clearance recommended for invasive procedures",
@@ -2510,7 +2787,8 @@
         "de": "Ärztliche Freigabe für invasive Eingriffe empfohlen",
         "es": "Se recomienda autorización médica previa para procedimientos invasivos",
         "nl": "Doktersadvies aanbevolen voor invasieve behandelingen",
-        "pt": "Liberação médica recomendada para procedimentos invasivos"
+        "pt": "Liberação médica recomendada para procedimentos invasivos",
+        "th": "แนะนำให้ได้รับการอนุมัติจากแพทย์สำหรับหัตถการที่รุกล้ำร่างกาย"
     },
     "Hemophilia, prolonged bleeding, or currently taking blood-thinning medications (e.g. Aspirin, Warfarin)": {
         "en": "Hemophilia, prolonged bleeding, or currently taking blood-thinning medications (e.g. Aspirin, Warfarin)",
@@ -2519,7 +2797,8 @@
         "de": "Hämophilie, Blutungsneigung oder Einnahme von Blutverdünnern (z.B. Aspirin, Marcumar)",
         "es": "Hemofilia, sangrado prolongado o toma de anticoagulantes (ej. Aspirina, Sintrom, Warfarina)",
         "nl": "Hemofilie, verhoogde bloedingsneiging of gebruik van bloedverdunners (bijv. Aspirine, Warfarine)",
-        "pt": "Hemofilia, sangramento prolongado ou uso de anticoagulantes (ex.: Aspirina, Varfarina)"
+        "pt": "Hemofilia, sangramento prolongado ou uso de anticoagulantes (ex.: Aspirina, Varfarina)",
+        "th": "โรคฮีโมฟีเลีย, ภาวะเลือดหยุดยาก หรือกำลังรับประทานยาละลายลิ่มเลือด/ยาต้านการแข็งตัวของเลือด (เช่น Aspirin, Warfarin)"
     },
     "May increase bleeding risk during procedure": {
         "en": "May increase bleeding risk during procedure",
@@ -2528,7 +2807,8 @@
         "de": "Kann das Blutungsrisiko während des Eingriffs erhöhen",
         "es": "Puede aumentar el riesgo de sangrado durante el procedimiento",
         "nl": "Kan het bloedingsrisico tijdens de behandeling verhogen",
-        "pt": "Pode aumentar o risco de sangramento durante o procedimento"
+        "pt": "Pode aumentar o risco de sangramento durante o procedimento",
+        "th": "อาจเพิ่มความเสี่ยงต่อการเลือดออกระหว่างทำหัตถการ"
     },
     "Diabetes (Type 1 or Type 2)": {
         "en": "Diabetes (Type 1 or Type 2)",
@@ -2537,7 +2817,8 @@
         "de": "Diabetes mellitus (Typ 1 oder Typ 2)",
         "es": "Diabetes (Tipo 1 o Tipo 2)",
         "nl": "Diabetes (Type 1 of Type 2)",
-        "pt": "Diabetes (Tipo 1 ou Tipo 2)"
+        "pt": "Diabetes (Tipo 1 ou Tipo 2)",
+        "th": "โรคเบาหวาน (ประเภท 1 หรือประเภท 2)"
     },
     "May slow wound healing; keep blood sugar regulated": {
         "en": "May slow wound healing; keep blood sugar regulated",
@@ -2546,7 +2827,8 @@
         "de": "Kann die Wundheilung verlangsamen; Blutzucker stabil halten",
         "es": "Puede ralentizar la cicatrización; mantenga la glucemia controlada",
         "nl": "Kan de wondgenezing vertragen; bloedsuikerspiegel stabiel houden",
-        "pt": "Pode retardar a cicatrização; mantenha o controle glicêmico"
+        "pt": "Pode retardar a cicatrização; mantenha o controle glicêmico",
+        "th": "อาจทำให้แผลหายช้าลง ควรควบคุมระดับน้ำตาลในเลือดให้อยู่ในเกณฑ์ปกติ"
     },
     "Epilepsy, seizures, or frequent fainting spells": {
         "en": "Epilepsy, seizures, or frequent fainting spells",
@@ -2555,7 +2837,8 @@
         "de": "Epilepsie, Krampfanfälle oder häufige Ohnmachtsanfälle",
         "es": "Epilepsia, convulsiones o desmayos frecuentes",
         "nl": "Epilepsie, toevallen of frequente flauwtes",
-        "pt": "Epilepsia, convulsões ou episódios frequentes de desmaio"
+        "pt": "Epilepsia, convulsões ou episódios frequentes de desmaio",
+        "th": "โรคลมชัก, อาการชัก หรือมีอาการเป็นลมบ่อยครั้ง"
     },
     "Artist needs to take seizure precautions": {
         "en": "Artist needs to take seizure precautions",
@@ -2564,7 +2847,8 @@
         "de": "Tätowierer muss entsprechende Schutzmaßnahmen treffen",
         "es": "El profesional debe tomar precauciones preventivas ante crisis",
         "nl": "Behandelaar moet voorzorgsmaatregelen nemen",
-        "pt": "O profissional precisa adotar precauções de segurança adequadas"
+        "pt": "O profissional precisa adotar precauções de segurança adequadas",
+        "th": "ช่างจำเป็นต้องเตรียมการป้องกันภาวะชัก"
     },
     "Hepatitis (A, B, or C), HIV/AIDS, or other bloodborne pathogens": {
         "en": "Hepatitis (A, B, or C), HIV/AIDS, or other bloodborne pathogens",
@@ -2573,7 +2857,8 @@
         "de": "Hepatitis (A, B oder C), HIV/AIDS oder andere durch Blut übertragbare Erreger",
         "es": "Hepatitis (A, B o C), VIH/SIDA u otros patógenos transmitidos por la sangre",
         "nl": "Hepatitis (A, B of C), Hiv/Aids of andere bloedoverdraagbare pathogenen",
-        "pt": "Hepatite (A, B ou C), HIV/AIDS ou outros patógenos transmitidos pelo sangue"
+        "pt": "Hepatite (A, B ou C), HIV/AIDS ou outros patógenos transmitidos pelo sangue",
+        "th": "ไวรัสตับอักเสบ (A, B หรือ C), HIV/AIDS หรือเชื้อโรคทางเลือดอื่น ๆ"
     },
     "Universal precautions apply; disclosure assists in safety": {
         "en": "Universal precautions apply; disclosure assists in safety",
@@ -2582,7 +2867,8 @@
         "de": "Universelle Schutzmaßnahmen greifen; Offenlegung dient der Sicherheit",
         "es": "Se aplican precauciones universales; la transparencia garantiza la seguridad",
         "nl": "Universele voorzorgsmaatregelen van toepassing; melding dient de veiligheid",
-        "pt": "Precauções universais são aplicadas; a declaração apoia a segurança"
+        "pt": "Precauções universais são aplicadas; a declaração apoia a segurança",
+        "th": "ใช้วิธีป้องกันตามมาตรฐานสากล การแจ้งข้อมูลช่วยเพิ่มความปลอดภัย"
     },
     "History of keloid scarring or hypertrophic scars": {
         "en": "History of keloid scarring or hypertrophic scars",
@@ -2591,7 +2877,8 @@
         "de": "Neigung zu Keloidbildung oder hypertrophen Narben",
         "es": "Antecedentes de cicatrización queloide o cicatrices hipertróficas",
         "nl": "Geschiedenis van keloïdvorming of hypertrofische littekens",
-        "pt": "Histórico de cicatrizes queloides ou cicatrizes hipertróficas"
+        "pt": "Histórico de cicatrizes queloides ou cicatrizes hipertróficas",
+        "th": "มีประวัติการเกิดแผลเป็นคีลอยด์หรือแผลเป็นนูน"
     },
     "Risk of altered cosmetic outcome": {
         "en": "Risk of altered cosmetic outcome",
@@ -2600,7 +2887,8 @@
         "de": "Risiko von Beeinträchtigungen des ästhetischen Ergebnisses",
         "es": "Riesgo de alteración del resultado estético y de cicatrización",
         "nl": "Risico op afwijkende esthetische littekenvorming",
-        "pt": "Risco de alteração no resultado estético e na cicatrização"
+        "pt": "Risco de alteração no resultado estético e na cicatrização",
+        "th": "เสี่ยงต่อผลลัพธ์ด้านความงามที่เปลี่ยนแปลงไป"
     },
     "Allergies to latex, adhesives, soaps, lidocaine, or metals (nickel, cobalt)": {
         "en": "Allergies to latex, adhesives, soaps, lidocaine, or metals (nickel, cobalt)",
@@ -2609,7 +2897,8 @@
         "de": "Allergien gegen Latex, Pflasterkleber, Seifen, Lidocain oder Metalle (Nickel, Kobalt)",
         "es": "Alergias al látex, apósitos/adhesivos, jabones, lidocaína o metales (níquel, cobalto)",
         "nl": "Allergieën voor latex, kleefpleisters, zepen, lidocaïne of metalen (nikkel, kobalt)",
-        "pt": "Alergias a látex, adesivos, sabonetes, lidocaína ou metais (níquel, cobalto)"
+        "pt": "Alergias a látex, adesivos, sabonetes, lidocaína ou metais (níquel, cobalto)",
+        "th": "แพ้ยางธรรมชาติ (Latex), กาว, สบู่, ยาชา Lidocaine หรือโลหะ (นิเกิล, โคบอลต์)"
     },
     "Requires hypoallergenic setup and materials": {
         "en": "Requires hypoallergenic setup and materials",
@@ -2618,7 +2907,8 @@
         "de": "Erfordert hypoallergenes Setup und Material",
         "es": "Requiere equipamiento y materiales hipoalergénicos",
         "nl": "Vereist hypoallergene materialen en opstelling",
-        "pt": "Requer equipamentos e materiais hipoalergênicos"
+        "pt": "Requer equipamentos e materiais hipoalergênicos",
+        "th": "ต้องจัดเตรียมอุปกรณ์และวัสดุที่ลดความเสี่ยงการแพ้ (Hypoallergenic)"
     },
     "Currently pregnant, planning pregnancy, or nursing": {
         "en": "Currently pregnant, planning pregnancy, or nursing",
@@ -2627,7 +2917,8 @@
         "de": "Bestehende Schwangerschaft, geplante Schwangerschaft oder Stillzeit",
         "es": "Embarazo actual, planificación de embarazo o período de lactancia",
         "nl": "Momenteel zwanger, kinderwens of borstvoeding gevend",
-        "pt": "Gravidez confirmada, planejamento de gravidez ou amamentação"
+        "pt": "Gravidez confirmada, planejamento de gravidez ou amamentação",
+        "th": "กำลังตั้งครรภ์, วางแผนจะตั้งครรภ์ หรือให้นมบุตร"
     },
     "Procedure typically postponed during pregnancy/nursing": {
         "en": "Procedure typically postponed during pregnancy/nursing",
@@ -2636,7 +2927,8 @@
         "de": "Eingriff wird während Schwangerschaft/Stillzeit in der Regel verschoben",
         "es": "El procedimiento debe posponerse durante el embarazo y la lactancia",
         "nl": "Behandeling wordt uitgesteld tijdens zwangerschap of borstvoeding",
-        "pt": "O procedimento deve ser adiado durante a gravidez e a amamentação"
+        "pt": "O procedimento deve ser adiado durante a gravidez e a amamentação",
+        "th": "โดยทั่วไปควรเลื่อนการทำหัตถการออกไปในระหว่างตั้งครรภ์/ให้นมบุตร"
     },
     "Active skin condition at the procedure site (eczema, psoriasis, sunburn, active acne)": {
         "en": "Active skin condition at the procedure site (eczema, psoriasis, sunburn, active acne)",
@@ -2645,7 +2937,8 @@
         "de": "Akute Hauterkrankung an der Eingriffsstelle (Ekzem, Psoriasis, Sonnenbrand, Akne)",
         "es": "Afección cutánea activa en la zona (eccema, psoriasis, quemadura solar, acné activo)",
         "nl": "Actieve huidaandoening op de behandelplek (eczeem, psoriasis, zonnebrand, actieve acne)",
-        "pt": "Condição ativa de pele no local (eczema, psoríase, queimadura solar, acne ativa)"
+        "pt": "Condição ativa de pele no local (eczema, psoríase, queimadura solar, acne ativa)",
+        "th": "มีอาการทางผิวหนังบริเวณที่จะทำหัตถการ (ผื่นแพ้, สะเก็ดเงิน, ผิวไหม้แดด, สิวอักเสบ)"
     },
     "Cannot perform procedure over compromised skin": {
         "en": "Cannot perform procedure over compromised skin",
@@ -2654,7 +2947,8 @@
         "de": "Eingriff auf geschädigter oder entzündeter Haut nicht möglich",
         "es": "No se puede realizar el procedimiento sobre piel dañada o irritada",
         "nl": "Behandeling kan niet worden uitgevoerd op beschadigde huid",
-        "pt": "Não é possível realizar o procedimento sobre pele sensibilizada ou lesionada"
+        "pt": "Não é possível realizar o procedimento sobre pele sensibilizada ou lesionada",
+        "th": "ไม่สามารถทำหัตถการบนผิวหนังที่ไม่สมบูรณ์หรือมีบาดแผลได้"
     },
     "Compromised immune system or taking immunosuppressive medication": {
         "en": "Compromised immune system or taking immunosuppressive medication",
@@ -2663,7 +2957,8 @@
         "de": "Geschwächtes Immunsystem oder Einnahme von Immunsuppressiva",
         "es": "Sistema inmunitario debilitado o toma de medicamentos inmunosupresores",
         "nl": "Verzwakt immuunsysteem of gebruik van afweeronderdrukkende medicatie",
-        "pt": "Sistema imunológico comprometido ou uso de medicamentos imunossupressores"
+        "pt": "Sistema imunológico comprometido ou uso de medicamentos imunossupressores",
+        "th": "มีภาวะภูมิคุ้มกันบกพร่อง หรือกำลังรับประทานยากดภูมิคุ้มกัน"
     },
     "Increased risk of infection; doctor consult required": {
         "en": "Increased risk of infection; doctor consult required",
@@ -2672,7 +2967,8 @@
         "de": "Erhöhtes Infektionsrisiko; ärztliche Rücksprache erforderlich",
         "es": "Mayor riesgo de infección; se requiere consulta médica previa",
         "nl": "Verhoogd infectierisico; doktersconsultatie verplicht",
-        "pt": "Risco aumentado de infecção; consulta médica obrigatória"
+        "pt": "Risco aumentado de infecção; consulta médica obrigatória",
+        "th": "มีความเสี่ยงติดเชื้อสูงขึ้น จำเป็นต้องปรึกษาแพทย์"
     },
     "Taking Accutane (isotretinoin) currently or within the past 6 months": {
         "en": "Taking Accutane (isotretinoin) currently or within the past 6 months",
@@ -2681,7 +2977,8 @@
         "de": "Einnahme von Isotretinoin (Roaccutan) aktuell oder in den letzten 6 Monaten",
         "es": "Toma de Roacutan / isotretinoína actualmente o en los últimos 6 meses",
         "nl": "Gebruik van Roaccutane (isotretinoïne) nu of in de afgelopen 6 maanden",
-        "pt": "Uso de Roacutan (isotretinoína) atualmente ou nos últimos 6 meses"
+        "pt": "Uso de Roacutan (isotretinoína) atualmente ou nos últimos 6 meses",
+        "th": "กำลังรับประทานยา Accutane (isotretinoin) หรือเคยรับประทานภายใน 6 เดือนที่ผ่านมา"
     },
     "Skin fragility; procedure must be postponed at least 6 months post-treatment": {
         "en": "Skin fragility; procedure must be postponed at least 6 months post-treatment",
@@ -2690,7 +2987,8 @@
         "de": "Erhöhte Hautempfindlichkeit; Wartezeit von mind. 6 Monaten nach Absetzen",
         "es": "Fragilidad de la piel; debe posponerse al menos 6 meses tras finalizar el tratamiento",
         "nl": "Kwetsbare huid; minimaal 6 maanden wachten na beëindiging van de kuur",
-        "pt": "Extrema sensibilidade na pele; adiar por no mínimo 6 meses após o término do tratamento"
+        "pt": "Extrema sensibilidade na pele; adiar por no mínimo 6 meses após o término do tratamento",
+        "th": "ผิวหนังเปราะบาง ต้องเลื่อนการทำหัตถการออกไปอย่างน้อย 6 เดือนหลังหยุดยา"
     },
     "Under the influence of alcohol, drugs, or recreational substances today": {
         "en": "Under the influence of alcohol, drugs, or recreational substances today",
@@ -2699,7 +2997,8 @@
         "de": "Heute unter dem Einfluss von Alkohol, Drogen oder Rauschmitteln",
         "es": "Bajo la influencia de alcohol, drogas o sustancias recreativas hoy",
         "nl": "Vandaag onder invloed van alcohol, drugs of verdovende middelen",
-        "pt": "Sob efeito de álcool, drogas ou substâncias entorpecentes no dia de hoje"
+        "pt": "Sob efeito de álcool, drogas ou substâncias entorpecentes no dia de hoje",
+        "th": "อยู่ภายใต้ฤทธิ์ของแอลกอฮอล์ ยาเสพติด หรือสารนันทนาการในวันนี้"
     },
     "ABSOLUTE CONTRAINDICATION: Cannot proceed under the influence": {
         "en": "ABSOLUTE CONTRAINDICATION: Cannot proceed under the influence",
@@ -2708,7 +3007,8 @@
         "de": "ABSOLUTE KONTRAINDIKATION: Keine Durchführung unter Alkoholeinfluss/Drogen",
         "es": "CONTRAINDICACIÓN ABSOLUTA: No se puede proceder bajo los efectos de sustancias",
         "nl": "ABSOLUTE CONTRA-INDICATIE: Geen behandeling mogelijk onder invloed",
-        "pt": "CONTRAINDICAÇÃO ABSOLUTA: Proibido realizar o procedimento sob o efeito de substâncias"
+        "pt": "CONTRAINDICAÇÃO ABSOLUTA: Proibido realizar o procedimento sob o efeito de substâncias",
+        "th": "ข้อห้ามเด็ดขาด: ไม่สามารถดำเนินหัตถการได้หากอยู่ภายใต้ฤทธิ์สารดังกล่าว"
     },
     "Studio / Shop Name": {
         "en": "Studio / Shop Name",
@@ -2717,7 +3017,8 @@
         "de": "Name des Studios / Shops",
         "es": "Nombre del estudio o tienda",
         "nl": "Naam van de studio of shop",
-        "pt": "Nome do estúdio ou estabelecimento"
+        "pt": "Nome do estúdio ou estabelecimento",
+        "th": "ชื่อสตูดิโอ / ร้าน"
     },
     "104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com": {
         "en": "104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com",
@@ -2726,7 +3027,8 @@
         "de": "104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com",
         "es": "104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com",
         "nl": "104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com",
-        "pt": "104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com"
+        "pt": "104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com",
+        "th": "104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com"
     },
     "Poli International Tattoo & Piercing Studio": {
         "en": "Poli International Tattoo & Piercing Studio",
@@ -2735,7 +3037,8 @@
         "de": "Poli International Tattoo & Piercing Studio",
         "es": "Poli International Tattoo & Piercing Studio",
         "nl": "Poli International Tattoo & Piercing Studio",
-        "pt": "Poli International Tattoo & Piercing Studio"
+        "pt": "Poli International Tattoo & Piercing Studio",
+        "th": "Poli International Tattoo & Piercing Studio"
     },
     "Poli International Studio": {
         "en": "Poli International Studio",
@@ -2744,7 +3047,8 @@
         "de": "Poli International Studio",
         "es": "Poli International Studio",
         "nl": "Poli International Studio",
-        "pt": "Poli International Studio"
+        "pt": "Poli International Studio",
+        "th": "Poli International Studio"
     },
     "Name of licensed tattoo artist": {
         "en": "Name of licensed tattoo artist",
@@ -2753,7 +3057,8 @@
         "de": "Name des lizenzierten Tätowierers",
         "es": "Nombre del tatuador certificado",
         "nl": "Naam van de gediplomeerde tatoeëerder",
-        "pt": "Nome do tatuador profissional certificado"
+        "pt": "Nome do tatuador profissional certificado",
+        "th": "ชื่อช่างสักที่ได้รับใบอนุญาต"
     },
     "Lead Artist Name": {
         "en": "Lead Artist Name",
@@ -2762,7 +3067,8 @@
         "de": "Name des leitenden Künstlers",
         "es": "Nombre del artista principal",
         "nl": "Naam van de hoofdartiest",
-        "pt": "Nome do artista principal"
+        "pt": "Nome do artista principal",
+        "th": "ชื่อช่างหลัก"
     },
     "Name of practitioner executing procedure": {
         "en": "Name of practitioner executing procedure",
@@ -2771,7 +3077,8 @@
         "de": "Name der ausführenden Fachkraft",
         "es": "Nombre del profesional que realiza el procedimiento",
         "nl": "Naam van de uitvoerende behandelaar",
-        "pt": "Nome do profissional responsável pelo procedimento"
+        "pt": "Nome do profissional responsável pelo procedimento",
+        "th": "ชื่อผู้ปฏิบัติงานทำหัตถการ"
     },
     "Cover-up specialist artist name": {
         "en": "Cover-up specialist artist name",
@@ -2780,7 +3087,8 @@
         "de": "Name des Cover-Up-Spezialisten",
         "es": "Nombre del artista especialista en cover-up",
         "nl": "Naam van de cover-up specialist",
-        "pt": "Nome do artista especialista em cover-up"
+        "pt": "Nome do artista especialista em cover-up",
+        "th": "ชื่อช่างสักผู้เชี่ยวชาญการแก้/ทับรอยสัก"
     },
     "Practitioner Name": {
         "en": "Practitioner Name",
@@ -2789,7 +3097,8 @@
         "de": "Name der Fachkraft",
         "es": "Nombre del profesional",
         "nl": "Naam van de behandelaar",
-        "pt": "Nome do profissional"
+        "pt": "Nome do profissional",
+        "th": "ชื่อผู้ปฏิบัติงาน"
     },
     "Client legal name": {
         "en": "Client legal name",
@@ -2798,7 +3107,8 @@
         "de": "Bürgerlicher Name des Kunden",
         "es": "Nombre legal del cliente",
         "nl": "Officiële naam van de klant",
-        "pt": "Nome civil do cliente"
+        "pt": "Nome civil do cliente",
+        "th": "ชื่อ-นามสกุลตามกฎหมายของลูกค้า"
     },
     "Jane Doe": {
         "en": "Jane Doe",
@@ -2807,7 +3117,8 @@
         "de": "Erika Mustermann",
         "es": "María García",
         "nl": "Sanne Janssen",
-        "pt": "Maria Silva"
+        "pt": "Maria Silva",
+        "th": "Jane Doe"
     },
     "Jane Elizabeth Doe": {
         "en": "Jane Elizabeth Doe",
@@ -2816,7 +3127,8 @@
         "de": "Erika Elisabeth Mustermann",
         "es": "María Isabel García",
         "nl": "Sanne Elisabeth Janssen",
-        "pt": "Maria Elisabeth Silva"
+        "pt": "Maria Elisabeth Silva",
+        "th": "Jane Elizabeth Doe"
     },
     "Minor first and last name": {
         "en": "Minor first and last name",
@@ -2825,7 +3137,8 @@
         "de": "Vor- und Nachname des Minderjährigen",
         "es": "Nombre y apellidos del menor",
         "nl": "Voor- en achternaam van de minderjarige",
-        "pt": "Nome e sobrenome do menor"
+        "pt": "Nome e sobrenome do menor",
+        "th": "ชื่อ-นามสกุล ของผู้เยาว์"
     },
     "Guardian first and last name": {
         "en": "Guardian first and last name",
@@ -2834,7 +3147,8 @@
         "de": "Vor- und Nachname des Erziehungsberechtigten",
         "es": "Nombre y apellidos del tutor",
         "nl": "Voor- en achternaam van de voogd",
-        "pt": "Nome e sobrenome do responsável"
+        "pt": "Nome e sobrenome do responsável",
+        "th": "ชื่อ-นามสกุล ของผู้ปกครอง"
     },
     "Street, City, State, ZIP": {
         "en": "Street, City, State, ZIP",
@@ -2843,7 +3157,8 @@
         "de": "Straße, Hausnr., Stadt, PLZ",
         "es": "Calle, Ciudad, Provincia, Código Postal",
         "nl": "Straat, Huisnummer, Stad, Postcode",
-        "pt": "Rua, Número, Cidade, Estado, CEP"
+        "pt": "Rua, Número, Cidade, Estado, CEP",
+        "th": "ที่อยู่, เมือง, จังหวัด, รหัสไปรษณีย์"
     },
     "State/Country & ID Number": {
         "en": "State/Country & ID Number",
@@ -2852,7 +3167,8 @@
         "de": "Land/Bundesland & Dokumentennummer",
         "es": "País/Comunidad y número de documento",
         "nl": "Land/Provincie & documentnummer",
-        "pt": "País/Estado e número do documento"
+        "pt": "País/Estado e número do documento",
+        "th": "จังหวัด/ประเทศ และ เลขบัตรประจำตัว"
     },
     "ID Type and Number": {
         "en": "ID Type and Number",
@@ -2861,7 +3177,8 @@
         "de": "Ausweisart und Nummer",
         "es": "Tipo de documento y número",
         "nl": "Soort document en nummer",
-        "pt": "Tipo de documento e número"
+        "pt": "Tipo de documento e número",
+        "th": "ประเภทบัตรและเลขที่บัตร"
     },
     "ID Type and document number": {
         "en": "ID Type and document number",
@@ -2870,7 +3187,8 @@
         "de": "Dokumentenart und Ausweisnummer",
         "es": "Tipo y número de documento",
         "nl": "Documenttype en nummer",
-        "pt": "Tipo e número do documento"
+        "pt": "Tipo e número do documento",
+        "th": "ประเภทบัตรและเลขที่เอกสาร"
     },
     "Permit & Location": {
         "en": "Permit & Location",
@@ -2879,7 +3197,8 @@
         "de": "Betriebserlaubnis & Standort",
         "es": "Permiso y ubicación",
         "nl": "Vergunning & locatie",
-        "pt": "Alvará e localização"
+        "pt": "Alvará e localização",
+        "th": "ใบอนุญาตและสถานที่"
     },
     "Contact person & phone number": {
         "en": "Contact person & phone number",
@@ -2888,7 +3207,8 @@
         "de": "Kontaktperson & Telefonnummer",
         "es": "Persona de contacto y número de teléfono",
         "nl": "Contactpersoon & telefoonnummer",
-        "pt": "Pessoa de contato e telefone"
+        "pt": "Pessoa de contato e telefone",
+        "th": "บุคคลที่ติดต่อได้และเบอร์โทรศัพท์"
     },
     "Color intensity, darkness, motifs...": {
         "en": "Color intensity, darkness, motifs...",
@@ -2897,7 +3217,8 @@
         "de": "Farbintensität, Deckkraft, vorhandene Motive...",
         "es": "Intensidad de color, oscuridad, motivos existentes...",
         "nl": "Kleurintensiteit, donkerte, bestaande motieven...",
-        "pt": "Intensidade da cor, saturação, motivos existentes..."
+        "pt": "Intensidade da cor, saturação, motivos existentes...",
+        "th": "ความเข้มของสี, ความมืด, ลวดลาย..."
     },
     "Dark motifs, florals, koi, biomech, dark shading...": {
         "en": "Dark motifs, florals, koi, biomech, dark shading...",
@@ -2906,7 +3227,8 @@
         "de": "Dunkle Motive, Floral, Koi, Biomechanik, dunkle Schattierungen...",
         "es": "Motivos oscuros, florales, carpa koi, biomecánico, sombras oscuras...",
         "nl": "Donkere motieven, bloemen, koi, biomechanisch, zware schaduwen...",
-        "pt": "Temas escuros, florais, carpa koi, biomecânico, sombras densas..."
+        "pt": "Temas escuros, florais, carpa koi, biomecânico, sombras densas...",
+        "th": "ลวดลายโทนเข้ม, ลายดอกไม้, ปลาคาร์ฟ, ไบโอเมค, การลงเงาเข้ม..."
     },
     "Detailed description of large scale theme, motifs, background elements, flow...": {
         "en": "Detailed description of large scale theme, motifs, background elements, flow...",
@@ -2915,7 +3237,8 @@
         "de": "Detaillierte Beschreibung des Großprojekts, Hintergründe, Dynamik...",
         "es": "Descripción detallada del proyecto de gran escala, fondos, composición...",
         "nl": "Gedetailleerde beschrijving van het grote thema, achtergronden, anatomische flow...",
-        "pt": "Descrição detalhada do projeto de grande escala, fundos, fluxo visual..."
+        "pt": "Descrição detalhada do projeto de grande escala, fundos, fluxo visual...",
+        "th": "รายละเอียดของธีมงานขนาดใหญ่, ลวดลาย, องค์ประกอบพื้นหลัง, ทิศทางของลาย..."
     },
     "Subject matter, symbols, references, text/lettering, style details...": {
         "en": "Subject matter, symbols, references, text/lettering, style details...",
@@ -2924,7 +3247,8 @@
         "de": "Motivbeschreibung, Symbole, Referenzen, Schriftzüge, Stilwünsche...",
         "es": "Tema, símbolos, referencias, texto/tipografía, detalles de estilo...",
         "nl": "Onderwerp, symbolen, referenties, belettering, stijlkenmerken...",
-        "pt": "Tema, símbolos, referências, escrita/lettering, detalhes do estilo..."
+        "pt": "Tema, símbolos, referências, escrita/lettering, detalhes do estilo...",
+        "th": "หัวข้อ, สัญลักษณ์, ภาพอ้างอิง, ข้อความ/ตัวอักษร, รายละเอียดสไตล์..."
     },
     "e.g. Left outer forearm, 2 inches above wrist": {
         "en": "e.g. Left outer forearm, 2 inches above wrist",
@@ -2933,7 +3257,8 @@
         "de": "z.B. Linker äußerer Unterarm, 5 cm oberhalb des Handgelenks",
         "es": "ej. Antebrazo exterior izquierdo, 5 cm sobre la muñeca",
         "nl": "bijv. Buitenkant linker onderarm, 5 cm boven de pols",
-        "pt": "ex.: Antebraço externo esquerdo, 5 cm acima do pulso"
+        "pt": "ex.: Antebraço externo esquerdo, 5 cm acima do pulso",
+        "th": "ต.ย. แขนท่อนล่างด้านนอกซ้าย, 2 นิ้ว เหนือข้อมือ"
     },
     "e.g. 4 inches x 6 inches (10cm x 15cm)": {
         "en": "e.g. 4 inches x 6 inches (10cm x 15cm)",
@@ -2942,7 +3267,8 @@
         "de": "z.B. 10 cm x 15 cm",
         "es": "ej. 10 cm x 15 cm",
         "nl": "bijv. 10 cm x 15 cm",
-        "pt": "ex.: 10 cm x 15 cm"
+        "pt": "ex.: 10 cm x 15 cm",
+        "th": "ต.ย. 4 นิ้ว x 6 นิ้ว (10cm x 15cm)"
     },
     "e.g. Full Back (neck to gluteal fold) and Rib panels": {
         "en": "e.g. Full Back (neck to gluteal fold) and Rib panels",
@@ -2951,7 +3277,8 @@
         "de": "z.B. Kompletter Rücken (Nacken bis Gesäßfalte) und Rippen",
         "es": "ej. Espalda completa (de nuca a glúteos) y costillas",
         "nl": "bijv. Volledige rug (nek tot bilplooi) en ribbenpanelen",
-        "pt": "ex.: Costas inteiras (nuca aos glúteos) e costelas"
+        "pt": "ex.: Costas inteiras (nuca aos glúteos) e costelas",
+        "th": "ต.ย. เต็มหลัง (ตั้งแต่ต้นคอถึงร่องก้น) และบริเวณซี่โครง"
     },
     "e.g. 5-7 sessions (~30-35 total hours)": {
         "en": "e.g. 5-7 sessions (~30-35 total hours)",
@@ -2960,7 +3287,8 @@
         "de": "z.B. 5-7 Sitzungen (~30-35 Gesamtstunden)",
         "es": "ej. 5-7 sesiones (~30-35 horas en total)",
         "nl": "bijv. 5-7 sessies (~30-35 uur in totaal)",
-        "pt": "ex.: 5 a 7 sessões (~30 a 35 horas no total)"
+        "pt": "ex.: 5 a 7 sessões (~30 a 35 horas no total)",
+        "th": "ต.ย. 5-7 ครั้ง (รวมประมาณ ~30-35 ชั่วโมง)"
     },
     "e.g. $180/hr or $1,200/day rate, $300 holding deposit": {
         "en": "e.g. $180/hr or $1,200/day rate, $300 holding deposit",
@@ -2969,7 +3297,8 @@
         "de": "z.B. 150 €/Std. oder 1.000 €/Tagessatz, 250 € Anzahlung",
         "es": "ej. 150 €/h o 1.000 €/tarifa día, 250 € fianza/reserva",
         "nl": "bijv. €150/uur of €1.000/dagtarief, €250 aanbetaling",
-        "pt": "ex.: R$ 250/h ou R$ 1.800/diária, R$ 400 sinal de reserva"
+        "pt": "ex.: R$ 250/h ou R$ 1.800/diária, R$ 400 sinal de reserva",
+        "th": "ต.ย. $180/ชม. หรือ เรท $1,200/วัน, มัดจำจองคิว $300"
     },
     "e.g. Station 3 - Autoclave Lot #2026-A": {
         "en": "e.g. Station 3 - Autoclave Lot #2026-A",
@@ -2978,7 +3307,8 @@
         "de": "z.B. Platz 3 - Autoklav-Chargennr. 2026-A",
         "es": "ej. Cabina 3 - Lote de autoclave n.º 2026-A",
         "nl": "bijv. Werkplek 3 - Autoclaaf lotnr. 2026-A",
-        "pt": "ex.: Bancada 3 - Lote autoclave n.º 2026-A"
+        "pt": "ex.: Bancada 3 - Lote autoclave n.º 2026-A",
+        "th": "ต.ย. สเตชั่น 3 - เครื่อง Autoclave ล็อต #2026-A"
     },
     "e.g. Lot #NV-2026-44, Statim Cycle 12 (Biological Spore Tested)": {
         "en": "e.g. Lot #NV-2026-44, Statim Cycle 12 (Biological Spore Tested)",
@@ -2987,7 +3317,8 @@
         "de": "z.B. Chargennr. NV-2026-44, Statim-Zyklus 12 (Biologischer Sporentest geprüft)",
         "es": "ej. Lote n.º NV-2026-44, Ciclo Statim 12 (Test biológico de esporas conforme)",
         "nl": "bijv. Lotnr. NV-2026-44, Statim-cyclus 12 (Biologische sporentest getest)",
-        "pt": "ex.: Lote n.º NV-2026-44, Ciclo Statim 12 (Teste biológico de esporos aprovado)"
+        "pt": "ex.: Lote n.º NV-2026-44, Ciclo Statim 12 (Teste biológico de esporos aprovado)",
+        "th": "ต.ย. ล็อต #NV-2026-44, Statim รอบที่ 12 (ผ่านการทดสอบเชื้อ Biological Spore)"
     },
     "e.g. 16G (1.2mm) x 5/16\" (8mm) Threadless Labret": {
         "en": "e.g. 16G (1.2mm) x 5/16\" (8mm) Threadless Labret",
@@ -2996,7 +3327,8 @@
         "de": "z.B. 16G (1,2 mm) x 8 mm (5/16\") gewindefreies Labret",
         "es": "ej. Labret sin rosca 16G (1,2 mm) x 8 mm (5/16\")",
         "nl": "bijv. 16G (1,2 mm) x 8 mm (5/16\") draadloze labret",
-        "pt": "ex.: Labret sem rosca 16G (1,2 mm) x 8 mm (5/16\")"
+        "pt": "ex.: Labret sem rosca 16G (1,2 mm) x 8 mm (5/16\")",
+        "th": "ต.ย. 16G (1.2mm) x 5/16\" (8mm) จิว Labret แบบไม่มีเกลียว"
     },
     "e.g. Standard bilateral earlobe piercing": {
         "en": "e.g. Standard bilateral earlobe piercing",
@@ -3005,7 +3337,8 @@
         "de": "z.B. Standardmäßiges beidseitiges Ohrlochstechen",
         "es": "ej. Perforación estándar bilateral de lóbulos de oreja",
         "nl": "bijv. Standaard dubbele oorlel-piercing",
-        "pt": "ex.: Perfuração bilateral padrão do lóbulo da orelha"
+        "pt": "ex.: Perfuração bilateral padrão do lóbulo da orelha",
+        "th": "ต.ย. เจาะติ่งหูมาตรฐานทั้งสองข้าง"
     },
     "e.g. ASTM F-136 Implant Grade Titanium Studs (18G / 1.0mm)": {
         "en": "e.g. ASTM F-136 Implant Grade Titanium Studs (18G / 1.0mm)",
@@ -3014,7 +3347,8 @@
         "de": "z.B. ASTM F-136 Implantat-Titanstecker (18G / 1,0 mm)",
         "es": "ej. Pendientes de titanio grado implante ASTM F-136 (18G / 1,0 mm)",
         "nl": "bijv. ASTM F-136 implant-grade titanium studs (18G / 1,0 mm)",
-        "pt": "ex.: Pinos em titânio grau implante ASTM F-136 (18G / 1,0 mm)"
+        "pt": "ex.: Pinos em titânio grau implante ASTM F-136 (18G / 1,0 mm)",
+        "th": "ต.ย. จิวไทเทเนียมเกรดการแพทย์ ASTM F-136 (18G / 1.0mm)"
     },
     "e.g. Tina Davies I Love Ink - Dark Brown Lot #5821": {
         "en": "e.g. Tina Davies I Love Ink - Dark Brown Lot #5821",
@@ -3023,7 +3357,8 @@
         "de": "z.B. Tina Davies I Love Ink - Dark Brown Chargennr. 5821",
         "es": "ej. Tina Davies I Love Ink - Dark Brown Lote n.º 5821",
         "nl": "bijv. Tina Davies I Love Ink - Dark Brown Batchnr. 5821",
-        "pt": "ex.: Tina Davies I Love Ink - Dark Brown Lote n.º 5821"
+        "pt": "ex.: Tina Davies I Love Ink - Dark Brown Lote n.º 5821",
+        "th": "ต.ย. Tina Davies I Love Ink - Dark Brown ล็อต #5821"
     },
     "e.g. Done 5 years ago": {
         "en": "e.g. Done 5 years ago",
@@ -3032,7 +3367,8 @@
         "de": "z.B. Vor 5 Jahren gestochen",
         "es": "ej. Hecho hace 5 años",
         "nl": "bijv. 5 jaar geleden gezet",
-        "pt": "ex.: Realizado há 5 anos"
+        "pt": "ex.: Realizado há 5 anos",
+        "th": "ต.ย. ทำมาเมื่อ 5 ปีที่แล้ว"
     },
     "e.g. 15": {
         "en": "e.g. 15",
@@ -3041,7 +3377,8 @@
         "de": "z.B. 15",
         "es": "ej. 15",
         "nl": "bijv. 15",
-        "pt": "ex.: 15"
+        "pt": "ex.: 15",
+        "th": "ต.ย. 15"
     },
     "e.g. Mark Doe (Spouse) - (555) 987-6543": {
         "en": "e.g. Mark Doe (Spouse) - (555) 987-6543",
@@ -3050,7 +3387,8 @@
         "de": "z.B. Max Mustermann (Ehepartner) - 0151 12345678",
         "es": "ej. Carlos García (Cónyuge) - 612 345 678",
         "nl": "bijv. Jan Jansen (Partner) - 06 12345678",
-        "pt": "ex.: Carlos Silva (Cônjuge) - (11) 98765-4321"
+        "pt": "ex.: Carlos Silva (Cônjuge) - (11) 98765-4321",
+        "th": "ต.ย. Mark Doe (คู่สมรส) - (555) 987-6543"
     },
     "e.g. John Doe (Spouse) - (555) 987-6543": {
         "en": "e.g. John Doe (Spouse) - (555) 987-6543",
@@ -3059,7 +3397,8 @@
         "de": "z.B. Johann Mustermann (Ehepartner) - 0151 12345678",
         "es": "ej. Juan García (Cónyuge) - 612 345 678",
         "nl": "bijv. Johan Jansen (Partner) - 06 12345678",
-        "pt": "ex.: João Silva (Cônjuge) - (11) 98765-4321"
+        "pt": "ex.: João Silva (Cônjuge) - (11) 98765-4321",
+        "th": "ต.ย. John Doe (คู่สมรส) - (555) 987-6543"
     },
     "e.g. Dr. Robert Vance, Metro Health - (555) 234-5678": {
         "en": "e.g. Dr. Robert Vance, Metro Health - (555) 234-5678",
@@ -3068,7 +3407,8 @@
         "de": "z.B. Dr. med. Robert Vance, Medizinisches Versorgungszentrum - 030 1234567",
         "es": "ej. Dr. Roberto Vence, Salud Metropolitana - 912 345 678",
         "nl": "bijv. Dr. Robert Vance, Metro Gezondheidscentrum - 020 1234567",
-        "pt": "ex.: Dr. Roberto Vance, Centro de Saúde Metropolitano - (11) 3234-5678"
+        "pt": "ex.: Dr. Roberto Vance, Centro de Saúde Metropolitano - (11) 3234-5678",
+        "th": "ต.ย. นพ. Robert Vance, Metro Health - (555) 234-5678"
     },
     "Dr. John Doe, City Medical Center, (555) 123-4567": {
         "en": "Dr. John Doe, City Medical Center, (555) 123-4567",
@@ -3077,7 +3417,8 @@
         "de": "Dr. Johann Mustermann, Städtisches Klinikum, 030 1234567",
         "es": "Dr. Juan García, Centro Médico Municipal, 912 345 678",
         "nl": "Dr. Jan Jansen, Medisch Centrum Stad, 020 1234567",
-        "pt": "Dr. João Silva, Centro Médico Municipal, (11) 3123-4567"
+        "pt": "Dr. João Silva, Centro Médico Municipal, (11) 3123-4567",
+        "th": "นพ. John Doe, City Medical Center, (555) 123-4567"
     },
     "Dr. Smith, City Medical Clinic, Clearance dated MM/DD/YYYY": {
         "en": "Dr. Smith, City Medical Clinic, Clearance dated MM/DD/YYYY",
@@ -3086,7 +3427,8 @@
         "de": "Dr. Müller, Medizinisches Zentrum, Freigabe vom TT.MM.JJJJ",
         "es": "Dr. Pérez, Centro Médico, Autorización con fecha DD/MM/AAAA",
         "nl": "Dr. De Vries, Medisch Centrum, Goedkeuring d.d. DD-MM-JJJJ",
-        "pt": "Dr. Souza, Clínica Médica, Autorização com data de DD/MM/AAAA"
+        "pt": "Dr. Souza, Clínica Médica, Autorização com data de DD/MM/AAAA",
+        "th": "นพ. Smith, City Medical Clinic, ใบรับรองแพทย์ลงวันที่ MM/DD/YYYY"
     },
     "e.g. Blood pressure medication, multivitamins, occasional ibuprofen...": {
         "en": "e.g. Blood pressure medication, multivitamins, occasional ibuprofen...",
@@ -3095,7 +3437,8 @@
         "de": "z.B. Blutdruckmedikamente, Multivitamine, gelegentlich Ibuprofen...",
         "es": "ej. Medicamentos para la tensión, multivitaminas, ibuprofeno ocasional...",
         "nl": "bijv. Bloeddrukmedicatie, multivitaminen, af en toe ibuprofen...",
-        "pt": "ex.: Remédio para pressão arterial, polivitamínicos, ibuprofeno ocasional..."
+        "pt": "ex.: Remédio para pressão arterial, polivitamínicos, ibuprofeno ocasional...",
+        "th": "ต.ย. ยาความดันโลหิต, วิตามินรวม, ยาไอบูโพรเฟนเป็นครั้งคราว..."
     },
     "Comprehensive studio consultation, medical safety disclosure, doctor authorization clause, and legal consent waiver for professional tattoo appointments.": {
         "en": "Comprehensive studio consultation, medical safety disclosure, doctor authorization clause, and legal consent waiver for professional tattoo appointments.",
@@ -3104,7 +3447,8 @@
         "de": "Umfassende Studio-Beratung, medizinische Sicherheitsauskunft, ärztliche Freigabeklausel und rechtliche Einverständniserklärung für professionelle Tattoo-Termine.",
         "es": "Consulta integral de estudio, declaración de seguridad médica, cláusula de autorización médica y consentimiento legal informado para citas de tatuaje profesional.",
         "nl": "Uitgebreide studio-intake, medische veiligheidsverklaring, doktersautorisatieclausule en wettelijke toestemmingsverklaring voor professionele tatoeageafspraken.",
-        "pt": "Consulta completa de estúdio, declaração de segurança médica, cláusula de autorizzazione médica e termo de consentimento livre e esclarecido para tatuagem profissional."
+        "pt": "Consulta completa de estúdio, declaração de segurança médica, cláusula de autorizzazione médica e termo de consentimento livre e esclarecido para tatuagem profissional.",
+        "th": "แบบฟอร์มปรึกษาครบวงจร, การเปิดเผยข้อมูลความปลอดภัยทางการแพทย์, ข้อกำหนดการอนุญาตจากแพทย์ และหนังสือยินยอมสละสิทธิ์ทางกฎหมายสำหรับการนัดหมายสักมืออาชีพ"
     },
     "jane.doe@example.com": {
         "en": "jane.doe@example.com",
@@ -3113,7 +3457,8 @@
         "de": "erika.mustermann@example.com",
         "es": "maria.garcia@example.com",
         "nl": "sanne.janssen@example.com",
-        "pt": "maria.silva@example.com"
+        "pt": "maria.silva@example.com",
+        "th": "jane.doe@example.com"
     },
     "(555) 432-8765": {
         "en": "(555) 432-8765",
@@ -3122,7 +3467,8 @@
         "de": "0151 12345678",
         "es": "612 345 678",
         "nl": "06 12345678",
-        "pt": "(11) 98765-4321"
+        "pt": "(11) 98765-4321",
+        "th": "(555) 432-8765"
     },
     "Comprehensive consent form for body piercing compliant with professional body piercing standards, qualified professional piercer sterilization protocols, physician clearance, sound mind declaration, and pre-procedure aftercare.": {
         "en": "Comprehensive consent form for body piercing compliant with professional body piercing standards, qualified professional piercer sterilization protocols, physician clearance, sound mind declaration, and pre-procedure aftercare.",
@@ -3131,7 +3477,8 @@
         "de": "Umfassende Einwilligungserklärung für Bodypiercing gemäß professionellen Standards, Sterilisationsprotokollen qualifizierter Piercer, ärztlicher Freigabe und Vorab-Nachsorgeberatung.",
         "es": "Formulario de consentimiento integral para piercing corporal según los Estándares Profesionales de Piercing, protocolos de esterilización de anillador cualificado, visto bueno médico y cuidados previos.",
         "nl": "Volledig toestemmingsformulier voor bodypiercing conform professionele normen, sterilisatieprotocollen van gekwalificeerde piercers, doktersgoedkeuring en voorafgaande nazorginstructies.",
-        "pt": "Formulário abrangente de consentimento para body piercing conforme Padrões Profissionais, protocolos de esterilização de body piercer qualificado, autorização médica e cuidados prévios."
+        "pt": "Formulário abrangente de consentimento para body piercing conforme Padrões Profissionais, protocolos de esterilização de body piercer qualificado, autorização médica e cuidados prévios.",
+        "th": "แบบฟอร์มยินยอมการเจาะร่างกายที่ครอบคลุม เป็นไปตามมาตรฐานการเจาะร่างกายระดับมืออาชีพ, โปรโตคอลการฆ่าเชื้อโดยช่างเจาะมืออาชีพ, การรับรองจากแพทย์, การประกาศว่ามีสติสัมปชัญญะสมบูรณ์ และการดูแลหลังเจาะเบื้องต้น"
     },
     "jane@example.com": {
         "en": "jane@example.com",
@@ -3140,7 +3487,8 @@
         "de": "erika@example.com",
         "es": "maria@example.com",
         "nl": "sanne@example.com",
-        "pt": "maria@example.com"
+        "pt": "maria@example.com",
+        "th": "jane@example.com"
     },
     "Medical Clearance Requirements": {
         "en": "Medical Clearance Requirements",
@@ -3149,7 +3497,8 @@
         "de": "Anforderungen an die ärztliche Freigabe",
         "es": "Requisitos de autorización médica",
         "nl": "Vereisten voor medische goedkeuring",
-        "pt": "Requisitos de liberação médica"
+        "pt": "Requisitos de liberação médica",
+        "th": "ข้อกำหนดการรับรองทางการแพทย์"
     },
     "Certain health conditions (including heart murmurs, hemophilia/blood clotting disorders, diabetes, immune disorders, pregnancy, or keloid scarring history) may mandate prior doctor authorization under professional body piercing standards.": {
         "en": "Certain health conditions (including heart murmurs, hemophilia/blood clotting disorders, diabetes, immune disorders, pregnancy, or keloid scarring history) may mandate prior doctor authorization under professional body piercing standards.",
@@ -3158,7 +3507,8 @@
         "de": "Bestimmte Erkrankungen (einschließlich Herzgeräusche, Blutgerinnungsstörungen/Hämophilie, Diabetes, Immunschwäche, Schwangerschaft oder Keloidbildung) erfordern gemäß professionellen Bodypiercing-Standards eine vorherige ärztliche Freigabe.",
         "es": "Ciertas condiciones de salud (incluidos soplos cardíacos, trastornos de coagulación/hemofilia, diabetes, problemas inmunitarios, embarazo o historial de queloides) exigen autorización médica previa según los Estándares Profesionales de Piercing.",
         "nl": "Bepaalde gezondheidsaandoeningen (waaronder hartruis, stollingsstoornissen/hemofilie, diabetes, immuunstoornissen, zwangerschap of neiging tot keloïden) vereisen vooraf doktersgoedkeuring conform professionele bodypiercing-normen.",
-        "pt": "Determinadas condições de saúde (como sopro cardíaco, distúrbios de coagulação/hemofilia, diabetes, distúrbios imunológicos, gravidez ou histórico de queloides) exigem autorização médica prévia sob os Padrões Profissionais de Body Piercing."
+        "pt": "Determinadas condições de saúde (como sopro cardíaco, distúrbios de coagulação/hemofilia, diabetes, distúrbios imunológicos, gravidez ou histórico de queloides) exigem autorização médica prévia sob os Padrões Profissionais de Body Piercing.",
+        "th": "ภาวะสุขภาพบางประการ (รวมถึงเสียงฟู่ที่หัวใจ, โรคฮีโมฟีเลีย/ความผิดปกติของการแข็งตัวของเลือด, เบาหวาน, ความผิดปกติของระบบภูมิคุ้มกัน, การตั้งครรภ์ หรือประวัติการเกิดแผลเป็นคีลอยด์) อาจจำเป็นต้องได้รับอนุญาตจากแพทย์ก่อนตามมาตรฐานการเจาะร่างกายระดับมืออาชีพ"
     },
     "No medical clearance required": {
         "en": "No medical clearance required",
@@ -3167,7 +3517,8 @@
         "de": "Keine ärztliche Freigabe erforderlich",
         "es": "No requiere autorización médica",
         "nl": "Geen medische goedkeuring vereist",
-        "pt": "Nenhuma autorização médica necessária"
+        "pt": "Nenhuma autorização médica necessária",
+        "th": "ไม่ต้องใช้ใบรับรองแพทย์"
     },
     "Yes - Doctor authorization obtained and on file": {
         "en": "Yes - Doctor authorization obtained and on file",
@@ -3176,7 +3527,8 @@
         "de": "Ja - Ärztliche Freigabe liegt vor und wurde hinterlegt",
         "es": "Sí - Autorización médica obtenida y archivada",
         "nl": "Ja - Doktersgoedkeuring verkregen en opgeslagen",
-        "pt": "Sim - Autorização médica obtida e arquivada"
+        "pt": "Sim - Autorização médica obtida e arquivada",
+        "th": "ใช่ - ได้รับการอนุญาตจากแพทย์และมีเอกสารแนบ"
     },
     "Yes - Cleared by treating physician": {
         "en": "Yes - Cleared by treating physician",
@@ -3185,7 +3537,8 @@
         "de": "Ja - Durch behandelnden Arzt freigegeben",
         "es": "Sí - Autorizado por el médico tratante",
         "nl": "Ja - Goedgekeurd door behandelend arts",
-        "pt": "Sim - Liberado pelo médico assistente"
+        "pt": "Sim - Liberado pelo médico assistente",
+        "th": "ใช่ - ได้รับการรับรองจากแพทย์ผู้รักษา"
     },
     "Comprehensive health disclosure and clinical intake form covering cardiovascular conditions, blood thinners, communicable diseases, allergies, fainting history, physician authorizations, and legal certifications.": {
         "en": "Comprehensive health disclosure and clinical intake form covering cardiovascular conditions, blood thinners, communicable diseases, allergies, fainting history, physician authorizations, and legal certifications.",
@@ -3194,7 +3547,8 @@
         "de": "Vollständige gesundheitliche Aufklärung und klinischer Aufnahmebogen für Herz-Kreislauf-Erkrankungen, Blutverdünner, Infektionskrankheiten, Allergien, Ohnmachten, Arztfreigaben und Rechtszertifizierungen.",
         "es": "Declaración integral de salud y ficha clínica de admisión sobre afecciones cardiovasculares, anticoagulantes, enfermedades transmisibles, alergias, síncopes, autorizaciones médicas y certificaciones legales.",
         "nl": "Uitgebreid gezondheidsoverzicht en klinisch intakeformulier over hart- en vaatziekten, bloedverdunners, overdraagbare aandoeningen, allergieën, flauwvallen, doktersautorisaties en wettelijke verklaringen.",
-        "pt": "Histórico completo de saúde e ficha clínica abrangendo doenças cardiovasculares, anticoagulantes, doenças transmissíveis, alergias, desmaios, autorizações médicas e declarações legais."
+        "pt": "Histórico completo de saúde e ficha clínica abrangendo doenças cardiovasculares, anticoagulantes, doenças transmissíveis, alergias, desmaios, autorizações médicas e declarações legais.",
+        "th": "แบบฟอร์มเปิดเผยข้อมูลสุขภาพและประวัติทางคลินิกที่ครอบคลุม รวมถึงโรคหัวใจและหลอดเลือด, การใช้ยาละลายลิ่มเลือด, โรคติดต่อ, อาการแพ้, ประวัติการเป็นลม, การอนุญาตจากแพทย์ และการรับรองทางกฎหมาย"
     },
     "Multi-Session Tattoo Project Master Agreement": {
         "en": "Multi-Session Tattoo Project Master Agreement",
@@ -3203,7 +3557,8 @@
         "de": "Rahmenvereinbarung für mehrteilige Tattoo-Großprojekte",
         "es": "Acuerdo marco para proyectos de tatuaje multisesión",
         "nl": "Hoofdovereenkomst voor tatoeageprojecten in meerdere sessies",
-        "pt": "Contrato principal para projeto de tatuagem em múltiplas sessões"
+        "pt": "Contrato principal para projeto de tatuagem em múltiplas sessões",
+        "th": "สัญญาหลักสำหรับการสักโปรเจกต์หลายครั้ง"
     },
     "Comprehensive agreement for back pieces, sleeves, body suits, and multi-session projects covering studio details, multi-day scheduling, physician releases, deposit structures, and continuous health disclosures.": {
         "en": "Comprehensive agreement for back pieces, sleeves, body suits, and multi-session projects covering studio details, multi-day scheduling, physician releases, deposit structures, and continuous health disclosures.",
@@ -3212,7 +3567,8 @@
         "de": "Umfassender Vertrag für Rücken-, Ärmel- und Ganzkörpertattoos sowie Mehrterminprojekte mit Terminplanung, Arztfreigaben, Anzahlungen und fortlaufender Gesundheitsauskunft.",
         "es": "Acuerdo integral para espaldas completas, mangas, trajes de cuerpo y proyectos multisesión que abarca calendario, vistos buenos médicos, depósitos y declaraciones continuas de salud.",
         "nl": "Uitgebreide overeenkomst voor backs, sleeves, body suits en projecten in meerdere sessies met planning, doktersverklaringen, aanbetalingsvoorwaarden en gezondheidsverklaringen.",
-        "pt": "Contrato abrangente para fechamentos de costas, braços, body suits e projetos em múltiplas sessões cobrindo agendamento, liberação médica, sinal e declaração contínua de saúde."
+        "pt": "Contrato abrangente para fechamentos de costas, braços, body suits e projetos em múltiplas sessões cobrindo agendamento, liberação médica, sinal e declaração contínua de saúde.",
+        "th": "ข้อตกลงที่ครอบคลุมสำหรับงานเต็มหลัง, งานแขน (Sleeves), บอดี้สูท และโปรเจกต์ที่ต้องทำหลายครั้ง ครอบคลุมรายละเอียดสตูดิโอ, การนัดหมายหลายวัน, ใบรับรองแพทย์, โครงสร้างเงินมัดจำ และการเปิดเผยข้อมูลสุขภาพอย่างต่อเนื่อง"
     },
     "Medical Assessment & High-Endurance Screening": {
         "en": "Medical Assessment & High-Endurance Screening",
@@ -3221,7 +3577,8 @@
         "de": "Medizinische Beurteilung & Belastbarkeitsprüfung für lange Sitzungen",
         "es": "Evaluación médica y examen de resistencia para sesiones largas",
         "nl": "Medische beoordeling en screening voor langdurige sessies",
-        "pt": "Avaliação médica e triagem de resistência para sessões prolongadas"
+        "pt": "Avaliação médica e triagem de resistência para sessões prolongadas",
+        "th": "การประเมินทางการแพทย์และการคัดกรองความทนทานของร่างกาย"
     },
     "Multi-Session Medical Prerequisite": {
         "en": "Multi-Session Medical Prerequisite",
@@ -3230,7 +3587,8 @@
         "de": "Medizinische Voraussetzung für Mehrterminsitzungen",
         "es": "Requisito médico previo para sesiones múltiples",
         "nl": "Medische voorwaarde voor meerdere sessies",
-        "pt": "Pré-requisito médico para múltiplas sessões"
+        "pt": "Pré-requisito médico para múltiplas sessões",
+        "th": "ข้อกำหนดเบื้องต้นทางการแพทย์สำหรับการสักหลายครั้ง"
     },
     "Extended tattoo sessions place significant physical stress on the circulatory, endocrine, and immune systems. Clients with chronic conditions must be formally cleared by their physician.": {
         "en": "Extended tattoo sessions place significant physical stress on the circulatory, endocrine, and immune systems. Clients with chronic conditions must be formally cleared by their physician.",
@@ -3239,7 +3597,8 @@
         "de": "Längere Tattoositzungen stellen eine erhebliche Belastung für Kreislauf, Hormon- und Immunsystem dar. Kunden mit chronischen Vorerkrankungen benötigen eine formelle ärztliche Freigabe.",
         "es": "Las sesiones prolongadas de tatuaje generan una exigencia física importante en los sistemas circulatorio, endocrino e inmune. Los clientes con afecciones crónicas deben contar con autorización médica formal.",
         "nl": "Langdurige tatoeagesessies belasten het cardiovasculaire, endocriene en immuunsysteem aanzienlijk. Klanten met chronische aandoeningen moeten vooraf formeel worden goedgekeurd door hun arts.",
-        "pt": "Sessões extensas de tatuagem impõem estresse físico significativo aos sistemas circulatório, endócrino e imunológico. Clientes com condições crônicas devem obter liberação médica formal."
+        "pt": "Sessões extensas de tatuagem impõem estresse físico significativo aos sistemas circulatório, endócrino e imunológico. Clientes com condições crônicas devem obter liberação médica formal.",
+        "th": "การสักต่อเนื่องเป็นเวลานานส่งผลกระทบต่อระบบไหลเวียนโลหิต ระบบต่อมไร้ท่อ และระบบภูมิคุ้มกันอย่างมาก ลูกค้าที่มีโรคประจำตัวเรื้อรังต้องได้รับการรับรองอย่างเป็นทางการจากแพทย์ผู้รักษา"
     },
     "PRE-PROCEDURE AFTERCARE: I confirm that the artist has provided comprehensive verbal and written aftercare advice prior to commencing work, and I commit to rigorous healing hygiene between sessions.": {
         "en": "PRE-PROCEDURE AFTERCARE: I confirm that the artist has provided comprehensive verbal and written aftercare advice prior to commencing work, and I commit to rigorous healing hygiene between sessions.",
@@ -3248,7 +3607,8 @@
         "de": "NACHSORGEAUFKLÄRUNG: Ich bestätige, dass der Tätowierer vor Beginn umfassende mündliche und schriftliche Nachsorgehinweise gegeben hat, und verpflichte mich zu strenger Hygiene zwischen den Terminen.",
         "es": "CUIDADOS PREVIOS: Confirmo que el artista me ha facilitado recomendaciones detalladas verbales y escritas sobre los cuidados antes de comenzar, y me comprometo a mantener una higiene rigurosa entre sesiones.",
         "nl": "VOORAFGAAND NAZORGADVIES: Ik bevestig dat de artiest mij voorafgaand aan het werk uitgebreide mondelinge en schriftelijke nazorginstructies heeft gegeven en verbind mij tot strikte hygiëne tussen de sessies.",
-        "pt": "CUIDADOS PRÉVIOS: Confirmo que o tatuador forneceu orientações abrangentes verbais e escritas de cuidados antes de iniciar o trabalho, e me comprometo com rigorosa higiene entre as sessões."
+        "pt": "CUIDADOS PRÉVIOS: Confirmo que o tatuador forneceu orientações abrangentes verbais e escritas de cuidados antes de iniciar o trabalho, e me comprometo com rigorosa higiene entre as sessões.",
+        "th": "การดูแลหลังสักเบื้องต้น: ข้าพเจ้ายืนยันว่าช่างสักได้ให้คำแนะนำในการดูแลหลังสักทั้งด้วยวาจาและเป็นลายลักษณ์อักษรอย่างครบถ้วนก่อนเริ่มงาน และข้าพเจ้าตกลงที่จะรักษาความสะอาดในการพักฟื้นอย่างเคร่งครัดในระหว่างช่วงพักการสักแต่ละครั้ง"
     },
     "Minor Consent & Legal Guardian Authorization Form": {
         "en": "Minor Consent & Legal Guardian Authorization Form",
@@ -3257,7 +3617,8 @@
         "de": "Einverständniserklärung für Minderjährige & Genehmigung der Erziehungsberechtigten",
         "es": "Formulario de consentimiento para menores y autorización del tutor legal",
         "nl": "Toestemmingsformulier voor minderjarigen & machtiging wettelijke voogd",
-        "pt": "Formulário de consentimento para menores e autorização do responsável legal"
+        "pt": "Formulário de consentimento para menores e autorização do responsável legal",
+        "th": "หนังสือยินยอมสำหรับผู้เยาว์และใบมอบอำนาจจากผู้ปกครองตามกฎหมาย"
     },
     "Legally required consent form for minor services (earlobes/piercings), requiring legal guardian identification, relationship verification, physician authorization review, capacity of reflection, and dual signatures.": {
         "en": "Legally required consent form for minor services (earlobes/piercings), requiring legal guardian identification, relationship verification, physician authorization review, capacity of reflection, and dual signatures.",
@@ -3266,7 +3627,8 @@
         "de": "Rechtlich vorgeschriebene Einwilligung für Minderjährige (Ohrläppchen/Piercings) mit Identitätsnachweis der Erziehungsberechtigten, Sorgerechtsprüfung, Arztfreigabe, Urteilsfähigkeit und doppelter Unterschrift.",
         "es": "Formulario de consentimiento legal obligatorio para menores (lóbulos/piercings), con identificación del tutor legal, acreditación de tutela, autorización médica, discernimiento y doble firma.",
         "nl": "Wettelijk verplicht toestemmingsformulier voor minderjarigen (oorlellen/piercings), met identiteitscontrole van de voogd, verificatie van het gezag, doktersautorisatie, wilsbekwaamheid en dubbele handtekening.",
-        "pt": "Formulário de consentimento obrigatório por lei para menores (lóbulos/piercings), exigindo identificação do responsável legal, comprovação de guarda, liberação médica, discernimento e dupla assinatura."
+        "pt": "Formulário de consentimento obrigatório por lei para menores (lóbulos/piercings), exigindo identificação do responsável legal, comprovação de guarda, liberação médica, discernimento e dupla assinatura.",
+        "th": "แบบฟอร์มยินยอมตามกฎหมายสำหรับการรับบริการของผู้เยาว์ (เจาะหู/เจาะร่างกาย) ซึ่งต้องมีการระบุตัวตนของผู้ปกครองตามกฎหมาย, การตรวจสอบความสัมพันธ์, การตรวจสอบการอนุญาตจากแพทย์, การมีสติสัมปชัญญะ และการลงนามร่วมกัน"
     },
     "CAPACITY OF REFLECTION: I affirm that I am in full capacity of my own reflection and sound judgment, not impaired by any substance, and freely authorize this procedure.": {
         "en": "CAPACITY OF REFLECTION: I affirm that I am in full capacity of my own reflection and sound judgment, not impaired by any substance, and freely authorize this procedure.",
@@ -3275,7 +3637,8 @@
         "de": "URTEILSFÄHIGKEIT: Ich bestätige, dass ich im Vollbesitz meiner geistigen Kräfte und Urteilsfähigkeit bin, nicht unter Alkoholeinfluss/Drogen stehe und diesem Eingriff frei zustimme.",
         "es": "CAPACIDAD DE REFLEXIÓN: Afirmo que estoy en pleno uso de mis facultades de reflexión y juicio cabal, sin alteración por sustancias, y autorizo libremente este procedimiento.",
         "nl": "WILSBEKWAAMHEID: Ik bevestig dat ik volledig wilsbekwaam ben, niet onder invloed van middelen verkeer en deze behandeling uit vrije wil goedkeur.",
-        "pt": "CAPACIDADE DE REFLEXÃO: Afirmo estar em plena capacidade de reflexão e bom senso, sem qualquer alteração por substâncias, e autorizo livremente este procedimento."
+        "pt": "CAPACIDADE DE REFLEXÃO: Afirmo estar em plena capacidade de reflexão e bom senso, sem qualquer alteração por substâncias, e autorizo livremente este procedimento.",
+        "th": "การมีสติสัมปชัญญะ: ข้าพเจ้ายืนยันว่าข้าพเจ้ามีสติสัมปชัญญะสมบูรณ์และมีการตัดสินใจที่ถี่ถ้วน ไม่ได้อยู่ภายใต้ฤทธิ์ของสารมึนเมาใดๆ และอนุญาตให้ดำเนินการนี้ด้วยความสมัครใจ"
     },
     "PRE-PROCEDURE AFTERCARE: I certify that both the minor and I have received thorough verbal and written pre-procedure aftercare instructions adhering to professional body piercing standards, and I will supervise the minor's healing protocol.": {
         "en": "PRE-PROCEDURE AFTERCARE: I certify that both the minor and I have received thorough verbal and written pre-procedure aftercare instructions adhering to professional body piercing standards, and I will supervise the minor's healing protocol.",
@@ -3284,7 +3647,8 @@
         "de": "NACHSORGEAUFKLÄRUNG: Ich versichere, dass sowohl der Minderjährige als auch ich ausführliche Nachsorgeanweisungen nach professionellen Bodypiercing-Standards erhalten haben und ich die Wundpflege beaufsichtige.",
         "es": "CUIDADOS PREVIOS: Certifico que tanto el menor como yo hemos recibido instrucciones completas verbales y escritas conformes a los Estándares Profesionales de Piercing, y supervisaré los cuidados de cicatrización.",
         "nl": "VOORAFGAAND NAZORGADVIES: Ik verklaar dat zowel de minderjarige als ik grondige mondelinge en schriftelijke nazorginstructies conform professionele bodypiercing-normen hebben ontvangen en ik toezicht houd op de genezing.",
-        "pt": "CUIDADOS PRÉVIOS: Certifico que tanto o menor quanto eu recebemos orientações verbais e escritas completas de acordo com os Padrões Profissionais de Body Piercing, e supervisionarei a cicatrização."
+        "pt": "CUIDADOS PRÉVIOS: Certifico que tanto o menor quanto eu recebemos orientações verbais e escritas completas de acordo com os Padrões Profissionais de Body Piercing, e supervisionarei a cicatrização.",
+        "th": "การดูแลหลังเจาะเบื้องต้น: ข้าพเจ้าขอรับรองว่าทั้งผู้เยาว์และข้าพเจ้าได้รับคำแนะนำในการดูแลหลังเจาะทั้งด้วยวาจาและเป็นลายลักษณ์อักษรอย่างละเอียดตามมาตรฐานการเจาะร่างกายระดับมืออาชีพ และข้าพเจ้าจะดูแลขั้นตอนการพักฟื้นของผู้เยาว์อย่างใกล้ชิด"
     },
     "Cover-Up & Rework Assessment Form": {
         "en": "Cover-Up & Rework Assessment Form",
@@ -3293,7 +3657,8 @@
         "de": "Begutachtungs- & Zustimmungsformular für Cover-Up & Überarbeitung",
         "es": "Formulario de valoración para cobertura (Cover-Up) y retoque",
         "nl": "Beoordelingsformulier voor cover-up en bijwerken van tatoeages",
-        "pt": "Formulário de avaliação para cobertura (Cover-Up) e reforma de tatuagem"
+        "pt": "Formulário de avaliação para cobertura (Cover-Up) e reforma de tatuagem",
+        "th": "แบบประเมินการสักทับลายเดิม (Cover-Up) และการแก้ไขงาน"
     },
     "Specialized consultation form for covering up or reworking existing tattoo work with skin condition disclosures, laser lightening history, physician release, and design flexibility terms.": {
         "en": "Specialized consultation form for covering up or reworking existing tattoo work with skin condition disclosures, laser lightening history, physician release, and design flexibility terms.",
@@ -3302,7 +3667,8 @@
         "de": "Spezialisiertes Beratungsformular zur Überdeckung oder Überarbeitung alter Tattoos mit Hautzustandsangaben, Laser-Vorgeschichte, Arztfreigabe und Designflexibilität.",
         "es": "Formulario de consulta especializada para cubrir o retocar tatuajes existentes con estado de la piel, historial de aclarado láser, visto bueno médico y flexibilidad de diseño.",
         "nl": "Gespecialiseerd consultatieformulier voor het coveren of bijwerken van bestaande tatoeages inclusief huidconditie, laserhistorie, doktersgoedkeuring en ontwerpflexibiliteit.",
-        "pt": "Formulário de consulta especializada para cobertura ou reforma de tatuagem antiga com histórico da pele, sessões de laser, liberação médica e flexibilidade artística."
+        "pt": "Formulário de consulta especializada para cobertura ou reforma de tatuagem antiga com histórico da pele, sessões de laser, liberação médica e flexibilidade artística.",
+        "th": "แบบฟอร์มปรึกษาเฉพาะทางสำหรับการสักทับ (Cover-up) หรือการแก้ไขงานสักเดิม รวมถึงการเปิดเผยสภาพผิว, ประวัติการลบรอยสักด้วยเลเซอร์, ใบรับรองแพทย์ และข้อกำหนดเรื่องความยืดหยุ่นของแบบ"
     },
     "CAPACITY OF REFLECTION: I declare that I am in full capacity of reflection and sound mind, making this decision freely.": {
         "en": "CAPACITY OF REFLECTION: I declare that I am in full capacity of reflection and sound mind, making this decision freely.",
@@ -3311,7 +3677,8 @@
         "de": "URTEILSFÄHIGKEIT: Ich erkläre, dass ich im Vollbesitz meiner geistigen Kräfte und Urteilsfähigkeit bin und diese Entscheidung frei treffe.",
         "es": "CAPACIDAD DE REFLEXIÓN: Declaro que me encuentro en plena capacidad de reflexión y sano juicio, tomando esta decisión libremente.",
         "nl": "WILSBEKWAAMHEID: Ik verklaar dat ik over mijn volle verstand en oordeelsvermogen beschik en deze beslissing vrijwillig neem.",
-        "pt": "CAPACIDADE DE REFLEXÃO: Declaro estar em plena capacidade de reflexão e discernimento lúcido, tomando esta decisão livremente."
+        "pt": "CAPACIDADE DE REFLEXÃO: Declaro estar em plena capacidade de reflexão e discernimento lúcido, tomando esta decisão livremente.",
+        "th": "การมีสติสัมปชัญญะ: ข้าพเจ้าขอประกาศว่าข้าพเจ้ามีสติสัมปชัญญะสมบูรณ์และมีวิจารณญาณที่ครบถ้วน โดยตัดสินใจครั้งนี้ด้วยความสมัครใจ"
     },
     "PRE-PROCEDURE AFTERCARE: I confirm that I have been provided with aftercare instructions prior to the procedure.": {
         "en": "PRE-PROCEDURE AFTERCARE: I confirm that I have been provided with aftercare instructions prior to the procedure.",
@@ -3320,7 +3687,8 @@
         "de": "NACHSORGEAUFKLÄRUNG: Ich bestätige, dass mir vor dem Eingriff Nachsorgeanweisungen erteilt wurden.",
         "es": "CUIDADOS PREVIOS: Confirmo que se me han proporcionado instrucciones sobre cuidados y cicatrización antes del procedimiento.",
         "nl": "VOORAFGAAND NAZORGADVIES: Ik bevestig dat ik voorafgaand aan de behandeling nazorginstructies heb ontvangen.",
-        "pt": "CUIDADOS PRÉVIOS: Confirmo que recebi instruções sobre cuidados e cicatrização antes da realização do procedimento."
+        "pt": "CUIDADOS PRÉVIOS: Confirmo que recebi instruções sobre cuidados e cicatrização antes da realização do procedimento.",
+        "th": "การดูแลหลังสักเบื้องต้น: ข้าพเจ้ายืนยันว่าได้รับคำแนะนำในการดูแลหลังสักเรียบร้อยแล้วก่อนเริ่มดำเนินการ"
     },
     "PMU & Cosmetic Tattoo Consultation": {
         "en": "PMU & Cosmetic Tattoo Consultation",
@@ -3329,7 +3697,8 @@
         "de": "PMU & Permanent Make-up Beratungs- und Einverständnisbogen",
         "es": "Consulta de micropigmentación (PMU) y maquillaje permanente",
         "nl": "PMU & Permanente make-up consultatie en toestemming",
-        "pt": "Consulta de micropigmentação (PMU) e maquiagem definitiva"
+        "pt": "Consulta de micropigmentação (PMU) e maquiagem definitiva",
+        "th": "การปรึกษาการสักเพื่อความงามและฝังสีใบหน้า (PMU)"
     },
     "Specialized consultation and consent agreement for cosmetic tattooing (microblading, powder brows, lip blushing, permanent eyeliner) including contraindication screening, pigment patch testing, sound mind declaration, and aftercare advice.": {
         "en": "Specialized consultation and consent agreement for cosmetic tattooing (microblading, powder brows, lip blushing, permanent eyeliner) including contraindication screening, pigment patch testing, sound mind declaration, and aftercare advice.",
@@ -3338,7 +3707,8 @@
         "de": "Spezialisierte Beratung und Einwilligung für Permanent Make-up (Microblading, Powder Brows, Lip Blush, Eyeliner) mit Kontraindikationen-Screening, Pigment-Patch-Test, Urteilsfähigkeit und Nachsorgeaufklärung.",
         "es": "Acuerdo especializado de consulta y consentimiento para micropigmentación (microblading, cejas efecto polvo, lip blush, eyeliner) con evaluación de contraindicaciones, prueba de parche, discernimiento y cuidados.",
         "nl": "Gespecialiseerd intake- en toestemmingsformulier voor permanente make-up (microblading, powder brows, lip blush, eyeliner) inclusief screening van contra-indicaties, patch-test, wilsbekwaamheid en nazorgadvies.",
-        "pt": "Termo de consulta e consentimento especializado para micropigmentação (microblading, powder brows, lip blush, delineador) incluindo contraindicações, teste de contato com pigmento, discernimento e cuidados."
+        "pt": "Termo de consulta e consentimento especializado para micropigmentação (microblading, powder brows, lip blush, delineador) incluindo contraindicações, teste de contato com pigmento, discernimento e cuidados.",
+        "th": "แบบฟอร์มปรึกษาและข้อตกลงยินยอมเฉพาะทางสำหรับการสักเพื่อความงาม (ฝังสีคิ้วลายเส้น, คิ้วสีฝุ่น, ฝังสีปาก, สักขอบตาถาวร) รวมถึงการคัดกรองข้อห้าม, การทดสอบอาการแพ้เม็ดสี (Patch Test), การประกาศว่ามีสติสัมปชัญญะสมบูรณ์ และคำแนะนำในการดูแลหลังสัก"
     },
     "PRE-PROCEDURE AFTERCARE ADVICE: I confirm that I have been provided with comprehensive verbal and written aftercare instructions (dry/wet healing protocol, sun avoidance, touch-up schedule) prior to procedure.": {
         "en": "PRE-PROCEDURE AFTERCARE ADVICE: I confirm that I have been provided with comprehensive verbal and written aftercare instructions (dry/wet healing protocol, sun avoidance, touch-up schedule) prior to procedure.",
@@ -3347,7 +3717,8 @@
         "de": "NACHSORGEAUFKLÄRUNG VOR DEM EINGRIFF: Ich bestätige, dass ich vor dem Eingriff ausführliche mündliche und schriftliche Nachsorgehinweise (Wundpflege, Sonnenschutz, Nachstechtermin) erhalten habe.",
         "es": "CONSEJOS DE CUIDADOS PREVIOS: Confirmo que antes del procedimiento he recibido instrucciones completas verbales y escritas sobre cuidados (protocolo de curación, protección solar, cita de retoque).",
         "nl": "VOORAFGAAND NAZORGADVIES: Ik bevestig dat ik voorafgaand aan de behandeling uitgebreide mondelinge en schriftelijke nazorginstructies heb ontvangen (genezingsprotocol, zonvermijding, nabehandeling).",
-        "pt": "INSTRUÇÕES DE CUIDADOS PRÉVIOS: Confirmo que, antes do procedimento, recebi instruções detalhadas verbais e escritas sobre cuidados (protocolo de cicatrização, proteção solar, cronograma de retoque)."
+        "pt": "INSTRUÇÕES DE CUIDADOS PRÉVIOS: Confirmo que, antes do procedimento, recebi instruções detalhadas verbais e escritas sobre cuidados (protocolo de cicatrização, proteção solar, cronograma de retoque).",
+        "th": "คำแนะนำในการดูแลหลังสักเบื้องต้น: ข้าพเจ้ายืนยันว่าได้รับคำแนะนำในการดูแลหลังสักทั้งด้วยวาจาและเป็นลายลักษณ์อักษรอย่างครบถ้วน (ขั้นตอนการดูแลแบบแห้ง/เปียก, การหลีกเลี่ยงแสงแดด, กำหนดการเติมสี) ก่อนเริ่มดำเนินการ"
     },
     "Blank Custom Form": {
         "en": "Blank Custom Form",
@@ -3356,7 +3727,8 @@
         "de": "Leeres individuelles Formular",
         "es": "Formulario en blanco personalizado",
         "nl": "Leeg aangepast formulier",
-        "pt": "Formulário em branco personalizado"
+        "pt": "Formulário em branco personalizado",
+        "th": "ฟอร์มเปล่าแบบกำหนดเอง"
     },
     "Start from scratch to build custom forms for your studio.": {
         "en": "Start from scratch to build custom forms for your studio.",
@@ -3365,7 +3737,8 @@
         "de": "Beginnen Sie von Grund auf und erstellen Sie individuelle Formulare für Ihr Studio.",
         "es": "Empiece desde cero para diseñar formularios personalizados para su estudio.",
         "nl": "Begin vanaf nul en maak formulieren op maat voor uw studio.",
-        "pt": "Comece do zero para criar formulários personalizados para o seu estúdio."
+        "pt": "Comece do zero para criar formulários personalizados para o seu estúdio.",
+        "th": "เริ่มสร้างฟอร์มแบบกำหนดเองสำหรับสตูดิโอของคุณตั้งแต่เริ่มต้น"
     }
 };
 
