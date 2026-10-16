@@ -1375,6 +1375,27 @@
       "next": "Next Step",
       "please_complete": "Please complete:",
       "and_more": "and more"
+    },
+    "pdf_doc": {
+      "doc_id": "DOC ID: {id}",
+      "legal_title": "LEGAL CERTIFICATION & SIGNATURE ATTESTATION",
+      "legal_text": "I solemnly certify under penalty of false statement that all information and medical disclosures provided in this form are true, accurate, and complete. I confirm that I am in full capacity of reflection and sound mind, and freely authorize the studio practitioner to proceed with the requested service.",
+      "client_sig": "Client Signature & Verification:",
+      "verified_onscreen": "[Digitally Verified On-Screen]",
+      "sign_above": "X Sign above or capture on tablet",
+      "practitioner_ack": "Studio Practitioner Acknowledgment:",
+      "practitioner": "Practitioner: {name}",
+      "default_practitioner": "Licensed Studio Practitioner",
+      "verification_id": "Verification ID: {id}",
+      "timestamp": "Timestamp: {time}",
+      "countersign": "Practitioner Counter-Signature & Health Permit Record",
+      "footer": "Confidential Studio Consultation Record • Poli Tools",
+      "page": "Page {i} of {n}",
+      "date": "Date: {date}",
+      "meta": "Client: {client}  •  Practitioner: {practitioner}  •  Category: {category} • Layout: {layout}",
+      "layout_standard": "Standard",
+      "layout_compact": "Compact",
+      "client_record": "Client Record"
     }
   },
   "fr": {
@@ -2753,6 +2774,27 @@
       "next": "Étape suivante",
       "please_complete": "Veuillez remplir :",
       "and_more": "et d'autres"
+    },
+    "pdf_doc": {
+      "doc_id": "N° DOC : {id}",
+      "legal_title": "CERTIFICATION LÉGALE ET ATTESTATION DE SIGNATURE",
+      "legal_text": "Je certifie solennellement, sous peine de fausse déclaration, que toutes les informations et déclarations médicales fournies dans ce formulaire sont vraies, exactes et complètes. Je confirme être en pleine possession de mes facultés et autorise librement le praticien du studio à réaliser la prestation demandée.",
+      "client_sig": "Signature et vérification du client :",
+      "verified_onscreen": "[Vérifié numériquement à l'écran]",
+      "sign_above": "X Signez ci-dessus ou sur la tablette",
+      "practitioner_ack": "Confirmation du praticien du studio :",
+      "practitioner": "Praticien : {name}",
+      "default_practitioner": "Praticien agréé du studio",
+      "verification_id": "ID de vérification : {id}",
+      "timestamp": "Horodatage : {time}",
+      "countersign": "Contre-signature du praticien et numéro d'autorisation sanitaire",
+      "footer": "Dossier de consultation confidentiel du studio • Poli Tools",
+      "page": "Page {i} sur {n}",
+      "date": "Date : {date}",
+      "meta": "Client : {client}  •  Praticien : {practitioner}  •  Catégorie : {category} • Mise en page : {layout}",
+      "layout_standard": "Standard",
+      "layout_compact": "Compacte",
+      "client_record": "Fiche client"
     }
   },
   "it": {
@@ -4131,6 +4173,27 @@
       "next": "Passo successivo",
       "please_complete": "Completate:",
       "and_more": "e altri"
+    },
+    "pdf_doc": {
+      "doc_id": "ID DOC: {id}",
+      "legal_title": "CERTIFICAZIONE LEGALE E ATTESTAZIONE DI FIRMA",
+      "legal_text": "Certifico solennemente, sotto pena di falsa dichiarazione, che tutte le informazioni e le dichiarazioni mediche fornite in questo modulo sono vere, accurate e complete. Confermo di essere nel pieno possesso delle mie facoltà e autorizzo liberamente l'operatore dello studio a procedere con il servizio richiesto.",
+      "client_sig": "Firma e verifica del cliente:",
+      "verified_onscreen": "[Verificato digitalmente sullo schermo]",
+      "sign_above": "X Firma qui sopra o sul tablet",
+      "practitioner_ack": "Conferma dell'operatore dello studio:",
+      "practitioner": "Operatore: {name}",
+      "default_practitioner": "Operatore autorizzato dello studio",
+      "verification_id": "ID di verifica: {id}",
+      "timestamp": "Data e ora: {time}",
+      "countersign": "Controfirma dell'operatore e numero di autorizzazione sanitaria",
+      "footer": "Scheda di consulenza riservata dello studio • Poli Tools",
+      "page": "Pagina {i} di {n}",
+      "date": "Data: {date}",
+      "meta": "Cliente: {client}  •  Operatore: {practitioner}  •  Categoria: {category} • Impaginazione: {layout}",
+      "layout_standard": "Standard",
+      "layout_compact": "Compatta",
+      "client_record": "Scheda cliente"
     }
   },
   "de": {
@@ -5509,6 +5572,27 @@
       "next": "Nächster Schritt",
       "please_complete": "Bitte ausfüllen:",
       "and_more": "und weitere"
+    },
+    "pdf_doc": {
+      "doc_id": "DOK-NR.: {id}",
+      "legal_title": "RECHTLICHE BESTÄTIGUNG UND UNTERSCHRIFT",
+      "legal_text": "Ich versichere feierlich und im Bewusstsein der Folgen einer falschen Erklärung, dass alle in diesem Formular gemachten Angaben und medizinischen Auskünfte wahr, richtig und vollständig sind. Ich bestätige, dass ich bei klarem Verstand und voll urteilsfähig bin, und ermächtige den Studio-Behandler aus freiem Willen, die gewünschte Leistung durchzuführen.",
+      "client_sig": "Unterschrift und Bestätigung des Kunden:",
+      "verified_onscreen": "[Digital am Bildschirm bestätigt]",
+      "sign_above": "X Oben unterschreiben oder am Tablet",
+      "practitioner_ack": "Bestätigung des Studio-Behandlers:",
+      "practitioner": "Behandler: {name}",
+      "default_practitioner": "Zugelassener Studio-Behandler",
+      "verification_id": "Prüf-ID: {id}",
+      "timestamp": "Zeitstempel: {time}",
+      "countersign": "Gegenzeichnung des Behandlers und Gesundheitsgenehmigung",
+      "footer": "Vertrauliches Beratungsprotokoll des Studios • Poli Tools",
+      "page": "Seite {i} von {n}",
+      "date": "Datum: {date}",
+      "meta": "Kunde: {client}  •  Behandler: {practitioner}  •  Kategorie: {category} • Layout: {layout}",
+      "layout_standard": "Standard",
+      "layout_compact": "Kompakt",
+      "client_record": "Kundenakte"
     }
   },
   "es": {
@@ -6887,6 +6971,27 @@
       "next": "Paso siguiente",
       "please_complete": "Complete:",
       "and_more": "y más"
+    },
+    "pdf_doc": {
+      "doc_id": "ID DOC: {id}",
+      "legal_title": "CERTIFICACIÓN LEGAL Y ATESTACIÓN DE FIRMA",
+      "legal_text": "Certifico solemnemente, bajo pena de falsedad, que toda la información y las declaraciones médicas facilitadas en este formulario son verdaderas, exactas y completas. Confirmo que estoy en pleno uso de mis facultades y autorizo libremente al profesional del estudio a realizar el servicio solicitado.",
+      "client_sig": "Firma y verificación del cliente:",
+      "verified_onscreen": "[Verificado digitalmente en pantalla]",
+      "sign_above": "X Firme arriba o en la tableta",
+      "practitioner_ack": "Conformidad del profesional del estudio:",
+      "practitioner": "Profesional: {name}",
+      "default_practitioner": "Profesional autorizado del estudio",
+      "verification_id": "ID de verificación: {id}",
+      "timestamp": "Fecha y hora: {time}",
+      "countersign": "Contrafirma del profesional y número de permiso sanitario",
+      "footer": "Registro confidencial de consulta del estudio • Poli Tools",
+      "page": "Página {i} de {n}",
+      "date": "Fecha: {date}",
+      "meta": "Cliente: {client}  •  Profesional: {practitioner}  •  Categoría: {category} • Diseño: {layout}",
+      "layout_standard": "Estándar",
+      "layout_compact": "Compacto",
+      "client_record": "Ficha del cliente"
     }
   },
   "nl": {
@@ -8265,6 +8370,27 @@
       "next": "Volgende stap",
       "please_complete": "Vul nog in:",
       "and_more": "en meer"
+    },
+    "pdf_doc": {
+      "doc_id": "DOC-NR.: {id}",
+      "legal_title": "JURIDISCHE VERKLARING EN ONDERTEKENING",
+      "legal_text": "Ik verklaar plechtig, op straffe van een valse verklaring, dat alle informatie en medische gegevens in dit formulier waar, juist en volledig zijn. Ik bevestig dat ik volledig wilsbekwaam en bij mijn volle verstand ben, en geef de behandelaar van de studio vrijwillig toestemming om de gevraagde behandeling uit te voeren.",
+      "client_sig": "Handtekening en verificatie van de klant:",
+      "verified_onscreen": "[Digitaal geverifieerd op het scherm]",
+      "sign_above": "X Teken hierboven of op de tablet",
+      "practitioner_ack": "Bevestiging door de behandelaar:",
+      "practitioner": "Behandelaar: {name}",
+      "default_practitioner": "Erkende behandelaar van de studio",
+      "verification_id": "Verificatie-ID: {id}",
+      "timestamp": "Tijdstip: {time}",
+      "countersign": "Medeondertekening behandelaar en gezondheidsvergunning",
+      "footer": "Vertrouwelijk consultverslag van de studio • Poli Tools",
+      "page": "Pagina {i} van {n}",
+      "date": "Datum: {date}",
+      "meta": "Klant: {client}  •  Behandelaar: {practitioner}  •  Categorie: {category} • Opmaak: {layout}",
+      "layout_standard": "Standaard",
+      "layout_compact": "Compact",
+      "client_record": "Klantdossier"
     }
   },
   "pt": {
@@ -9643,6 +9769,27 @@
       "next": "Passo seguinte",
       "please_complete": "Preencha:",
       "and_more": "e mais"
+    },
+    "pdf_doc": {
+      "doc_id": "ID DOC: {id}",
+      "legal_title": "CERTIFICAÇÃO LEGAL E ATESTAÇÃO DE ASSINATURA",
+      "legal_text": "Certifico solenemente, sob pena de falsas declarações, que todas as informações e declarações médicas prestadas neste formulário são verdadeiras, exatas e completas. Confirmo que estou na plena posse das minhas faculdades e autorizo livremente o profissional do estúdio a realizar o serviço pedido.",
+      "client_sig": "Assinatura e verificação do cliente:",
+      "verified_onscreen": "[Verificado digitalmente no ecrã]",
+      "sign_above": "X Assine acima ou no tablet",
+      "practitioner_ack": "Confirmação do profissional do estúdio:",
+      "practitioner": "Profissional: {name}",
+      "default_practitioner": "Profissional licenciado do estúdio",
+      "verification_id": "ID de verificação: {id}",
+      "timestamp": "Data e hora: {time}",
+      "countersign": "Contra-assinatura do profissional e licença sanitária",
+      "footer": "Registo confidencial de consulta do estúdio • Poli Tools",
+      "page": "Página {i} de {n}",
+      "date": "Data: {date}",
+      "meta": "Cliente: {client}  •  Profissional: {practitioner}  •  Categoria: {category} • Esquema: {layout}",
+      "layout_standard": "Padrão",
+      "layout_compact": "Compacto",
+      "client_record": "Ficha do cliente"
     }
   },
   "th": {
@@ -11021,6 +11168,27 @@
       "next": "ขั้นตอนถัดไป",
       "please_complete": "โปรดกรอกให้ครบถ้วน:",
       "and_more": "และอื่นๆ"
+    },
+    "pdf_doc": {
+      "doc_id": "เลขที่เอกสาร: {id}",
+      "legal_title": "การรับรองทางกฎหมายและการลงลายมือชื่อ",
+      "legal_text": "ข้าพเจ้าขอรับรองว่าข้อมูลและข้อมูลทางการแพทย์ทั้งหมดที่ให้ไว้ในแบบฟอร์มนี้เป็นความจริง ถูกต้อง และครบถ้วน หากเป็นเท็จข้าพเจ้ายินดีรับผิดชอบ ข้าพเจ้ายืนยันว่ามีสติสัมปชัญญะสมบูรณ์ และยินยอมโดยสมัครใจให้ช่างของสตูดิโอดำเนินการตามบริการที่ขอ",
+      "client_sig": "ลายมือชื่อและการยืนยันของลูกค้า:",
+      "verified_onscreen": "[ยืนยันแบบดิจิทัลบนหน้าจอ]",
+      "sign_above": "X ลงชื่อด้านบนหรือบนแท็บเล็ต",
+      "practitioner_ack": "การรับทราบของช่างสตูดิโอ:",
+      "practitioner": "ช่าง: {name}",
+      "default_practitioner": "ช่างของสตูดิโอที่ได้รับอนุญาต",
+      "verification_id": "รหัสยืนยัน: {id}",
+      "timestamp": "วันเวลา: {time}",
+      "countersign": "ลายมือชื่อช่างและเลขที่ใบอนุญาตด้านสาธารณสุข",
+      "footer": "บันทึกการปรึกษาของสตูดิโอ (เป็นความลับ) • Poli Tools",
+      "page": "หน้า {i} จาก {n}",
+      "date": "วันที่: {date}",
+      "meta": "ลูกค้า: {client}  •  ช่าง: {practitioner}  •  หมวดหมู่: {category} • รูปแบบ: {layout}",
+      "layout_standard": "มาตรฐาน",
+      "layout_compact": "กะทัดรัด",
+      "client_record": "บันทึกลูกค้า"
     }
   }
 }
