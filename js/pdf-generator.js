@@ -33,11 +33,18 @@ const PDFGenerator = {
         const contentWidth = pageWidth - (margin * 2);
         let yPos = margin;
 
+        // Fixed PDF wording in the form builder's language (i18n.json "pdf_doc"); English if that is missing.
+        const L = (key, en, params = {}) => {
+            let text = (window.i18n && typeof window.i18n.t === 'function') ? window.i18n.t('pdf_doc.' + key, en, params) : en;
+            for (const [k, v] of Object.entries(params)) text = text.split('{' + k + '}').join(String(v));
+            return text;
+        };
+
         // Resolve Studio and Practitioner Details
         let studioName = 'POLI INTERNATIONAL TATTOO & BODY PIERCING STUDIO';
         let studioAddress = '104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com';
-        let practitionerName = responses['practitioner_name'] || 'Licensed Studio Practitioner';
-        let clientName = responses['full_name'] || responses['client_name'] || responses['minor_name'] || 'Client Record';
+        let practitionerName = responses['practitioner_name'] || L('default_practitioner', 'Licensed Studio Practitioner');
+        let clientName = responses['full_name'] || responses['client_name'] || responses['minor_name'] || L('client_record', 'Client Record');
         let formDocId = `REC-${new Date().getFullYear()}-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
 
         // Look for studio fields in form definition or responses
@@ -68,7 +75,7 @@ const PDFGenerator = {
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(isCompact ? 8 : 8.5);
         doc.setTextColor(37, 99, 235);
-        doc.text(`DOC ID: ${formDocId}`, pageWidth - margin, yPos, { align: 'right' });
+        doc.text(L('doc_id', 'DOC ID: {id}', { id: formDocId }), pageWidth - margin, yPos, { align: 'right' });
         yPos += isCompact ? 3.8 : 4.5;
 
         // Studio Address / Permit Sub-line
@@ -77,7 +84,7 @@ const PDFGenerator = {
         doc.setTextColor(100, 116, 139);
         doc.text(studioAddress, margin, yPos);
 
-        const dateStr = `Date: ${new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}`;
+        const dateStr = L('date', 'Date: {date}', { date: new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) });
         doc.text(dateStr, pageWidth - margin, yPos, { align: 'right' });
         yPos += isCompact ? 4.5 : 5.5;
 
@@ -96,7 +103,8 @@ const PDFGenerator = {
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(isCompact ? 7.2 : 8);
         doc.setTextColor(71, 85, 105);
-        const metaLine = `Client: ${clientName}  •  Practitioner: ${practitionerName}  •  Category: ${formData.category || 'Studio Consultation'} • Layout: ${isCompact ? 'Compact' : 'Standard'}`;
+        const metaLine = L('meta', 'Client: {client}  •  Practitioner: {practitioner}  •  Category: {category} • Layout: {layout}', { client: clientName, practitioner: practitionerName,
+            category: formData.category || 'Studio Consultation', layout: isCompact ? L('layout_compact', 'Compact') : L('layout_standard', 'Standard') });
         doc.text(metaLine, margin + 3.5, yPos + (isCompact ? 7.8 : 9.5));
         yPos += isCompact ? 12 : 16;
 
@@ -363,7 +371,14 @@ const PDFGenerator = {
         // =========================================================
         // 3. DEDICATED OFFICIAL SIGNATURE & CERTIFICATION BLOCK
         // =========================================================
-        const sigBlockHeight = isCompact ? 44 : 54;
+        // The declaration is measured first: in some languages it runs to more lines, and the block grows with it
+        // instead of the declaration running into the signature lines below.
+        const legalDisclaimer = L('legal_text', 'I solemnly certify under penalty of false statement that all information and medical disclosures provided in this form are true, accurate, and complete. I confirm that I am in full capacity of reflection and sound mind, and freely authorize the studio practitioner to proceed with the requested service.');
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(isCompact ? 6.8 : 7.5);
+        const legalLines = doc.splitTextToSize(legalDisclaimer, contentWidth - 7);
+        const legalExtra = Math.max(0, legalLines.length - 2) * doc.getLineHeight() / doc.internal.scaleFactor;
+        const sigBlockHeight = (isCompact ? 44 : 54) + legalExtra;
         if (yPos > pageHeight - (sigBlockHeight + 12)) {
             doc.addPage();
             yPos = margin;
@@ -379,23 +394,21 @@ const PDFGenerator = {
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(isCompact ? 8.5 : 9.5);
         doc.setTextColor(15, 23, 42);
-        doc.text('LEGAL CERTIFICATION & SIGNATURE ATTESTATION', margin + 3.5, yPos + (isCompact ? 4.8 : 6));
+        doc.text(L('legal_title', 'LEGAL CERTIFICATION & SIGNATURE ATTESTATION'), margin + 3.5, yPos + (isCompact ? 4.8 : 6));
 
         // Legal Declaration Clause
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(isCompact ? 6.8 : 7.5);
         doc.setTextColor(71, 85, 105);
-        const legalDisclaimer = 'I solemnly certify under penalty of false statement that all information and medical disclosures provided in this form are true, accurate, and complete. I confirm that I am in full capacity of reflection and sound mind, and freely authorize the studio practitioner to proceed with the requested service.';
-        const legalLines = doc.splitTextToSize(legalDisclaimer, contentWidth - 7);
         doc.text(legalLines, margin + 3.5, yPos + (isCompact ? 8.5 : 10.5));
 
-        const sigBlockY = yPos + (isCompact ? 14 : 18);
+        const sigBlockY = yPos + (isCompact ? 14 : 18) + legalExtra;
 
         // Left Side: Client Digital Signature
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(8);
         doc.setTextColor(51, 65, 85);
-        doc.text('Client Signature & Verification:', margin + 4, sigBlockY);
+        doc.text(L('client_sig', 'Client Signature & Verification:'), margin + 4, sigBlockY);
 
         if (signatureImage) {
             try {
@@ -410,7 +423,7 @@ const PDFGenerator = {
                 console.warn('Signature image embed fallback:', err);
                 doc.setFont('helvetica', 'italic');
                 doc.setFontSize(8);
-                doc.text('[Digitally Verified On-Screen]', margin + 4, sigBlockY + 10);
+                doc.text(L('verified_onscreen', '[Digitally Verified On-Screen]'), margin + 4, sigBlockY + 10);
             }
         } else {
             // Signature placeholder line
@@ -420,7 +433,7 @@ const PDFGenerator = {
             doc.setFont('helvetica', 'italic');
             doc.setFontSize(7.5);
             doc.setTextColor(148, 163, 184);
-            doc.text('X Sign above or capture on tablet', margin + 4, sigBlockY + 20);
+            doc.text(L('sign_above', 'X Sign above or capture on tablet'), margin + 4, sigBlockY + 20);
         }
 
         // Right Side: Practitioner Counter-Signature & Audit Timestamp
@@ -428,14 +441,14 @@ const PDFGenerator = {
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(8);
         doc.setTextColor(51, 65, 85);
-        doc.text('Studio Practitioner Acknowledgment:', rightColX, sigBlockY);
+        doc.text(L('practitioner_ack', 'Studio Practitioner Acknowledgment:'), rightColX, sigBlockY);
 
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(7.5);
         doc.setTextColor(71, 85, 105);
-        doc.text(`Practitioner: ${practitionerName}`, rightColX, sigBlockY + 5);
-        doc.text(`Verification ID: ${formDocId}`, rightColX, sigBlockY + 9);
-        doc.text(`Timestamp: ${new Date().toLocaleString()}`, rightColX, sigBlockY + 13);
+        doc.text(L('practitioner', 'Practitioner: {name}', { name: practitionerName }), rightColX, sigBlockY + 5);
+        doc.text(L('verification_id', 'Verification ID: {id}', { id: formDocId }), rightColX, sigBlockY + 9);
+        doc.text(L('timestamp', 'Timestamp: {time}', { time: new Date().toLocaleString() }), rightColX, sigBlockY + 13);
 
         // Counter-signature line
         doc.setDrawColor(148, 163, 184);
@@ -444,7 +457,7 @@ const PDFGenerator = {
         doc.setFont('helvetica', 'italic');
         doc.setFontSize(7);
         doc.setTextColor(100, 116, 139);
-        doc.text('Practitioner Counter-Signature & Health Permit Record', rightColX, sigBlockY + 28);
+        doc.text(L('countersign', 'Practitioner Counter-Signature & Health Permit Record'), rightColX, sigBlockY + 28);
 
         // =========================================================
         // 4. APPLY STUDIO WATERMARK & FOOTER ON ALL PAGES
@@ -465,10 +478,10 @@ const PDFGenerator = {
             doc.setTextColor(148, 163, 184);
             
             // Left footer
-            doc.text('Confidential Studio Consultation Record • Poli Tools', margin, pageHeight - 7);
+            doc.text(L('footer', 'Confidential Studio Consultation Record • Poli Tools'), margin, pageHeight - 7);
             
             // Right footer: page number
-            doc.text(`Page ${i} of ${pageCount}`, pageWidth - margin, pageHeight - 7, { align: 'right' });
+            doc.text(L('page', 'Page {i} of {n}', { i, n: pageCount }), pageWidth - margin, pageHeight - 7, { align: 'right' });
         }
 
         // Trigger Download
