@@ -1374,7 +1374,8 @@
       "complete": "Complete & Review PDF",
       "next": "Next Step",
       "please_complete": "Please complete:",
-      "and_more": "and more"
+      "and_more": "and more",
+      "required": "Required"
     },
     "pdf_doc": {
       "doc_id": "DOC ID: {id}",
@@ -2773,7 +2774,8 @@
       "complete": "Terminer et voir le PDF",
       "next": "Étape suivante",
       "please_complete": "Veuillez remplir :",
-      "and_more": "et d'autres"
+      "and_more": "et d'autres",
+      "required": "Obligatoire"
     },
     "pdf_doc": {
       "doc_id": "N° DOC : {id}",
@@ -4172,7 +4174,8 @@
       "complete": "Completa e vedi il PDF",
       "next": "Passo successivo",
       "please_complete": "Completate:",
-      "and_more": "e altri"
+      "and_more": "e altri",
+      "required": "Obbligatorio"
     },
     "pdf_doc": {
       "doc_id": "ID DOC: {id}",
@@ -5571,7 +5574,8 @@
       "complete": "Abschließen und PDF ansehen",
       "next": "Nächster Schritt",
       "please_complete": "Bitte ausfüllen:",
-      "and_more": "und weitere"
+      "and_more": "und weitere",
+      "required": "Pflichtfeld"
     },
     "pdf_doc": {
       "doc_id": "DOK-NR.: {id}",
@@ -6970,7 +6974,8 @@
       "complete": "Completar y ver el PDF",
       "next": "Paso siguiente",
       "please_complete": "Complete:",
-      "and_more": "y más"
+      "and_more": "y más",
+      "required": "Obligatorio"
     },
     "pdf_doc": {
       "doc_id": "ID DOC: {id}",
@@ -8369,7 +8374,8 @@
       "complete": "Afronden en pdf bekijken",
       "next": "Volgende stap",
       "please_complete": "Vul nog in:",
-      "and_more": "en meer"
+      "and_more": "en meer",
+      "required": "Verplicht"
     },
     "pdf_doc": {
       "doc_id": "DOC-NR.: {id}",
@@ -9768,7 +9774,8 @@
       "complete": "Concluir e ver o PDF",
       "next": "Passo seguinte",
       "please_complete": "Preencha:",
-      "and_more": "e mais"
+      "and_more": "e mais",
+      "required": "Obrigatório"
     },
     "pdf_doc": {
       "doc_id": "ID DOC: {id}",
@@ -11167,7 +11174,8 @@
       "complete": "เสร็จสิ้นและตรวจสอบ PDF",
       "next": "ขั้นตอนถัดไป",
       "please_complete": "โปรดกรอกให้ครบถ้วน:",
-      "and_more": "และอื่นๆ"
+      "and_more": "และอื่นๆ",
+      "required": "จำเป็นต้องกรอก"
     },
     "pdf_doc": {
       "doc_id": "เลขที่เอกสาร: {id}",
