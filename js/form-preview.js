@@ -1059,24 +1059,51 @@ class FormPreview {
         }));
     }
 
+    // A required question left empty keeps the client on its page; Complete checks the whole form.
+    // Henry, 2026-10-17: without a kiosk PIN, Complete used to save a form with required answers missing.
+    // The page on screen is checked, not the form behind the kiosk (it is not drawn in kiosk mode, so
+    // validateAll() found nothing there); the client cannot skip a page, so every page gets checked.
+    kioskMissing() {
+        const modal = document.getElementById('tablet-kiosk-modal');
+        const missing = [];
+        // the studio's own details (sections studio_artist_info, studio_piercer_info...) are not the client's to know
+        const sec = this.getKioskSections()[this.currentKioskStep];
+        if (sec && /^studio_/.test(sec.id || '')) { const old = document.getElementById('kiosk-missing-note'); if (old) old.remove(); return false; }
+        (modal ? [...modal.querySelectorAll('.preview-field-group[data-required="true"]')] : []).forEach((group) => {
+            if (!group.offsetParent) return;   // a question hidden by a condition
+            const id = group.dataset.fieldId, type = group.dataset.type, val = this.responses[id];
+            const labelEl = group.querySelector('.preview-field-label');
+            const fieldLabel = labelEl ? labelEl.textContent.replace('*', '').trim() : id;
+            let empty;
+            if (type === 'signature') { const m = this.signatureManagers[id]; empty = !m || m.isEmpty(); }
+            else if (Array.isArray(val)) empty = val.length === 0;
+            else empty = val === undefined || val === null || val === false || String(val).trim() === '';
+            if (empty) { missing.push({ fieldLabel }); this.markFieldError(group, t('kiosk.required', 'Required')); }
+        });
+        const old = document.getElementById('kiosk-missing-note');
+        if (old) old.remove();
+        if (!missing.length) return false;
+        const content = document.getElementById('kiosk-content-area');
+        const note = document.createElement('div');
+        note.id = 'kiosk-missing-note';
+        note.setAttribute('role', 'alert');
+        note.style.cssText = 'background:#fef2f2;border:1px solid #fca5a5;color:#991b1b;padding:12px;border-radius:8px;margin-bottom:12px;';
+        note.textContent = t('kiosk.please_complete', 'Please complete:') + ' ' + [...new Set(missing.map((e) => e.fieldLabel))].slice(0, 6).join(', ') + (missing.length > 6 ? ' ' + t('kiosk.and_more', 'and more') : '');
+        if (content) { content.prepend(note); content.scrollTop = 0; }
+        return true;
+    }
+
     nextKioskStep() {
         const sections = this.getKioskSections();
         if (this.currentKioskStep < sections.length - 1) {
+            if (this.kioskMissing()) return;
             this.currentKioskStep++;
             this.renderKioskStep();
             const content = document.getElementById('kiosk-content-area');
             if (content) content.scrollTop = 0;
+        } else if (this.kioskMissing()) {
+            return;
         } else if (this.kioskPin()) {
-            const missing = this.validateAll();
-            if (missing.length) {
-                const content = document.getElementById('kiosk-content-area');
-                const note = document.createElement('div');
-                note.setAttribute('role', 'alert');
-                note.style.cssText = 'background:#fef2f2;border:1px solid #fca5a5;color:#991b1b;padding:12px;border-radius:8px;margin-bottom:12px;';
-                note.textContent = t('kiosk.please_complete', 'Please complete:') + ' ' + [...new Set(missing.map((e) => e.fieldLabel))].slice(0, 6).join(', ') + (missing.length > 6 ? ' ' + t('kiosk.and_more', 'and more') : '');
-                if (content) { content.prepend(note); content.scrollTop = 0; }
-                return;
-            }
             this.exitKioskMode();
             this.handleExport();
             this.showKioskThankYou();
@@ -2693,7 +2720,9 @@ class FormPreview {
 
             // Date population
             const isBirthDate = /birth|dob/.test(idLower + ' ' + labelText);
-            if (!isBirthDate && (inp.type === 'date' || idLower.includes('date') || labelText.includes('date'))) {
+            // only a date box, or a field named as one: a text box whose label merely mentions a date
+            // ("Physician Name, Clinic & Clearance Date") is the client's to fill (Henry, 2026-10-17)
+            if (!isBirthDate && (inp.type === 'date' || /(^|_)date($|_)/.test(idLower))) {
                 if (force || !inp.value) {
                     inp.value = todayStr;
                     this.responses[fieldId] = todayStr;
