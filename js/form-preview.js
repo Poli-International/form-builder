@@ -973,6 +973,10 @@ class FormPreview {
         this.restoreResponses(kioskOverlay);
         this.initDateAgeCalculations(kioskOverlay);
         this.autoPopulateStudioDefaults(false, kioskOverlay);
+        // the studio's own details are not the client's to fill: no "required" stars on that page (Henry, 2026-10-17:
+        // he read the stars as required questions the kiosk let the client skip)
+        const kioskSec = this.getKioskSections()[this.currentKioskStep];
+        if (kioskSec && /^studio_/.test(kioskSec.id || '')) kioskOverlay.querySelectorAll('.required-star').forEach((el) => el.remove());
 
         // Attach input listeners on kiosk overlay
         kioskOverlay.onchange = (e) => {
