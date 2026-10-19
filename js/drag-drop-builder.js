@@ -1579,7 +1579,13 @@ class FormBuilder {
         try {
             const raw = localStorage.getItem(formId ? this.autoSaveKey + ':' + formId : this.autoSaveKey);
             if (!raw) return null;
-            return JSON.parse(raw);
+            const data = JSON.parse(raw);
+            // a draft saved before 1.0.19 keeps the sample studio in its studio fields: emptied, so the
+            // studio's own details fill them (isSampleStudioValue in form-preview.js)
+            for (const sec of (data && data.form && data.form.sections) || []) for (const f of (sec && sec.fields) || []) {
+                if (f && typeof isSampleStudioValue === 'function' && isSampleStudioValue(f.value)) delete f.value;
+            }
+            return data;
         } catch (e) {
             return null;
         }
