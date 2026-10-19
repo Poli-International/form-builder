@@ -16,8 +16,8 @@ const formTemplates = {
                 title: 'Studio & Tattooist Information',
                 collapsed: false,
                 fields: [
-                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, value: 'Poli International Tattoo & Piercing Studio', placeholder: 'Studio / Shop Name', labelAlign: 'top' },
-                    { id: 'studio_address', type: 'text', label: 'Studio Address & Contact', required: true, value: '104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com', placeholder: 'Address, Phone, Email & Permit #', labelAlign: 'top' },
+                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, placeholder: 'Studio / Shop Name', labelAlign: 'top' },
+                    { id: 'studio_address', type: 'text', label: 'Studio Address & Contact', required: true, placeholder: 'Address, Phone, Email & Permit #', labelAlign: 'top' },
                     { id: 'practitioner_name', type: 'text', label: 'Tattooist (Artist) Name', required: true, placeholder: 'Name of licensed tattoo artist', validation: 'text', labelAlign: 'top' },
                     { id: 'workstation_id', type: 'text', label: 'Workstation / Sterilization Lot #', required: false, placeholder: 'e.g. Station 3 - Autoclave Lot #2026-A', labelAlign: 'top' }
                 ]
@@ -125,8 +125,8 @@ const formTemplates = {
                 title: 'Studio & qualified professional piercer Information',
                 collapsed: false,
                 fields: [
-                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, value: 'Poli International Body Piercing Studio', placeholder: 'Studio Name', labelAlign: 'top' },
-                    { id: 'studio_contact', type: 'text', label: 'Studio Address, Phone & Health Permit', required: true, value: '104 Studio Plaza, Suite B | (555) 019-2834 | Permit #PB-8841', placeholder: 'Address & Contact', labelAlign: 'top' },
+                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, placeholder: 'Studio Name', labelAlign: 'top' },
+                    { id: 'studio_contact', type: 'text', label: 'Studio Address, Phone & Health Permit', required: true, placeholder: 'Address & Contact', labelAlign: 'top' },
                     { id: 'practitioner_name', type: 'text', label: 'qualified professional piercer Name', required: true, placeholder: 'qualified professional piercer Name', validation: 'text', labelAlign: 'top' },
                     { id: 'autoclave_lot', type: 'text', label: 'Needle & Jewelry Sterilization Lot # / Autoclave Cycle', required: false, placeholder: 'e.g. Lot #NV-2026-44, Statim Cycle 12 (Biological Spore Tested)', labelAlign: 'top' }
                 ]
@@ -215,8 +215,8 @@ const formTemplates = {
                 title: 'Studio & Clinical Practitioner Information',
                 collapsed: false,
                 fields: [
-                    { id: 'studio_name', type: 'text', label: 'Studio / Practice Name', required: true, value: 'Poli International Tattoo & Body Art Studio', placeholder: 'Studio Name', labelAlign: 'top' },
-                    { id: 'studio_permit', type: 'text', label: 'Health Facility Permit # & Location', required: true, value: 'Facility Permit #HL-4492-B | 104 Studio Plaza, Suite B', placeholder: 'Permit & Location', labelAlign: 'top' },
+                    { id: 'studio_name', type: 'text', label: 'Studio / Practice Name', required: true, placeholder: 'Studio Name', labelAlign: 'top' },
+                    { id: 'studio_permit', type: 'text', label: 'Health Facility Permit # & Location', required: true, placeholder: 'Permit & Location', labelAlign: 'top' },
                     { id: 'practitioner_name', type: 'text', label: 'Consulting Artist / Practitioner Name', required: true, placeholder: 'Licensed Practitioner Name', validation: 'text', labelAlign: 'top' }
                 ]
             },
@@ -319,8 +319,8 @@ const formTemplates = {
                 title: 'Studio & Lead Tattooist Information',
                 collapsed: false,
                 fields: [
-                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, value: 'Poli International Custom Tattoo Studio', labelAlign: 'top' },
-                    { id: 'studio_contact', type: 'text', label: 'Studio Address & Business Contact', required: true, value: '104 Studio Plaza, Suite B | (555) 019-2834', labelAlign: 'top' },
+                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, labelAlign: 'top' },
+                    { id: 'studio_contact', type: 'text', label: 'Studio Address & Business Contact', required: true, labelAlign: 'top' },
                     { id: 'practitioner_name', type: 'text', label: 'Lead Tattooist / Master Artist', required: true, placeholder: 'Lead Artist Name', validation: 'text', labelAlign: 'top' }
                 ]
             },
@@ -407,8 +407,8 @@ const formTemplates = {
                 title: 'Studio & Practitioner Information',
                 collapsed: false,
                 fields: [
-                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, value: 'Poli International Certified Studio', labelAlign: 'top' },
-                    { id: 'studio_contact', type: 'text', label: 'Studio Address, Telephone & Permit', required: true, value: '104 Studio Plaza, Suite B | (555) 019-2834 | Permit #MD-9021', labelAlign: 'top' },
+                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, labelAlign: 'top' },
+                    { id: 'studio_contact', type: 'text', label: 'Studio Address, Telephone & Permit', required: true, labelAlign: 'top' },
                     { id: 'practitioner_name', type: 'text', label: 'Practitioner (Piercer / Artist) Name', required: true, placeholder: 'Name of practitioner executing procedure', validation: 'text', labelAlign: 'top' }
                 ]
             },
@@ -506,7 +506,7 @@ const formTemplates = {
                 title: 'Studio & Tattooist Information',
                 collapsed: false,
                 fields: [
-                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, value: 'Poli International Tattoo Studio', labelAlign: 'top' },
+                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, labelAlign: 'top' },
                     { id: 'practitioner_name', type: 'text', label: 'Tattooist Name', required: true, placeholder: 'Cover-up specialist artist name', validation: 'text', labelAlign: 'top' }
                 ]
             },
@@ -570,7 +570,7 @@ const formTemplates = {
                 title: 'Studio & PMU Practitioner Information',
                 collapsed: false,
                 fields: [
-                    { id: 'studio_name', type: 'text', label: 'Studio / Aesthetic Clinic Name', required: true, value: 'Poli International PMU & Aesthetic Studio', labelAlign: 'top' },
+                    { id: 'studio_name', type: 'text', label: 'Studio / Aesthetic Clinic Name', required: true, labelAlign: 'top' },
                     { id: 'practitioner_name', type: 'text', label: 'Certified PMU Practitioner Name', required: true, placeholder: 'Practitioner Name', validation: 'text', labelAlign: 'top' },
                     { id: 'pigment_lot', type: 'text', label: 'Pigment Brand, Shade & Lot Number', required: false, placeholder: 'e.g. Tina Davies I Love Ink - Dark Brown Lot #5821', labelAlign: 'top' }
                 ]
@@ -654,7 +654,7 @@ const formTemplates = {
                 title: 'Studio & Client Details',
                 collapsed: false,
                 fields: [
-                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, value: 'Poli International Studio', labelAlign: 'top' },
+                    { id: 'studio_name', type: 'text', label: 'Studio Name', required: true, labelAlign: 'top' },
                     { id: 'client_name', type: 'text', label: 'Client Full Name', required: true, placeholder: 'Client legal name', validation: 'text', labelAlign: 'top' },
                     { id: 'client_sig', type: 'signature', label: 'Client Signature', required: true, labelAlign: 'top' }
                 ]
