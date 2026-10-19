@@ -41,16 +41,20 @@ const PDFGenerator = {
         };
 
         // Resolve Studio and Practitioner Details
-        let studioName = 'POLI INTERNATIONAL TATTOO & BODY PIERCING STUDIO';
-        let studioAddress = '104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com';
+        // the studio's own details (Settings), not a sample studio: a form without studio fields printed "Poli International"
+        let studio = {};
+        try { studio = JSON.parse(localStorage.getItem('poli_studio_profile') || '{}') || {}; } catch (e) { /* none saved */ }
+        let studioName = String(studio.studioName || '').toUpperCase();
+        let studioAddress = [studio.studioAddress, studio.studioPhone, studio.studioEmail, studio.studioPermit].filter(Boolean).join(' | ');
+        const own = (v) => v && !(typeof isSampleStudioValue === 'function' && isSampleStudioValue(v));
         let practitionerName = responses['practitioner_name'] || L('default_practitioner', 'Licensed Studio Practitioner');
         let clientName = responses['full_name'] || responses['client_name'] || responses['minor_name'] || L('client_record', 'Client Record');
         let formDocId = `REC-${new Date().getFullYear()}-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
 
         // Look for studio fields in form definition or responses
-        if (responses['studio_name']) studioName = responses['studio_name'].toUpperCase();
-        if (responses['studio_address'] || responses['studio_contact']) {
-            studioAddress = responses['studio_address'] || responses['studio_contact'];
+        if (own(responses['studio_name'])) studioName = responses['studio_name'].toUpperCase();
+        if (own(responses['studio_address']) || own(responses['studio_contact'])) {
+            studioAddress = own(responses['studio_address']) ? responses['studio_address'] : responses['studio_contact'];
         }
 
         // =========================================================
