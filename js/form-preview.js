@@ -32,6 +32,13 @@ function studioFieldValue(idLower, labelLower, s) {
     return '';
 }
 
+// The sample studio of the templates before 1.0.19, still in forms saved before then: treated as empty,
+// so the studio's own details replace it (Henry, 2026-10-19: "it still shows Poli International").
+// The CRM server has the same rule for forms sent to a kiosk tablet (fillStudioFields in server.js).
+function isSampleStudioValue(v) {
+    return /Poli International|104 Studio Plaza|100 Artisan Boulevard|poli-studio\.com|poliinternational\.com/i.test(String(v || ''));
+}
+
 class FormPreview {
     constructor(containerId) {
         this.container = document.getElementById(containerId);
@@ -1952,9 +1959,7 @@ class FormPreview {
     fillSampleData() {
         const today = new Date().toISOString().split('T')[0];
         const sampleValues = {
-            studio_name: 'Poli International Tattoo & Body Piercing Studio',
-            studio_address: '104 Studio Plaza, Suite B | (555) 019-2834 | contact@poli-studio.com',
-            studio_contact: '104 Studio Plaza, Suite B | (555) 019-2834 | Permit #PB-8841',
+            // the studio fields keep the studio's own details (Settings), filled when the form opened
             practitioner_name: 'Alex "Ink" Vance (Licensed Practitioner #TX-9482)',
             workstation_id: 'Station 2 - Statim Autoclave Cycle #2026-44',
             autoclave_lot: 'Needle Lot #NV-2026-88, Jewelry Lot #TI-4192',
@@ -2745,7 +2750,7 @@ class FormPreview {
             // The studio's name in its name field, its address and contact in the others: every field with
             // "studio" in its id got the name, so "Studio Address, Telephone & Permit" showed the name
             const studioValue = studioFieldValue(idLower, labelText, settings);
-            if (studioValue && (force || !inp.value)) {
+            if (studioValue && (force || !inp.value || isSampleStudioValue(inp.value))) {
                 inp.value = studioValue;
                 this.responses[fieldId] = studioValue;
                 populatedCount++;
