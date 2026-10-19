@@ -20,6 +20,18 @@ function TP(key, fallback) {
  * Poli International - Studio Consultation Form Builder
  */
 
+// What a studio field of a form gets from the studio's details: its name in a name field, its
+// address and contact (or its permit) in the others.
+function studioFieldValue(idLower, labelLower, s) {
+    const text = idLower + ' ' + labelLower;
+    if (!/studio|practice|clinic/.test(text) || /artist|practitioner|piercer/.test(text)) return '';
+    const join = (...v) => v.filter(Boolean).join(' | ');
+    if (/name/.test(text)) return s.studioName || '';
+    if (/permit|licen/.test(idLower)) return join(s.studioPermit, s.studioAddress); // by id: "Address, Phone & Permit" is an address field
+    if (/address|contact|phone|location/.test(text)) return join(s.studioAddress, s.studioPhone, s.studioEmail, s.studioPermit);
+    return '';
+}
+
 class FormPreview {
     constructor(containerId) {
         this.container = document.getElementById(containerId);
@@ -2688,13 +2700,9 @@ class FormPreview {
     // ==========================================
 
     getStudioSettings() {
-        const defaultSettings = {
-            studioName: 'Poli International Tattoo & Piercing Studio',
-            studioPhone: '+1 (555) 765-4321',
-            studioEmail: 'consultations@poliinternational.com',
-            studioAddress: '100 Artisan Boulevard, Suite 400',
-            artistName: 'Senior Resident Artist'
-        };
+        // Nothing until the studio enters its own details: the forms showed "Poli International Tattoo &
+        // Piercing Studio, 100 Artisan Boulevard" as if they were the studio's (Henry, 2026-10-18)
+        const defaultSettings = { studioName: '', studioPhone: '', studioEmail: '', studioAddress: '', studioPermit: '', artistName: '' };
 
         try {
             const raw = localStorage.getItem('poli_studio_profile') || localStorage.getItem('studio_settings') || localStorage.getItem('studio_profile');
@@ -2734,17 +2742,17 @@ class FormPreview {
                 }
             }
 
-            // Studio Name population
-            if (idLower.includes('studio') || labelText.includes('studio name') || labelText.includes('studio')) {
-                if (force || !inp.value) {
-                    inp.value = settings.studioName;
-                    this.responses[fieldId] = settings.studioName;
-                    populatedCount++;
-                }
+            // The studio's name in its name field, its address and contact in the others: every field with
+            // "studio" in its id got the name, so "Studio Address, Telephone & Permit" showed the name
+            const studioValue = studioFieldValue(idLower, labelText, settings);
+            if (studioValue && (force || !inp.value)) {
+                inp.value = studioValue;
+                this.responses[fieldId] = studioValue;
+                populatedCount++;
             }
 
             // Artist Name population
-            if (idLower.includes('artist') || idLower.includes('practitioner') || labelText.includes('artist name') || labelText.includes('artist')) {
+            if (settings.artistName && (idLower.includes('artist') || idLower.includes('practitioner') || labelText.includes('artist name') || labelText.includes('artist'))) {
                 if (force || !inp.value) {
                     inp.value = settings.artistName;
                     this.responses[fieldId] = settings.artistName;
