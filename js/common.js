@@ -431,6 +431,15 @@ function initApp() {
                     window.FormBuilderApp.showToast(toastMsg, 'info');
                 }
             });
+            // The preview was drawn once, when it opened: a form chosen in the list while it was open
+            // was loaded behind it and never shown (Henry, 2026-10-18: "it stayed on the Tattoo form").
+            // Runs after the handler above, whichever branch it took.
+            templateSelect.addEventListener('change', () => {
+                const previewEl = document.getElementById('preview-interface');
+                if (previewEl && previewEl.style.display !== 'none' && window.FormBuilderApp && window.FormPreview) {
+                    new window.FormPreview('preview-container').render(window.FormBuilderApp.currentForm);
+                }
+            });
 
             // Check for existing auto-saved draft or load standard template
             let loaded = false;
