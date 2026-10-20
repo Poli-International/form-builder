@@ -1487,7 +1487,7 @@ class FormBuilder {
             statusEl.title = 'Form Integrity 100%: All choice lists, labels, and logic dependencies are valid';
             statusEl.innerHTML = `
                 <span class="val-status-icon">🛡️</span>
-                <span class="val-status-text">Health: 100% (All Valid)</span>
+                <span class="val-status-text">${TP('x.health_all_valid', 'Health: 100% (All Valid)')}</span>
             `;
             statusEl.onclick = () => {
                 this.openDataIntegrityModal();
@@ -1979,6 +1979,13 @@ class FormBuilder {
     }
 
     initCanvasNudgeHUD() {
+        // Built once, so refresh its hint and the pill when the language changes.
+        document.addEventListener('languageChanged', () => {
+            const hint = document.querySelector('#canvas-nudge-hud .canvas-nudge-hint');
+            if (hint) hint.textContent = TP('x.arrow_keys_hint', '(Arrow Keys: ±5px | Shift: ±20px | 0: Reset)');
+            this.updateCanvasValidationStatus();
+            this.renderRecommendedFields();
+        });
         let hud = document.getElementById('canvas-nudge-hud');
         if (!hud) {
             hud = document.createElement('div');
@@ -1987,7 +1994,7 @@ class FormBuilder {
             hud.innerHTML = `
                 <div class="canvas-nudge-coords">
                     <span id="canvas-nudge-info">📐 Pos: X: 0px, Y: 0px</span>
-                    <span style="color: rgba(255,255,255,0.6); font-size: 0.72rem; margin-left: 8px;">(Arrow Keys: ±5px | Shift: ±20px | 0: Reset)</span>
+                    <span class="canvas-nudge-hint" style="color: rgba(255,255,255,0.6); font-size: 0.72rem; margin-left: 8px;">${TP('x.arrow_keys_hint', '(Arrow Keys: ±5px | Shift: ±20px | 0: Reset)')}</span>
                 </div>
             `;
             document.body.appendChild(hud);
@@ -3568,7 +3575,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 secEl.setAttribute('title', sectionGroupingTooltip);
                 secEl.setAttribute('data-section-tooltip', sectionGroupingTooltip);
 
-                const fieldCount = section.fields ? section.fields.length : (isMedical ? 'Auto (7)' : 0);
+                const fieldCount = section.fields ? section.fields.length : (isMedical ? TP('x.auto_count', 'Auto (7)') : 0);
 
                 secEl.innerHTML = `
                     <div class="section-header-bar" onclick="window.FormBuilderApp.selectSection('${section.id}')" title="${sectionGroupingTooltip}">
@@ -3579,9 +3586,9 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                             <span class="section-drag-handle" title="${sectionDragTooltip}">⠿</span>
                             <span class="section-group-icon-badge" title="${sectionGroupingTooltip}">📦</span>
                             <input type="text" class="section-title-input" value="${this.escapeHtml(section.title)}" placeholder="Section Title..." ${isMedical ? 'readonly' : ''} onclick="event.stopPropagation(); window.FormBuilderApp.selectSection('${section.id}')">
-                            ${isMedical ? '<span class="medical-badge" title="Auto-injected medical safety check module">⚕️ Medical Safety Module</span>' : ''}
+                            ${isMedical ? '<span class="medical-badge" title="Auto-injected medical safety check module">' + TP('x.medical_safety_module', '⚕️ Medical Safety Module') + '</span>' : ''}
                             ${isHidden ? '<span class="badge-hidden-section" title="This section is currently hidden from client preview">🚫 Hidden</span>' : ''}
-                            <span class="section-field-counter" title="${fieldCount} fields contained in this section">${fieldCount} fields</span>
+                            <span class="section-field-counter" title="${fieldCount} fields contained in this section">${fieldCount} ${TP('x.fields_word', 'fields')}</span>
                             ${isCollapsed ? ('<span class="section-collapsed-summary" onclick="event.stopPropagation(); window.FormBuilderApp.toggleSectionCollapse(\'' + section.id + '\')">📦 ' + (window.i18n ? window.i18n.t('section.collapsed_summary', { count: fieldCount }) : (fieldCount + ' fields collapsed (Click to expand)')) + '</span>') : ''}
                         </div>
                         <div class="section-actions" onclick="event.stopPropagation()">
