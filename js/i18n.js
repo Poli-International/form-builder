@@ -44,6 +44,8 @@
             this.translateDOM();
 
             this.isLoaded = true;
+            // Let components that cache translated text (HUD hint, validation pill) refresh after the first load.
+            document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: this.currentLanguage } }));
 
             // FormBuilder is constructed at script-parse time (bottom of
             // drag-drop-builder.js), i.e. before this async load resolves, so its
