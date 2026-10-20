@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+if (window.self !== window.top) {
+    var poliRoot = document.documentElement;
+    var poliApply = function (light) {
+        poliRoot.setAttribute('data-theme', light ? 'light' : 'dark');
+        var b = document.body;
+        if (b) {
+            b.classList.toggle('dark-mode', !light);
+            b.classList.toggle('light-mode', !!light);
+        }
+    };
+    poliApply(false);
+    document.addEventListener('DOMContentLoaded', function () {
+        poliApply(poliRoot.getAttribute('data-theme') === 'light');
+    });
+    window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'poli-theme') {
+            poliApply(!!e.data.light);
+        }
+    });
+}
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentação — Criador de Formulários de Consulta | Poli International</title>
+  <meta name="description" content="Como criar, validar, traduzir e exportar formulários de consentimento para tatuagens e piercings com o Criador de Formulários de Consulta da Poli International.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/tools/shared/a11y.css">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #1c2430;
+      --border: #2a3441;
+      --text: #d8dee9;
+      --heading: #ffffff;
+      --muted: #8b98a9;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.12);
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --code-bg: #0a0e14;
+      --radius: 10px;
+    }
+    body.light-mode, html[data-theme="light"] body {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface-2: #f0f2f5;
+      --border: #dde1e7;
+      --text: #26313f;
+      --heading: #0d1117;
+      --muted: #5d6b7c;
+      --accent: #0b62c4;
+      --accent-soft: rgba(11, 98, 196, 0.09);
+      --ok: #0f8f63;
+      --warn: #a86400;
+      --code-bg: #f0f2f5;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+    h1, h2, h3 { color: var(--heading); line-height: 1.25; }
+    h1 { font-size: 2rem; margin: 0 0 .5rem; letter-spacing: -.02em; }
+    h2 {
+      font-size: 1.4rem;
+      margin: 3rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 1rem;
+    }
+    h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+    p { margin: 0 0 1rem; }
+    a { color: var(--accent); }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+    li { margin-bottom: .4rem; }
+    strong { color: var(--heading); }
+    code {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .1em .4em;
+      font: 500 .875em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      overflow-x: auto;
+      font: 500 .85rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
+    .lede { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .topbar {
+      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center;
+      margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: .6rem 1.1rem; border-radius: 8px; font-weight: 600; font-size: .95rem;
+    }
+    .btn--ghost { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+
+    .callout {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.15rem;
+      margin: 1.5rem 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout--ok { background: rgba(52, 211, 153, .1); border-left-color: var(--ok); }
+    .callout--warn { background: rgba(251, 191, 36, .1); border-left-color: var(--warn); }
+
+    figure { margin: 1.5rem 0 2rem; }
+    figure img {
+      display: block; width: 100%; height: auto;
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    figcaption { color: var(--muted); font-size: .875rem; margin-top: .6rem; }
+
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .toc ol { columns: 2; column-gap: 2rem; margin: 0; }
+    @media (max-width: 620px) { .toc ol { columns: 1; } }
+
+    .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; }
+    table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: .93rem; }
+    th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--heading); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+    tbody tr:last-child td { border-bottom: 0; }
+    kbd {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-bottom-width: 2px; border-radius: 5px;
+      padding: .12em .45em; font: 600 .82em/1 ui-monospace, Menlo, Consolas, monospace;
+      color: var(--heading); white-space: nowrap;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.15rem; }
+    .card h3 { margin: 0 0 .35rem; font-size: .98rem; }
+    .card p { margin: 0; font-size: .9rem; color: var(--muted); }
+
+    footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .875rem; }
+    .doc-langs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 1.5rem; font-size: .85rem; }
+    .doc-langs a { color: var(--muted); text-decoration: none; padding: 2px 9px; border: 1px solid var(--border); border-radius: 6px; }
+    .doc-langs a[aria-current="page"] { color: var(--text, #fff); border-color: currentColor; }
+  </style>
+</head>
+<body class="dark-mode">
+<div class="wrap">
+  <nav class="doc-langs" aria-label="Idioma da documentação">
+    <a href="./documentation.html">English</a>
+    <a href="./documentation-fr.html">Français</a>
+    <a href="./documentation-de.html">Deutsch</a>
+    <a href="./documentation-it.html">Italiano</a>
+    <a href="./documentation-es.html">Español</a>
+    <a href="./documentation-nl.html">Nederlands</a>
+    <a href="./documentation-pt.html" aria-current="page">Português</a>
+  </nav>
+
+  <header>
+    <h1>Criador de Formulários de Consulta</h1>
+    <p class="lede">Crie, valide e imprima formulários de consentimento para tatuagens e piercings. Tudo funciona no seu navegador, por isso nenhum dado de saúde do cliente sai do dispositivo.</p>
+    <div class="topbar">
+      <a class="btn" href="/tools/form-builder/index.html" target="_top">Abrir o criador</a>
+      <a class="btn btn--ghost" href="/wiki/legal-compliance-standards/" target="_top">Wiki jurídica e de conformidade</a>
+      <a class="btn btn--ghost" href="/tools/" target="_top">Todas as ferramentas gratuitas</a>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <strong>Nesta página</strong>
+    <ol>
+      <li><a href="#start">Primeiros passos</a></li>
+      <li><a href="#templates">Modelos</a></li>
+      <li><a href="#fields">Tipos de campo</a></li>
+      <li><a href="#properties">Configurar um campo</a></li>
+      <li><a href="#logic">Lógica condicional</a></li>
+      <li><a href="#integrity">Verificador de integridade dos dados</a></li>
+      <li><a href="#preview">Vista do cliente e avisos de segurança</a></li>
+      <li><a href="#signature">Assinaturas e exportação para PDF</a></li>
+      <li><a href="#kiosk">Modo quiosque e incorporação</a></li>
+      <li><a href="#csv">Importação CSV e mapeamento no CRM</a></li>
+      <li><a href="#languages">Idiomas</a></li>
+      <li><a href="#shortcuts">Atalhos de teclado</a></li>
+      <li><a href="#privacy">Dados e privacidade</a></li>
+      <li><a href="#faq">Perguntas frequentes</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="start">Primeiros passos</h2>
+  <p>O criador abre com um modelo já selecionado. Três passos levam a um formulário utilizável:</p>
+  <ol>
+    <li><strong>Escolha um modelo</strong> na lista pendente <em>Modelo</em> no cabeçalho. Substitui a área de trabalho por um formulário completo e dividido em secções.</li>
+    <li><strong>Edite na área de trabalho.</strong> Arraste tipos de campo a partir da paleta à esquerda, reordene-os arrastando e clique em qualquer campo para abrir as definições à direita.</li>
+    <li><strong>Pré-visualize e imprima.</strong> <em>Pré-visualizar</em> muda para a vista destinada ao cliente, onde pode recolher uma assinatura e exportar um PDF.</li>
+  </ol>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/01-drag-drop-consent-form-builder-field-properties.jpg"
+         alt="O criador de formulários com a paleta de campos à esquerda, um formulário de consentimento de piercing ao centro e o painel de propriedades do campo aberto à direita." loading="lazy">
+    <figcaption>Paleta, área de trabalho e propriedades do campo. Ao selecionar um campo abrem-se o seu tipo, rótulo, alias CRM e definições de validação.</figcaption>
+  </figure>
+
+  <div class="callout">
+    <p><strong>O seu trabalho é guardado automaticamente.</strong> O criador grava um rascunho neste navegador após cada alteração e oferece restaurá-lo quando voltar. Limpar os dados do site apaga o rascunho, por isso exporte uma cópia JSON de tudo o que queira manter de forma permanente (<em>Exportar &rarr; Exportar JSON</em>, ou <kbd>Ctrl</kbd> + <kbd>S</kbd>).</p>
+  </div>
+
+  <h2 id="templates">Modelos</h2>
+  <p>Oito pontos de partida, cada um um formulário completo e não um esqueleto. O modelo de consentimento para piercings, por exemplo, inclui 7 secções e 28 campos, dos quais 18 são obrigatórios.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Modelo</th><th>Utilize-o para</th></tr></thead>
+      <tbody>
+        <tr><td>Consentimento e acordo de exoneração para tatuagens</td><td>Marcações normais de tatuagem: dados do estúdio e do tatuador, declaração médica, termo de exoneração.</td></tr>
+        <tr><td>Consentimento e exoneração para piercings</td><td>Marcações de piercing: anatomia e localização, material e calibre da joia, lote de esterilização.</td></tr>
+        <tr><td>Historial clínico e questionário de rastreio de saúde</td><td>Um questionário de saúde autónomo quando o rastreio é feito antes da marcação.</td></tr>
+        <tr><td>Acordo-mestre para projetos de tatuagem em várias sessões</td><td>Peças de grande dimensão marcadas em várias sessões, com acompanhamento por sessão.</td></tr>
+        <tr><td>Consentimento de menores e autorização do responsável legal</td><td>Quando a lei local permite trabalhar com um menor na presença de um responsável legal que co-assina.</td></tr>
+        <tr><td>Avaliação de cobertura e retoque</td><td>Avaliação de trabalho existente antes de o cobrir ou retocar.</td></tr>
+        <tr><td>Consulta de PMU e tatuagem cosmética</td><td>Consultas de maquilhagem permanente e de tatuagem cosmética.</td></tr>
+        <tr><td>Formulário personalizado em branco</td><td>Para começar do zero.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout--warn">
+    <p>Os modelos são uma ajuda para a redação, não aconselhamento jurídico. Os requisitos de consentimento variam consoante o país, o estado e o município. Peça a alguém qualificado na sua jurisdição que reveja a redação final antes de a usar com clientes.</p>
+  </div>
+
+  <h2 id="fields">Tipos de campo</h2>
+  <p>Dezassete tipos de campo, agrupados em categorias na paleta. Utilize a caixa de pesquisa (<kbd>Ctrl</kbd> + <kbd>F</kbd>) para os filtrar.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Entrada básica</h3>
+      <p>Texto curto, Parágrafo / Texto longo, Endereço de e-mail, Número de telefone, Seletor de data, Número / Quantidade.</p>
+    </div>
+    <div class="card">
+      <h3>Escolhas e opções</h3>
+      <p>Caixa de seleção, Grupo de caixas de seleção, Botões de opção, Menu suspenso.</p>
+    </div>
+    <div class="card">
+      <h3>Layout e estrutura</h3>
+      <p>Cabeçalho de seção, Contêiner / Painel, Secção / Grupo.</p>
+    </div>
+    <div class="card">
+      <h3>Avisos e jurídico</h3>
+      <p>Aviso / Cabeçalho para texto permanente, e Assinatura digital para a validação com efeitos vinculativos.</p>
+    </div>
+    <div class="card">
+      <h3>Clínico e média</h3>
+      <p>Mapa anatómico corporal para assinalar a localização, e Documento de identidade e carregamento de documentos.</p>
+    </div>
+  </div>
+  <p>A paleta tem também um interruptor <strong>Sugestões Inteligentes</strong>. Quando está ativo, a parte superior da paleta recomenda os campos que faltam ao seu formulário para o tipo de trabalho que ele descreve.</p>
+
+  <h2 id="properties">Configurar um campo</h2>
+  <p>Clique num campo na área de trabalho e o painel da direita passa de <em>Visão geral do formulário</em> para <em>Propriedades do campo</em>:</p>
+  <ul>
+    <li><strong>Tipo de campo</strong> &mdash; altere-o no próprio local sem perder o rótulo.</li>
+    <li><strong>Rótulo do campo</strong> &mdash; a pergunta tal como o cliente a lê.</li>
+    <li><strong>Alias interno do campo (CRM / Chave API)</strong> &mdash; um nome técnico estável, como <code>client_allergies_list</code>. As exportações usam o alias, por isso pode mudar o texto de uma pergunta sem partir uma folha de cálculo ou uma integração.</li>
+    <li><strong>Obrigatório</strong> &mdash; bloqueia o envio e a geração do PDF até ser respondido.</li>
+    <li><strong>Validação</strong> &mdash; limites de caracteres, limites numéricos e padrões de expressões regulares.</li>
+  </ul>
+  <p>Selecione vários campos com <kbd>Shift</kbd> + clique para os definir como obrigatórios ou ocultos de uma só vez.</p>
+
+  <h2 id="logic">Lógica condicional</h2>
+  <p>Qualquer campo pode ser apresentado apenas quando outro campo tem uma resposta específica, pelo que um cliente que responda &quot;não&quot; a uma pergunta médica nunca vê as seis perguntas de seguimento que estão por baixo. Defina a pergunta principal e o valor que a ativa na secção <em>Lógica</em> das propriedades do campo.</p>
+  <p>Regras encadeadas em profundidade podem formar, sem querer, um ciclo em que A depende de B e B depende de A, deixando ambos permanentemente ocultos. O verificador de integridade abaixo deteta exatamente esse caso.</p>
+
+  <h2 id="integrity">Verificador de integridade dos dados</h2>
+  <p><em>Validar Formulário</em> na barra de ferramentas da área de trabalho executa uma análise de diagnóstico e atribui uma pontuação ao formulário. Apanha os erros que só aparecem quando um cliente está à sua frente:</p>
+  <ul>
+    <li>Dependências lógicas circulares que tornam campos inacessíveis.</li>
+    <li>Menus suspensos, botões de opção e grupos de caixas de seleção sem opções configuradas.</li>
+    <li>Rótulos de opção duplicados que tornam uma resposta ambígua.</li>
+    <li>Limites de validação invertidos, como um mínimo superior ao máximo.</li>
+    <li>Padrões de expressões regulares inválidos.</li>
+    <li>Aliases CRM duplicados, que colidem na exportação.</li>
+    <li>Rótulos em falta e secções vazias.</li>
+  </ul>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/03-form-data-integrity-logic-checker-diagnostics.jpg"
+         alt="O verificador de integridade dos dados com uma pontuação de 76 por cento, contadores de lógica crítica, opções em falta e avisos, e um cartão de problema com botões para ir ao campo e corrigir rapidamente." loading="lazy">
+    <figcaption>Cada conclusão explica a consequência e oferece <em>Ir para o campo e corrigir</em>, ou <em>Correção Rápida</em> quando a reparação é inequívoca. <em>Correção Automática Segura</em> aplica de uma vez todas as correções inequívocas.</figcaption>
+  </figure>
+
+  <h2 id="preview">Vista do cliente e avisos de segurança</h2>
+  <p><em>Pré-visualizar</em> apresenta o formulário exatamente como o cliente o vê, com um indicador de progresso que mostra quantos campos obrigatórios ainda faltam.</p>
+  <p>À medida que chegam respostas médicas, a pré-visualização apresenta <strong>avisos de segurança</strong> acima do formulário: declarações que exigem que o tatuador esteja ciente, uma precaução de procedimento ou uma autorização médica formal. Uma alergia ao látex declarada, por exemplo, gera um alerta de barreira que indica a substituição necessária nesse posto de trabalho.</p>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/02-medical-safety-callouts-client-consent-view.jpg"
+         alt="O formulário de consentimento visto pelo cliente, com uma barra de progresso a 96 por cento e um aviso de segurança médica que assinala uma alergia ao látex declarada." loading="lazy">
+    <figcaption><em>Preencher dados de teste</em> preenche o formulário com dados de teste para que possa ver os avisos e o resultado em PDF antes de passar a usar o formulário.</figcaption>
+  </figure>
+
+  <h2 id="signature">Assinaturas e exportação para PDF</h2>
+  <p>O campo Assinatura digital aceita rato, caneta stylus ou ponta de dedo e carimba a data da assinatura. <em>Configurações de PDF e Impressão</em> controla a exportação: formato do papel, margens e uma marca de água ou logótipo do estúdio.</p>
+  <p><em>Imprimir formulário</em> abre a caixa de diálogo de impressão do navegador com uma folha de estilos de impressão. Ative <strong>Imprimir após assinatura</strong> se quiser que isso aconteça automaticamente no momento em que o cliente termina de assinar.</p>
+  <p><em>Exportar CSV</em> escreve as respostas com os aliases CRM como cabeçalhos de coluna, prontas para uma folha de cálculo ou para importar noutro software.</p>
+
+  <h2 id="kiosk">Modo quiosque e incorporação</h2>
+  <p><strong>Modo Quiosque Tablet</strong> (em <em>Opções</em>, ou a partir da barra de pré-visualização) apresenta o formulário passo a passo, com alvos táteis grandes, para entregar um tablet ao cliente na sala de espera.</p>
+  <p><em>Opções &rarr; Incorporar / QR Code</em> gera tanto um fragmento iframe para o seu próprio site como um cartaz QR imprimível que os clientes podem digitalizar com o telemóvel. O fragmento de incorporação tem este aspeto:</p>
+  <pre><code>&lt;iframe src="https://poliinternational.com/tools/form-builder/index.html"
+        width="100%" height="1000" frameborder="0"
+        style="border-radius:12px;"&gt;&lt;/iframe&gt;</code></pre>
+  <h3 id="in-crm">Dentro do Studio CRM</h3>
+  <p>No Studio CRM gratuito o criador faz mais, porque os formulários são guardados junto com os dados do estúdio:</p>
+  <ul>
+    <li><strong>Enviar para o quiosque:</strong> a partir de <em>Pré-visualizar</em>, envie o formulário para um tablet com nome que aguarda na rede do estúdio. O cliente preenche e assina, e o formulário é guardado no perfil desse cliente. O tablet fica então a aguardar o formulário seguinte.</li>
+    <li><strong>Campo de scanner:</strong> um campo que digitaliza uma página de papel no computador do CRM (Windows WIA, Linux SANE; não em macOS) e a acrescenta ao formulário como uma fotografia, guardada no registo e no PDF.</li>
+    <li><strong>Um formulário em todo o lado:</strong> um formulário editado num computador é o formulário que todos os tablets e computadores do estúdio mostram.</li>
+  </ul>
+
+  <h2 id="csv">Importação CSV e mapeamento no CRM</h2>
+  <p><em>Importar &rarr; Importação em Lote de Campos (CSV)</em> cria campos a partir de uma folha de cálculo, a forma mais rápida de transferir um formulário existente, em papel ou digital. Carregue um ficheiro ou cole as linhas diretamente. Colunas esperadas:</p>
+  <pre><code>Label,Type,Required,HelperText,Options
+Emergency contact,text,true,Full legal name,
+Preferred language,select,false,Pick your main language,English;French;Thai
+Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code></pre>
+  <p><em>Exportar &rarr; IDs de Campo e Mapa CRM</em> produz uma referência de cada pergunta, o seu alias interno, tipo de dados e regra de validação, em JSON, CSV ou como um exemplo de payload de webhook. É esse o documento a entregar a um programador que ligue o formulário a outros sistemas.</p>
+
+  <h2 id="languages">Idiomas</h2>
+  <p>A interface e os modelos estão disponíveis em sete idiomas: inglês, francês, italiano, alemão, espanhol, neerlandês e português. Utilize a lista pendente <em>Idioma</em> no cabeçalho. Mudar de idioma traduz tanto os controlos do próprio criador como os rótulos dos campos do formulário que está a criar, para que possa entregar a um cliente francês um formulário de consentimento em francês.</p>
+  <p>A sua escolha fica guardada neste navegador. Os campos que escreveu você próprio mantêm-se exatamente como os digitou.</p>
+
+  <h2 id="shortcuts">Atalhos de teclado</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Teclas</th><th>Ação</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>Anular a última ação ou edição de campo</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd> / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td><td>Refazer</td></tr>
+        <tr><td><kbd>Shift</kbd> + clique</td><td>Selecionar vários campos para ações em lote</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>D</kbd></td><td>Duplicar o campo ou bloco selecionado</td></tr>
+        <tr><td><kbd>Delete</kbd> / <kbd>Backspace</kbd></td><td>Eliminar os campos selecionados</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>Exportar o esquema do formulário como JSON</td></tr>
+        <tr><td><kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&larr;</kbd> <kbd>&rarr;</kbd></td><td>Deslocar os campos selecionados 5 px</td></tr>
+        <tr><td><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd></td><td>Percorrer as propriedades de configuração do campo</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>Filtrar a paleta ou pesquisar as propriedades do campo</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Desmarcar e voltar à Visão geral do formulário</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Os campos eliminados vão para um cesto de <strong>Excluídos recentemente</strong> na parte inferior da área de trabalho, pelo que uma eliminação acidental pode ser recuperada mesmo depois de várias edições.</p>
+
+  <h2 id="privacy">Dados e privacidade</h2>
+  <div class="callout callout--ok">
+    <p><strong>Nada do que escreve chega aos nossos servidores.</strong> O criador não faz pedidos de rede além de carregar o seu próprio ficheiro de tradução. Os formulários, as respostas dos clientes, as assinaturas e os PDF gerados são criados e guardados apenas no seu navegador.</p>
+  </div>
+  <p>Consequências práticas que vale a pena conhecer:</p>
+  <ul>
+    <li>Os rascunhos e as submissões ficam no armazenamento local deste navegador. Não são sincronizados entre computadores, e outro navegador ou uma janela privada não os verá.</li>
+    <li>Limpar os dados do site apaga-os de forma permanente. Não existe cópia no servidor que possamos restaurar.</li>
+    <li>Como os registos ficam no seu dispositivo, continua a ser o responsável pelo tratamento desses dados. As suas obrigações ao abrigo do RGPD, da PDPA ou da legislação local sobre registos de saúde não mudam, e a forma como guarda os PDF exportados é da sua responsabilidade.</li>
+  </ul>
+  <p>Exporte uma cópia JSON de qualquer modelo de formulário em que confie, e arquive os PDF de consentimento concluídos onde já guarda os registos dos clientes.</p>
+
+  <h2 id="faq">Perguntas frequentes</h2>
+  <h3>A ferramenta é gratuita?</h3>
+  <p>Sim, sem conta e sem limite de utilização. Pode também incorporá-la no seu próprio site sem custo.</p>
+
+  <h3>Um formulário assinado digitalmente tem validade jurídica?</h3>
+  <p>As assinaturas eletrónicas são amplamente reconhecidas, mas o padrão de prova e os requisitos de conservação de registos variam consoante a jurisdição. Trate o PDF exportado como trataria um formulário assinado em papel, e confirme os requisitos aplicáveis onde exerce a atividade.</p>
+
+  <h3>Posso recuperar os meus formulários noutro computador?</h3>
+  <p>Apenas movendo-os você próprio. Use <em>Exportar &rarr; Exportar JSON</em> no primeiro computador e <em>Importar &rarr; Importar Modelo JSON</em> no segundo.</p>
+
+  <h3>Porque é que um campo aparece a cinzento ou não aparece na vista do cliente?</h3>
+  <p>Ou está oculto, ou uma regra condicional o mantém oculto porque a pergunta principal não foi respondida com o valor que o ativa. Execute <em>Validar Formulário</em>; se a pergunta principal já não existir, o verificador comunica-o como lógica órfã.</p>
+
+  <h3>Falta o meu logótipo no PDF.</h3>
+  <p>Carregue-o em <em>Opções &rarr; Configurações de PDF e Impressão</em>. Como tudo o resto, fica guardado neste navegador, por isso é preciso carregá-lo novamente noutro computador.</p>
+
+  <h3>Posso recolher submissões online?</h3>
+  <p>Não através de nós, por opção de conceção. A ferramenta não tem backend. Se precisar de encaminhar as submissões para algum sítio, use <em>Exportar &rarr; IDs de Campo e Mapa CRM</em> para obter o esquema e o exemplo de payload de webhook, e ligue o formulário ao seu próprio sistema.</p>
+
+  <footer>
+    <p>Criador de Formulários de Consulta &mdash; parte do conjunto gratuito de ferramentas profissionais da
+      <a href="https://poliinternational.com/" target="_top">Poli International</a>.
+      Dúvidas ou um erro a reportar? <a href="https://poliinternational.com/contact-us/" target="_top">Contacte-nos</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
