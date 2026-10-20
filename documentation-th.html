@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+if (window.self !== window.top) {
+    var poliRoot = document.documentElement;
+    var poliApply = function (light) {
+        poliRoot.setAttribute('data-theme', light ? 'light' : 'dark');
+        var b = document.body;
+        if (b) {
+            b.classList.toggle('dark-mode', !light);
+            b.classList.toggle('light-mode', !!light);
+        }
+    };
+    poliApply(false);
+    document.addEventListener('DOMContentLoaded', function () {
+        poliApply(poliRoot.getAttribute('data-theme') === 'light');
+    });
+    window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'poli-theme') {
+            poliApply(!!e.data.light);
+        }
+    });
+}
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เอกสาร: เครื่องมือสร้างแบบฟอร์มปรึกษา | Poli International</title>
+  <meta name="description" content="วิธีสร้าง ตรวจสอบ แปล และส่งออกแบบฟอร์มยินยอมสำหรับการสักและการเจาะ ด้วยเครื่องมือสร้างแบบฟอร์มปรึกษาของ Poli International">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/tools/shared/a11y.css">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #1c2430;
+      --border: #2a3441;
+      --text: #d8dee9;
+      --heading: #ffffff;
+      --muted: #8b98a9;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.12);
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --code-bg: #0a0e14;
+      --radius: 10px;
+    }
+    body.light-mode, html[data-theme="light"] body {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface-2: #f0f2f5;
+      --border: #dde1e7;
+      --text: #26313f;
+      --heading: #0d1117;
+      --muted: #5d6b7c;
+      --accent: #0b62c4;
+      --accent-soft: rgba(11, 98, 196, 0.09);
+      --ok: #0f8f63;
+      --warn: #a86400;
+      --code-bg: #f0f2f5;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+    h1, h2, h3 { color: var(--heading); line-height: 1.25; }
+    h1 { font-size: 2rem; margin: 0 0 .5rem; letter-spacing: -.02em; }
+    h2 {
+      font-size: 1.4rem;
+      margin: 3rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 1rem;
+    }
+    h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+    p { margin: 0 0 1rem; }
+    a { color: var(--accent); }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+    li { margin-bottom: .4rem; }
+    strong { color: var(--heading); }
+    code {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .1em .4em;
+      font: 500 .875em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      overflow-x: auto;
+      font: 500 .85rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
+    .lede { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .topbar {
+      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center;
+      margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: .6rem 1.1rem; border-radius: 8px; font-weight: 600; font-size: .95rem;
+    }
+    .btn--ghost { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+
+    .callout {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.15rem;
+      margin: 1.5rem 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout--ok { background: rgba(52, 211, 153, .1); border-left-color: var(--ok); }
+    .callout--warn { background: rgba(251, 191, 36, .1); border-left-color: var(--warn); }
+
+    figure { margin: 1.5rem 0 2rem; }
+    figure img {
+      display: block; width: 100%; height: auto;
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    figcaption { color: var(--muted); font-size: .875rem; margin-top: .6rem; }
+
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .toc ol { columns: 2; column-gap: 2rem; margin: 0; }
+    @media (max-width: 620px) { .toc ol { columns: 1; } }
+
+    .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; }
+    table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: .93rem; }
+    th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--heading); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+    tbody tr:last-child td { border-bottom: 0; }
+    kbd {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-bottom-width: 2px; border-radius: 5px;
+      padding: .12em .45em; font: 600 .82em/1 ui-monospace, Menlo, Consolas, monospace;
+      color: var(--heading); white-space: nowrap;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.15rem; }
+    .card h3 { margin: 0 0 .35rem; font-size: .98rem; }
+    .card p { margin: 0; font-size: .9rem; color: var(--muted); }
+
+    footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .875rem; }
+    .doc-langs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 1.5rem; font-size: .85rem; }
+    .doc-langs a { color: var(--muted); text-decoration: none; padding: 2px 9px; border: 1px solid var(--border); border-radius: 6px; }
+    .doc-langs a[aria-current="page"] { color: var(--text, #fff); border-color: currentColor; }
+  </style>
+</head>
+<body class="dark-mode">
+<div class="wrap">
+  <nav class="doc-langs" aria-label="Documentation language">
+    <a href="./documentation.html">English</a>
+    <a href="./documentation-fr.html">Français</a>
+    <a href="./documentation-de.html">Deutsch</a>
+    <a href="./documentation-it.html">Italiano</a>
+    <a href="./documentation-es.html">Español</a>
+    <a href="./documentation-nl.html">Nederlands</a>
+    <a href="./documentation-pt.html">Português</a>
+  <a lang="th" href="documentation-th.html" aria-current="page">ไทย</a></nav>
+
+  <header>
+    <h1>เครื่องมือสร้างแบบฟอร์มปรึกษา (Consultation Form Builder)</h1>
+    <p class="lede">สร้าง ตรวจสอบ และพิมพ์แบบฟอร์มยินยอมสำหรับการสักและการเจาะ ทุกอย่างทำงานในเบราว์เซอร์ของคุณ ข้อมูลสุขภาพของลูกค้าจึงไม่ออกจากอุปกรณ์เลย</p>
+    <div class="topbar">
+      <a class="btn" href="/tools/form-builder/index.html" target="_top">เปิดเครื่องมือสร้างแบบฟอร์ม</a>
+      <a class="btn btn--ghost" href="/wiki/legal-compliance-standards/" target="_top">วิกิกฎหมายและการปฏิบัติตามข้อกำหนด</a>
+      <a class="btn btn--ghost" href="/tools/" target="_top">เครื่องมือฟรีทั้งหมด</a>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="สารบัญ">
+    <strong>ในหน้านี้</strong>
+    <ol>
+      <li><a href="#start">เริ่มต้นใช้งาน</a></li>
+      <li><a href="#templates">เทมเพลต</a></li>
+      <li><a href="#fields">ประเภทฟิลด์</a></li>
+      <li><a href="#properties">การตั้งค่าฟิลด์</a></li>
+      <li><a href="#logic">ตรรกะแบบมีเงื่อนไข</a></li>
+      <li><a href="#integrity">ตัวตรวจสอบความถูกต้องของข้อมูล</a></li>
+      <li><a href="#preview">มุมมองลูกค้าและประกาศด้านความปลอดภัย</a></li>
+      <li><a href="#signature">ลายเซ็นและการส่งออก PDF</a></li>
+      <li><a href="#kiosk">โหมดคีออสก์และการฝัง</a></li>
+      <li><a href="#csv">การนำเข้า CSV และการจับคู่ CRM</a></li>
+      <li><a href="#languages">ภาษา</a></li>
+      <li><a href="#shortcuts">ปุ่มลัดแป้นพิมพ์</a></li>
+      <li><a href="#privacy">ข้อมูลและความเป็นส่วนตัว</a></li>
+      <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="start">เริ่มต้นใช้งาน</h2>
+  <p>เครื่องมือจะเปิดขึ้นพร้อมเทมเพลตที่เลือกไว้แล้ว มีสามขั้นตอนที่จะพาคุณไปถึงแบบฟอร์มที่ใช้งานได้:</p>
+  <ol>
+    <li><strong>เลือกเทมเพลต</strong> จากเมนู <em>เทมเพลต</em> ในส่วนหัว เทมเพลตจะแทนที่แคนวาสด้วยแบบฟอร์มที่สมบูรณ์และแบ่งเป็นส่วนต่าง ๆ</li>
+    <li><strong>แก้ไขบนแคนวาส</strong> ลากประเภทฟิลด์จากพาเลตทางซ้าย จัดลำดับใหม่โดยการลาก และคลิกฟิลด์ใดก็ได้เพื่อเปิดการตั้งค่าทางขวา</li>
+    <li><strong>ดูตัวอย่างและพิมพ์</strong> <em>ดูตัวอย่างแบบฟอร์ม</em> จะสลับไปยังมุมมองที่ใช้กับลูกค้า ซึ่งคุณสามารถเก็บลายเซ็นและส่งออกเป็น PDF ได้</li>
+  </ol>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/01-drag-drop-consent-form-builder-field-properties.jpg"
+         alt="เครื่องมือสร้างแบบฟอร์มที่มีพาเลตฟิลด์อยู่ทางซ้าย แบบฟอร์มยินยอมการเจาะอยู่บนแคนวาส และแผงคุณสมบัติของฟิลด์เปิดอยู่ทางขวา" loading="lazy">
+    <figcaption>พาเลต แคนวาส และคุณสมบัติของฟิลด์ เมื่อเลือกฟิลด์ จะเปิดการตั้งค่าประเภท ป้ายกำกับ ชื่อเรียกสำหรับ CRM และการตรวจสอบ</figcaption>
+  </figure>
+
+  <div class="callout">
+    <p><strong>งานของคุณถูกบันทึกอัตโนมัติ</strong> เครื่องมือจะเขียนฉบับร่างลงในเบราว์เซอร์นี้หลังทุกการเปลี่ยนแปลง และจะเสนอให้กู้คืนเมื่อคุณกลับมา การล้างข้อมูลของเว็บไซต์จะล้างฉบับร่างด้วย ดังนั้นให้ส่งออกสำเนา JSON ของสิ่งที่คุณต้องการเก็บไว้ถาวร (<em>ส่งออก &rarr; ส่งออก JSON</em> หรือ <kbd>Ctrl</kbd> + <kbd>S</kbd>)</p>
+  </div>
+
+  <h2 id="templates">เทมเพลต</h2>
+  <p>มีจุดเริ่มต้นแปดแบบ ซึ่งแต่ละแบบเป็นแบบฟอร์มที่สมบูรณ์ ไม่ใช่โครงร่างเปล่า ตัวอย่างเช่น เทมเพลตหนังสือยินยอมการเจาะมาพร้อม 7 ส่วนและ 28 ฟิลด์ โดย 18 ฟิลด์เป็นฟิลด์บังคับ</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>เทมเพลต</th><th>ใช้สำหรับ</th></tr></thead>
+      <tbody>
+        <tr><td>หนังสือให้ความยินยอมและข้อตกลงการปล่อยสิทธิ์การสัก</td><td>นัดหมายสักทั่วไป: รายละเอียดของสตูดิโอและศิลปิน การเปิดเผยข้อมูลทางการแพทย์ และหนังสือสละสิทธิ์</td></tr>
+        <tr><td>หนังสือให้ความยินยอมและข้อตกลงการปล่อยสิทธิ์การเจาะ</td><td>นัดหมายเจาะ: กายวิภาคและตำแหน่ง วัสดุของเครื่องประดับและขนาดเกจ (gauge) และล็อตการฆ่าเชื้อ</td></tr>
+        <tr><td>ประวัติการรักษาพยาบาลและการคัดกรองสุขภาพ</td><td>แบบสอบถามสุขภาพแยกต่างหาก เมื่อการคัดกรองเกิดขึ้นก่อนนัดหมาย</td></tr>
+        <tr><td>ข้อตกลงหลักสำหรับโปรเจกต์การสักหลายครั้ง</td><td>งานชิ้นใหญ่ที่จองข้ามหลายรอบ พร้อมการติดตามรายครั้ง</td></tr>
+        <tr><td>แบบฟอร์มให้ความยินยอมสำหรับผู้เยาว์และการอนุมัติจากผู้ปกครองตามกฎหมาย</td><td>กรณีที่กฎหมายท้องถิ่นอนุญาตให้ทำงานกับผู้เยาว์เมื่อมีผู้ปกครองอยู่ด้วยและร่วมลงนาม</td></tr>
+        <tr><td>แบบประเมินการแก้ลายสักและการทำทับรอยเดิม</td><td>ประเมินงานที่มีอยู่ก่อนปิดทับหรือทำใหม่</td></tr>
+        <tr><td>การให้คำปรึกษาการสักเพื่อความงามและ PMU</td><td>การให้คำปรึกษาเรื่องการทำถาวรเพื่อความงามและการสักเพื่อความงาม</td></tr>
+        <tr><td>แบบฟอร์มกำหนดเองว่างเปล่า</td><td>เริ่มจากศูนย์</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout--warn">
+    <p>เทมเพลตเป็นเครื่องมือช่วยร่าง ไม่ใช่คำแนะนำทางกฎหมาย เงื่อนไขการให้ความยินยอมแตกต่างกันไปตามประเทศ รัฐ และเทศบาล ควรให้ผู้ที่มีคุณสมบัติในเขตอำนาจของคุณตรวจสอบถ้อยคำสุดท้ายก่อนนำไปใช้กับลูกค้า</p>
+  </div>
+
+  <h2 id="fields">ประเภทฟิลด์</h2>
+  <p>มีประเภทฟิลด์สิบเจ็ดแบบ จัดเป็นหมวดหมู่ในพาเลต ใช้กล่องค้นหา (<kbd>Ctrl</kbd> + <kbd>F</kbd>) เพื่อกรองฟิลด์เหล่านั้น</p>
+  <div class="grid">
+    <div class="card">
+      <h3>ฟิลด์ป้อนข้อมูลพื้นฐาน</h3>
+      <p>ข้อความสั้น, ย่อหน้า / ข้อความยาว, ที่อยู่อีเมล, เบอร์โทรศัพท์, ตัวเลือกวันที่, ตัวเลข / จำนวน</p>
+    </div>
+    <div class="card">
+      <h3>ตัวเลือกและรายการเลือก</h3>
+      <p>ช่องทำเครื่องหมาย, กลุ่มช่องทำเครื่องหมาย, ตัวเลือก (Radio), เมนูแบบดรอปดาวน์</p>
+    </div>
+    <div class="card">
+      <h3>เลย์เอาต์และโครงสร้าง</h3>
+      <p>หัวข้อส่วน, คอนเทนเนอร์ / แผงควบคุม, ส่วน / กลุ่ม</p>
+    </div>
+    <div class="card">
+      <h3>ประกาศและข้อกำหนดทางกฎหมาย</h3>
+      <p>ประกาศ / หัวเรื่อง สำหรับข้อความมาตรฐาน และลายเซ็นดิจิทัลสำหรับการลงนามยืนยันที่มีผลผูกพัน</p>
+    </div>
+    <div class="card">
+      <h3>ข้อมูลคลินิกและสื่อ</h3>
+      <p>แผนผังร่างกาย (Body Map) สำหรับระบุตำแหน่ง และ Photo ID &amp; Reference Upload</p>
+    </div>
+  </div>
+  <p>พาเลตยังมีสวิตช์ <strong>ระบบแนะนำอัจฉริยะ</strong> เมื่อเปิดไว้ ด้านบนของพาเลตจะแนะนำฟิลด์ที่แบบฟอร์มยังขาดอยู่สำหรับงานประเภทที่แบบฟอร์มนั้นอธิบายไว้</p>
+
+  <h2 id="properties">การตั้งค่าฟิลด์</h2>
+  <p>คลิกฟิลด์บนแคนวาส แล้วแผงทางขวาจะเปลี่ยนจาก <em>ภาพรวมและการตั้งค่าแบบฟอร์ม</em> ไปเป็น <em>คุณสมบัติของฟิลด์</em>:</p>
+  <ul>
+    <li><strong>ประเภทฟิลด์</strong> &mdash; เปลี่ยนได้ทันทีโดยไม่สูญเสียป้ายกำกับ</li>
+    <li><strong>ชื่อฟิลด์ (Label)</strong> &mdash; คำถามตามที่ลูกค้าอ่าน</li>
+    <li><strong>ชื่อเรียกภายในฟิลด์ (CRM / API Key)</strong> &mdash; ชื่อเครื่องที่คงที่ เช่น <code>client_allergies_list</code> การส่งออกใช้ชื่อเรียกนี้ ดังนั้นคุณเปลี่ยนชื่อคำถามได้โดยไม่ทำให้สเปรดชีตหรือการเชื่อมต่อระบบเสียหาย</li>
+    <li><strong>ฟิลด์ที่จำเป็นต้องกรอก</strong> &mdash; บล็อกการส่งและการสร้าง PDF จนกว่าจะมีการตอบ</li>
+    <li><strong>การตรวจสอบ</strong> &mdash; จำนวนอักขระขั้นต่ำและสูงสุด ขอบเขตของตัวเลข และรูปแบบนิพจน์ปกติ (regular expression)</li>
+  </ul>
+  <p>เลือกหลายฟิลด์ด้วย <kbd>Shift</kbd> + คลิก เพื่อตั้งค่าให้จำเป็นหรือซ่อนทั้งหมดพร้อมกัน</p>
+
+  <h2 id="logic">ตรรกะแบบมีเงื่อนไข</h2>
+  <p>ฟิลด์ใดก็ได้สามารถแสดงได้เฉพาะเมื่อฟิลด์อื่นมีคำตอบเฉพาะ ดังนั้นลูกค้าที่ตอบว่า “ไม่” ต่อคำถามทางการแพทย์จะไม่เห็นคำถามติดตามหกข้อที่อยู่ข้างใต้ ตั้งคำถามหลักและค่าที่ทำให้แสดงในส่วน <em>ตรรกะ</em> ของคุณสมบัติฟิลด์</p>
+  <p>กฎที่เชื่อมโยงกันลึกอาจเผลอสร้างวงจร เช่น A ขึ้นอยู่กับ B และ B ขึ้นอยู่กับ A ทำให้ทั้งคู่ถูกซ่อนถาวร ตัวตรวจสอบความถูกต้องของข้อมูลด้านล่างจะตรวจพบกรณีนี้</p>
+
+  <h2 id="integrity">ตัวตรวจสอบความถูกต้องของข้อมูล</h2>
+  <p><em>ตรวจสอบแบบฟอร์ม</em> บนแถบเครื่องมือของแคนวาสจะเรียกการสแกนวินิจฉัยและให้คะแนนแบบฟอร์ม ตัวตรวจสอบนี้จับข้อผิดพลาดที่จะปรากฏเฉพาะเมื่อลูกค้ายืนอยู่ตรงหน้าคุณ:</p>
+  <ul>
+    <li>ตรรกะที่วนซ้ำทำให้ฟิลด์เข้าถึงไม่ได้</li>
+    <li>เมนูแบบดรอปดาวน์ เรดิโอ และกลุ่มช่องทำเครื่องหมายที่ไม่มีตัวเลือกที่กำหนดไว้</li>
+    <li>ป้ายกำกับตัวเลือกที่ซ้ำกันซึ่งทำให้คำตอบคลุมเครือ</li>
+    <li>ขอบเขตการตรวจสอบที่กลับด้าน เช่น ค่าต่ำสุดที่สูงกว่าค่าสูงสุด</li>
+    <li>รูปแบบนิพจน์ปกติที่ไม่ถูกต้อง</li>
+    <li>ชื่อเรียก CRM ที่ซ้ำกัน ซึ่งจะชนกันตอนส่งออก</li>
+    <li>ป้ายกำกับที่หายไปและส่วนที่ว่างเปล่า</li>
+  </ul>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/03-form-data-integrity-logic-checker-diagnostics.jpg"
+         alt="ตัวตรวจสอบความถูกต้องของข้อมูลแสดงคะแนน 76 เปอร์เซ็นต์ ตัวนับสำหรับตรรกะวิกฤต ตัวเลือกที่หายไป และคำเตือน พร้อมการ์ดปัญหาที่มีปุ่มไปยังฟิลด์และปุ่มแก้ไขด่วน" loading="lazy">
+    <figcaption>ผลการตรวจแต่ละรายการจะอธิบายผลที่ตามมาและมี <em>ไปยังฟิลด์และแก้ไข</em> หรือ <em>แก้ไขด่วน</em> เมื่อการซ่อมแซมชัดเจน <em>แก้ไขปัญหาที่ปลอดภัยอัตโนมัติ</em> จะใช้การแก้ไขที่ชัดเจนทั้งหมดพร้อมกัน</figcaption>
+  </figure>
+
+  <h2 id="preview">มุมมองลูกค้าและประกาศด้านความปลอดภัย</h2>
+  <p><em>ดูตัวอย่างแบบฟอร์ม</em> แสดงแบบฟอร์มตรงกับที่ลูกค้าเห็น พร้อมตัวบ่งชี้ความคืบหน้าที่แสดงว่ายังเหลือฟิลด์บังคับอีกกี่ช่อง</p>
+  <p>เมื่อมีคำตอบทางการแพทย์เข้ามา การแสดงตัวอย่างจะขึ้น <strong>ประกาศด้านความปลอดภัย</strong> เหนือแบบฟอร์ม ได้แก่ ข้อมูลที่ศิลปินควรทราบ ข้อควรระวังเชิงขั้นตอน หรือการรับรองอย่างเป็นทางการจากแพทย์ ตัวอย่างเช่น เมื่อแจ้งว่าแพ้ยางลาเท็กซ์ จะแสดงการแจ้งเตือนเรื่องอุปสรรคป้องกัน (barrier) ที่ระบุวัสดุทดแทนที่ต้องใช้ที่เวิร์กสเตชันนั้น</p>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/02-medical-safety-callouts-client-consent-view.jpg"
+         alt="แบบฟอร์มยินยอมที่ลูกค้าเห็น แสดงแถบความคืบหน้าการกรอกที่ 96 เปอร์เซ็นต์ และแผงประกาศด้านความปลอดภัยทางการแพทย์ที่แจ้งการแพ้ยางลาเท็กซ์" loading="lazy">
+    <figcaption><em>กรอกคำตอบตัวอย่าง</em> จะใส่ข้อมูลทดสอบลงในแบบฟอร์ม เพื่อให้คุณเห็นประกาศและผลลัพธ์ PDF ก่อนเริ่มใช้งานจริง</figcaption>
+  </figure>
+
+  <h2 id="signature">ลายเซ็นและการส่งออก PDF</h2>
+  <p>ฟิลด์ลายเซ็นดิจิทัลรับได้ทั้งเมาส์ ปากกาสไตลัส หรือปลายนิ้ว และประทับวันที่ลงนาม <em>การตั้งค่า PDF และการพิมพ์</em> ควบคุมการส่งออก: ขนาดกระดาษ ระยะขอบ และลายน้ำหรือโลโก้ของสตูดิโอ</p>
+  <p><em>พิมพ์แบบฟอร์ม</em> เปิดกล่องโต้ตอบการพิมพ์ของเบราว์เซอร์โดยใช้สไตล์ชีตสำหรับการพิมพ์ เปิด <strong>พิมพ์ทันทีหลังเซ็นชื่อ</strong> หากคุณต้องการให้เกิดขึ้นโดยอัตโนมัติทันทีที่ลูกค้าลงนามเสร็จ</p>
+  <p><em>ส่งออกไฟล์ CSV</em> เขียนคำตอบออกมาโดยใช้ชื่อเรียก CRM เป็นหัวคอลัมน์ พร้อมใช้กับสเปรดชีตหรือการนำเข้าไปยังซอฟต์แวร์อื่น</p>
+
+  <h2 id="kiosk">โหมดคีออสก์และการฝัง</h2>
+  <p><strong>โหมดคีออสก์สำหรับแท็บเล็ต</strong> (ใน <em>ตัวเลือก</em> หรือจากแถบเครื่องมือของการแสดงตัวอย่าง) นำเสนอแบบฟอร์มทีละขั้นตอนด้วยปุ่มสัมผัสขนาดใหญ่ สำหรับส่งแท็บเล็ตให้ลูกค้าในพื้นที่รอ</p>
+  <p><em>ตัวเลือก &rarr; ฝังโค้ด / QR Code</em> สร้างทั้งโค้ด iframe สำหรับเว็บไซต์ของคุณเอง และป้าย QR สำหรับพิมพ์ที่ลูกค้าสแกนด้วยโทรศัพท์ของตนเอง โค้ดฝังมีลักษณะดังนี้:</p>
+  <pre><code>&lt;iframe src="https://poliinternational.com/tools/form-builder/index.html"
+        width="100%" height="1000" frameborder="0"
+        style="border-radius:12px;"&gt;&lt;/iframe&gt;</code></pre>
+  <h3 id="in-crm">ภายใน Studio CRM</h3>
+  <p>ใน Studio CRM ฟรี เครื่องมือทำได้มากกว่า เพราะแบบฟอร์มจะถูกบันทึกพร้อมข้อมูลของสตูดิโอ:</p>
+  <ul>
+    <li><strong>ส่งไปยังคีออสก์:</strong> จาก <em>ดูตัวอย่างแบบฟอร์ม</em> ให้ส่งแบบฟอร์มไปยังแท็บเล็ตที่ตั้งชื่อไว้ซึ่งรออยู่ในเครือข่ายของสตูดิโอ ลูกค้ากรอกและลงนาม แบบฟอร์มจะถูกบันทึกไว้ในโปรไฟล์ของลูกค้านั้น แล้วแท็บเล็ตจะรอแบบฟอร์มถัดไป</li>
+    <li><strong>ฟิลด์สแกนเนอร์:</strong> ฟิลด์ที่สแกนหน้ากระดาษบนคอมพิวเตอร์ที่ใช้ CRM (Windows WIA, Linux SANE; ไม่รองรับ macOS) และเพิ่มลงในแบบฟอร์มเหมือนรูปภาพ เก็บไว้ในบันทึกและใน PDF</li>
+    <li><strong>แบบฟอร์มเดียวใช้ได้ทุกที่:</strong> แบบฟอร์มที่แก้ไขบนคอมพิวเตอร์เครื่องหนึ่งคือแบบฟอร์มที่แท็บเล็ตและคอมพิวเตอร์ทุกเครื่องในสตูดิโอแสดง</li>
+  </ul>
+
+  <h2 id="csv">การนำเข้า CSV และการจับคู่ CRM</h2>
+  <p><em>นำเข้า &rarr; นำเข้าฟิลด์จำนวนมาก (CSV)</em> สร้างฟิลด์จากสเปรดชีต ซึ่งเป็นวิธีที่เร็วที่สุดในการย้ายแบบฟอร์มกระดาษหรือดิจิทัลที่มีอยู่ อัปโหลดไฟล์หรือวางแถวข้อมูลโดยตรง คอลัมน์ที่คาดหวัง:</p>
+  <pre><code>Label,Type,Required,HelperText,Options
+Emergency contact,text,true,Full legal name,
+Preferred language,select,false,Pick your main language,English;French;Thai
+Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code></pre>
+  <p><em>ส่งออก &rarr; ID ฟิลด์ และแผนผัง CRM</em> สร้างเอกสารอ้างอิงของทุกคำถาม ชื่อเรียกภายใน ประเภทข้อมูล และกฎการตรวจสอบ ในรูปแบบ JSON, CSV หรือตัวอย่าง payload ของ webhook นั่นคือเอกสารที่ควรส่งให้นักพัฒนาที่เชื่อมแบบฟอร์มเข้ากับระบบอื่น</p>
+
+  <h2 id="languages">ภาษา</h2>
+  <p>อินเทอร์เฟซและเทมเพลตใช้ได้ในแปดภาษา ได้แก่ อังกฤษ ฝรั่งเศส อิตาลี เยอรมัน สเปน ดัตช์ โปรตุเกส และไทย ใช้เมนู <em>ภาษา</em> ในส่วนหัว การสลับภาษาจะแปลทั้งตัวควบคุมของเครื่องมือเองและป้ายกำกับฟิลด์ของแบบฟอร์มที่คุณกำลังสร้าง ดังนั้นคุณสามารถส่งแบบฟอร์มยินยอมภาษาฝรั่งเศสให้ลูกค้าชาวฝรั่งเศสได้</p>
+  <p>ตัวเลือกของคุณจะถูกจดจำในเบราว์เซอร์นี้ ฟิลด์ที่คุณเขียนเองจะคงอยู่ตามที่พิมพ์ทุกประการ</p>
+
+  <h2 id="shortcuts">ปุ่มลัดแป้นพิมพ์</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>ปุ่ม</th><th>การทำงาน</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>ยกเลิกการกระทำล่าสุดหรือการแก้ไขฟิลด์</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd> / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td><td>ทำซ้ำ</td></tr>
+        <tr><td><kbd>Shift</kbd> + click</td><td>เลือกหลายฟิลด์สำหรับการดำเนินการแบบกลุ่ม</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>D</kbd></td><td>คัดลอกฟิลด์หรือบล็อกที่เลือก</td></tr>
+        <tr><td><kbd>Delete</kbd> / <kbd>Backspace</kbd></td><td>ลบฟิลด์ที่เลือก</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>ส่งออกโครงสร้างแบบฟอร์มเป็น JSON</td></tr>
+        <tr><td><kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&larr;</kbd> <kbd>&rarr;</kbd></td><td>เลื่อนฟิลด์ที่เลือกทีละ 5px</td></tr>
+        <tr><td><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd></td><td>วนดูคุณสมบัติการตั้งค่าของฟิลด์</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>กรองพาเลตหรือค้นหาคุณสมบัติของฟิลด์</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>ยกเลิกการเลือกและกลับไปยังภาพรวมแบบฟอร์ม</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>ฟิลด์ที่ถูกลบจะไปอยู่ใน <strong>รายการที่เพิ่งลบ</strong> ที่ด้านล่างของแคนวาส ดังนั้นการลบโดยไม่ตั้งใจยังกู้คืนได้แม้หลังจากแก้ไขเพิ่มอีกหลายครั้ง</p>
+
+  <h2 id="privacy">ข้อมูลและความเป็นส่วนตัว</h2>
+  <div class="callout callout--ok">
+    <p><strong>สิ่งที่คุณพิมพ์จะไม่ไปถึงเซิร์ฟเวอร์ของเรา</strong> เครื่องมือไม่ส่งคำขอทางเครือข่ายใด ๆ นอกจากการโหลดไฟล์การแปลของตัวเอง แบบฟอร์ม คำตอบของลูกค้า ลายเซ็น และ PDF ที่สร้างขึ้น ถูกสร้างและจัดเก็บไว้ในเบราว์เซอร์ของคุณเท่านั้น</p>
+  </div>
+  <p>ข้อควรเข้าใจในทางปฏิบัติ:</p>
+  <ul>
+    <li>ฉบับร่างและการส่งข้อมูลอยู่ในที่เก็บข้อมูลภายในเครื่องของเบราว์เซอร์นี้ ข้อมูลเหล่านี้ไม่ซิงก์ระหว่างเครื่อง และเบราว์เซอร์อื่นหรือหน้าต่างส่วนตัวจะมองไม่เห็น</li>
+    <li>การล้างข้อมูลของเว็บไซต์จะลบข้อมูลเหล่านี้อย่างถาวร และไม่มีสำเนาบนเซิร์ฟเวอร์ที่เราจะกู้คืนให้ได้</li>
+    <li>เพราะบันทึกอยู่บนอุปกรณ์ของคุณ คุณจึงเป็นผู้ควบคุมข้อมูลสำหรับบันทึกเหล่านั้น ภาระผูกพันของคุณภายใต้ GDPR, PDPA หรือกฎหมายบันทึกข้อมูลสุขภาพท้องถิ่นไม่เปลี่ยนแปลง และวิธีจัดเก็บไฟล์ PDF ที่ส่งออกเป็นความรับผิดชอบของคุณ</li>
+  </ul>
+  <p>ส่งออกสำเนา JSON ของเทมเพลตแบบฟอร์มที่คุณใช้เป็นประจำ และเก็บไฟล์ PDF ยินยอมที่กรอกเสร็จแล้วไว้ในที่ที่คุณเก็บบันทึกลูกค้าอยู่แล้ว</p>
+
+  <h2 id="faq">คำถามที่พบบ่อย</h2>
+  <h3>เครื่องมือนี้ฟรีไหม</h3>
+  <p>ฟรี ไม่ต้องมีบัญชีและไม่มีขีดจำกัดการใช้งาน คุณยังสามารถฝังไว้บนเว็บไซต์ของตนเองได้โดยไม่มีค่าใช้จ่าย</p>
+
+  <h3>แบบฟอร์มที่ลงลายเซ็นดิจิทัลมีผลทางกฎหมายหรือไม่</h3>
+  <p>ลายเซ็นอิเล็กทรอนิกส์ได้รับการยอมรับอย่างกว้างขวาง แต่มาตรฐานการพิสูจน์และข้อกำหนดการเก็บบันทึกแตกต่างกันไปตามเขตอำนาจ ให้ปฏิบัติกับไฟล์ PDF ที่ส่งออกเหมือนแบบฟอร์มกระดาษที่ลงนามแล้ว และยืนยันข้อกำหนดที่ใช้บังคับในพื้นที่ที่คุณประกอบวิชาชีพ</p>
+
+  <h3>ฉันจะนำแบบฟอร์มกลับมาใช้บนคอมพิวเตอร์เครื่องอื่นได้ไหม</h3>
+  <p>ทำได้เฉพาะโดยการย้ายด้วยตนเอง ใช้ <em>ส่งออก &rarr; ส่งออก JSON</em> บนเครื่องแรก และ <em>นำเข้า &rarr; นำเข้าเทมเพลต JSON</em> บนเครื่องที่สอง</p>
+
+  <h3>ทำไมฟิลด์ถึงเป็นสีเทาหรือหายไปในมุมมองของลูกค้า</h3>
+  <p>อาจเป็นเพราะฟิลด์ถูกซ่อนไว้ หรือกฎแบบมีเงื่อนไขกำลังซ่อนฟิลด์นั้นอยู่ เพราะคำถามหลักยังไม่ได้รับคำตอบด้วยค่าที่ทำให้แสดง ให้เรียก <em>ตรวจสอบแบบฟอร์ม</em> หากคำถามหลักไม่มีอยู่แล้ว ตัวตรวจสอบจะรายงานว่าเป็นตรรกะที่ไม่มีที่มา (orphaned logic)</p>
+
+  <h3>PDF ไม่มีโลโก้ของฉัน</h3>
+  <p>อัปโหลดภายใต้ <em>ตัวเลือก &rarr; การตั้งค่า PDF และการพิมพ์</em> เหมือนสิ่งอื่น ๆ โลโก้จะถูกเก็บในเบราว์เซอร์นี้ ดังนั้นต้องอัปโหลดใหม่บนเครื่องอื่น</p>
+
+  <h3>ฉันรับการส่งแบบฟอร์มออนไลน์ได้ไหม</h3>
+  <p>ไม่ได้ผ่านเรา ตามการออกแบบ เครื่องมือไม่มีระบบหลังบ้าน (backend) หากคุณต้องการให้การส่งถูกส่งไปที่ใดสักแห่ง ให้ใช้ <em>ส่งออก &rarr; ID ฟิลด์ และแผนผัง CRM</em> เพื่อรับโครงสร้างและตัวอย่าง payload ของ webhook แล้วเชื่อมแบบฟอร์มเข้ากับระบบของคุณเอง</p>
+
+  <footer>
+    <p>เครื่องมือสร้างแบบฟอร์มปรึกษา (Consultation Form Builder) &mdash; เป็นส่วนหนึ่งของชุดเครื่องมือมืออาชีพฟรีจาก
+      <a href="https://poliinternational.com/" target="_top">Poli International</a>.
+      มีคำถามหรือพบข้อบกพร่องที่ต้องแจ้ง? <a href="https://poliinternational.com/contact-us/" target="_top">ติดต่อเรา</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
