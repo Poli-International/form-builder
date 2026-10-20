@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+if (window.self !== window.top) {
+    var poliRoot = document.documentElement;
+    var poliApply = function (light) {
+        poliRoot.setAttribute('data-theme', light ? 'light' : 'dark');
+        var b = document.body;
+        if (b) {
+            b.classList.toggle('dark-mode', !light);
+            b.classList.toggle('light-mode', !!light);
+        }
+    };
+    poliApply(false);
+    document.addEventListener('DOMContentLoaded', function () {
+        poliApply(poliRoot.getAttribute('data-theme') === 'light');
+    });
+    window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'poli-theme') {
+            poliApply(!!e.data.light);
+        }
+    });
+}
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentazione — Generatore di moduli di consultazione | Poli International</title>
+  <meta name="description" content="Come creare, convalidare, tradurre ed esportare i moduli di consenso per tatuaggi e piercing con il Generatore di moduli di consultazione di Poli International.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/tools/shared/a11y.css">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #1c2430;
+      --border: #2a3441;
+      --text: #d8dee9;
+      --heading: #ffffff;
+      --muted: #8b98a9;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.12);
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --code-bg: #0a0e14;
+      --radius: 10px;
+    }
+    body.light-mode, html[data-theme="light"] body {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface-2: #f0f2f5;
+      --border: #dde1e7;
+      --text: #26313f;
+      --heading: #0d1117;
+      --muted: #5d6b7c;
+      --accent: #0b62c4;
+      --accent-soft: rgba(11, 98, 196, 0.09);
+      --ok: #0f8f63;
+      --warn: #a86400;
+      --code-bg: #f0f2f5;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+    h1, h2, h3 { color: var(--heading); line-height: 1.25; }
+    h1 { font-size: 2rem; margin: 0 0 .5rem; letter-spacing: -.02em; }
+    h2 {
+      font-size: 1.4rem;
+      margin: 3rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 1rem;
+    }
+    h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+    p { margin: 0 0 1rem; }
+    a { color: var(--accent); }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+    li { margin-bottom: .4rem; }
+    strong { color: var(--heading); }
+    code {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .1em .4em;
+      font: 500 .875em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      overflow-x: auto;
+      font: 500 .85rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
+    .lede { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .topbar {
+      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center;
+      margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: .6rem 1.1rem; border-radius: 8px; font-weight: 600; font-size: .95rem;
+    }
+    .btn--ghost { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+
+    .callout {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.15rem;
+      margin: 1.5rem 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout--ok { background: rgba(52, 211, 153, .1); border-left-color: var(--ok); }
+    .callout--warn { background: rgba(251, 191, 36, .1); border-left-color: var(--warn); }
+
+    figure { margin: 1.5rem 0 2rem; }
+    figure img {
+      display: block; width: 100%; height: auto;
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    figcaption { color: var(--muted); font-size: .875rem; margin-top: .6rem; }
+
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .toc ol { columns: 2; column-gap: 2rem; margin: 0; }
+    @media (max-width: 620px) { .toc ol { columns: 1; } }
+
+    .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; }
+    table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: .93rem; }
+    th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--heading); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+    tbody tr:last-child td { border-bottom: 0; }
+    kbd {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-bottom-width: 2px; border-radius: 5px;
+      padding: .12em .45em; font: 600 .82em/1 ui-monospace, Menlo, Consolas, monospace;
+      color: var(--heading); white-space: nowrap;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.15rem; }
+    .card h3 { margin: 0 0 .35rem; font-size: .98rem; }
+    .card p { margin: 0; font-size: .9rem; color: var(--muted); }
+
+    footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .875rem; }
+    .doc-langs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 1.5rem; font-size: .85rem; }
+    .doc-langs a { color: var(--muted); text-decoration: none; padding: 2px 9px; border: 1px solid var(--border); border-radius: 6px; }
+    .doc-langs a[aria-current="page"] { color: var(--text, #fff); border-color: currentColor; }
+  </style>
+</head>
+<body class="dark-mode">
+<div class="wrap">
+  <nav class="doc-langs" aria-label="Lingua della documentazione">
+    <a href="./documentation.html">English</a>
+    <a href="./documentation-fr.html">Français</a>
+    <a href="./documentation-de.html">Deutsch</a>
+    <a href="./documentation-it.html" aria-current="page">Italiano</a>
+    <a href="./documentation-es.html">Español</a>
+    <a href="./documentation-nl.html">Nederlands</a>
+    <a href="./documentation-pt.html">Português</a>
+  </nav>
+
+  <header>
+    <h1>Generatore di moduli di consultazione</h1>
+    <p class="lede">Creare, convalidare e stampare moduli di consenso per tatuaggi e piercing. Tutto funziona nel browser, quindi i dati sanitari dei clienti non lasciano mai il dispositivo.</p>
+    <div class="topbar">
+      <a class="btn" href="/tools/form-builder/index.html" target="_top">Apri il generatore</a>
+      <a class="btn btn--ghost" href="/wiki/legal-compliance-standards/" target="_top">Wiki legale e conformità</a>
+      <a class="btn btn--ghost" href="/tools/" target="_top">Tutti gli strumenti gratuiti</a>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <strong>In questa pagina</strong>
+    <ol>
+      <li><a href="#start">Primi passi</a></li>
+      <li><a href="#templates">Modelli</a></li>
+      <li><a href="#fields">Tipi di campo</a></li>
+      <li><a href="#properties">Configurazione di un campo</a></li>
+      <li><a href="#logic">Logica condizionale</a></li>
+      <li><a href="#integrity">Verifica dell'integrità dei dati</a></li>
+      <li><a href="#preview">Vista cliente e avvisi di sicurezza</a></li>
+      <li><a href="#signature">Firme ed esportazione PDF</a></li>
+      <li><a href="#kiosk">Modalità chiosco e incorporamento</a></li>
+      <li><a href="#csv">Importazione CSV e mappatura CRM</a></li>
+      <li><a href="#languages">Lingue</a></li>
+      <li><a href="#shortcuts">Scorciatoie da tastiera</a></li>
+      <li><a href="#privacy">Dati e privacy</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="start">Primi passi</h2>
+  <p>Il generatore si apre con un modello già selezionato. Bastano tre passaggi per ottenere un modulo utilizzabile:</p>
+  <ol>
+    <li><strong>Scegliere un modello</strong> dal menu a discesa <em>Modello</em> nell'intestazione. Sostituisce l'area di lavoro con un modulo completo, suddiviso in sezioni.</li>
+    <li><strong>Modificare nell'area di lavoro.</strong> Trascinare i tipi di campo dalla palette a sinistra, riordinarli trascinandoli e fare clic su un campo per aprirne le impostazioni a destra.</li>
+    <li><strong>Visualizzare in anteprima e stampare.</strong> <em>Anteprima modulo</em> passa alla vista per il cliente, dove è possibile raccogliere una firma ed esportare un PDF.</li>
+  </ol>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/01-drag-drop-consent-form-builder-field-properties.jpg"
+         alt="Il generatore di moduli con la palette dei campi a sinistra, un modulo di consenso per piercing nell'area di lavoro e il pannello delle proprietà del campo aperto a destra." loading="lazy">
+    <figcaption>Palette, area di lavoro e proprietà del campo. Selezionando un campo si aprono le impostazioni di tipo, etichetta, alias CRM e convalida.</figcaption>
+  </figure>
+
+  <div class="callout">
+    <p><strong>Il lavoro viene salvato automaticamente.</strong> Il generatore scrive una bozza in questo browser dopo ogni modifica e propone di ripristinarla al ritorno. Cancellare i dati del sito elimina la bozza, quindi è opportuno esportare una copia JSON di quanto si vuole conservare in modo permanente (<em>Esporta &rarr; Esporta JSON</em>, oppure <kbd>Ctrl</kbd> + <kbd>S</kbd>).</p>
+  </div>
+
+  <h2 id="templates">Modelli</h2>
+  <p>Otto punti di partenza, ciascuno dei quali è un modulo completo e non una semplice struttura. Il modello di consenso per piercing, ad esempio, comprende 7 sezioni e 28 campi, di cui 18 obbligatori.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Modello</th><th>Utilizzo</th></tr></thead>
+      <tbody>
+        <tr><td>Consenso e liberatoria per tatuaggi</td><td>Appuntamenti standard per tatuaggi: dati dello studio e del tatuatore, dichiarazione medica, liberatoria.</td></tr>
+        <tr><td>Consenso e liberatoria per piercing</td><td>Appuntamenti per piercing: anatomia e posizionamento, materiale e calibro del gioiello, lotto di sterilizzazione.</td></tr>
+        <tr><td>Anamnesi e screening sanitario</td><td>Questionario sanitario autonomo, da utilizzare quando lo screening avviene prima dell'appuntamento.</td></tr>
+        <tr><td>Accordo quadro per progetti di tatuaggio multi-sessione</td><td>Lavori di grandi dimensioni prenotati in più sedute, con monitoraggio per ogni seduta.</td></tr>
+        <tr><td>Consenso per minori e autorizzazione del tutore legale</td><td>Nei casi in cui la legge locale consente una prestazione su un minore, con la presenza e la cofirma del tutore.</td></tr>
+        <tr><td>Valutazione per coperture e rielaborazioni</td><td>Valutazione di un tatuaggio esistente prima di coprirlo o rielaborarlo.</td></tr>
+        <tr><td>Consulenza per trucco permanente e tatuaggio estetico</td><td>Consulenze per trucco permanente e tatuaggi estetici.</td></tr>
+        <tr><td>Modulo personalizzato vuoto</td><td>Creazione da zero.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout--warn">
+    <p>I modelli sono un ausilio alla redazione e non costituiscono consulenza legale. I requisiti per il consenso variano a seconda del Paese, dello Stato e del Comune. Far verificare il testo definitivo da una persona qualificata nella propria giurisdizione prima di utilizzarlo con i clienti.</p>
+  </div>
+
+  <h2 id="fields">Tipi di campo</h2>
+  <p>Diciassette tipi di campo, raggruppati per categoria nella palette. Per filtrarli, utilizzare la casella di ricerca (<kbd>Ctrl</kbd> + <kbd>F</kbd>).</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Input di base</h3>
+      <p>Testo breve, Paragrafo / Testo lungo, Indirizzo e-mail, Numero di telefono, Selettore data, Numero / Quantità.</p>
+    </div>
+    <div class="card">
+      <h3>Scelta e opzioni</h3>
+      <p>Casella di controllo, Gruppo di caselle di controllo, Pulsanti di scelta, Menu a discesa.</p>
+    </div>
+    <div class="card">
+      <h3>Layout e struttura</h3>
+      <p>Intestazione di sezione, Contenitore / Pannello, Sezione / Gruppo.</p>
+    </div>
+    <div class="card">
+      <h3>Avvisi e aspetti legali</h3>
+      <p>Avviso / Intestazione per testi fissi, e Firma digitale per la convalida vincolante.</p>
+    </div>
+    <div class="card">
+      <h3>Clinica e contenuti multimediali</h3>
+      <p>Mappa anatomica del corpo per indicare il posizionamento, e Foto documento e caricamento di documenti.</p>
+    </div>
+  </div>
+  <p>La palette dispone anche di un interruttore <strong>Suggerimenti intelligenti</strong>. Se attivato, la parte superiore della palette suggerisce i campi che mancano al modulo per il tipo di intervento che descrive.</p>
+
+  <h2 id="properties">Configurazione di un campo</h2>
+  <p>Facendo clic su un campo nell'area di lavoro, il pannello di destra passa da <em>Panoramica del modulo</em> a <em>Proprietà del campo</em>:</p>
+  <ul>
+    <li><strong>Tipo di campo</strong> &mdash; è possibile modificarlo direttamente senza perdere l'etichetta.</li>
+    <li><strong>Etichetta del campo</strong> &mdash; la domanda così come la legge il cliente.</li>
+    <li><strong>Alias interno del campo (CRM / Chiave API)</strong> &mdash; un nome tecnico stabile, come <code>client_allergies_list</code>. Le esportazioni utilizzano l'alias, quindi è possibile rinominare una domanda senza compromettere un foglio di calcolo o un'integrazione.</li>
+    <li><strong>Obbligatorio</strong> &mdash; blocca l'invio e la generazione del PDF finché non viene data una risposta.</li>
+    <li><strong>Convalida</strong> &mdash; limiti di caratteri, intervalli numerici e schemi di espressioni regolari.</li>
+  </ul>
+  <p>Per selezionare più campi, utilizzare <kbd>Maiusc</kbd> + clic: in questo modo è possibile impostarli come obbligatori o nascosti tutti insieme.</p>
+
+  <h2 id="logic">Logica condizionale</h2>
+  <p>Un campo può essere mostrato solo quando un altro campo riceve una risposta specifica: così un cliente che risponde «no» a una domanda medica non vede mai le sei domande di approfondimento che ne derivano. Impostare la domanda padre e il valore che attiva il campo nella sezione <em>Logica</em> delle proprietà del campo.</p>
+  <p>Regole collegate a catena in profondità possono formare accidentalmente un ciclo, in cui A dipende da B e B dipende da A, lasciando entrambi permanentemente nascosti. La verifica dell'integrità descritta di seguito rileva esattamente questo caso.</p>
+
+  <h2 id="integrity">Verifica dell'integrità dei dati</h2>
+  <p><em>Valida modulo</em> nella barra degli strumenti dell'area di lavoro esegue una scansione diagnostica e assegna un punteggio al modulo. Individua gli errori che emergono solo quando il cliente è davanti a noi:</p>
+  <ul>
+    <li>Dipendenze circolari nella logica che rendono irraggiungibili alcuni campi.</li>
+    <li>Menu a discesa, pulsanti di scelta e gruppi di caselle di controllo privi di opzioni configurate.</li>
+    <li>Etichette di opzione duplicate che rendono ambigua una risposta.</li>
+    <li>Limiti di convalida invertiti, ad esempio un minimo superiore al massimo.</li>
+    <li>Schemi di espressioni regolari non validi.</li>
+    <li>Alias CRM duplicati, che entrano in conflitto durante l'esportazione.</li>
+    <li>Etichette mancanti e sezioni vuote.</li>
+  </ul>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/03-form-data-integrity-logic-checker-diagnostics.jpg"
+         alt="La verifica dell'integrità dei dati con un punteggio del 76 per cento, contatori per la logica critica, le opzioni mancanti e gli avvisi, e una scheda del problema con i pulsanti per andare al campo e per la correzione rapida." loading="lazy">
+    <figcaption>Ogni rilievo spiega la conseguenza e propone <em>Vai al campo e correggi</em>, oppure <em>Correzione rapida</em> quando la riparazione è univoca. <em>Riparazione Automatica Sicura</em> applica in un'unica operazione tutte le correzioni univoche.</figcaption>
+  </figure>
+
+  <h2 id="preview">Vista cliente e avvisi di sicurezza</h2>
+  <p><em>Anteprima modulo</em> mostra il modulo esattamente come lo vede il cliente, con un indicatore di avanzamento che riporta quanti campi obbligatori restano da compilare.</p>
+  <p>Man mano che arrivano le risposte di carattere medico, l'anteprima visualizza sopra il modulo <strong>avvisi di sicurezza</strong>: dichiarazioni che richiedono la consapevolezza del tatuatore, una precauzione procedurale o un'autorizzazione medica formale. Una allergia al lattice dichiarata, ad esempio, genera un avviso di barriera che indica la sostituzione necessaria in quella postazione di lavoro.</p>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/02-medical-safety-callouts-client-consent-view.jpg"
+         alt="Il modulo di consenso visibile al cliente, con una barra di avanzamento al 96 per cento e un pannello di avviso di sicurezza medica che segnala un'allergia al lattice dichiarata." loading="lazy">
+    <figcaption><em>Compila risposte di prova</em> riempie il modulo con dati di prova, in modo da visualizzare gli avvisi e il PDF prodotto prima della messa in servizio.</figcaption>
+  </figure>
+
+  <h2 id="signature">Firme ed esportazione PDF</h2>
+  <p>Il campo Firma digitale accetta il mouse, lo stilo o il dito e riporta la data della firma. <em>Impostazioni PDF e Stampa</em> controlla l'esportazione: formato della carta, margini e filigrana o logo dello studio.</p>
+  <p><em>Stampa modulo</em> apre la finestra di stampa del browser con un foglio di stile per la stampa. Attivare <strong>Stampa dopo la Firma</strong> se si desidera che ciò avvenga automaticamente non appena il cliente termina di firmare.</p>
+  <p><em>Esporta CSV</em> scrive le risposte con gli alias CRM come intestazioni di colonna, pronte per un foglio di calcolo o per un'importazione in altro software.</p>
+
+  <h2 id="kiosk">Modalità chiosco e incorporamento</h2>
+  <p><strong>Modalità Kiosk Tablet</strong> (in <em>Opzioni</em>, oppure dalla barra degli strumenti dell'anteprima) presenta il modulo un passaggio alla volta, con aree di tocco grandi, per consegnare un tablet al cliente nella sala d'attesa.</p>
+  <p><em>Opzioni &rarr; Incorpora / QR Code</em> genera sia un frammento iframe per il proprio sito web sia un cartello QR stampabile che i clienti possono scansionare con il proprio telefono. Il frammento di incorporamento è il seguente:</p>
+  <pre><code>&lt;iframe src="https://poliinternational.com/tools/form-builder/index.html"
+        width="100%" height="1000" frameborder="0"
+        style="border-radius:12px;"&gt;&lt;/iframe&gt;</code></pre>
+  <h3 id="in-crm">All'interno del CRM Studio</h3>
+  <p>Nel CRM Studio gratuito il generatore offre di più, perché i moduli vengono salvati insieme ai dati dello studio:</p>
+  <ul>
+    <li><strong>Invia al chiosco:</strong> da <em>Anteprima modulo</em>, inviare il modulo a un tablet con nome che resta in attesa sulla rete dello studio. Il cliente lo compila e firma, e il modulo viene salvato nel profilo di quel cliente. Il tablet resta poi in attesa del modulo successivo.</li>
+    <li><strong>Campo Scanner:</strong> un campo che acquisisce una pagina cartacea dal computer del CRM (Windows WIA, Linux SANE; non su macOS) e la aggiunge al modulo come una foto, conservata nella scheda e nel PDF.</li>
+    <li><strong>Un solo modulo ovunque:</strong> un modulo modificato su un computer è il modulo che mostrano tutti i tablet e i computer dello studio.</li>
+  </ul>
+
+  <h2 id="csv">Importazione CSV e mappatura CRM</h2>
+  <p><em>Importa &rarr; Importazione campi in blocco (CSV)</em> crea i campi a partire da un foglio di calcolo, il modo più rapido per trasferire un modulo cartaceo o digitale già esistente. Caricare un file oppure incollare direttamente le righe. Colonne previste:</p>
+  <pre><code>Label,Type,Required,HelperText,Options
+Emergency contact,text,true,Full legal name,
+Preferred language,select,false,Pick your main language,English;French;Thai
+Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code></pre>
+  <p><em>Esporta &rarr; ID Campo e Mappa CRM</em> produce un riferimento di ogni domanda, con il relativo alias interno, il tipo di dato e la regola di convalida, in formato JSON, CSV oppure come esempio di payload webhook. È il documento da consegnare a uno sviluppatore che collega il modulo ad altri sistemi.</p>
+
+  <h2 id="languages">Lingue</h2>
+  <p>L'interfaccia e i modelli sono disponibili in sette lingue: inglese, francese, italiano, tedesco, spagnolo, olandese e portoghese. Utilizzare il menu a discesa <em>Lingua</em> nell'intestazione. Il cambio lingua traduce sia i comandi del generatore sia le etichette dei campi del modulo in corso di creazione, così è possibile consegnare a un cliente francese un modulo di consenso in francese.</p>
+  <p>La scelta effettuata viene memorizzata in questo browser. I campi scritti direttamente dall'utente restano esattamente come sono stati digitati.</p>
+
+  <h2 id="shortcuts">Scorciatoie da tastiera</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Keys</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>Annulla l'ultima azione o modifica del campo</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd> / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td><td>Ripristina</td></tr>
+        <tr><td><kbd>Shift</kbd> + click</td><td>Seleziona più campi per le azioni in blocco</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>D</kbd></td><td>Duplica il campo o il blocco selezionato</td></tr>
+        <tr><td><kbd>Delete</kbd> / <kbd>Backspace</kbd></td><td>Elimina i campi selezionati</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>Esporta lo schema del modulo in JSON</td></tr>
+        <tr><td><kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&larr;</kbd> <kbd>&rarr;</kbd></td><td>Sposta i campi selezionati di 5 px</td></tr>
+        <tr><td><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd></td><td>Scorre le proprietà di configurazione del campo</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>Filtra la palette o cerca tra le proprietà del campo</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Deseleziona e torna alla panoramica del modulo</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>I campi eliminati finiscono nel cestino <strong>Eliminati di recente</strong> in fondo all'area di lavoro, quindi un'eliminazione accidentale può essere recuperata anche dopo diverse altre modifiche.</p>
+
+  <h2 id="privacy">Dati e privacy</h2>
+  <div class="callout callout--ok">
+    <p><strong>Nulla di quanto digitato raggiunge i nostri server.</strong> Il generatore non effettua richieste di rete, se non per caricare il proprio file di traduzione. Moduli, risposte dei clienti, firme e PDF generati vengono creati e conservati solo nel browser.</p>
+  </div>
+  <p>Conseguenze pratiche da tenere presenti:</p>
+  <ul>
+    <li>Bozze e invii sono conservati nella memoria locale di questo browser. Non vengono sincronizzati tra dispositivi, e un altro browser o una finestra in incognito non li vedrà.</li>
+    <li>Cancellare i dati del sito li elimina definitivamente. Non esiste una copia lato server che si possa ripristinare.</li>
+    <li>Poiché le registrazioni restano sul dispositivo, il titolare del trattamento resta chi le gestisce. Gli obblighi previsti dal GDPR, dal PDPA o dalla normativa locale sulle cartelle sanitarie restano invariati, e la modalità di conservazione dei PDF esportati è di propria responsabilità.</li>
+  </ul>
+  <p>Esportare una copia JSON di ogni modello di modulo su cui si fa affidamento e archiviare i PDF di consenso completati dove si conservano già le schede dei clienti.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <h3>Lo strumento è gratuito?</h3>
+  <p>Sì, senza account e senza limiti di utilizzo. È inoltre possibile incorporarlo nel proprio sito senza costi.</p>
+
+  <h3>Un modulo firmato digitalmente ha valore legale?</h3>
+  <p>Le firme elettroniche sono ampiamente riconosciute, ma il livello di prova richiesto e i requisiti di conservazione della documentazione variano a seconda della giurisdizione. Il PDF esportato va trattato come un modulo cartaceo firmato, verificando i requisiti applicabili nel luogo in cui si esercita l'attività.</p>
+
+  <h3>È possibile recuperare i moduli su un altro computer?</h3>
+  <p>Solo trasferendoli manualmente. Utilizzare <em>Esporta &rarr; Esporta JSON</em> sul primo dispositivo e <em>Importa &rarr; Importa modello JSON</em> sul secondo.</p>
+
+  <h3>Perché un campo appare in grigio o manca nella vista cliente?</h3>
+  <p>Il campo è nascosto oppure una regola condizionale lo mantiene nascosto, perché la domanda padre non ha ricevuto il valore che lo attiva. Eseguire <em>Valida modulo</em>: se la domanda padre non esiste più, la verifica la segnala come logica orfana.</p>
+
+  <h3>Nel PDF manca il logo.</h3>
+  <p>Caricarlo in <em>Opzioni &rarr; Impostazioni PDF e Stampa</em>. Come tutto il resto, viene conservato in questo browser, quindi su un altro dispositivo va caricato di nuovo.</p>
+
+  <h3>È possibile raccogliere invii online?</h3>
+  <p>Non attraverso di noi, per scelta progettuale. Lo strumento non dispone di un backend. Se è necessario che gli invii vengano consegnati in un altro luogo, utilizzare <em>Esporta &rarr; ID Campo e Mappa CRM</em> per ottenere lo schema e l'esempio di payload webhook, e collegare il modulo al proprio sistema.</p>
+
+  <footer>
+    <p>Generatore di moduli di consultazione &mdash; parte della suite gratuita di strumenti professionali di
+      <a href="https://poliinternational.com/" target="_top">Poli International</a>.
+      Domande o segnalazioni di errori? <a href="https://poliinternational.com/contact-us/" target="_top">Contatti</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
