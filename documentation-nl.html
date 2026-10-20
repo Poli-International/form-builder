@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+if (window.self !== window.top) {
+    var poliRoot = document.documentElement;
+    var poliApply = function (light) {
+        poliRoot.setAttribute('data-theme', light ? 'light' : 'dark');
+        var b = document.body;
+        if (b) {
+            b.classList.toggle('dark-mode', !light);
+            b.classList.toggle('light-mode', !!light);
+        }
+    };
+    poliApply(false);
+    document.addEventListener('DOMContentLoaded', function () {
+        poliApply(poliRoot.getAttribute('data-theme') === 'light');
+    });
+    window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'poli-theme') {
+            poliApply(!!e.data.light);
+        }
+    });
+}
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentatie — Consultatieformulier Bouwer | Poli International</title>
+  <meta name="description" content="Hoe u toestemmingsformulieren voor tattoo's en piercings bouwt, valideert, vertaalt en exporteert met de Consultatieformulier Bouwer van Poli International.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/tools/shared/a11y.css">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #1c2430;
+      --border: #2a3441;
+      --text: #d8dee9;
+      --heading: #ffffff;
+      --muted: #8b98a9;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.12);
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --code-bg: #0a0e14;
+      --radius: 10px;
+    }
+    body.light-mode, html[data-theme="light"] body {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface-2: #f0f2f5;
+      --border: #dde1e7;
+      --text: #26313f;
+      --heading: #0d1117;
+      --muted: #5d6b7c;
+      --accent: #0b62c4;
+      --accent-soft: rgba(11, 98, 196, 0.09);
+      --ok: #0f8f63;
+      --warn: #a86400;
+      --code-bg: #f0f2f5;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+    h1, h2, h3 { color: var(--heading); line-height: 1.25; }
+    h1 { font-size: 2rem; margin: 0 0 .5rem; letter-spacing: -.02em; }
+    h2 {
+      font-size: 1.4rem;
+      margin: 3rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 1rem;
+    }
+    h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+    p { margin: 0 0 1rem; }
+    a { color: var(--accent); }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+    li { margin-bottom: .4rem; }
+    strong { color: var(--heading); }
+    code {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .1em .4em;
+      font: 500 .875em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      overflow-x: auto;
+      font: 500 .85rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
+    .lede { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .topbar {
+      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center;
+      margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: .6rem 1.1rem; border-radius: 8px; font-weight: 600; font-size: .95rem;
+    }
+    .btn--ghost { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+
+    .callout {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.15rem;
+      margin: 1.5rem 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout--ok { background: rgba(52, 211, 153, .1); border-left-color: var(--ok); }
+    .callout--warn { background: rgba(251, 191, 36, .1); border-left-color: var(--warn); }
+
+    figure { margin: 1.5rem 0 2rem; }
+    figure img {
+      display: block; width: 100%; height: auto;
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    figcaption { color: var(--muted); font-size: .875rem; margin-top: .6rem; }
+
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .toc ol { columns: 2; column-gap: 2rem; margin: 0; }
+    @media (max-width: 620px) { .toc ol { columns: 1; } }
+
+    .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; }
+    table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: .93rem; }
+    th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--heading); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+    tbody tr:last-child td { border-bottom: 0; }
+    kbd {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-bottom-width: 2px; border-radius: 5px;
+      padding: .12em .45em; font: 600 .82em/1 ui-monospace, Menlo, Consolas, monospace;
+      color: var(--heading); white-space: nowrap;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.15rem; }
+    .card h3 { margin: 0 0 .35rem; font-size: .98rem; }
+    .card p { margin: 0; font-size: .9rem; color: var(--muted); }
+
+    footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .875rem; }
+    .doc-langs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 1.5rem; font-size: .85rem; }
+    .doc-langs a { color: var(--muted); text-decoration: none; padding: 2px 9px; border: 1px solid var(--border); border-radius: 6px; }
+    .doc-langs a[aria-current="page"] { color: var(--text, #fff); border-color: currentColor; }
+  </style>
+</head>
+<body class="dark-mode">
+<div class="wrap">
+  <nav class="doc-langs" aria-label="Taal van de documentatie">
+    <a href="./documentation.html">English</a>
+    <a href="./documentation-fr.html">Français</a>
+    <a href="./documentation-de.html">Deutsch</a>
+    <a href="./documentation-it.html">Italiano</a>
+    <a href="./documentation-es.html">Español</a>
+    <a href="./documentation-nl.html" aria-current="page">Nederlands</a>
+    <a href="./documentation-pt.html">Português</a>
+  </nav>
+
+  <header>
+    <h1>Consultatieformulier Bouwer</h1>
+    <p class="lede">Bouw, valideer en print toestemmingsformulieren voor tattoo's en piercings. Alles draait in uw browser, dus er verlaten nooit gezondheidsgegevens van cliënten het apparaat.</p>
+    <div class="topbar">
+      <a class="btn" href="/tools/form-builder/index.html" target="_top">Open de bouwer</a>
+      <a class="btn btn--ghost" href="/wiki/legal-compliance-standards/" target="_top">Juridische &amp; compliance-wiki</a>
+      <a class="btn btn--ghost" href="/tools/" target="_top">Alle gratis tools</a>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <strong>Op deze pagina</strong>
+    <ol>
+      <li><a href="#start">Aan de slag</a></li>
+      <li><a href="#templates">Sjablonen</a></li>
+      <li><a href="#fields">Veldtypen</a></li>
+      <li><a href="#properties">Een veld configureren</a></li>
+      <li><a href="#logic">Voorwaardelijke logica</a></li>
+      <li><a href="#integrity">Controle van gegevensintegriteit</a></li>
+      <li><a href="#preview">Cliëntweergave &amp; veiligheidsmeldingen</a></li>
+      <li><a href="#signature">Handtekeningen &amp; PDF-export</a></li>
+      <li><a href="#kiosk">Kioskmodus &amp; insluiten</a></li>
+      <li><a href="#csv">CSV-import &amp; CRM-koppeling</a></li>
+      <li><a href="#languages">Talen</a></li>
+      <li><a href="#shortcuts">Sneltoetsen</a></li>
+      <li><a href="#privacy">Gegevens &amp; privacy</a></li>
+      <li><a href="#faq">Veelgestelde vragen</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="start">Aan de slag</h2>
+  <p>De bouwer opent met al een sjabloon geselecteerd. Drie stappen brengen u bij een bruikbaar formulier:</p>
+  <ol>
+    <li><strong>Kies een sjabloon</strong> in de vervolgkeuzelijst <em>Sjabloon</em> in de koptekst. Het vervangt het canvas door een compleet, in secties ingedeeld formulier.</li>
+    <li><strong>Bewerk op het canvas.</strong> Sleep veldtypen vanuit het palet links naar het canvas, herschik ze door te slepen en klik op een veld om de instellingen rechts te openen.</li>
+    <li><strong>Voorbeeld bekijken en printen.</strong> <em>Voorbeeld bekijken</em> schakelt over naar de weergave voor de cliënt, waar u een handtekening kunt verzamelen en een PDF kunt exporteren.</li>
+  </ol>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/01-drag-drop-consent-form-builder-field-properties.jpg"
+         alt="De formulierbouwer met het veldenpalet links, een toestemmingsformulier voor piercing in het midden en het paneel met veldeigenschappen rechts geopend." loading="lazy">
+    <figcaption>Palet, canvas en veldeigenschappen. Bij het selecteren van een veld openen zich het type, het label, de CRM-alias en de validatie-instellingen.</figcaption>
+  </figure>
+
+  <div class="callout">
+    <p><strong>Uw werk wordt automatisch opgeslagen.</strong> De bouwer schrijft na elke wijziging een concept naar deze browser en biedt aan het te herstellen wanneer u terugkomt. Het wissen van sitegegevens wist ook het concept, dus exporteer een JSON-kopie van alles wat u blijvend wilt bewaren (<em>Exporteren &rarr; JSON exporteren</em>, of <kbd>Ctrl</kbd> + <kbd>S</kbd>).</p>
+  </div>
+
+  <h2 id="templates">Sjablonen</h2>
+  <p>Acht startpunten, elk een compleet formulier in plaats van een skelet. Het sjabloon voor piercingtoestemming bevat bijvoorbeeld 7 secties en 28 velden, waarvan er 18 verplicht zijn.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Sjabloon</th><th>Gebruik het voor</th></tr></thead>
+      <tbody>
+        <tr><td>Toestemming &amp; vrijwaringsovereenkomst tattoo</td><td>Standaard tattooafspraken: gegevens van studio en tattoo-artiest, medische vragenlijst, vrijwaringsverklaring.</td></tr>
+        <tr><td>Toestemming &amp; vrijwaring piercing</td><td>Piercingafspraken: anatomie en plaatsing, materiaal en diameter van het sieraad, steriliseringslot.</td></tr>
+        <tr><td>Medische voorgeschiedenis &amp; gezondheidsscreening</td><td>Een zelfstandige gezondheidsvragenlijst wanneer de screening vóór de afspraak plaatsvindt.</td></tr>
+        <tr><td>Hoofdovereenkomst project meerdere tattoosessies</td><td>Grote werken die over meerdere sessies worden geboekt, met voortgangsregistratie per sessie.</td></tr>
+        <tr><td>Toestemming minderjarigen &amp; machtiging wettelijke voogd</td><td>Waar de lokale wet werk aan een minderjarige toestaat, met een voogd aanwezig die medeondertekent.</td></tr>
+        <tr><td>Beoordeling overtattoeage &amp; herwerking</td><td>Beoordeling van bestaand werk voordat het wordt overtattoeëerd of herwerkt.</td></tr>
+        <tr><td>Consult PMU &amp; cosmetische tattoo</td><td>Consulten voor permanente make-up en cosmetische tattoo's.</td></tr>
+        <tr><td>Leeg aangepast formulier</td><td>Vanaf nul beginnen.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout--warn">
+    <p>Sjablonen zijn een hulpmiddel bij het opstellen en geen juridisch advies. Toestemmingseisen verschillen per land, deelstaat en gemeente. Laat uw definitieve tekst nakijken door iemand met de juiste kwalificaties in uw rechtsgebied voordat u die bij cliënten gebruikt.</p>
+  </div>
+
+  <h2 id="fields">Veldtypen</h2>
+  <p>Zeventien veldtypen, gegroepeerd in categorieën in het palet. Gebruik het zoekvak (<kbd>Ctrl</kbd> + <kbd>F</kbd>) om ze te filteren.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Basisinvoer</h3>
+      <p>Korte tekst, Paragraaf / Lange tekst, E-mailadres, Telefoonnummer, Datumkiezer, Nummer / Aantal.</p>
+    </div>
+    <div class="card">
+      <h3>Keuzes &amp; opties</h3>
+      <p>Selectievakje, Groep selectievakjes, Keuzerondjes, Dropdown-menu.</p>
+    </div>
+    <div class="card">
+      <h3>Indeling &amp; structuur</h3>
+      <p>Sectiekop, Container / Paneel, Sectie / Groep.</p>
+    </div>
+    <div class="card">
+      <h3>Kennisgevingen &amp; juridisch</h3>
+      <p>Kennisgeving / Kop voor vaste tekst, en Digitale handtekening voor de bindende goedkeuring.</p>
+    </div>
+    <div class="card">
+      <h3>Klinisch &amp; media</h3>
+      <p>Anatomische lichaamskaart om de plaatsing aan te geven, en Identiteitsbewijs &amp; documentupload.</p>
+    </div>
+  </div>
+  <p>Het palet heeft ook een schakelaar <strong>Slimme suggesties</strong>. Als die aan staat, beveelt het bovenste deel van het palet velden aan die uw formulier mist voor het soort werk dat het beschrijft.</p>
+
+  <h2 id="properties">Een veld configureren</h2>
+  <p>Klik op een veld op het canvas en het rechterpaneel schakelt van <em>Formulieroverzicht</em> naar <em>Veldeigenschappen</em>:</p>
+  <ul>
+    <li><strong>Veldtype</strong> &mdash; wijzig het ter plekke zonder het label te verliezen.</li>
+    <li><strong>Veldlabel</strong> &mdash; de vraag zoals de cliënt die leest.</li>
+    <li><strong>Interne veld-alias (CRM / API-sleutel)</strong> &mdash; een stabiele machinenaam zoals <code>client_allergies_list</code>. Exports gebruiken de alias, dus u kunt een vraag hernoemen zonder een spreadsheet of koppeling te breken.</li>
+    <li><strong>Verplicht</strong> &mdash; blokkeert verzending en PDF-generatie tot er is geantwoord.</li>
+    <li><strong>Validatie</strong> &mdash; tekenlimieten, numerieke grenzen en patronen met reguliere expressies.</li>
+  </ul>
+  <p>Selecteer meerdere velden met <kbd>Shift</kbd> + klik om ze in één keer verplicht of verborgen te maken.</p>
+
+  <h2 id="logic">Voorwaardelijke logica</h2>
+  <p>Elk veld kan alleen worden getoond wanneer een ander veld een bepaald antwoord heeft, zodat een cliënt die &quot;nee&quot; antwoordt op een medische vraag nooit de zes vervolgvragen eronder ziet. Stel de hoofdvraag en de waarde die het veld activeert in op het tabblad <em>Logica</em> van de veldeigenschappen.</p>
+  <p>Diep geketende regels kunnen per ongeluk een lus vormen, waarbij A van B afhankelijk is en B weer van A, waardoor beide permanent verborgen blijven. De onderstaande integriteitscontrole herkent precies dat.</p>
+
+  <h2 id="integrity">Controle van gegevensintegriteit</h2>
+  <p><em>Formulier valideren</em> in de werkbalk van het canvas voert een diagnostische scan uit en geeft het formulier een score. Het vangt de fouten op die pas zichtbaar worden wanneer een cliënt voor u staat:</p>
+  <ul>
+    <li>Circulaire logische afhankelijkheden waardoor velden onbereikbaar worden.</li>
+    <li>Dropdown-menu's, keuzerondjes en groepen selectievakjes zonder geconfigureerde opties.</li>
+    <li>Dubbele optielabels waardoor een antwoord dubbelzinnig wordt.</li>
+    <li>Omgekeerde validatiegrenzen, zoals een minimum dat hoger is dan het maximum.</li>
+    <li>Ongeldige patronen van reguliere expressies.</li>
+    <li>Dubbele CRM-aliassen, die bij export met elkaar in botsing komen.</li>
+    <li>Ontbrekende labels en lege secties.</li>
+  </ul>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/03-form-data-integrity-logic-checker-diagnostics.jpg"
+         alt="De controle op gegevensintegriteit met een score van 76 procent, tellers voor kritieke logica, ontbrekende opties en waarschuwingen, en een probleemkaart met knoppen om naar het veld te gaan en snel te herstellen." loading="lazy">
+    <figcaption>Elke bevinding legt de gevolgen uit en biedt <em>Naar veld gaan &amp; herstellen</em>, of <em>Snelle correctie</em> wanneer de reparatie eenduidig is. <em>Veilig automatisch herstellen</em> past alle eenduidige reparaties in één keer toe.</figcaption>
+  </figure>
+
+  <h2 id="preview">Cliëntweergave &amp; veiligheidsmeldingen</h2>
+  <p><em>Voorbeeld bekijken</em> toont het formulier precies zoals een cliënt het ziet, met een voortgangsmeter die laat zien hoeveel verplichte velden er nog open staan.</p>
+  <p>Wanneer er medische antwoorden binnenkomen, toont het voorbeeld <strong>veiligheidsmeldingen</strong> boven het formulier: meldingen die aandacht van de tattoo-artiest vragen, een procedurele voorzorgsmaatregel of formele medische toestemming. Een opgegeven latexallergie geeft bijvoorbeeld een barrièremelding die aangeeft welke vervanging er aan die werkplek nodig is.</p>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/02-medical-safety-callouts-client-consent-view.jpg"
+         alt="Het toestemmingsformulier zoals de klant het ziet, met een voortgangsbalk op 96 procent en een medisch veiligheidsvak dat een gemelde latexallergie aangeeft." loading="lazy">
+    <figcaption><em>Voorbeeldantwoorden invullen</em> vult het formulier met testgegevens, zodat u de meldingen en de PDF-uitvoer kunt zien voordat u live gaat.</figcaption>
+  </figure>
+
+  <h2 id="signature">Handtekeningen &amp; PDF-export</h2>
+  <p>Het veld Digitale handtekening accepteert een muis, stylus of vingertop en zet de datum van ondertekening erop. <em>PDF- &amp; afdrukinstellingen</em> bepaalt de export: papierformaat, marges en een watermerk of logo van de studio.</p>
+  <p><em>Formulier afdrukken</em> opent het printvenster van de browser met een printstylesheet. Zet <strong>Afdrukken na handtekening</strong> aan als u wilt dat dit automatisch gebeurt zodra een cliënt klaar is met tekenen.</p>
+  <p><em>CSV exporteren</em> schrijft de antwoorden weg met de CRM-aliassen als kolomkoppen, klaar voor een spreadsheet of een import in andere software.</p>
+
+  <h2 id="kiosk">Kioskmodus &amp; insluiten</h2>
+  <p><strong>Tablet Kiosk Modus</strong> (onder <em>Opties</em>, of vanuit de werkbalk van het voorbeeld) toont het formulier stap voor stap met grote aanraakvlakken, om een tablet in de wachtruimte aan een cliënt te overhandigen.</p>
+  <p><em>Opties &rarr; Insluiten / QR-code</em> genereert zowel een iframe-fragment voor uw eigen website als een printbare QR-kaart waarmee cliënten met hun eigen telefoon kunnen scannen. Het insluitfragment ziet er zo uit:</p>
+  <pre><code>&lt;iframe src="https://poliinternational.com/tools/form-builder/index.html"
+        width="100%" height="1000" frameborder="0"
+        style="border-radius:12px;"&gt;&lt;/iframe&gt;</code></pre>
+  <h3 id="in-crm">In de Studio CRM</h3>
+  <p>In de gratis Studio CRM doet de bouwer meer, omdat de formulieren worden opgeslagen bij de gegevens van de studio:</p>
+  <ul>
+    <li><strong>Naar kiosk sturen:</strong> stuur het formulier vanuit <em>Voorbeeld bekijken</em> naar een benoemde tablet die op het netwerk van de studio wacht. De cliënt vult het in en tekent, en het formulier wordt opgeslagen in het profiel van die cliënt. De tablet wacht daarna op het volgende formulier.</li>
+    <li><strong>Scannerveld:</strong> een veld dat een papieren pagina scant op de CRM-computer (Windows WIA, Linux SANE; niet op macOS) en die als foto aan het formulier toevoegt, bewaard in het dossier en de PDF.</li>
+    <li><strong>Eén formulier overal:</strong> een formulier dat op de ene computer wordt bewerkt, is het formulier dat elke tablet en computer in de studio toont.</li>
+  </ul>
+
+  <h2 id="csv">CSV-import &amp; CRM-koppeling</h2>
+  <p><em>Importeren &rarr; Bulkvelden importeren (CSV)</em> maakt velden aan vanuit een spreadsheet, de snelste manier om een bestaand papieren of digitaal formulier over te zetten. Upload een bestand of plak rijen rechtstreeks. Verwachte kolommen:</p>
+  <pre><code>Label,Type,Required,HelperText,Options
+Emergency contact,text,true,Full legal name,
+Preferred language,select,false,Pick your main language,English;French;Thai
+Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code></pre>
+  <p><em>Exporteren &rarr; Veld-ID's &amp; CRM-kaart</em> maakt een overzicht van elke vraag, de interne alias, het gegevenstype en de validatieregel, als JSON, CSV of als voorbeeld van een webhook-payload. Dat is het document dat u geeft aan een ontwikkelaar die het formulier aan andere systemen koppelt.</p>
+
+  <h2 id="languages">Talen</h2>
+  <p>De interface en de sjablonen zijn beschikbaar in zeven talen: Engels, Frans, Italiaans, Duits, Spaans, Nederlands en Portugees. Gebruik de vervolgkeuzelijst <em>Taal</em> in de koptekst. Wisselen vertaalt zowel de eigen bedieningselementen van de bouwer als de veldlabels van het formulier dat u maakt, zodat u een Franse cliënt een Frans toestemmingsformulier kunt geven.</p>
+  <p>Uw keuze wordt onthouden in deze browser. Velden die u zelf hebt geschreven, blijven precies staan zoals u ze heeft getypt.</p>
+
+  <h2 id="shortcuts">Sneltoetsen</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Toetsen</th><th>Actie</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>De laatste actie of veldbewerking ongedaan maken</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd> / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td><td>Opnieuw</td></tr>
+        <tr><td><kbd>Shift</kbd> + klik</td><td>Meerdere velden selecteren voor bulkacties</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>D</kbd></td><td>Het geselecteerde veld of blok dupliceren</td></tr>
+        <tr><td><kbd>Delete</kbd> / <kbd>Backspace</kbd></td><td>De geselecteerde velden verwijderen</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>Het formulierschema als JSON exporteren</td></tr>
+        <tr><td><kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&larr;</kbd> <kbd>&rarr;</kbd></td><td>De geselecteerde velden 5 px verschuiven</td></tr>
+        <tr><td><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd></td><td>Doorlopen door de configuratie-eigenschappen van het veld</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>Het palet filteren of de veldeigenschappen doorzoeken</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Deselecteren en terugkeren naar het Formulieroverzicht</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Verwijderde velden gaan naar een bak <strong>Onlangs verwijderd</strong> onderaan het canvas, zodat een per ongeluk verwijderd veld zelfs na nog meerdere bewerkingen kan worden hersteld.</p>
+
+  <h2 id="privacy">Gegevens &amp; privacy</h2>
+  <div class="callout callout--ok">
+    <p><strong>Wat u typt, bereikt nooit onze servers.</strong> De bouwer doet geen netwerkverzoeken behalve het laden van het eigen vertaalbestand. Formulieren, antwoorden van cliënten, handtekeningen en gegenereerde PDF's worden alleen in uw browser aangemaakt en opgeslagen.</p>
+  </div>
+  <p>Praktische gevolgen die het waard zijn om te begrijpen:</p>
+  <ul>
+    <li>Concepten en verzendingen staan in de lokale opslag van deze browser. Ze worden niet tussen apparaten gesynchroniseerd, en een andere browser of een privévenster ziet ze niet.</li>
+    <li>Het wissen van sitegegevens verwijdert ze permanent. Er is geen kopie op de server die wij kunnen herstellen.</li>
+    <li>Omdat de gegevens op uw apparaat blijven, blijft u de verwerkingsverantwoordelijke ervoor. Uw verplichtingen onder de AVG, de PDPA of de lokale wetgeving over medische dossiers veranderen niet, en hoe u de geëxporteerde PDF's bewaart, is uw verantwoordelijkheid.</li>
+  </ul>
+  <p>Exporteer een JSON-kopie van elk formuliersjabloon waar u op vertrouwt, en archiveer ingevulde toestemmings-PDF's op de plek waar u al cliëntdossiers bewaart.</p>
+
+  <h2 id="faq">Veelgestelde vragen</h2>
+  <h3>Is de tool gratis?</h3>
+  <p>Ja, zonder account en zonder gebruikslimiet. U kunt hem ook kosteloos op uw eigen site insluiten.</p>
+
+  <h3>Houdt een digitaal ondertekend formulier juridisch stand?</h3>
+  <p>Elektronische handtekeningen worden breed erkend, maar de bewijsnorm en de eisen voor het bijhouden van dossiers verschillen per rechtsgebied. Behandel de geëxporteerde PDF zoals een ondertekend papieren formulier, en controleer welke eisen gelden waar u praktijk uitoefent.</p>
+
+  <h3>Kan ik mijn formulieren op een andere computer terugkrijgen?</h3>
+  <p>Alleen door ze zelf over te zetten. Gebruik <em>Exporteren &rarr; JSON exporteren</em> op de eerste computer en <em>Importeren &rarr; JSON-sjabloon importeren</em> op de tweede.</p>
+
+  <h3>Waarom is een veld grijs of ontbreekt het in de cliëntweergave?</h3>
+  <p>Het is verborgen, of een voorwaardelijke regel houdt het verborgen omdat de hoofdvraag niet is beantwoord met de waarde die het activeert. Voer <em>Formulier valideren</em> uit; als de hoofdvraag niet meer bestaat, meldt de controle dat als verweesde logica.</p>
+
+  <h3>In de PDF ontbreekt mijn logo.</h3>
+  <p>Upload het onder <em>Opties &rarr; PDF- &amp; afdrukinstellingen</em>. Net als alles andere wordt het in deze browser opgeslagen, dus op een andere computer moet het opnieuw worden geüpload.</p>
+
+  <h3>Kan ik formulieren online verzamelen?</h3>
+  <p>Niet via ons, bewust zo ontworpen. De tool heeft geen backend. Als u wilt dat inzendingen ergens worden afgeleverd, gebruik dan <em>Exporteren &rarr; Veld-ID's &amp; CRM-kaart</em> om het schema en het voorbeeld van de webhook-payload op te halen, en koppel het formulier aan uw eigen systeem.</p>
+
+  <footer>
+    <p>Consultatieformulier Bouwer &mdash; onderdeel van de gratis professionele toolsuite van
+      <a href="https://poliinternational.com/" target="_top">Poli International</a>.
+      Vragen of een bug melden? <a href="https://poliinternational.com/contact-us/" target="_top">Neem contact op</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
