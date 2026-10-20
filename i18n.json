@@ -1351,7 +1351,14 @@
       "of_mandatory_fields_completed": "{0} of {1} mandatory fields completed",
       "session_iteration": "Session {0} - {1} (Iteration)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Digitally Signed &amp; Timestamped: <strong>{0}</strong>",
-      "append_to_fields": "Append to: {0} ({1} fields)"
+      "append_to_fields": "Append to: {0} ({1} fields)",
+      "health_all_valid": "Health: 100% (All Valid)",
+      "auto_count": "Auto (7)",
+      "fields_word": "fields",
+      "medical_safety_module": "⚕️ Medical Safety Module",
+      "arrow_keys_hint": "(Arrow Keys: ±5px | Shift: ±20px | 0: Reset)",
+      "csv_supports": "Supports standard CSV columns:",
+      "csv_separated_semicolons": "(separated by semicolons)."
     },
     "kiosk": {
       "mode_title": "Tablet Kiosk Mode",
@@ -2751,7 +2758,14 @@
       "of_mandatory_fields_completed": "{0} champs obligatoires remplis sur {1}",
       "session_iteration": "Séance {0} - {1} (répétition)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Signé numériquement et horodaté : <strong>{0}</strong>",
-      "append_to_fields": "Ajouter à : {0} ({1} champs)"
+      "append_to_fields": "Ajouter à : {0} ({1} champs)",
+      "health_all_valid": "Intégrité : 100 % (tout valide)",
+      "auto_count": "Automatique (7)",
+      "fields_word": "champs",
+      "medical_safety_module": "⚕️ Module de sécurité médicale",
+      "arrow_keys_hint": "(Flèches : ±5 px | Maj : ±20 px | 0 : réinitialiser)",
+      "csv_supports": "Prend en charge les colonnes CSV standard :",
+      "csv_separated_semicolons": "(séparées par des points-virgules)."
     },
     "kiosk": {
       "mode_title": "Mode kiosque tablette",
@@ -4151,7 +4165,14 @@
       "of_mandatory_fields_completed": "{0} campi obbligatori compilati su {1}",
       "session_iteration": "Seduta {0} - {1} (ripetizione)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Firmato digitalmente e con marca temporale: <strong>{0}</strong>",
-      "append_to_fields": "Aggiungi a: {0} ({1} campi)"
+      "append_to_fields": "Aggiungi a: {0} ({1} campi)",
+      "health_all_valid": "Integrità: 100% (tutto valido)",
+      "auto_count": "Automatico (7)",
+      "fields_word": "campi",
+      "medical_safety_module": "⚕️ Modulo di sicurezza medica",
+      "arrow_keys_hint": "(Frecce: ±5 px | Maiusc: ±20 px | 0: Reimposta)",
+      "csv_supports": "Supporta le colonne CSV standard:",
+      "csv_separated_semicolons": "(separate da punti e virgola)."
     },
     "kiosk": {
       "mode_title": "Modalità chiosco tablet",
@@ -5551,7 +5572,14 @@
       "of_mandatory_fields_completed": "{0} von {1} Pflichtfeldern ausgefüllt",
       "session_iteration": "Sitzung {0} - {1} (Wiederholung)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Digital signiert und mit Zeitstempel versehen: <strong>{0}</strong>",
-      "append_to_fields": "Anhängen an: {0} ({1} Felder)"
+      "append_to_fields": "Anhängen an: {0} ({1} Felder)",
+      "health_all_valid": "Integrität: 100 % (alles gültig)",
+      "auto_count": "Automatisch (7)",
+      "fields_word": "Felder",
+      "medical_safety_module": "⚕️ Medizinisches Sicherheitsmodul",
+      "arrow_keys_hint": "(Pfeiltasten: ±5 px | Umschalt: ±20 px | 0: Zurücksetzen)",
+      "csv_supports": "Unterstützt Standard-CSV-Spalten:",
+      "csv_separated_semicolons": "(durch Semikolons getrennt)."
     },
     "kiosk": {
       "mode_title": "Tablet-Kiosk-Modus",
@@ -6951,7 +6979,14 @@
       "of_mandatory_fields_completed": "{0} de {1} campos obligatorios completados",
       "session_iteration": "Sesión {0} - {1} (repetición)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Firmado digitalmente y con sello de tiempo: <strong>{0}</strong>",
-      "append_to_fields": "Añadir a: {0} ({1} campos)"
+      "append_to_fields": "Añadir a: {0} ({1} campos)",
+      "health_all_valid": "Integridad: 100 % (todo válido)",
+      "auto_count": "Automático (7)",
+      "fields_word": "campos",
+      "medical_safety_module": "⚕️ Módulo de seguridad médica",
+      "arrow_keys_hint": "(Flechas: ±5 px | Mayús: ±20 px | 0: Restablecer)",
+      "csv_supports": "Admite las columnas CSV estándar:",
+      "csv_separated_semicolons": "(separadas por punto y coma)."
     },
     "kiosk": {
       "mode_title": "Modo quiosco de tableta",
@@ -8351,7 +8386,14 @@
       "of_mandatory_fields_completed": "{0} van {1} verplichte velden ingevuld",
       "session_iteration": "Sessie {0} - {1} (herhaling)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Digitaal ondertekend en van tijdstempel voorzien: <strong>{0}</strong>",
-      "append_to_fields": "Toevoegen aan: {0} ({1} velden)"
+      "append_to_fields": "Toevoegen aan: {0} ({1} velden)",
+      "health_all_valid": "Integriteit: 100% (alles geldig)",
+      "auto_count": "Automatisch (7)",
+      "fields_word": "velden",
+      "medical_safety_module": "⚕️ Medische veiligheidsmodule",
+      "arrow_keys_hint": "(Pijltjes: ±5 px | Shift: ±20 px | 0: Resetten)",
+      "csv_supports": "Ondersteunt standaard CSV-kolommen:",
+      "csv_separated_semicolons": "(gescheiden door puntkomma's)."
     },
     "kiosk": {
       "mode_title": "Tabletkioskmodus",
@@ -9751,7 +9793,14 @@
       "of_mandatory_fields_completed": "{0} de {1} campos obrigatórios preenchidos",
       "session_iteration": "Sessão {0} - {1} (repetição)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> Assinado digitalmente e com selo temporal: <strong>{0}</strong>",
-      "append_to_fields": "Acrescentar a: {0} ({1} campos)"
+      "append_to_fields": "Acrescentar a: {0} ({1} campos)",
+      "health_all_valid": "Integridade: 100% (tudo válido)",
+      "auto_count": "Automático (7)",
+      "fields_word": "campos",
+      "medical_safety_module": "⚕️ Módulo de segurança médica",
+      "arrow_keys_hint": "(Setas: ±5 px | Shift: ±20 px | 0: Repor)",
+      "csv_supports": "Suporta as colunas CSV padrão:",
+      "csv_separated_semicolons": "(separadas por ponto e vírgula)."
     },
     "kiosk": {
       "mode_title": "Modo quiosque do tablet",
@@ -10651,7 +10700,7 @@
       "create_new_section": "สร้างหมวดหมู่ใหม่ (\"Imported CSV Fields\")",
       "parsed_preview": "ตัวอย่างฟิลด์ข้อมูลที่ประมวลผลแล้ว",
       "target_destination_label": "หมวดหมู่ปลายทางที่ต้องการบันทึก",
-      "download_sample_btn": "📥 Download Sample CSV",
+      "download_sample_btn": "📥 ดาวน์โหลด CSV ตัวอย่าง",
       "paste_raw_btn": "✍️ วางข้อความ CSV",
       "hide_raw_btn": "ซ่อนข้อความ CSV",
       "paste_raw_label": "วางข้อมูล CSV:",
@@ -11151,7 +11200,14 @@
       "of_mandatory_fields_completed": "กรอกฟิลด์บังคับแล้ว {0} จาก {1} ฟิลด์",
       "session_iteration": "เซสชัน {0} - {1} (รอบ)",
       "digitally_signed_amp_timestamped": "<span class=\"sig-verified-icon\">✓</span> ลงลายมือชื่อดิจิทัลและประทับเวลา: <strong>{0}</strong>",
-      "append_to_fields": "เพิ่มต่อไปยัง: {0} ({1} ฟิลด์)"
+      "append_to_fields": "เพิ่มต่อไปยัง: {0} ({1} ฟิลด์)",
+      "health_all_valid": "ความสมบูรณ์: 100% (ถูกต้องทั้งหมด)",
+      "auto_count": "อัตโนมัติ (7)",
+      "fields_word": "ฟิลด์",
+      "medical_safety_module": "⚕️ โมดูลความปลอดภัยทางการแพทย์",
+      "arrow_keys_hint": "(ปุ่มลูกศร: ±5 px | Shift: ±20 px | 0: รีเซ็ต)",
+      "csv_supports": "รองรับคอลัมน์ CSV มาตรฐาน:",
+      "csv_separated_semicolons": "(คั่นด้วยเซมิโคลอน)."
     },
     "kiosk": {
       "mode_title": "โหมดคีออสแท็บเล็ต",
