@@ -155,10 +155,22 @@ if (window.self !== window.top) {
     .card p { margin: 0; font-size: .9rem; color: var(--muted); }
 
     footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .875rem; }
+    .doc-langs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 1.5rem; font-size: .85rem; }
+    .doc-langs a { color: var(--muted); text-decoration: none; padding: 2px 9px; border: 1px solid var(--border); border-radius: 6px; }
+    .doc-langs a[aria-current="page"] { color: var(--text, #fff); border-color: currentColor; }
   </style>
 </head>
 <body class="dark-mode">
 <div class="wrap">
+  <nav class="doc-langs" aria-label="Documentation language">
+    <a href="./documentation.html" aria-current="page">English</a>
+    <a href="./documentation-fr.html">Français</a>
+    <a href="./documentation-de.html">Deutsch</a>
+    <a href="./documentation-it.html">Italiano</a>
+    <a href="./documentation-es.html">Español</a>
+    <a href="./documentation-nl.html">Nederlands</a>
+    <a href="./documentation-pt.html">Português</a>
+  </nav>
 
   <header>
     <h1>Consultation Form Builder</h1>
@@ -309,14 +321,21 @@ if (window.self !== window.top) {
   <pre><code>&lt;iframe src="https://poliinternational.com/tools/form-builder/index.html"
         width="100%" height="1000" frameborder="0"
         style="border-radius:12px;"&gt;&lt;/iframe&gt;</code></pre>
+  <h3 id="in-crm">Inside the Studio CRM</h3>
+  <p>In the free Studio CRM the builder does more, because the forms are saved with the studio's data:</p>
+  <ul>
+    <li><strong>Send to kiosk:</strong> from <em>Preview Form</em>, send the form to a named tablet that waits on the studio network. The client fills it in and signs, and the form is saved to that client's profile. The tablet then waits for the next form.</li>
+    <li><strong>Scanner field:</strong> a field that scans a paper page on the CRM computer (Windows WIA, Linux SANE; not on macOS) and adds it to the form like a photo, kept in the record and the PDF.</li>
+    <li><strong>One form everywhere:</strong> a form edited on one computer is the form every tablet and computer in the studio shows.</li>
+  </ul>
 
   <h2 id="csv">CSV import &amp; CRM mapping</h2>
-  <p><em>Import &rarr; Bulk Import CSV</em> builds fields from a spreadsheet, which is the fastest way to move an existing paper or digital form across. Upload a file or paste rows directly. Expected columns:</p>
+  <p><em>Import &rarr; Bulk Import Fields (CSV)</em> builds fields from a spreadsheet, which is the fastest way to move an existing paper or digital form across. Upload a file or paste rows directly. Expected columns:</p>
   <pre><code>Label,Type,Required,HelperText,Options
 Emergency contact,text,true,Full legal name,
 Preferred language,select,false,Pick your main language,English;French;Thai
 Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code></pre>
-  <p><em>Export &rarr; Field ID Map</em> produces a reference of every question, its internal alias, data type and validation rule, as JSON, CSV or a sample webhook payload. That is the document to hand a developer wiring the form into other systems.</p>
+  <p><em>Export &rarr; Field IDs &amp; CRM Map</em> produces a reference of every question, its internal alias, data type and validation rule, as JSON, CSV or a sample webhook payload. That is the document to hand a developer wiring the form into other systems.</p>
 
   <h2 id="languages">Languages</h2>
   <p>The interface and the templates are available in seven languages: English, French, Italian, German, Spanish, Dutch and Portuguese. Use the <em>Language</em> dropdown in the header. Switching translates both the builder's own controls and the field labels of the form you are building, so you can hand a French client a French consent form.</p>
@@ -362,7 +381,7 @@ Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code><
   <p>Electronic signatures are widely recognised, but the standard of proof and the record-keeping requirements vary by jurisdiction. Treat the exported PDF as you would a signed paper form, and confirm the requirements that apply where you practise.</p>
 
   <h3>Can I get my forms back on another computer?</h3>
-  <p>Only by moving them yourself. Use <em>Export &rarr; Export JSON</em> on the first machine and <em>Import &rarr; Import JSON</em> on the second.</p>
+  <p>Only by moving them yourself. Use <em>Export &rarr; Export JSON</em> on the first machine and <em>Import &rarr; Import JSON Template</em> on the second.</p>
 
   <h3>Why is a field greyed out or missing in the client view?</h3>
   <p>Either it is hidden, or a conditional rule is keeping it hidden because its parent question has not been answered with the triggering value. Run <em>Validate Form</em>; if the parent no longer exists, the checker reports it as orphaned logic.</p>
@@ -371,7 +390,7 @@ Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code><
   <p>Upload it under <em>Options &rarr; PDF &amp; Print Settings</em>. Like everything else, it is stored in this browser, so it needs uploading again on another machine.</p>
 
   <h3>Can I collect submissions online?</h3>
-  <p>Not through us, by design. The tool has no backend. If you need submissions delivered somewhere, use <em>Export &rarr; Field ID Map</em> to get the schema and sample webhook payload, and wire the form into your own system.</p>
+  <p>Not through us, by design. The tool has no backend. If you need submissions delivered somewhere, use <em>Export &rarr; Field IDs &amp; CRM Map</em> to get the schema and sample webhook payload, and wire the form into your own system.</p>
 
   <footer>
     <p>Consultation Form Builder &mdash; part of the free professional tool suite from
