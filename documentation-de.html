@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+if (window.self !== window.top) {
+    var poliRoot = document.documentElement;
+    var poliApply = function (light) {
+        poliRoot.setAttribute('data-theme', light ? 'light' : 'dark');
+        var b = document.body;
+        if (b) {
+            b.classList.toggle('dark-mode', !light);
+            b.classList.toggle('light-mode', !!light);
+        }
+    };
+    poliApply(false);
+    document.addEventListener('DOMContentLoaded', function () {
+        poliApply(poliRoot.getAttribute('data-theme') === 'light');
+    });
+    window.addEventListener('message', function (e) {
+        if (e.data && e.data.type === 'poli-theme') {
+            poliApply(!!e.data.light);
+        }
+    });
+}
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumentation — Formular-Generator für Beratungsformulare | Poli International</title>
+  <meta name="description" content="So erstellen, prüfen, übersetzen und exportieren Sie Einwilligungsformulare für Tattoos und Piercings mit dem Formular-Generator für Beratungsformulare von Poli International.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/tools/shared/a11y.css">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #1c2430;
+      --border: #2a3441;
+      --text: #d8dee9;
+      --heading: #ffffff;
+      --muted: #8b98a9;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.12);
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --code-bg: #0a0e14;
+      --radius: 10px;
+    }
+    body.light-mode, html[data-theme="light"] body {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface-2: #f0f2f5;
+      --border: #dde1e7;
+      --text: #26313f;
+      --heading: #0d1117;
+      --muted: #5d6b7c;
+      --accent: #0b62c4;
+      --accent-soft: rgba(11, 98, 196, 0.09);
+      --ok: #0f8f63;
+      --warn: #a86400;
+      --code-bg: #f0f2f5;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+    h1, h2, h3 { color: var(--heading); line-height: 1.25; }
+    h1 { font-size: 2rem; margin: 0 0 .5rem; letter-spacing: -.02em; }
+    h2 {
+      font-size: 1.4rem;
+      margin: 3rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 1rem;
+    }
+    h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+    p { margin: 0 0 1rem; }
+    a { color: var(--accent); }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+    li { margin-bottom: .4rem; }
+    strong { color: var(--heading); }
+    code {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .1em .4em;
+      font: 500 .875em/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      overflow-x: auto;
+      font: 500 .85rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
+    .lede { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .topbar {
+      display: flex; flex-wrap: wrap; gap: .75rem; align-items: center;
+      margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: .6rem 1.1rem; border-radius: 8px; font-weight: 600; font-size: .95rem;
+    }
+    .btn--ghost { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+
+    .callout {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.15rem;
+      margin: 1.5rem 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout--ok { background: rgba(52, 211, 153, .1); border-left-color: var(--ok); }
+    .callout--warn { background: rgba(251, 191, 36, .1); border-left-color: var(--warn); }
+
+    figure { margin: 1.5rem 0 2rem; }
+    figure img {
+      display: block; width: 100%; height: auto;
+      border: 1px solid var(--border); border-radius: var(--radius);
+    }
+    figcaption { color: var(--muted); font-size: .875rem; margin-top: .6rem; }
+
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .toc ol { columns: 2; column-gap: 2rem; margin: 0; }
+    @media (max-width: 620px) { .toc ol { columns: 1; } }
+
+    .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; }
+    table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: .93rem; }
+    th, td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--heading); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+    tbody tr:last-child td { border-bottom: 0; }
+    kbd {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-bottom-width: 2px; border-radius: 5px;
+      padding: .12em .45em; font: 600 .82em/1 ui-monospace, Menlo, Consolas, monospace;
+      color: var(--heading); white-space: nowrap;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.15rem; }
+    .card h3 { margin: 0 0 .35rem; font-size: .98rem; }
+    .card p { margin: 0; font-size: .9rem; color: var(--muted); }
+
+    footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .875rem; }
+    .doc-langs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 1.5rem; font-size: .85rem; }
+    .doc-langs a { color: var(--muted); text-decoration: none; padding: 2px 9px; border: 1px solid var(--border); border-radius: 6px; }
+    .doc-langs a[aria-current="page"] { color: var(--text, #fff); border-color: currentColor; }
+  </style>
+</head>
+<body class="dark-mode">
+<div class="wrap">
+  <nav class="doc-langs" aria-label="Sprache der Dokumentation">
+    <a href="./documentation.html">English</a>
+    <a href="./documentation-fr.html">Français</a>
+    <a href="./documentation-de.html" aria-current="page">Deutsch</a>
+    <a href="./documentation-it.html">Italiano</a>
+    <a href="./documentation-es.html">Español</a>
+    <a href="./documentation-nl.html">Nederlands</a>
+    <a href="./documentation-pt.html">Português</a>
+  </nav>
+
+  <header>
+    <h1>Formular-Generator für Beratungsformulare</h1>
+    <p class="lede">Erstellen, prüfen und drucken Sie Einwilligungsformulare für Tattoos und Piercings. Alles läuft in Ihrem Browser, sodass Gesundheitsdaten Ihrer Kunden das Gerät niemals verlassen.</p>
+    <div class="topbar">
+      <a class="btn" href="/tools/form-builder/index.html" target="_top">Generator öffnen</a>
+      <a class="btn btn--ghost" href="/wiki/legal-compliance-standards/" target="_top">Wiki Recht &amp; Compliance</a>
+      <a class="btn btn--ghost" href="/tools/" target="_top">Alle kostenlosen Tools</a>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <strong>Auf dieser Seite</strong>
+    <ol>
+      <li><a href="#start">Erste Schritte</a></li>
+      <li><a href="#templates">Vorlagen</a></li>
+      <li><a href="#fields">Feldtypen</a></li>
+      <li><a href="#properties">Ein Feld konfigurieren</a></li>
+      <li><a href="#logic">Bedingte Logik</a></li>
+      <li><a href="#integrity">Prüfung der Datenintegrität</a></li>
+      <li><a href="#preview">Kundenansicht &amp; Sicherheitshinweise</a></li>
+      <li><a href="#signature">Unterschriften &amp; PDF-Export</a></li>
+      <li><a href="#kiosk">Kiosk-Modus &amp; Einbettung</a></li>
+      <li><a href="#csv">CSV-Import &amp; CRM-Zuordnung</a></li>
+      <li><a href="#languages">Sprachen</a></li>
+      <li><a href="#shortcuts">Tastaturkürzel</a></li>
+      <li><a href="#privacy">Daten &amp; Datenschutz</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="start">Erste Schritte</h2>
+  <p>Der Generator öffnet sich mit bereits ausgewählter Vorlage. Drei Schritte führen Sie zu einem brauchbaren Formular:</p>
+  <ol>
+    <li><strong>Wählen Sie eine Vorlage</strong> im Dropdown <em>Vorlage</em> in der Kopfzeile. Sie ersetzt die Arbeitsfläche durch ein vollständiges, in Abschnitte gegliedertes Formular.</li>
+    <li><strong>Bearbeiten Sie auf der Arbeitsfläche.</strong> Ziehen Sie Feldtypen aus der Palette links hinein, ordnen Sie sie per Ziehen neu an und klicken Sie auf ein beliebiges Feld, um rechts seine Einstellungen zu öffnen.</li>
+    <li><strong>Vorschau und Druck.</strong> <em>Formular-Vorschau</em> wechselt in die Kundenansicht, in der Sie eine Unterschrift erfassen und ein PDF exportieren können.</li>
+  </ol>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/01-drag-drop-consent-form-builder-field-properties.jpg"
+         alt="Der Formular-Generator mit der Feldpalette links, einem Piercing-Einwilligungsformular auf der Arbeitsfläche und dem geöffneten Eigenschaftenbereich des Feldes rechts." loading="lazy">
+    <figcaption>Palette, Arbeitsfläche und Feldeigenschaften. Wenn Sie ein Feld auswählen, öffnen sich dessen Einstellungen für Typ, Bezeichnung, CRM-Alias und Validierung.</figcaption>
+  </figure>
+
+  <div class="callout">
+    <p><strong>Ihre Arbeit wird automatisch gespeichert.</strong> Der Generator schreibt nach jeder Änderung einen Entwurf in diesen Browser und bietet an, ihn bei Ihrer Rückkehr wiederherzustellen. Das Löschen der Website-Daten entfernt den Entwurf. Exportieren Sie deshalb eine JSON-Kopie von allem, was Sie dauerhaft behalten möchten (<em>Exportieren &rarr; JSON exportieren</em>, oder <kbd>Strg</kbd> + <kbd>S</kbd>).</p>
+  </div>
+
+  <h2 id="templates">Vorlagen</h2>
+  <p>Acht Ausgangspunkte, jeweils ein vollständiges Formular statt eines bloßen Gerüsts. Die Piercing-Einwilligungsvorlage enthält beispielsweise 7 Abschnitte und 28 Felder, davon 18 Pflichtfelder.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Vorlage</th><th>Verwendung</th></tr></thead>
+      <tbody>
+        <tr><td>Einwilligung &amp; Freigabeerklärung für Tattoos</td><td>Standardtermine für Tattoos: Angaben zu Studio und Tätowierer, Gesundheitsangaben, Haftungsverzicht.</td></tr>
+        <tr><td>Einwilligung &amp; Freigabe für Piercings</td><td>Piercing-Termine: Anatomie und Platzierung, Schmuckmaterial und Stärke, Sterilisationscharge.</td></tr>
+        <tr><td>Anamnese &amp; Gesundheitsscreening</td><td>Eigenständiger Gesundheitsfragebogen, wenn das Screening vor dem Termin erfolgt.</td></tr>
+        <tr><td>Rahmenvereinbarung für mehrsitzige Tattoo-Projekte</td><td>Große Motive, die über mehrere Sitzungen gebucht werden, mit Verfolgung pro Sitzung.</td></tr>
+        <tr><td>Einwilligung Minderjähriger &amp; Vollmacht des gesetzlichen Vertreters</td><td>Wo das lokale Recht Arbeiten an einer minderjährigen Person erlaubt, wenn ein Erziehungsberechtigter anwesend ist und mitunterzeichnet.</td></tr>
+        <tr><td>Bewertung für Cover-ups &amp; Überarbeitungen</td><td>Bewertung eines bestehenden Tattoos, bevor es überdeckt oder überarbeitet wird.</td></tr>
+        <tr><td>Beratung für Permanent-Make-up &amp; Kosmetiktattoos</td><td>Beratungen zu Permanent-Make-up und kosmetischen Tattoos.</td></tr>
+        <tr><td>Leeres individuelles Formular</td><td>Start bei null.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout callout--warn">
+    <p>Vorlagen sind eine Entwurfshilfe und keine Rechtsberatung. Die Anforderungen an die Einwilligung unterscheiden sich nach Land, Bundesland und Gemeinde. Lassen Sie Ihren endgültigen Wortlaut von einer in Ihrem Rechtsraum qualifizierten Person prüfen, bevor Sie ihn bei Kunden verwenden.</p>
+  </div>
+
+  <h2 id="fields">Feldtypen</h2>
+  <p>Siebzehn Feldtypen, in der Palette nach Kategorien gruppiert. Verwenden Sie das Suchfeld (<kbd>Strg</kbd> + <kbd>F</kbd>), um sie zu filtern.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Grundlegende Eingabe</h3>
+      <p>Kurztext, Absatz / Langtext, E-Mail-Adresse, Telefonnummer, Datumsauswahl, Zahl / Menge.</p>
+    </div>
+    <div class="card">
+      <h3>Auswahl &amp; Optionen</h3>
+      <p>Kontrollkästchen, Kontrollkästchen-Gruppe, Optionsfelder, Dropdown-Menü.</p>
+    </div>
+    <div class="card">
+      <h3>Layout &amp; Struktur</h3>
+      <p>Abschnittsüberschrift, Container / Panel, Abschnitt / Gruppe.</p>
+    </div>
+    <div class="card">
+      <h3>Hinweise &amp; Recht</h3>
+      <p>Hinweis / Überschrift für feststehende Texte und Digitale Signatur für die verbindliche Freigabe.</p>
+    </div>
+    <div class="card">
+      <h3>Klinik &amp; Medien</h3>
+      <p>Anatomische Körperkarte zur Markierung der Platzierung sowie Lichtbildausweis &amp; Dokumenten-Upload.</p>
+    </div>
+  </div>
+  <p>Die Palette hat außerdem einen Schalter <strong>Smarte Vorschläge</strong>. Ist er aktiviert, empfiehlt der obere Bereich der Palette Felder, die Ihrem Formular für die beschriebene Art der Behandlung fehlen.</p>
+
+  <h2 id="properties">Ein Feld konfigurieren</h2>
+  <p>Klicken Sie auf ein Feld der Arbeitsfläche, dann wechselt das rechte Panel von <em>Formular-Übersicht</em> zu <em>Feldeigenschaften</em>:</p>
+  <ul>
+    <li><strong>Feldtyp</strong> &mdash; ändern Sie ihn direkt, ohne die Bezeichnung zu verlieren.</li>
+    <li><strong>Feldbezeichnung</strong> &mdash; die Frage, so wie der Kunde sie liest.</li>
+    <li><strong>Interner Feld-Alias (CRM / API-Schlüssel)</strong> &mdash; ein stabiler technischer Name wie <code>client_allergies_list</code>. Exporte verwenden den Alias, sodass Sie eine Frage umbenennen können, ohne eine Tabelle oder eine Schnittstelle zu beschädigen.</li>
+    <li><strong>Pflichtfeld</strong> &mdash; blockiert Absenden und PDF-Erstellung, bis das Feld beantwortet ist.</li>
+    <li><strong>Validierung</strong> &mdash; Zeichenlimits, numerische Grenzen und Muster für reguläre Ausdrücke.</li>
+  </ul>
+  <p>Wählen Sie mehrere Felder mit <kbd>Umschalt</kbd> + Klick aus, um sie alle gleichzeitig als Pflichtfeld oder ausgeblendet festzulegen.</p>
+
+  <h2 id="logic">Bedingte Logik</h2>
+  <p>Ein Feld kann nur angezeigt werden, wenn ein anderes Feld eine bestimmte Antwort hat. So sieht ein Kunde, der eine medizinische Frage mit „Nein“ beantwortet, die sechs Folgefragen darunter nie. Legen Sie die übergeordnete Frage und den auslösenden Wert im Abschnitt <em>Logik</em> der Feldeigenschaften fest.</p>
+  <p>Tief verkettete Regeln können versehentlich eine Schleife bilden, bei der A von B abhängt und B wiederum von A, sodass beide dauerhaft ausgeblendet bleiben. Die unten beschriebene Prüfung der Datenintegrität erkennt genau das.</p>
+
+  <h2 id="integrity">Prüfung der Datenintegrität</h2>
+  <p><em>Formular prüfen</em> in der Werkzeugleiste der Arbeitsfläche startet einen Diagnosescan und bewertet das Formular. Er findet die Fehler, die erst auffallen, wenn der Kunde vor Ihnen steht:</p>
+  <ul>
+    <li>Zirkuläre Logikabhängigkeiten, durch die Felder nicht mehr erreichbar sind.</li>
+    <li>Dropdown-Menüs, Optionsfelder und Kontrollkästchen-Gruppen ohne konfigurierte Optionen.</li>
+    <li>Doppelte Optionsbezeichnungen, die eine Antwort mehrdeutig machen.</li>
+    <li>Vertauschte Validierungsgrenzen, etwa ein Minimum über dem Maximum.</li>
+    <li>Ungültige Muster für reguläre Ausdrücke.</li>
+    <li>Doppelte CRM-Aliase, die beim Export kollidieren.</li>
+    <li>Fehlende Bezeichnungen und leere Abschnitte.</li>
+  </ul>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/03-form-data-integrity-logic-checker-diagnostics.jpg"
+         alt="Die Prüfung der Datenintegrität mit einer Bewertung von 76 Prozent, Zählern für kritische Logik, fehlende Optionen und Warnungen sowie einer Problemkarte mit den Schaltflächen Zum Feld springen und Schnellkorrektur." loading="lazy">
+    <figcaption>Jeder Befund erklärt die Folgen und bietet <em>Zum Feld springen &amp; beheben</em> an, bzw. <em>Schnellkorrektur</em>, wenn die Reparatur eindeutig ist. <em>Sichere automatische Reparatur</em> wendet alle eindeutigen Korrekturen auf einmal an.</figcaption>
+  </figure>
+
+  <h2 id="preview">Kundenansicht &amp; Sicherheitshinweise</h2>
+  <p><em>Formular-Vorschau</em> zeigt das Formular genau so an, wie es der Kunde sieht, mit einer Fortschrittsanzeige, die zeigt, wie viele Pflichtfelder noch offen sind.</p>
+  <p>Sobald medizinische Angaben eingehen, blendet die Vorschau oberhalb des Formulars <strong>Sicherheitshinweise</strong> ein: Angaben, die dem Tätowierer bekannt sein müssen, eine verfahrenstechnische Vorsichtsmaßnahme oder eine ärztliche Freigabe. Eine angegebene Latexallergie erzeugt beispielsweise einen Barrierehinweis, der die am Arbeitsplatz erforderliche Ersatzlösung nennt.</p>
+
+  <figure>
+    <img src="/public-uploads/tools/form-builder/02-medical-safety-callouts-client-consent-view.jpg"
+         alt="Das kundenseitige Einwilligungsformular mit einer Fortschrittsanzeige bei 96 Prozent und einem medizinischen Sicherheitshinweis, der eine angegebene Latexallergie meldet." loading="lazy">
+    <figcaption><em>Beispieldaten einfügen</em> befüllt das Formular mit Testdaten, damit Sie die Hinweise und die PDF-Ausgabe vor dem Livegang sehen können.</figcaption>
+  </figure>
+
+  <h2 id="signature">Unterschriften &amp; PDF-Export</h2>
+  <p>Das Feld Digitale Signatur nimmt Maus, Stift oder Fingerspitze an und versieht die Unterschrift mit dem Datum. <em>PDF- &amp; Druckeinstellungen</em> steuert den Export: Papierformat, Ränder sowie ein Wasserzeichen oder Logo des Studios.</p>
+  <p><em>Formular drucken</em> öffnet den Druckdialog des Browsers mit einem Druckstylesheet. Aktivieren Sie <strong>Nach Unterschrift drucken</strong>, wenn dies automatisch geschehen soll, sobald der Kunde die Unterschrift abgeschlossen hat.</p>
+  <p><em>CSV exportieren</em> schreibt die Antworten mit den CRM-Aliasen als Spaltenüberschriften heraus, bereit für eine Tabellenkalkulation oder den Import in andere Software.</p>
+
+  <h2 id="kiosk">Kiosk-Modus &amp; Einbettung</h2>
+  <p><strong>Tablet-Kiosk-Modus</strong> (unter <em>Optionen</em> oder in der Werkzeugleiste der Vorschau) zeigt das Formular Schritt für Schritt mit großen Touch-Flächen, damit Sie dem Kunden im Wartebereich ein Tablet reichen können.</p>
+  <p><em>Optionen &rarr; Einbetten / QR-Code</em> erzeugt sowohl einen iframe-Ausschnitt für Ihre eigene Website als auch ein druckbares QR-Schild, das Kunden mit ihrem eigenen Smartphone scannen können. Der Einbettungsausschnitt sieht so aus:</p>
+  <pre><code>&lt;iframe src="https://poliinternational.com/tools/form-builder/index.html"
+        width="100%" height="1000" frameborder="0"
+        style="border-radius:12px;"&gt;&lt;/iframe&gt;</code></pre>
+  <h3 id="in-crm">Im Studio-CRM</h3>
+  <p>Im kostenlosen Studio-CRM leistet der Generator mehr, weil die Formulare zusammen mit den Daten des Studios gespeichert werden:</p>
+  <ul>
+    <li><strong>An Kiosk senden:</strong> Senden Sie das Formular aus der <em>Formular-Vorschau</em> an ein benanntes Tablet, das im Netzwerk des Studios wartet. Der Kunde füllt es aus und unterschreibt, und das Formular wird im Profil dieses Kunden gespeichert. Das Tablet wartet danach auf das nächste Formular.</li>
+    <li><strong>Scanner-Feld:</strong> ein Feld, das eine Papierseite am CRM-Computer scannt (Windows WIA, Linux SANE; nicht unter macOS) und sie wie ein Foto in das Formular einfügt, wo sie in der Akte und im PDF erhalten bleibt.</li>
+    <li><strong>Ein Formular überall:</strong> Ein auf einem Computer bearbeitetes Formular ist das Formular, das jedes Tablet und jeder Computer im Studio anzeigt.</li>
+  </ul>
+
+  <h2 id="csv">CSV-Import &amp; CRM-Zuordnung</h2>
+  <p><em>Importieren &rarr; Felder per CSV importieren</em> erstellt Felder aus einer Tabellenkalkulation, dem schnellsten Weg, ein bestehendes Papier- oder digitales Formular zu übernehmen. Laden Sie eine Datei hoch oder fügen Sie Zeilen direkt ein. Erwartete Spalten:</p>
+  <pre><code>Label,Type,Required,HelperText,Options
+Emergency contact,text,true,Full legal name,
+Preferred language,select,false,Pick your main language,English;French;Thai
+Are you pregnant or breastfeeding?,radio,true,Required for safety,Yes;No</code></pre>
+  <p><em>Exportieren &rarr; Feld-IDs &amp; CRM-Zuordnung</em> erstellt eine Übersicht jeder Frage mit ihrem internen Alias, Datentyp und ihrer Validierungsregel, als JSON, CSV oder als Beispiel-Nutzlast eines Webhooks. Dieses Dokument geben Sie einem Entwickler, der das Formular mit anderen Systemen verbindet.</p>
+
+  <h2 id="languages">Sprachen</h2>
+  <p>Die Oberfläche und die Vorlagen sind in sieben Sprachen verfügbar: Englisch, Französisch, Italienisch, Deutsch, Spanisch, Niederländisch und Portugiesisch. Verwenden Sie das Dropdown <em>Sprache</em> in der Kopfzeile. Beim Wechsel werden sowohl die eigenen Bedienelemente des Generators als auch die Feldbezeichnungen des Formulars übersetzt, das Sie gerade erstellen. So können Sie einem französischsprachigen Kunden ein französisches Einwilligungsformular übergeben.</p>
+  <p>Ihre Auswahl wird in diesem Browser gespeichert. Von Ihnen selbst verfasste Felder bleiben genau so erhalten, wie Sie sie eingegeben haben.</p>
+
+  <h2 id="shortcuts">Tastaturkürzel</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Keys</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>Die letzte Aktion oder Feldbearbeitung rückgängig machen</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd> / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td><td>Wiederholen</td></tr>
+        <tr><td><kbd>Shift</kbd> + click</td><td>Mehrere Felder für Sammelaktionen auswählen</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>D</kbd></td><td>Das ausgewählte Feld oder den Block duplizieren</td></tr>
+        <tr><td><kbd>Delete</kbd> / <kbd>Backspace</kbd></td><td>Die ausgewählten Felder löschen</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>Das Formularschema als JSON exportieren</td></tr>
+        <tr><td><kbd>&uarr;</kbd> <kbd>&darr;</kbd> <kbd>&larr;</kbd> <kbd>&rarr;</kbd></td><td>Die ausgewählten Felder um 5 px verschieben</td></tr>
+        <tr><td><kbd>Tab</kbd> / <kbd>Shift</kbd> + <kbd>Tab</kbd></td><td>Durch die Konfigurationseigenschaften des Feldes blättern</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>F</kbd></td><td>Die Palette filtern oder in den Feldeigenschaften suchen</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Auswahl aufheben und zur Formular-Übersicht zurückkehren</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Gelöschte Felder landen im Bereich <strong>Kürzlich gelöscht</strong> unten auf der Arbeitsfläche. Ein versehentliches Löschen lässt sich daher auch nach mehreren weiteren Änderungen rückgängig machen.</p>
+
+  <h2 id="privacy">Daten &amp; Datenschutz</h2>
+  <div class="callout callout--ok">
+    <p><strong>Nichts, was Sie eingeben, erreicht unsere Server.</strong> Der Generator stellt außer dem Laden seiner eigenen Übersetzungsdatei keine Netzwerkanfragen. Formulare, Kundenantworten, Unterschriften und erzeugte PDFs werden ausschließlich in Ihrem Browser erstellt und gespeichert.</p>
+  </div>
+  <p>Praktische Folgen, die Sie kennen sollten:</p>
+  <ul>
+    <li>Entwürfe und Übermittlungen liegen im lokalen Speicher dieses Browsers. Sie werden nicht zwischen Geräten synchronisiert, und ein anderer Browser oder ein privates Fenster sieht sie nicht.</li>
+    <li>Das Löschen der Website-Daten entfernt sie dauerhaft. Es gibt keine serverseitige Kopie, die wir wiederherstellen könnten.</li>
+    <li>Da die Daten auf Ihrem Gerät bleiben, bleiben Sie für sie der Verantwortliche. Ihre Pflichten nach DSGVO, PDPA oder dem lokalen Recht zu Gesundheitsakten bleiben unverändert, und wie Sie die exportierten PDFs aufbewahren, liegt in Ihrer Verantwortung.</li>
+  </ul>
+  <p>Exportieren Sie eine JSON-Kopie jeder Formularvorlage, auf die Sie sich verlassen, und archivieren Sie ausgefüllte Einwilligungs-PDFs dort, wo Sie ohnehin Kundenakten aufbewahren.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <h3>Ist das Tool kostenlos?</h3>
+  <p>Ja, ohne Konto und ohne Nutzungsbeschränkung. Sie können es außerdem kostenlos auf Ihrer eigenen Website einbetten.</p>
+
+  <h3>Hält ein digital unterschriebenes Formular rechtlich stand?</h3>
+  <p>Elektronische Signaturen sind weithin anerkannt, doch die Beweisanforderungen und die Pflichten zur Aufbewahrung von Unterlagen unterscheiden sich je nach Rechtsordnung. Behandeln Sie das exportierte PDF wie ein unterschriebenes Papierformular und prüfen Sie die Anforderungen, die dort gelten, wo Sie tätig sind.</p>
+
+  <h3>Kann ich meine Formulare auf einem anderen Computer wieder verwenden?</h3>
+  <p>Nur, indem Sie sie selbst übertragen. Verwenden Sie <em>Exportieren &rarr; JSON exportieren</em> auf dem ersten Gerät und <em>Importieren &rarr; JSON-Vorlage importieren</em> auf dem zweiten.</p>
+
+  <h3>Warum ist ein Feld in der Kundenansicht ausgegraut oder fehlt?</h3>
+  <p>Entweder ist es ausgeblendet, oder eine bedingte Regel hält es ausgeblendet, weil die übergeordnete Frage nicht mit dem auslösenden Wert beantwortet wurde. Führen Sie <em>Formular prüfen</em> aus; existiert die übergeordnete Frage nicht mehr, meldet die Prüfung das als verwaiste Logik.</p>
+
+  <h3>Im PDF fehlt mein Logo.</h3>
+  <p>Laden Sie es unter <em>Optionen &rarr; PDF- &amp; Druckeinstellungen</em> hoch. Wie alles andere wird es in diesem Browser gespeichert und muss deshalb auf einem anderen Gerät erneut hochgeladen werden.</p>
+
+  <h3>Kann ich Übermittlungen online sammeln?</h3>
+  <p>Nicht über uns, das ist so beabsichtigt. Das Tool hat kein Backend. Wenn Übermittlungen an einen bestimmten Ort gelangen sollen, verwenden Sie <em>Exportieren &rarr; Feld-IDs &amp; CRM-Zuordnung</em>, um das Schema und die Beispiel-Nutzlast des Webhooks zu erhalten, und verbinden Sie das Formular mit Ihrem eigenen System.</p>
+
+  <footer>
+    <p>Formular-Generator für Beratungsformulare &mdash; Teil der kostenlosen Profi-Werkzeugsammlung von
+      <a href="https://poliinternational.com/" target="_top">Poli International</a>.
+      Fragen oder einen Fehler melden? <a href="https://poliinternational.com/contact-us/" target="_top">Kontakt aufnehmen</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
