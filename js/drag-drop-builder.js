@@ -195,7 +195,7 @@ class FormBuilder {
 
         this.recordState('Auto-Sort Fields Alphabetically');
         this.renderCanvas();
-        this.showToast('Form fields auto-sorted alphabetically by label (A-Z)!', 'success');
+        this.showToast(TP('live.sorted_toast', "Form fields auto-sorted alphabetically by label (A-Z)!"), 'success');
     }
 
     async copyFieldJson(fieldOrData, buttonEl = null) {
@@ -230,10 +230,10 @@ class FormBuilder {
             const label = Array.isArray(fieldOrData)
                 ? `${fieldOrData.length} selected fields`
                 : `"${fieldOrData.label || fieldOrData.id || 'Field'}"`;
-            this.showToast(`JSON metadata for ${label} copied to clipboard!`, 'success');
+            this.showToast(TP('live.meta_copied_toast', "JSON metadata for {0} copied to clipboard!", label), 'success');
         } catch (err) {
             console.error('Failed to copy JSON metadata to clipboard:', err);
-            this.showToast('Failed to copy metadata to clipboard', 'warning');
+            this.showToast(TP('live.meta_copy_failed', "Failed to copy metadata to clipboard"), 'warning');
         }
     }
 
@@ -254,21 +254,21 @@ class FormBuilder {
             canvas.classList.add('canvas-grid-pattern');
             gridBtn.classList.add('active');
             gridBtn.setAttribute('aria-pressed', 'true');
-            if (gridText) gridText.textContent = 'Grid: On';
+            if (gridText) gridText.textContent = TP('live.grid_on', "Grid: On");
         } else {
             canvas.classList.remove('canvas-grid-pattern');
             gridBtn.classList.remove('active');
             gridBtn.setAttribute('aria-pressed', 'false');
-            if (gridText) gridText.textContent = 'Grid: Off';
+            if (gridText) gridText.textContent = TP('live.grid_off', "Grid: Off");
         }
 
         gridBtn.addEventListener('click', () => {
             const nowActive = canvas.classList.toggle('canvas-grid-pattern');
             gridBtn.classList.toggle('active', nowActive);
             gridBtn.setAttribute('aria-pressed', nowActive ? 'true' : 'false');
-            if (gridText) gridText.textContent = nowActive ? 'Grid: On' : 'Grid: Off';
+            if (gridText) gridText.textContent = nowActive ? TP('live.grid_on', "Grid: On") : TP('live.grid_off', "Grid: Off");
             localStorage.setItem('poli_form_canvas_grid', nowActive ? 'true' : 'false');
-            this.showToast(nowActive ? 'Canvas alignment grid enabled' : 'Canvas alignment grid disabled', 'info');
+            this.showToast(nowActive ? TP('live.grid_enabled_toast', "Canvas alignment grid enabled") : TP('live.grid_disabled_toast', "Canvas alignment grid disabled"), 'info');
         });
     }
 
@@ -298,8 +298,8 @@ class FormBuilder {
             localStorage.setItem('poli_smart_snap_enabled', this.smartSnapEnabled ? 'true' : 'false');
             updateSnapUI();
             const msg = this.smartSnapEnabled
-                ? 'Smart Snap alignment enabled (magnetic axis guidelines active)'
-                : 'Smart Snap alignment disabled';
+                ? TP('live.snap_on_toast', "Smart Snap alignment enabled (magnetic axis guidelines active)")
+                : TP('live.snap_off_toast', "Smart Snap alignment disabled");
             this.showToast(msg, 'info');
         });
     }
@@ -1349,14 +1349,14 @@ class FormBuilder {
             this.recordState(`Auto-fixed integrity issue: ${issue.title}`);
             this.renderCanvas();
             this.renderIntegrityModalContent(this.currentIntegrityFilter || 'all');
-            this.showToast(`✨ Resolved "${issue.title}" successfully!`, 'success');
+            this.showToast(TP('live.resolved_toast', "✨ Resolved \"{0}\" successfully!", issue.title), 'success');
         }
     }
 
     autoFixIntegrityIssues() {
         const audit = this.runDataIntegrityCheck();
         if (audit.issues.length === 0) {
-            this.showToast('✓ No issues to fix! Form is 100% valid.', 'success');
+            this.showToast(TP('live.no_issues_toast', "✓ No issues to fix! Form is 100% valid."), 'success');
             return;
         }
 
@@ -1400,9 +1400,9 @@ class FormBuilder {
             this.recordState(`Auto-fixed ${fixedCount} data integrity issue(s)`);
             this.renderCanvas();
             this.renderIntegrityModalContent(this.currentIntegrityFilter || 'all');
-            this.showToast(`✨ Automatically repaired ${fixedCount} issue${fixedCount === 1 ? '' : 's'}!`, 'success');
+            this.showToast(fixedCount === 1 ? TP('live.repaired_one', "✨ Automatically repaired {0} issue!", fixedCount) : TP('live.repaired_many', "✨ Automatically repaired {0} issues!", fixedCount), 'success');
         } else {
-            this.showToast('Remaining issues require manual review in the property editor.', 'info');
+            this.showToast(TP('live.manual_review_toast', "Remaining issues require manual review in the property editor."), 'info');
         }
     }
 
@@ -1434,9 +1434,9 @@ class FormBuilder {
         }
 
         navigator.clipboard.writeText(report).then(() => {
-            this.showToast('📋 Data Integrity Report copied to clipboard!', 'success');
+            this.showToast(TP('live.report_copied_toast', "📋 Data Integrity Report copied to clipboard!"), 'success');
         }).catch(() => {
-            this.showToast('Report generated in console log.', 'info');
+            this.showToast(TP('live.report_console_toast', "Report generated in console log."), 'info');
             console.log(report);
         });
     }
@@ -1477,14 +1477,14 @@ class FormBuilder {
             statusEl.title = TP("x.data_integrity_diagnostic_issue_s_detected", "Data Integrity: {0} diagnostic issue(s) detected. Click to inspect.", audit.stats.total);
             statusEl.innerHTML = `
                 <span class="val-status-icon">${hasCriticalOrError ? '⚠️' : 'ℹ️'}</span>
-                <span class="val-status-text">Health: ${audit.score}% (${audit.stats.total} Issue${audit.stats.total === 1 ? '' : 's'})</span>
+                <span class="val-status-text">${audit.stats.total === 1 ? TP('live.health_issue1', "Health: {0}% ({1} Issue)", audit.score, audit.stats.total) : TP('live.health_issues', "Health: {0}% ({1} Issues)", audit.score, audit.stats.total)}</span>
             `;
             statusEl.onclick = () => {
                 this.openDataIntegrityModal();
             };
         } else {
             statusEl.className = 'canvas-validation-status-pill val-ok';
-            statusEl.title = 'Form Integrity 100%: All choice lists, labels, and logic dependencies are valid';
+            statusEl.title = TP('live.integrity_ok_title', "Form Integrity 100%: All choice lists, labels, and logic dependencies are valid");
             statusEl.innerHTML = `
                 <span class="val-status-icon">🛡️</span>
                 <span class="val-status-text">${TP('x.health_all_valid', 'Health: 100% (All Valid)')}</span>
@@ -1509,7 +1509,7 @@ class FormBuilder {
                 indicator.id = 'autosave-indicator';
                 indicator.className = 'autosave-badge';
                 indicator.innerHTML = '<span class="autosave-dot"></span> <span class="autosave-text">Ready</span>';
-                indicator.title = 'Changes are automatically saved to your browser local storage';
+                indicator.title = TP('live.autosave_title', "Changes are automatically saved to your browser local storage");
                 headerCenter.appendChild(indicator);
             }
         }
@@ -1599,7 +1599,7 @@ class FormBuilder {
             indicator.className = 'autosave-badge';
             indicator.innerHTML = '<span class="autosave-dot"></span> <span class="autosave-text">Ready</span>';
         }
-        this.showToast('Auto-save cache cleared', 'info');
+        this.showToast(TP('live.autosave_cleared', "Auto-save cache cleared"), 'info');
     }
 
     // ==========================================
@@ -1663,7 +1663,7 @@ class FormBuilder {
             this.isPerformingHistoryAction = false;
             this.updateUndoRedoUI();
             this.triggerAutoSave();
-            this.showToast(`Undone: ${previous.action || 'Change'}`, 'info');
+            this.showToast(TP('live.undone_toast', "Undone: {0}", previous.action || TP('live.default_change', "Change")), 'info');
         }
     }
 
@@ -1688,7 +1688,7 @@ class FormBuilder {
             this.isPerformingHistoryAction = false;
             this.updateUndoRedoUI();
             this.triggerAutoSave();
-            this.showToast(`Redone: ${next.action || 'Change'}`, 'info');
+            this.showToast(TP('live.redone_toast', "Redone: {0}", next.action || TP('live.default_change', "Change")), 'info');
         }
     }
 
@@ -1717,14 +1717,14 @@ class FormBuilder {
 
     exportJSON(skipIntegrityPrompt = false) {
         if (!this.currentForm) {
-            this.showToast('No form to export', 'error');
+            this.showToast(TP('live.no_form_export', "No form to export"), 'error');
             return;
         }
 
         if (!skipIntegrityPrompt) {
             const audit = this.runDataIntegrityCheck();
             if (audit.stats.critical > 0 || audit.stats.error > 0) {
-                const proceed = confirm(`⚠️ Data Integrity Notice: Your form has ${audit.stats.critical} critical and ${audit.stats.error} error diagnostic(s) (such as circular logic deadlock or missing select/radio choices).\n\nClick "Cancel" to inspect with the Data Integrity Checker, or "OK" to proceed with export anyway.`);
+                const proceed = confirm(TP('live.export_confirm', "⚠️ Data Integrity Notice: Your form has {0} critical and {1} error diagnostic(s) (such as circular logic deadlock or missing select/radio choices).\n\nClick \"Cancel\" to inspect with the Data Integrity Checker, or \"OK\" to proceed with export anyway.", audit.stats.critical, audit.stats.error));
                 if (!proceed) {
                     this.openDataIntegrityModal();
                     return;
@@ -1742,7 +1742,7 @@ class FormBuilder {
         downloadAnchor.click();
         downloadAnchor.remove();
 
-        this.showToast(`Exported "${fileName}"`, 'success');
+        this.showToast(TP('live.exported_toast', "Exported \"{0}\"", fileName), 'success');
     }
 
     importJSONFile(file) {
@@ -1755,7 +1755,7 @@ class FormBuilder {
                 this.loadFormFromJSON(parsed);
             } catch (err) {
                 console.error('JSON Import error:', err);
-                alert('Invalid JSON file. Please ensure the file contains valid form configuration JSON.');
+                alert(TP('live.invalid_json_alert', "Invalid JSON file. Please ensure the file contains valid form configuration JSON."));
             }
         };
         reader.readAsText(file);
@@ -1763,7 +1763,7 @@ class FormBuilder {
 
     loadFormFromJSON(formData) {
         if (!formData || typeof formData !== 'object') {
-            alert('Invalid form data format.');
+            alert(TP('live.invalid_form_alert', "Invalid form data format."));
             return;
         }
 
@@ -1783,7 +1783,7 @@ class FormBuilder {
                     }]
                 };
             } else {
-                alert('Imported JSON must contain a "sections" or "fields" array.');
+                alert(TP('live.missing_sections_alert', "Imported JSON must contain a \"sections\" or \"fields\" array."));
                 return;
             }
         }
@@ -1809,7 +1809,7 @@ class FormBuilder {
         });
 
         this.loadForm(formData, 'Import JSON');
-        this.showToast(`Form "${formData.name || 'Imported'}" loaded successfully!`, 'success');
+        this.showToast(TP('live.loaded_toast', "Form \"{0}\" loaded successfully!", formData.name || TP('live.default_imported', "Imported")), 'success');
     }
 
     // ==========================================
@@ -1828,7 +1828,7 @@ class FormBuilder {
                         propSearch.focus();
                         propSearch.select();
                         propSearch.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                        this.showToast('🔍 Field Property Search focused (Ctrl+F)', 'info');
+                        this.showToast(TP('live.search_focused_toast', "🔍 Field Property Search focused (Ctrl+F)"), 'info');
                         return;
                     }
                 }
@@ -1839,7 +1839,7 @@ class FormBuilder {
                     searchInput.focus();
                     searchInput.select();
                     searchInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    this.showToast('Palette filter search focused (Ctrl+F)', 'info');
+                    this.showToast(TP('live.palette_focused_toast', "Palette filter search focused (Ctrl+F)"), 'info');
                     return;
                 }
             }
@@ -1969,7 +1969,7 @@ class FormBuilder {
                     const canvasItem = this.dom.canvas.querySelector(`[data-field-id="${this.selectedFieldId}"]`);
                     if (canvasItem) {
                         canvasItem.focus();
-                        this.showToast('🎯 Focus returned to canvas field', 'info');
+                        this.showToast(TP('live.focus_returned_toast', "🎯 Focus returned to canvas field"), 'info');
                     }
                 } else {
                     this.deselectField();
@@ -2077,7 +2077,7 @@ class FormBuilder {
         });
 
         this.recordState('Reset Field Position Offset');
-        this.showToast('📐 Field position offset reset to standard layout', 'info');
+        this.showToast(TP('live.position_reset_toast', "📐 Field position offset reset to standard layout"), 'info');
         this.showCanvasNudgeHUD(targetIds.length > 1 ? `${targetIds.length} Fields` : 'Field', 0, 0);
     }
 
@@ -2109,7 +2109,7 @@ class FormBuilder {
 
         const nextId = allFieldIds[nextIndex];
         this.selectField(nextId, true);
-        this.showToast(`Selected: ${nextIndex + 1} of ${allFieldIds.length} fields (Tab to edit)`, 'info');
+        this.showToast(TP('live.selected_toast', "Selected: {0} of {1} fields (Tab to edit)", nextIndex + 1, allFieldIds.length), 'info');
     }
 
     focusPropertyEditor() {
@@ -2121,7 +2121,7 @@ class FormBuilder {
             target.focus();
             if (target.select) target.select();
             target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            this.showToast('⌨️ Property Editor focused. Use Tab to cycle settings, Esc to return.', 'info');
+            this.showToast(TP('live.prop_focused_toast', "⌨️ Property Editor focused. Use Tab to cycle settings, Esc to return."), 'info');
         }
     }
 
@@ -2143,7 +2143,7 @@ class FormBuilder {
         this.recordState(`Move Field ${delta < 0 ? 'Up' : 'Down'} in Section`);
         this.renderCanvas();
         this.selectField(moved.id, false);
-        this.showToast(`↕️ Moved "${moved.label || 'Field'}" ${delta < 0 ? 'Up' : 'Down'}`, 'info');
+        this.showToast(delta < 0 ? TP('live.moved_up', "↕️ Moved \"{0}\" Up", moved.label || TP('live.default_field', "Field")) : TP('live.moved_down', "↕️ Moved \"{0}\" Down", moved.label || TP('live.default_field', "Field")), 'info');
     }
 
     initToolbarHandlers() {
@@ -2178,7 +2178,7 @@ class FormBuilder {
                 if (exportDropdown) exportDropdown.classList.remove('show');
                 if (window.PDFGenerator && typeof window.PDFGenerator.generateSchemaMappingPDF === 'function') {
                     window.PDFGenerator.generateSchemaMappingPDF(this.currentForm);
-                    this.showToast('Generating Client Schema Mapping Guide...', 'info');
+                    this.showToast(TP('live.schema_guide_toast', "Generating Client Schema Mapping Guide..."), 'info');
                 }
             });
         }
@@ -2463,9 +2463,9 @@ class FormBuilder {
             localStorage.setItem('formBuilder_showSmartSuggest', active ? 'true' : 'false');
             if (active) {
                 this.renderRecommendedFields();
-                this.showToast('Smart Suggest recommended fields enabled', 'info');
+                this.showToast(TP('live.suggest_on_toast', "Smart Suggest recommended fields enabled"), 'info');
             } else {
-                this.showToast('Smart Suggest section hidden', 'info');
+                this.showToast(TP('live.suggest_off_toast', "Smart Suggest section hidden"), 'info');
             }
         });
     }
@@ -2620,13 +2620,13 @@ class FormBuilder {
                     dupBtn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         this.addField(ft.type, null, this.selectedSectionId);
-                        this.showToast('Added ' + ft.label + ' to form', 'info');
+                        this.showToast(TP('live.added_to_form_toast', "Added {0} to form", ft.label), 'info');
                     });
                 }
 
                 el.addEventListener('click', () => {
                     this.addField(ft.type, null, this.selectedSectionId);
-                    this.showToast('Added ' + ft.label, 'info');
+                    this.showToast(TP('live.added_toast', "Added {0}", ft.label), 'info');
                 });
 
                 itemsContainer.appendChild(el);
@@ -2929,7 +2929,7 @@ class FormBuilder {
         this.selectField(newField.id);
         this.renderRecommendedFields();
         this.triggerAutoSave();
-        this.showToast(`Added recommended field: "${rec.label}"`, 'success');
+        this.showToast(TP('live.recommended_added_toast', "Added recommended field: \"{0}\"", rec.label), 'success');
     }
 
     // ==========================================
@@ -3002,7 +3002,7 @@ class FormBuilder {
             parseRawBtn.addEventListener('click', () => {
                 const text = rawTextarea.value.trim();
                 if (!text) {
-                    alert('Please paste CSV content into the box before clicking Parse.');
+                    alert(TP('live.csv_paste_alert', "Please paste CSV content into the box before clicking Parse."));
                     return;
                 }
                 const fields = this.parseCSV(text);
@@ -3083,7 +3083,7 @@ class FormBuilder {
     handleCSVFile(file) {
         if (!file) return;
         if (!file.name.endsWith('.csv') && file.type !== 'text/csv' && file.type !== 'application/vnd.ms-excel') {
-            alert('Please select a valid CSV (.csv) file.');
+            alert(TP('live.csv_invalid_file_alert', "Please select a valid CSV (.csv) file."));
             return;
         }
 
@@ -3232,7 +3232,7 @@ class FormBuilder {
         if (!tbody) return;
 
         if (!fields || fields.length === 0) {
-            alert('No valid field rows found in the CSV. Please ensure your CSV has header columns (Field Name, Type, Required, Helper Text).');
+            alert(TP('live.csv_no_rows_alert', "No valid field rows found in the CSV. Please ensure your CSV has header columns (Field Name, Type, Required, Helper Text)."));
             return;
         }
 
@@ -3267,7 +3267,7 @@ class FormBuilder {
 
     executeCSVImport() {
         if (!this.parsedCSVFields || this.parsedCSVFields.length === 0) {
-            alert('No fields to import.');
+            alert(TP('live.csv_no_fields_alert', "No fields to import."));
             return;
         }
 
@@ -3311,7 +3311,7 @@ class FormBuilder {
         const modal = document.getElementById('bulk-csv-import-modal') || document.getElementById('bulk-csv-modal');
         if (modal) modal.style.display = 'none';
 
-        this.showToast(`Successfully imported ${this.parsedCSVFields.length} fields into "${targetSection.title}"!`, 'success');
+        this.showToast(TP('live.csv_imported_toast', "Successfully imported {0} fields into \"{1}\"!", this.parsedCSVFields.length, targetSection.title), 'success');
     }
 
     downloadCSVTemplate() {
@@ -3335,7 +3335,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
         link.click();
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
-        this.showToast('Downloaded sample CSV template', 'info');
+        this.showToast(TP('live.csv_template_toast', "Downloaded sample CSV template"), 'info');
     }
 
     initPaletteSearch() {
@@ -4458,9 +4458,9 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 targetBtn.textContent = '✅ Copied!';
                 setTimeout(() => { targetBtn.textContent = orig; }, 1500);
             }
-            this.showToast('Field configuration JSON copied to clipboard.', 'success');
+            this.showToast(TP('live.field_copied_toast', "Field configuration JSON copied to clipboard."), 'success');
         }).catch(() => {
-            this.showToast('Failed to copy to clipboard.', 'error');
+            this.showToast(TP('live.copy_failed_toast', "Failed to copy to clipboard."), 'error');
         });
     }
 
@@ -5502,7 +5502,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                         this.renderCanvas();
                         this.selectField(field.id, false);
                     } else {
-                        alert('Field must have at least one option.');
+                        alert(TP('live.option_min_alert', "Field must have at least one option."));
                     }
                 });
             });
@@ -5866,7 +5866,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
         const handleLogoFile = (file) => {
             if (!file) return;
             if (!file.type.startsWith('image/')) {
-                alert('Please upload a valid image file (PNG, JPEG, WebP, SVG).');
+                alert(TP('live.image_invalid_alert', "Please upload a valid image file (PNG, JPEG, WebP, SVG)."));
                 return;
             }
             const reader = new FileReader();
@@ -5958,7 +5958,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 }
 
                 modal.style.display = 'none';
-                this.showToast('PDF & Print Automation settings saved successfully', 'success');
+                this.showToast(TP('live.pdf_saved_toast', "PDF & Print Automation settings saved successfully"), 'success');
             });
         }
     }
