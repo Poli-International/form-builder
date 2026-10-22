@@ -3541,6 +3541,8 @@ body.dark-mode .palette-item:hover .palette-icon-badge {
   border-color: #3b82f6;
 }
 
+/* the badge-type backgrounds stay pastel in dark mode too: their drawn icons keep a dark stroke */
+[class*="badge-type-"] > .palette-icon-symbol { color: #334155; }
 .badge-type-text { background: #f0fdf4 !important; border-color: #bbf7d0 !important; }
 .badge-type-contact { background: #eff6ff !important; border-color: #bfdbfe !important; }
 .badge-type-datetime { background: #fefce8 !important; border-color: #fef08a !important; }
