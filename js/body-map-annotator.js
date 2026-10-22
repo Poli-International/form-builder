@@ -49,10 +49,10 @@ class BodyMapAnnotator {
 
     static getViews() {
         return [
-            { id: 'body_front_back', name: 'Full Body (Front & Back)', icon: '🧍' },
-            { id: 'ears', name: 'Ear Anatomy (Left & Right)', icon: '👂' },
-            { id: 'face', name: 'Facial Anatomy & Oral', icon: '👤' },
-            { id: 'hands_arms', name: 'Arms & Hands', icon: '✋' }
+            { id: 'body_front_back', name: 'Full Body (Front & Back)', icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-user></use></svg>' },
+            { id: 'ears', name: 'Ear Anatomy (Left & Right)', icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-ring></use></svg>' },
+            { id: 'face', name: 'Facial Anatomy & Oral', icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-user></use></svg>' },
+            { id: 'hands_arms', name: 'Arms & Hands', icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-gloves></use></svg>' }
         ];
     }
 
@@ -73,20 +73,20 @@ class BodyMapAnnotator {
                     <div class="body-map-views-group">
                         <label class="body-map-tool-label">View:</label>
                         <select class="body-map-view-select" id="view-select-${this.fieldId}">
-                            <option value="body_front_back" ${this.currentView === 'body_front_back' ? 'selected' : ''}>🧍 Full Body (Front/Back)</option>
-                            <option value="ears" ${this.currentView === 'ears' ? 'selected' : ''}>👂 Ear Anatomy (L & R)</option>
-                            <option value="face" ${this.currentView === 'face' ? 'selected' : ''}>👤 Facial Anatomy</option>
-                            <option value="hands_arms" ${this.currentView === 'hands_arms' ? 'selected' : ''}>✋ Arms & Hands</option>
+                            <option value="body_front_back" ${this.currentView === 'body_front_back' ? 'selected' : ''}>Full Body (Front/Back)</option>
+                            <option value="ears" ${this.currentView === 'ears' ? 'selected' : ''}>Ear Anatomy (L & R)</option>
+                            <option value="face" ${this.currentView === 'face' ? 'selected' : ''}>Facial Anatomy</option>
+                            <option value="hands_arms" ${this.currentView === 'hands_arms' ? 'selected' : ''}>Arms & Hands</option>
                         </select>
                     </div>
 
                     ${!this.readOnly ? `
                     <div class="body-map-tools-group">
                         <button type="button" class="btn-bm-tool ${this.currentTool === 'pin' ? 'active' : ''}" data-tool="pin" id="tool-pin-${this.fieldId}" title="Drop placement pin on diagram">
-                            📍 Pin
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pin></use></svg> Pin
                         </button>
                         <button type="button" class="btn-bm-tool ${this.currentTool === 'draw' ? 'active' : ''}" data-tool="draw" id="tool-draw-${this.fieldId}" title="Freehand draw/circle placement areas">
-                            ✏️ Draw
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pen></use></svg> Draw
                         </button>
                         
                         <div class="body-map-color-picker">
@@ -101,7 +101,7 @@ class BodyMapAnnotator {
                             ↩ Undo
                         </button>
                         <button type="button" class="btn-bm-action btn-bm-clear" id="btn-bm-clear-${this.fieldId}" title="Clear all pins and markings">
-                            🗑️ Clear
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg> Clear
                         </button>
                     </div>
                     ` : ''}
@@ -118,7 +118,7 @@ class BodyMapAnnotator {
                 <!-- Pins & Placement Legend Table -->
                 <div class="body-map-pins-panel" id="pins-panel-${this.fieldId}">
                     <div class="body-map-pins-header">
-                        <strong>📍 Placed Markers &amp; Procedure Specifications (${this.pins.length})</strong>
+                        <strong><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pin></use></svg> Placed Markers &amp; Procedure Specifications (${this.pins.length})</strong>
                         <small class="text-muted">Click diagram to add pins with gauge, jewelry &amp; stencil placement notes</small>
                     </div>
                     <div class="body-map-pins-list" id="pins-list-${this.fieldId}">
@@ -461,12 +461,12 @@ class BodyMapAnnotator {
                 <div class="bm-pin-badge" style="background: ${pin.color || '#dc2626'};">${pin.number}</div>
                 <div class="bm-pin-info">
                     <strong class="bm-pin-title">${this.escapeHtml(pin.label)}</strong>
-                    ${pin.notes ? `<div class="bm-pin-notes">📋 ${this.escapeHtml(pin.notes)}</div>` : ''}
+                    ${pin.notes ? `<div class="bm-pin-notes"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> ${this.escapeHtml(pin.notes)}</div>` : ''}
                     <div class="bm-pin-meta">View: ${this.escapeHtml(pin.view)} • Coordinates: (${pin.x}, ${pin.y})</div>
                 </div>
                 ${!this.readOnly ? `
                     <button type="button" class="btn-bm-remove-pin" onclick="window.ActiveBodyMaps && window.ActiveBodyMaps['${this.fieldId}'] && window.ActiveBodyMaps['${this.fieldId}'].removePin('${pin.id}')" title="Remove this marker">
-                        ✕
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg>
                     </button>
                 ` : ''}
             </div>
@@ -480,7 +480,7 @@ class BodyMapAnnotator {
         }
         const headerEl = this.container.querySelector('.body-map-pins-header strong');
         if (headerEl) {
-            headerEl.textContent = TP("x.placed_markers_procedure_specifications", "📍 Placed Markers & Procedure Specifications ({0})", this.pins.length);
+            headerEl.textContent = TP("x.placed_markers_procedure_specifications", "Placed Markers & Procedure Specifications ({0})", this.pins.length);
         }
     }
 
