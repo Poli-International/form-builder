@@ -159,7 +159,7 @@ const MultiSessionPlanner = {
             const now = Date.now();
             MultiSessionPlanner.autoCheckpointSeq++;
             const timeStr = new Date(now).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            const finalName = '⏱️ Checkpoint (Auto #' + MultiSessionPlanner.autoCheckpointSeq + ' - ' + timeStr + ')';
+            const finalName = 'Checkpoint (Auto #' + MultiSessionPlanner.autoCheckpointSeq + ' - ' + timeStr + ')';
             const notes = 'Automatic checkpoint saved after 10 consecutive edits. (Last edit: ' + lastAction + ')';
 
             const newVersion = {
@@ -187,7 +187,7 @@ const MultiSessionPlanner = {
             localStorage.setItem(MultiSessionPlanner.STORAGE_KEY, JSON.stringify(combined));
 
             if (window.FormBuilderApp) {
-                const toastMsg = window.i18n ? window.i18n.t('multisession.checkpoint_saved') : '⏱️ Auto-checkpoint saved (10 consecutive changes)';
+                const toastMsg = window.i18n ? window.i18n.t('multisession.checkpoint_saved') : 'Auto-checkpoint saved (10 consecutive changes)';
                 window.FormBuilderApp.showToast(toastMsg, 'info');
             }
 
@@ -458,8 +458,8 @@ const MultiSessionPlanner = {
         }
 
         const tabAllText = window.i18n ? window.i18n.t('multisession.tab_all', { count: allVersions.length }) : ('All Versions (' + allVersions.length + ')');
-        const tabAutoText = window.i18n ? window.i18n.t('multisession.tab_auto_checkpoints', { count: autoCount }) : ('⏱️ Auto-Checkpoints (' + autoCount + ')');
-        const tabManualText = window.i18n ? window.i18n.t('multisession.tab_manual_drafts', { count: manualCount }) : ('📌 Manual Drafts (' + manualCount + ')');
+        const tabAutoText = window.i18n ? window.i18n.t('multisession.tab_auto_checkpoints', { count: autoCount }) : ('Auto-Checkpoints (' + autoCount + ')');
+        const tabManualText = window.i18n ? window.i18n.t('multisession.tab_manual_drafts', { count: manualCount }) : ('Manual Drafts (' + manualCount + ')');
 
         let html = '<div class="multisession-tab-filter-bar">';
         html += '<button type="button" class="multisession-tab-btn ' + (MultiSessionPlanner.currentFilterTab === 'all' ? 'active' : '') + '" onclick="MultiSessionPlanner.setFilterTab(\'all\')">' + tabAllText + '</button>';
@@ -474,7 +474,7 @@ const MultiSessionPlanner = {
                 : (window.i18n ? window.i18n.t('multisession.no_versions_desc', 'Use the form above to snapshot your current form layout as a multi-session checkpoint or draft iteration.') : 'Use the form above to snapshot your current form layout as a multi-session checkpoint or draft iteration.');
 
             html += '<div class="multisession-empty-state" style="text-align: center; padding: 2.5rem 1rem; color: #64748b; background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 10px;">';
-            html += '<div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📁</div>';
+            html += '<div style="font-size: 2.5rem; margin-bottom: 0.5rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-folder></use></svg></div>';
             html += '<h4 style="margin: 0 0 0.35rem 0; color: #334155; font-size: 1.05rem;">' + MultiSessionPlanner.escapeHtml(emptyTitle) + '</h4>';
             html += '<p style="font-size: 0.85rem; max-width: 420px; margin: 0 auto 1rem auto; line-height: 1.4;">' + MultiSessionPlanner.escapeHtml(emptyDesc) + '</p>';
             html += '</div>';
@@ -497,7 +497,7 @@ const MultiSessionPlanner = {
                 }
             }
 
-            const autoBadgeText = window.i18n ? window.i18n.t('multisession.auto_checkpoint_badge', '⏱️ Auto-Checkpoint') : '⏱️ Auto-Checkpoint';
+            const autoBadgeText = window.i18n ? window.i18n.t('multisession.auto_checkpoint_badge', 'Auto-Checkpoint') : 'Auto-Checkpoint';
             const badgeHtml = isCheckpoint
                 ? '<span class="badge-auto-checkpoint" style="background: #f3e8ff; color: #6b21a8; font-weight: 700; font-size: 0.72rem; padding: 0.15rem 0.6rem; border-radius: 12px; border: 1px solid #d8b4fe;">' + autoBadgeText + '</span>'
                 : '<span class="badge-table-section" style="background: #e0f2fe; color: #0369a1; font-weight: 700; font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 4px;">' + MultiSessionPlanner.escapeHtml(displayCategory) + '</span>';
@@ -555,9 +555,9 @@ const MultiSessionPlanner = {
 
             // Localized Tooltips & Button Labels
             const restoreText = isCheckpoint 
-                ? (window.i18n ? window.i18n.t('multisession.restore_checkpoint', '🔄 Restore Checkpoint') : '🔄 Restore Checkpoint')
-                : (window.i18n ? window.i18n.t('multisession.switch_to_version', '🔄 Switch to Version') : '🔄 Switch to Version');
-            const compareText = window.i18n ? window.i18n.t('multisession.compare_btn_text', '🔍 Compare') : '🔍 Compare';
+                ? (window.i18n ? window.i18n.t('multisession.restore_checkpoint', 'Restore Checkpoint') : 'Restore Checkpoint')
+                : (window.i18n ? window.i18n.t('multisession.switch_to_version', 'Switch to Version') : 'Switch to Version');
+            const compareText = window.i18n ? window.i18n.t('multisession.compare_btn_text', 'Compare') : 'Compare';
             const loadTooltip = window.i18n ? window.i18n.t('multisession.load_version_tooltip', 'Load this version into the editor') : 'Load this version into the editor';
             const compareTooltip = window.i18n ? window.i18n.t('multisession.compare_tooltip', 'Compare this iteration with another version or active editor') : 'Compare this iteration with another version or active editor';
             const renameTooltip = window.i18n ? window.i18n.t('multisession.rename_tooltip', 'Rename Version') : 'Rename Version';
@@ -573,9 +573,9 @@ const MultiSessionPlanner = {
             html += '<h4 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: #0f172a;">' + MultiSessionPlanner.escapeHtml(displayName) + '</h4>';
             html += '</div>';
             html += '<div style="display: flex; align-items: center; gap: 0.85rem; font-size: 0.78rem; color: #64748b;">';
-            html += '<span>🕒 ' + MultiSessionPlanner.escapeHtml(formattedDate) + '</span>';
-            html += '<span>📋 ' + MultiSessionPlanner.escapeHtml(baseLabel) + ' <strong>' + MultiSessionPlanner.escapeHtml(displayFormName) + '</strong></span>';
-            html += '<span>🔢 ' + MultiSessionPlanner.escapeHtml(sectionsFieldsStr) + '</span>';
+            html += '<span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clock></use></svg> ' + MultiSessionPlanner.escapeHtml(formattedDate) + '</span>';
+            html += '<span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> ' + MultiSessionPlanner.escapeHtml(baseLabel) + ' <strong>' + MultiSessionPlanner.escapeHtml(displayFormName) + '</strong></span>';
+            html += '<span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-type></use></svg> ' + MultiSessionPlanner.escapeHtml(sectionsFieldsStr) + '</span>';
             html += '</div>';
             html += '</div>';
 
@@ -584,15 +584,15 @@ const MultiSessionPlanner = {
             html += restoreText;
             html += '</button>';
             html += '<button type="button" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.65rem;" onclick="MultiSessionPlanner.openCompareModal(\'' + v.id + '\')" title="' + MultiSessionPlanner.escapeHtml(compareTooltip) + '">' + compareText + '</button>';
-            html += '<button type="button" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.6rem;" onclick="MultiSessionPlanner.renameVersion(\'' + v.id + '\')" title="' + MultiSessionPlanner.escapeHtml(renameTooltip) + '">✏️</button>';
-            html += '<button type="button" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.6rem;" onclick="MultiSessionPlanner.duplicateVersion(\'' + v.id + '\')" title="' + MultiSessionPlanner.escapeHtml(duplicateTooltip) + '">📋</button>';
-            html += '<button type="button" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.6rem;" onclick="MultiSessionPlanner.exportVersionJSON(\'' + v.id + '\')" title="' + MultiSessionPlanner.escapeHtml(exportTooltip) + '">📥</button>';
-            html += '<button type="button" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.6rem; color: #dc2626;" onclick="MultiSessionPlanner.deleteVersion(\'' + v.id + '\')" title="' + MultiSessionPlanner.escapeHtml(deleteTooltip) + '">🗑️</button>';
+            html += '<button type="button" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.6rem;" onclick="MultiSessionPlanner.renameVersion(\'' + v.id + '\')" title="' + MultiSessionPlanner.escapeHtml(renameTooltip) + '"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pen></use></svg></button>';
+            html += '<button type="button" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.6rem;" onclick="MultiSessionPlanner.duplicateVersion(\'' + v.id + '\')" title="' + MultiSessionPlanner.escapeHtml(duplicateTooltip) + '"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></button>';
+            html += '<button type="button" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.6rem;" onclick="MultiSessionPlanner.exportVersionJSON(\'' + v.id + '\')" title="' + MultiSessionPlanner.escapeHtml(exportTooltip) + '"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-download></use></svg></button>';
+            html += '<button type="button" class="btn-secondary" style="font-size: 0.8rem; padding: 0.35rem 0.6rem; color: #dc2626;" onclick="MultiSessionPlanner.deleteVersion(\'' + v.id + '\')" title="' + MultiSessionPlanner.escapeHtml(deleteTooltip) + '"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg></button>';
             html += '</div>';
             html += '</div>';
 
             if (displayNotes) {
-                html += '<div style="background: ' + (isCheckpoint ? '#f3e8ff' : '#f8fafc') + '; border-left: 3px solid ' + (isCheckpoint ? '#9333ea' : '#0284c7') + '; padding: 0.4rem 0.75rem; border-radius: 4px; font-size: 0.82rem; color: #334155;">💬 ' + MultiSessionPlanner.escapeHtml(displayNotes) + '</div>';
+                html += '<div style="background: ' + (isCheckpoint ? '#f3e8ff' : '#f8fafc') + '; border-left: 3px solid ' + (isCheckpoint ? '#9333ea' : '#0284c7') + '; padding: 0.4rem 0.75rem; border-radius: 4px; font-size: 0.82rem; color: #334155;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-chat></use></svg> ' + MultiSessionPlanner.escapeHtml(displayNotes) + '</div>';
             }
             html += '</div>';
         });
@@ -845,7 +845,7 @@ const MultiSessionPlanner = {
 
             resultsEl.innerHTML = `
                 <div style="padding: 2.5rem 1rem; text-align: center; color: #16a34a; background: #f0fdf4; border-radius: 8px;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">✨</div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-spark></use></svg></div>
                     <h4 style="margin: 0 0 0.25rem 0; font-weight: 700; color: #15803d;">${MultiSessionPlanner.escapeHtml(identicalTitle)}</h4>
                     <p style="margin: 0; font-size: 0.86rem; color: #166534;">${MultiSessionPlanner.escapeHtml(identicalDesc)}</p>
                 </div>
@@ -856,7 +856,7 @@ const MultiSessionPlanner = {
         let html = '<div style="display: flex; flex-direction: column; gap: 0.75rem; padding: 0.25rem;">';
 
         if (metaDiffs.length > 0) {
-            const metaTitle = window.i18n ? window.i18n.t('multisession.diff_metadata_title', '📋 Form Metadata Updates:') : '📋 Form Metadata Updates:';
+            const metaTitle = window.i18n ? window.i18n.t('multisession.diff_metadata_title', 'Form Metadata Updates:') : 'Form Metadata Updates:';
             html += `
                 <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.75rem 1rem;">
                     <strong style="color: #1e40af; font-size: 0.86rem; display: block; margin-bottom: 0.3rem;">${MultiSessionPlanner.escapeHtml(metaTitle)}</strong>
