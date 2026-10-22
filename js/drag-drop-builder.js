@@ -4454,9 +4454,9 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
         const jsonStr = JSON.stringify(field, null, 2);
         navigator.clipboard.writeText(jsonStr).then(() => {
             if (targetBtn) {
-                const orig = targetBtn.textContent;
+                const orig = targetBtn.innerHTML;
                 targetBtn.textContent = 'Copied!';
-                setTimeout(() => { targetBtn.textContent = orig; }, 1500);
+                setTimeout(() => { targetBtn.innerHTML = orig; }, 1500);
             }
             this.showToast(TP('live.field_copied_toast', "Field configuration JSON copied to clipboard."), 'success');
         }).catch(() => {
