@@ -153,13 +153,13 @@ function initFieldIdsMapModal() {
         if (statsBar) {
             statsBar.innerHTML = `
                 <div style="font-size: 0.82rem; font-weight: 700; color: #1e293b;">
-                    📊 ${t('field_ids_map.total_fields', 'Total Fields')}: <span style="color: #2563eb;">${totalCount}</span>
+                    <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-chart></use></svg> ${t('field_ids_map.total_fields', 'Total Fields')}: <span style="color: #2563eb;">${totalCount}</span>
                 </div>
                 <div style="font-size: 0.82rem; font-weight: 600; color: #64748b;">
-                    ★ ${t('field_ids_map.mandatory_count', 'Required')}: <span style="color: #dc2626;">${reqCount}</span>
+                    <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-star></use></svg> ${t('field_ids_map.mandatory_count', 'Required')}: <span style="color: #dc2626;">${reqCount}</span>
                 </div>
                 <div style="font-size: 0.82rem; font-weight: 600; color: #64748b;">
-                    📑 ${t('field_ids_map.sections_count', 'Sections')}: <span style="color: #059669;">${secCount}</span>
+                    <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> ${t('field_ids_map.sections_count', 'Sections')}: <span style="color: #059669;">${secCount}</span>
                 </div>
                 ${q ? `<span style="font-size: 0.78rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 9999px; font-weight: 600;">${t('field_ids_map.showing_matches', 'Showing {count} matches', { count: filtered.length })}</span>` : ''}
             `;
@@ -168,7 +168,7 @@ function initFieldIdsMapModal() {
         if (filtered.length === 0) {
             container.innerHTML = `
                 <div style="text-align:center; padding: 2.5rem 1rem; color: #64748b;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔍</div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-search></use></svg></div>
                     <strong style="display:block; font-size: 0.95rem; color: #1e293b;">${t('field_ids_map.empty_title', 'No fields found')}</strong>
                     <p style="font-size: 0.8rem; margin-top: 4px;">${t('field_ids_map.empty_desc', 'Try searching for a different keyword or clear the search filter.')}</p>
                 </div>
@@ -201,21 +201,21 @@ function initFieldIdsMapModal() {
                     <td>
                         <strong style="color: #0f172a; display: block; font-size: 0.84rem;">${escapeHtml(f.label || t('canvas.untitled_field', 'Untitled Field'))}</strong>
                         <div style="font-size: 0.72rem; color: #64748b; margin-top: 2px; display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
-                            <span>📑 ${escapeHtml(item.sectionTitle)}</span>
-                            ${item.containerLabel ? `<span style="opacity: 0.7;">› 🗂️ ${escapeHtml(item.containerLabel)}</span>` : ''}
-                            ${isHidden ? `<span style="font-size: 0.65rem; background: #fee2e2; color: #991b1b; padding: 1px 4px; border-radius: 3px; font-weight: 600;">${t('field_ids_map.hidden_badge', '🚫 Hidden')}</span>` : ''}
+                            <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> ${escapeHtml(item.sectionTitle)}</span>
+                            ${item.containerLabel ? `<span style="opacity: 0.7;">› ${escapeHtml(item.containerLabel)}</span>` : ''}
+                            ${isHidden ? `<span style="font-size: 0.65rem; background: #fee2e2; color: #991b1b; padding: 1px 4px; border-radius: 3px; font-weight: 600;">${t('field_ids_map.hidden_badge', 'Hidden')}</span>` : ''}
                         </div>
                     </td>
                     <td>
                         <div class="field-id-code">
                             <span>${escapeHtml(f.id)}</span>
-                            <button type="button" class="btn-copy-id" onclick="window.copyTextToClipboard('${f.id}', '${t('field_ids_map.copied_id_toast', 'Field ID copied!')}')" title="${t('field_ids_map.copy_field_id', 'Copy field ID')}">📋</button>
+                            <button type="button" class="btn-copy-id" onclick="window.copyTextToClipboard('${f.id}', '${t('field_ids_map.copied_id_toast', 'Field ID copied!')}')" title="${t('field_ids_map.copy_field_id', 'Copy field ID')}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></button>
                         </div>
                     </td>
                     <td>
                         <div class="field-id-code" style="background: #ecfdf5; border-color: #a7f3d0; color: #065f46;">
                             <span>${escapeHtml(crmKey)}</span>
-                            <button type="button" class="btn-copy-id" onclick="window.copyTextToClipboard('${crmKey}', '${t('field_ids_map.copied_crm_toast', 'CRM Key copied!')}')" title="${t('field_ids_map.copy_crm_key', 'Copy CRM variable key')}">📋</button>
+                            <button type="button" class="btn-copy-id" onclick="window.copyTextToClipboard('${crmKey}', '${t('field_ids_map.copied_crm_toast', 'CRM Key copied!')}')" title="${t('field_ids_map.copy_crm_key', 'Copy CRM variable key')}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></button>
                         </div>
                     </td>
                     <td>
@@ -225,7 +225,7 @@ function initFieldIdsMapModal() {
                     </td>
                     <td>
                         ${isReq 
-                            ? `<span style="font-size: 0.72rem; background: #fee2e2; color: #b91c1c; padding: 2px 6px; border-radius: 4px; font-weight: 700;">${t('field_ids_map.mandatory_badge', '★ Required')}</span>` 
+                            ? `<span style="font-size: 0.72rem; background: #fee2e2; color: #b91c1c; padding: 2px 6px; border-radius: 4px; font-weight: 700;">${t('field_ids_map.mandatory_badge', 'Required')}</span>` 
                             : `<span style="font-size: 0.72rem; background: #f8fafc; color: #94a3b8; padding: 2px 6px; border-radius: 4px;">${t('field_ids_map.optional_badge', 'Optional')}</span>`
                         }
                     </td>
@@ -405,7 +405,7 @@ function initApp() {
                 templates.forEach(t => {
                     const opt = document.createElement('option');
                     opt.value = t.id;
-                    opt.textContent = `📋 ${t.name} (${t.category})`;
+                    opt.textContent = `${t.name} (${t.category})`;
                     templateSelect.appendChild(opt);
                 });
             }
@@ -527,7 +527,7 @@ function togglePreview() {
         // Switch back to Builder mode
         builderEl.style.display = 'flex';
         previewEl.style.display = 'none';
-        btn.innerHTML = '<span>👁️</span> Preview Form';
+        btn.innerHTML = '<span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-eye></use></svg></span> Preview Form';
         btn.classList.remove('btn-active');
         if (templateWrap) templateWrap.style.opacity = '1';
         if (historyControls) historyControls.style.display = 'flex';
@@ -541,7 +541,7 @@ function togglePreview() {
 
         builderEl.style.display = 'none';
         previewEl.style.display = 'block';
-        btn.innerHTML = '<span>✏️</span> Back to Editor';
+        btn.innerHTML = '<span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pen></use></svg></span> Back to Editor';
         btn.classList.add('btn-active');
         if (templateWrap) templateWrap.style.opacity = '0.5';
         if (historyControls) historyControls.style.display = 'none';
@@ -560,16 +560,16 @@ function initDarkMode() {
 
     if (stored === 'dark' || (!stored && prefersDark)) {
         document.body.classList.add('dark-mode');
-        if (toggle) toggle.textContent = '☀️';
+        if (toggle) toggle.innerHTML = '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-sun></use></svg>';
     } else {
-        if (toggle) toggle.textContent = '🌙';
+        if (toggle) toggle.innerHTML = '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-moon></use></svg>';
     }
 
     if (toggle) {
         toggle.addEventListener('click', () => {
             const isDark = document.body.classList.toggle('dark-mode');
             localStorage.setItem('poli_form_builder_theme', isDark ? 'dark' : 'light');
-            toggle.textContent = isDark ? '☀️' : '🌙';
+            toggle.innerHTML = isDark ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-sun></use></svg>' : '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-moon></use></svg>';
         });
     }
 }
@@ -659,7 +659,7 @@ function initPdfSettingsModal() {
 /**
  * Helper: Copy text to clipboard with multi-device fallback
  */
-async function copyTextToClipboard(text, btnElement, successLabel = '✓ Copied to Clipboard!') {
+async function copyTextToClipboard(text, btnElement, successLabel = 'Copied to Clipboard!') {
     // some callers pass the message to show instead of the button
     const message = typeof btnElement === 'string' ? btnElement : 'Copied to clipboard!';
     if (typeof btnElement === 'string') btnElement = null;
@@ -850,7 +850,7 @@ function initEmbedModal() {
     if (btnCopyDirectUrl && directUrlInput) {
         btnCopyDirectUrl.addEventListener('click', () => {
             const urlToCopy = directUrlInput.value || window.location.href;
-            copyTextToClipboard(urlToCopy, btnCopyDirectUrl, '✓ Copied to Clipboard!');
+            copyTextToClipboard(urlToCopy, btnCopyDirectUrl, 'Copied to Clipboard!');
         });
     }
 
@@ -858,7 +858,7 @@ function initEmbedModal() {
     if (btnCopyEmbedCode && iframeCodeTextarea) {
         btnCopyEmbedCode.addEventListener('click', () => {
             const codeToCopy = iframeCodeTextarea.value;
-            copyTextToClipboard(codeToCopy, btnCopyEmbedCode, '✓ Copied Iframe Code!');
+            copyTextToClipboard(codeToCopy, btnCopyEmbedCode, 'Copied Iframe Code!');
         });
     }
 
@@ -898,7 +898,7 @@ function initEmbedModal() {
                             <div class="qr-box">
                                 <img src="${qrDataUrl}" class="qr-img" alt="Intake QR Code" />
                             </div>
-                            <div class="instructions">📱 Scan to Complete Your Consultation &amp; Waiver</div>
+                            <div class="instructions"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-phone></use></svg> Scan to Complete Your Consultation &amp; Waiver</div>
                             <div class="instructions-sub">Point your phone's camera at the QR code to open your intake form directly on your mobile device.</div>
                             <div class="url-tag">${intakeUrl}</div>
                         </div>
