@@ -60,18 +60,18 @@ class FormPreview {
         let html = `
             <div class="preview-toolbar-bar">
                 <div class="preview-meta">
-                    <span class="preview-mode-tag">${t('preview.live_view', '👁️ Live Client Interactive View')}</span>
+                    <span class="preview-mode-tag">${t('preview.live_view', 'Live Client Interactive View')}</span>
                     <span class="preview-category-tag">${this.escapeHtml(this.formData.category || 'Consultation')}</span>
                 </div>
                 <div class="preview-tools">
-                    <button type="button" id="btn-toggle-kiosk" class="btn-secondary" onclick="window.ActiveFormPreview && window.ActiveFormPreview.enterKioskMode()" title="Switch to Step-by-Step Tablet Kiosk Mode for client check-in">📱 Tablet Kiosk Mode</button>
-                    <button type="button" id="btn-pdf-settings" class="btn-secondary" title="${t('preview.pdf_settings_title', 'Configure PDF generator & automatic print settings')}">${t('preview.pdf_settings', '⚙️ PDF & Print Settings')}</button>
-                    <button type="button" id="btn-auto-populate-defaults" class="btn-secondary" title="${t('preview.auto_fill_title', 'Auto-populate studio name and current system date from settings')}">${t('preview.auto_fill', '🪄 Auto-fill Studio & Date')}</button>
-                    <button type="button" id="btn-open-results-dashboard" class="btn-primary" title="${t('preview.results_dashboard_title', 'View interactive client intake results summary and data dashboard')}">${t('preview.results_dashboard', '📊 Results Dashboard')}</button>
-                    <button type="button" id="btn-print-preview" class="btn-secondary" title="${t('preview.print_form_title', 'Print this completed form or save as PDF via system print dialog')}">${t('preview.print_form', '🖨️ Print Form')}</button>
-                    <button type="button" id="btn-export-csv" class="btn-secondary" title="${t('preview.export_csv_title', 'Export client responses as a CSV spreadsheet')}">${t('preview.export_csv', '📊 Export CSV')}</button>
-                    <button type="button" id="btn-fill-sample" class="btn-secondary" title="${t('preview.fill_sample_title', 'Fill realistic test data for quick validation & PDF preview')}">${t('preview.fill_sample', '✨ Fill Sample Answers')}</button>
-                    <button type="button" id="btn-reset-preview" class="btn-text">${t('preview.reset_form', '🔄 Reset Form')}</button>
+                    <button type="button" id="btn-toggle-kiosk" class="btn-secondary" onclick="window.ActiveFormPreview && window.ActiveFormPreview.enterKioskMode()" title="Switch to Step-by-Step Tablet Kiosk Mode for client check-in"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-phone></use></svg> Tablet Kiosk Mode</button>
+                    <button type="button" id="btn-pdf-settings" class="btn-secondary" title="${t('preview.pdf_settings_title', 'Configure PDF generator & automatic print settings')}">${t('preview.pdf_settings', 'PDF & Print Settings')}</button>
+                    <button type="button" id="btn-auto-populate-defaults" class="btn-secondary" title="${t('preview.auto_fill_title', 'Auto-populate studio name and current system date from settings')}">${t('preview.auto_fill', 'Auto-fill Studio & Date')}</button>
+                    <button type="button" id="btn-open-results-dashboard" class="btn-primary" title="${t('preview.results_dashboard_title', 'View interactive client intake results summary and data dashboard')}">${t('preview.results_dashboard', 'Results Dashboard')}</button>
+                    <button type="button" id="btn-print-preview" class="btn-secondary" title="${t('preview.print_form_title', 'Print this completed form or save as PDF via system print dialog')}">${t('preview.print_form', 'Print Form')}</button>
+                    <button type="button" id="btn-export-csv" class="btn-secondary" title="${t('preview.export_csv_title', 'Export client responses as a CSV spreadsheet')}">${t('preview.export_csv', 'Export CSV')}</button>
+                    <button type="button" id="btn-fill-sample" class="btn-secondary" title="${t('preview.fill_sample_title', 'Fill realistic test data for quick validation & PDF preview')}">${t('preview.fill_sample', 'Fill Sample Answers')}</button>
+                    <button type="button" id="btn-reset-preview" class="btn-text">${t('preview.reset_form', 'Reset Form')}</button>
                 </div>
             </div>
 
@@ -79,7 +79,7 @@ class FormPreview {
             <div class="preview-progress-panel" id="preview-progress-panel">
                 <div class="preview-progress-header">
                     <div class="preview-progress-title-wrap">
-                        <span class="preview-progress-icon">📋</span>
+                        <span class="preview-progress-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></span>
                         <span class="preview-progress-title">${t('preview.progress_title', 'Form Completion Progress')}</span>
                     </div>
                     <div class="preview-progress-stats">
@@ -136,7 +136,7 @@ class FormPreview {
                     <div class="preview-section-card" id="section-${section.id}" data-section-id="${section.id}">
                         <div class="preview-section-header-row" onclick="window.ActiveFormPreview.toggleSection('${section.id}')">
                             <h3 class="preview-section-heading">
-                                ${isMedical ? '⚕️ ' : '📋 '}${this.escapeHtml(section.title)}
+                                ${isMedical ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-health></use></svg> ' : '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> '}${this.escapeHtml(section.title)}
                             </h3>
                             <button type="button" class="preview-sec-collapse-btn" title="Toggle section">
                                 <span id="sec-chevron-${section.id}">${isSectionCollapsed ? t('preview.expand', '▶ Expand') : t('preview.collapse', '▼ Collapse')}</span>
@@ -178,7 +178,7 @@ class FormPreview {
                                     <div class="preview-section-header-box ${isCollapsible ? 'preview-section-header-collapsible' : ''}" ${isCollapsible ? `onclick="window.ActiveFormPreview && window.ActiveFormPreview.toggleSectionHeaderGroup('${field.id}')"` : ''} style="${isCollapsible ? 'cursor:pointer; display:flex; justify-content:space-between; align-items:center;' : ''}">
                                         <div>
                                             <div class="preview-section-header-title-row">
-                                                <span class="preview-section-header-icon">📑</span>
+                                                <span class="preview-section-header-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></span>
                                                 <h4 class="preview-section-header-title">${this.escapeHtml(field.label || 'Section Header')}</h4>
                                             </div>
                                             ${(field.helperText || field.helpText) ? `<p class="preview-section-header-desc">${this.escapeHtml(field.helperText || field.helpText)}</p>` : ''}
@@ -213,20 +213,20 @@ class FormPreview {
         html += `
                 <div class="preview-form-footer">
                     <div class="preview-footer-note">
-                        ${window.i18n ? window.i18n.t('preview.privacy_footer_note', {}, '🔒 This form is processed entirely in your browser. No client data is uploaded, transmitted, or stored on our servers.') : '🔒 This form is processed entirely in your browser. No client data is uploaded, transmitted, or stored on our servers.'}
+                        ${window.i18n ? window.i18n.t('preview.privacy_footer_note', {}, 'This form is processed entirely in your browser. No client data is uploaded, transmitted, or stored on our servers.') : 'This form is processed entirely in your browser. No client data is uploaded, transmitted, or stored on our servers.'}
                     </div>
                     <div class="preview-footer-btn-group">
                         <button type="button" id="preview-results-btn" class="btn-secondary btn-large" title="Open client submissions and statistics dashboard">
-                            📊 View Results Dashboard
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-chart></use></svg> View Results Dashboard
                         </button>
                         <button type="button" id="preview-print-btn" class="btn-secondary btn-large">
-                            🖨️ Print Form
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-print></use></svg> Print Form
                         </button>
                         <button type="button" id="preview-export-csv-btn" class="btn-secondary btn-large">
-                            📊 Export Data as CSV
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-chart></use></svg> Export Data as CSV
                         </button>
                         <button type="button" id="preview-submit" class="btn-primary btn-large">
-                            📄 Generate & Download Official PDF
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-doc></use></svg> Generate & Download Official PDF
                         </button>
                     </div>
                 </div>
@@ -299,7 +299,7 @@ class FormPreview {
                 <div class="preview-container-field container-style-${style}" id="field-wrapper-${field.id}" data-field-id="${field.id}" data-type="container">
                     <div class="preview-container-header ${isCollapsible ? 'preview-container-collapsible-header' : ''}" ${isCollapsible ? `onclick="window.ActiveFormPreview && window.ActiveFormPreview.toggleContainer('${field.id}')"` : ''} style="${isCollapsible ? 'cursor:pointer; display:flex; justify-content:space-between; align-items:center;' : ''}">
                         <div>
-                            <h4 class="preview-container-title">📦 ${this.escapeHtml(field.label || 'Group Section')}</h4>
+                            <h4 class="preview-container-title"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-box></use></svg> ${this.escapeHtml(field.label || 'Group Section')}</h4>
                             ${helperText ? `<p class="preview-container-desc">${this.escapeHtml(helperText)}</p>` : ''}
                         </div>
                         ${isCollapsible ? `
@@ -327,7 +327,7 @@ class FormPreview {
                     <div class="preview-section-header-box ${isCollapsible ? 'preview-section-header-collapsible' : ''}" ${isCollapsible ? `onclick="window.ActiveFormPreview && window.ActiveFormPreview.toggleSectionHeaderGroup('${field.id}')"` : ''} style="${isCollapsible ? 'cursor:pointer; display:flex; justify-content:space-between; align-items:center;' : ''}">
                         <div>
                             <div class="preview-section-header-title-row">
-                                <span class="preview-section-header-icon">📑</span>
+                                <span class="preview-section-header-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></span>
                                 <h4 class="preview-section-header-title">${this.escapeHtml(field.label || 'Section Header')}</h4>
                             </div>
                             ${helperText ? `<p class="preview-section-header-desc">${this.escapeHtml(helperText)}</p>` : ''}
@@ -401,14 +401,14 @@ class FormPreview {
                 html += `
                     <div class="preview-photo-upload-container" id="photo-upload-wrapper-${field.id}">
                         <div class="photo-upload-dropzone" id="photo-dropzone-${field.id}">
-                            <div class="photo-upload-icon">🪪</div>
+                            <div class="photo-upload-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-id></use></svg></div>
                             <div class="photo-upload-prompt">
                                 <strong>Click to upload</strong> or drag & drop photo ID / reference image
                             </div>
                             <div class="photo-upload-subtext">JPG, PNG, WEBP or PDF (Max 10MB • Pure client-side secure verification)</div>
                             <input type="file" id="photo-file-input-${field.id}" accept="image/*,application/pdf" multiple style="display:none;">
                             <button type="button" class="btn-secondary btn-upload-photo" onclick="document.getElementById('photo-file-input-${field.id}').click()">
-                                📁 Choose Images / ID
+                                <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-folder></use></svg> Choose Images / ID
                             </button>
                         </div>
                         <div class="photo-preview-gallery" id="photo-gallery-${field.id}" style="display:none;"></div>
@@ -479,7 +479,7 @@ class FormPreview {
                             <canvas id="sig-canvas-${field.id}" class="signature-pad-canvas"></canvas>
                         </div>
                         <div class="signature-toolbar">
-                            <span class="sig-instructions">✍️ Sign inside the box using mouse, stylus, or fingertip</span>
+                            <span class="sig-instructions"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pen></use></svg> Sign inside the box using mouse, stylus, or fingertip</span>
                             <button type="button" class="btn-clear-sig" id="clear-sig-${field.id}">Clear Signature</button>
                         </div>
                         <div class="sig-verification-badge" id="sig-verification-${field.id}" style="display:none;"></div>
@@ -617,10 +617,10 @@ class FormPreview {
         badge.style.display = 'inline-flex';
         if (ageInfo.isMinor) {
             badge.className = 'date-age-calculated-badge badge-minor-alert';
-            badge.innerHTML = TP("x.calculated_age_yrs_mos_minor_client", "⚠️ <strong>Calculated Age: {0} yrs ({1} mos) — Minor Client</strong> (Legal Guardian Authorization Required)", ageInfo.years, ageInfo.months);
+            badge.innerHTML = TP("x.calculated_age_yrs_mos_minor_client", "<strong>Calculated Age: {0} yrs ({1} mos) — Minor Client</strong> (Legal Guardian Authorization Required)", ageInfo.years, ageInfo.months);
         } else {
             badge.className = 'date-age-calculated-badge badge-adult-verified';
-            badge.innerHTML = TP("x.calculated_age_yrs_verified_adult_18", "✅ <strong>Calculated Age: {0} yrs</strong> (Verified Adult • 18+)", ageInfo.years);
+            badge.innerHTML = TP("x.calculated_age_yrs_verified_adult_18", "<strong>Calculated Age: {0} yrs</strong> (Verified Adult • 18+)", ageInfo.years);
         }
 
         this.evaluateMinorAlerts();
@@ -645,17 +645,17 @@ class FormPreview {
             banner.style.display = 'block';
             banner.innerHTML = `
                 <div class="minor-alert-header">
-                    <span class="minor-alert-icon">🛡️</span>
+                    <span class="minor-alert-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-shield></use></svg></span>
                     <div>
                         <strong class="minor-alert-title">Minor Client Detected (Age: ${detectedMinor.years} years old)</strong>
                         <p class="minor-alert-desc">Under statutory regulations and established professional practice, procedures on clients under 18 years of age require verified Legal Parent/Guardian physical presence, government-issued photo ID verification of both parties, and co-signed legal authorization.</p>
                     </div>
                 </div>
                 <div class="minor-alert-checklist">
-                    <span class="minor-check-pill">✓ Parent/Legal Guardian Government Photo ID</span>
-                    <span class="minor-check-pill">✓ Minor Client Birth Certificate or Custody Order</span>
-                    <span class="minor-check-pill">✓ In-Person Physical Guardian Presence During Procedure</span>
-                    <span class="minor-check-pill">✓ Mandatory Co-Signed Guardian Attestation</span>
+                    <span class="minor-check-pill"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg> Parent/Legal Guardian Government Photo ID</span>
+                    <span class="minor-check-pill"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg> Minor Client Birth Certificate or Custody Order</span>
+                    <span class="minor-check-pill"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg> In-Person Physical Guardian Presence During Procedure</span>
+                    <span class="minor-check-pill"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg> Mandatory Co-Signed Guardian Attestation</span>
                 </div>
             `;
         } else {
@@ -748,13 +748,13 @@ class FormPreview {
             <div class="photo-preview-item" data-photo-id="${item.id}">
                 <div class="photo-preview-thumb-wrap" onclick="window.ActiveFormPreview.viewPhotoModal('${item.id}', '${fieldId}')" title="Click to view full size">
                     <img src="${item.dataUrl}" alt="${this.escapeHtml(item.name)}" class="photo-preview-thumb" />
-                    <div class="photo-zoom-overlay">🔍 Expand</div>
+                    <div class="photo-zoom-overlay"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-search></use></svg> Expand</div>
                 </div>
                 <div class="photo-preview-info">
                     <span class="photo-filename" title="${this.escapeHtml(item.name)}">${this.escapeHtml(item.name)}</span>
                     <span class="photo-filesize">${item.size} • ${item.timestamp}</span>
                 </div>
-                <button type="button" class="btn-remove-photo" onclick="window.ActiveFormPreview.removePhoto('${fieldId}', '${item.id}')" title="Remove photo">🗑️</button>
+                <button type="button" class="btn-remove-photo" onclick="window.ActiveFormPreview.removePhoto('${fieldId}', '${item.id}')" title="Remove photo"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg></button>
             </div>
         `).join('');
     }
@@ -780,7 +780,7 @@ class FormPreview {
                 <div class="photo-modal-content">
                     <div class="photo-modal-header">
                         <h4 id="photo-modal-title" style="margin:0; font-size:0.95rem; font-weight:700; color:#0f172a;">Photo Preview</h4>
-                        <button type="button" class="btn-close-modal" onclick="document.getElementById('photo-fullscreen-modal').style.display='none'">✕</button>
+                        <button type="button" class="btn-close-modal" onclick="document.getElementById('photo-fullscreen-modal').style.display='none'"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
                     </div>
                     <div class="photo-modal-body" style="padding:16px; text-align:center; background:#0f172a; border-radius:0 0 12px 12px;">
                         <img id="photo-modal-img" src="" alt="Preview" style="max-width:100%; max-height:75vh; border-radius:8px; object-fit:contain; box-shadow:0 8px 30px rgba(0,0,0,0.5);" />
@@ -904,7 +904,7 @@ class FormPreview {
                             <h3 class="kiosk-doc-title">${t('kiosk.mode_title', 'Tablet Kiosk Mode')}</h3>
                         </div>
                         <div class="kiosk-top-right">
-                            <button type="button" class="btn-exit-kiosk" onclick="window.ActiveFormPreview && window.ActiveFormPreview.requestKioskExit()">✕ ${t('kiosk.exit', 'Exit Kiosk')}</button>
+                            <button type="button" class="btn-exit-kiosk" onclick="window.ActiveFormPreview && window.ActiveFormPreview.requestKioskExit()"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg> ${t('kiosk.exit', 'Exit Kiosk')}</button>
                         </div>
                     </div>
                     <div class="kiosk-content-area" style="text-align:center; padding:3rem 1.5rem;">
@@ -951,7 +951,7 @@ class FormPreview {
                         <div class="kiosk-step-title">${this.escapeHtml(currentSec.title)}</div>
                     </div>
                     <div class="kiosk-top-right">
-                        <button type="button" class="btn-exit-kiosk" onclick="window.ActiveFormPreview && window.ActiveFormPreview.requestKioskExit()">✕ ${t('kiosk.exit', 'Exit Kiosk')}</button>
+                        <button type="button" class="btn-exit-kiosk" onclick="window.ActiveFormPreview && window.ActiveFormPreview.requestKioskExit()"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg> ${t('kiosk.exit', 'Exit Kiosk')}</button>
                     </div>
                 </div>
 
@@ -979,7 +979,7 @@ class FormPreview {
                         ${sections.map((_, idx) => `<span class="kiosk-dot ${idx === this.currentKioskStep ? 'active' : (idx < this.currentKioskStep ? 'done' : '')}"></span>`).join('')}
                     </div>
                     <button type="button" class="btn-kiosk-nav btn-kiosk-next" onclick="window.ActiveFormPreview && window.ActiveFormPreview.nextKioskStep()">
-                        ${isLast ? '✅ ' + t('kiosk.complete', 'Complete & Review PDF') + ' →' : t('kiosk.next', 'Next Step') + ' →'}
+                        ${isLast ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg> ' + t('kiosk.complete', 'Complete & Review PDF') + ' →' : t('kiosk.next', 'Next Step') + ' →'}
                     </button>
                 </div>
             </div>
@@ -1070,7 +1070,7 @@ class FormPreview {
         overlay.innerHTML = `
             <div class="kiosk-frame" style="position:relative;">
                 <div class="kiosk-content-area" style="text-align:center;padding:4rem 1.5rem;">
-                    <div style="font-size:3rem;">✅</div>
+                    <div style="font-size:3rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg></div>
                     <h2 style="margin:0.5rem 0;">${t('kiosk.thank_you', 'Thank you')}</h2>
                     <p style="font-size:1.1rem;color:#475569;">${t('kiosk.submitted', 'Your form has been submitted. Please hand the tablet back to the studio.')}</p>
                     <button type="button" class="btn-kiosk-staff-exit" style="margin-top:2rem;padding:10px 18px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;cursor:pointer;">${t('kiosk.staff_exit', 'Staff: exit')}</button>
@@ -1296,7 +1296,7 @@ class FormPreview {
         if (this.responses['blood_thinners'] === 'Yes') {
             alerts.push({
                 severity: 'high',
-                badge: '⚠️ Bleeding Risk Alert',
+                badge: 'Bleeding Risk Alert',
                 title: 'Blood Thinners / Anticoagulants Disclosed',
                 desc: 'Client is taking blood thinners or aspirin. Procedure may experience increased capillary bleeding, elongated clotting times, and increased ink blowout potential. Advise gentle needle velocity and strict pressure-hold aftercare.'
             });
@@ -1306,7 +1306,7 @@ class FormPreview {
         if (this.responses['pregnant'] === 'Yes') {
             alerts.push({
                 severity: 'critical',
-                badge: '⛔ Strict Contraindication',
+                badge: 'Strict Contraindication',
                 title: 'Pregnancy / Nursing Disclosed',
                 desc: 'Tattooing and piercing during pregnancy or lactation are contraindicated under professional studio safety protocols due to infection hazards, immune stress, and chemical absorption risks.'
             });
@@ -1317,7 +1317,7 @@ class FormPreview {
         if (conditions.includes('Hemophilia / Bleeding disorder')) {
             alerts.push({
                 severity: 'critical',
-                badge: '⛔ Physician Authorization Mandatory',
+                badge: 'Physician Authorization Mandatory',
                 title: 'Hemophilia or Coagulation Disorder',
                 desc: 'Severe hemorrhage risk. A signed written authorization and clearance note from the client\'s hematologist/physician is required before performing any skin penetration.'
             });
@@ -1325,7 +1325,7 @@ class FormPreview {
         if (conditions.includes('Diabetes')) {
             alerts.push({
                 severity: 'medium',
-                badge: '⚠️ Delayed Healing Precaution',
+                badge: 'Delayed Healing Precaution',
                 title: 'Diabetes Mellitus Disclosed',
                 desc: 'Clients with diabetes have elevated infection risks and slower skin regeneration rates. Ensure client has eaten, blood glucose is stable, and inspect distal limb circulation if tattooing extremities.'
             });
@@ -1333,7 +1333,7 @@ class FormPreview {
         if (conditions.includes('Keloid scarring tendency')) {
             alerts.push({
                 severity: 'medium',
-                badge: '⚠️ Scarring Notice',
+                badge: 'Scarring Notice',
                 title: 'Keloid Scarring Tendency',
                 desc: 'High risk of hypertrophic or raised keloid scar formation at the procedure site. Ensure client has signed the explicit scar waiver acknowledging this biological outcome.'
             });
@@ -1341,7 +1341,7 @@ class FormPreview {
         if (conditions.includes('Heart condition')) {
             alerts.push({
                 severity: 'high',
-                badge: '⚕️ Cardiac & Syncope Precaution',
+                badge: 'Cardiac & Syncope Precaution',
                 title: 'Cardiovascular Condition Disclosed',
                 desc: 'Client may be sensitive to vasovagal reactions (fainting) or require prophylactic antibiotic protocols. Keep client reclined and monitor respiration.'
             });
@@ -1349,7 +1349,7 @@ class FormPreview {
         if (conditions.includes('Epilepsy / Seizures')) {
             alerts.push({
                 severity: 'high',
-                badge: '⚕️ Seizure Risk Precaution',
+                badge: 'Seizure Risk Precaution',
                 title: 'Epilepsy / Seizure History',
                 desc: 'Inform the workstation artist. Ensure client is seated in a secure reclining position and minimize sudden flashing lights or intense stress spikes.'
             });
@@ -1357,7 +1357,7 @@ class FormPreview {
         if (conditions.includes('Immune system disorder') || conditions.includes('HIV/AIDS') || conditions.includes('Hepatitis')) {
             alerts.push({
                 severity: 'high',
-                badge: '⚕️ Immunocompromise / Bloodborne Protocol',
+                badge: 'Immunocompromise / Bloodborne Protocol',
                 title: 'Immune System or Bloodborne Disclosure',
                 desc: 'Strict universal barrier precautions and medical autoclave lot verification are mandatory. Emphasize sterile wound-healing aftercare.'
             });
@@ -1368,7 +1368,7 @@ class FormPreview {
         if (allergies.includes('Latex')) {
             alerts.push({
                 severity: 'high',
-                badge: '🧤 Barrier Alert: Latex Allergy',
+                badge: 'Barrier Alert: Latex Allergy',
                 title: 'Latex Allergy Disclosed',
                 desc: 'Practitioner MUST use 100% Nitrile or Vinyl gloves, barriers, and tape. Zero latex products at this workstation.'
             });
@@ -1376,7 +1376,7 @@ class FormPreview {
         if (allergies.includes('Metals (nickel, etc.)')) {
             alerts.push({
                 severity: 'high',
-                badge: '💎 Jewelry Precaution: Metal Sensitivity',
+                badge: 'Jewelry Precaution: Metal Sensitivity',
                 title: 'Nickel / Metal Allergy Disclosed',
                 desc: 'Select a nickel-free material: ASTM F-136 implant grade titanium (Ti6Al4V ELI), unalloyed ASTM F-67 titanium, high-purity niobium, 14k+ solid nickel-free gold, or a medical grade biocompatible polymer (PTFE ASTM F754). Avoid ASTM F-138 stainless steel: it is nickel-bearing and is not appropriate for a disclosed nickel sensitivity.'
             });
@@ -1384,7 +1384,7 @@ class FormPreview {
         if (allergies.includes('Topical anesthetics')) {
             alerts.push({
                 severity: 'high',
-                badge: '🧴 Anesthetic Precaution: Numbing Agent Allergy',
+                badge: 'Anesthetic Precaution: Numbing Agent Allergy',
                 title: 'Topical Anesthetic / Lidocaine Allergy',
                 desc: 'Do NOT apply secondary numbing gels, sprays, or lidocaine creams. Perform procedure without topical anesthetics.'
             });
@@ -1394,7 +1394,7 @@ class FormPreview {
         if (this.responses['alcohol_24hrs'] === 'Yes') {
             alerts.push({
                 severity: 'high',
-                badge: '🍷 Vasodilation & Legal Alert',
+                badge: 'Vasodilation & Legal Alert',
                 title: 'Alcohol Consumed in Past 24 Hours',
                 desc: 'Alcohol thins the blood, exacerbates swelling, and legally impairs client cognitive capacity to provide informed consent. Verify sobriety before proceeding.'
             });
@@ -1404,7 +1404,7 @@ class FormPreview {
         if (this.responses['eaten_4hrs'] === 'No') {
             alerts.push({
                 severity: 'medium',
-                badge: '🥪 Blood Sugar Precaution',
+                badge: 'Blood Sugar Precaution',
                 title: 'Client Has Not Eaten Within 4 Hours',
                 desc: 'Hypoglycemia risk. Client is prone to dizziness, nausea, or fainting during skin trauma. Offer water and a quick carbohydrate snack prior to beginning.'
             });
@@ -1415,7 +1415,7 @@ class FormPreview {
             let alertsHtml = `
                 <div class="contraindication-header">
                     <div class="contraindication-title-wrap">
-                        <span class="contraindication-icon">⚕️</span>
+                        <span class="contraindication-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-health></use></svg></span>
                         <div>
                             <h4 class="contraindication-title">Medical History Contraindications &amp; Safety Callouts (${alerts.length} Detected)</h4>
                             <p class="contraindication-sub">The following disclosures require artist awareness, procedural precautions, or formal physician clearance.</p>
@@ -1660,20 +1660,20 @@ class FormPreview {
 
         const count = errors.length;
         const plural = count > 1 ? 's' : '';
-        const titleText = `⚠️ Form Validation Summary (${count} mandatory field${plural} require attention)`;
+        const titleText = `Form Validation Summary (${count} mandatory field${plural} require attention)`;
         const descText = 'Please complete or correct the following highlighted fields before submitting or generating your official PDF document:';
 
         summaryEl.style.display = 'block';
         summaryEl.innerHTML = `
             <div class="validation-summary-header">
                 <div class="validation-summary-title-wrap">
-                    <span class="validation-summary-icon">⚠️</span>
+                    <span class="validation-summary-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-warn></use></svg></span>
                     <div>
                         <h4 class="validation-summary-title">${this.escapeHtml(titleText)}</h4>
                         <p class="validation-summary-desc">${this.escapeHtml(descText)}</p>
                     </div>
                 </div>
-                <button type="button" class="btn-summary-dismiss" onclick="window.ActiveFormPreview.dismissValidationSummary()" title="Dismiss Summary">✕</button>
+                <button type="button" class="btn-summary-dismiss" onclick="window.ActiveFormPreview.dismissValidationSummary()" title="Dismiss Summary"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="validation-summary-list">
                 ${errors.map((err, idx) => `
@@ -1682,7 +1682,7 @@ class FormPreview {
                             <span class="summary-item-num">${idx + 1}</span>
                             <div class="summary-item-info">
                                 <div class="summary-badges-row">
-                                    <span class="summary-sec-badge">📁 ${this.escapeHtml(err.sectionTitle)}</span>
+                                    <span class="summary-sec-badge"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-folder></use></svg> ${this.escapeHtml(err.sectionTitle)}</span>
                                 </div>
                                 <strong class="summary-field-name">${this.escapeHtml(err.fieldLabel)}</strong>
                                 <span class="summary-error-text">${this.escapeHtml(err.message)}</span>
@@ -1799,7 +1799,7 @@ class FormPreview {
         if (badgeEl) {
             if (percent === 100) {
                 badgeEl.className = 'preview-progress-badge badge-complete';
-                badgeEl.textContent = '100% Complete! ✨';
+                badgeEl.textContent = '100% Complete!';
             } else {
                 badgeEl.className = 'preview-progress-badge';
                 badgeEl.textContent = `${percent}%`;
@@ -2171,10 +2171,10 @@ class FormPreview {
                                 isComplete = true;
                                 const time = mgr.getFormattedTimestamp();
                                 displayVal = time 
-                                    ? t('results.signed_on_device', `✓ Digitally Signed on Device (${time})`, { time })
-                                    : t('results.signed_on_device_simple', '✓ Digitally Signed on Device');
+                                    ? t('results.signed_on_device', `Digitally Signed on Device (${time})`, { time })
+                                    : t('results.signed_on_device_simple', 'Digitally Signed on Device');
                             } else {
-                                displayVal = t('results.unsigned', '⚠️ Unsigned');
+                                displayVal = t('results.unsigned', 'Unsigned');
                             }
                         } else if (val !== undefined && val !== null && String(val).trim() !== '') {
                             if (Array.isArray(val)) {
@@ -2186,7 +2186,7 @@ class FormPreview {
                                 }
                             } else if (typeof val === 'boolean') {
                                 isComplete = val;
-                                displayVal = val ? t('results.val_yes_ack', '✓ Yes / Acknowledged') : t('results.val_no_uncheck', '✗ No / Unchecked');
+                                displayVal = val ? t('results.val_yes_ack', 'Yes / Acknowledged') : t('results.val_no_uncheck', 'No / Unchecked');
                             } else {
                                 isComplete = true;
                                 displayVal = translateTxt(String(val));
@@ -2236,13 +2236,13 @@ class FormPreview {
         if (summaryCards) {
             const completionSub = t('results.completion_sub', `${completedFields} of ${totalFields} fields answered`, { completed: completedFields, total: totalFields });
             const mandatorySub = percentReq === 100 
-                ? t('results.mandatory_sub_complete', '✓ 100% Complete') 
+                ? t('results.mandatory_sub_complete', '100% Complete') 
                 : t('results.mandatory_sub_missing', `${totalRequired - completedRequired} fields missing`, { count: totalRequired - completedRequired });
             const safetySub = contraindicationCount > 0 
-                ? t('results.safety_sub_alert', '⚠️ Physician/Artist Review') 
-                : t('results.safety_sub_clean', '✓ Clean Health Profile');
+                ? t('results.safety_sub_alert', 'Physician/Artist Review') 
+                : t('results.safety_sub_clean', 'Clean Health Profile');
             const signaturesSub = signaturesCount > 0 && signedCount === signaturesCount 
-                ? t('results.signatures_sub_all', '✓ All signed') 
+                ? t('results.signatures_sub_all', 'All signed') 
                 : (signaturesCount === 0 ? t('results.signatures_sub_none', 'No signature fields') : t('results.signatures_sub_pending', 'Pending client signature'));
 
             summaryCards.innerHTML = `
@@ -2282,7 +2282,7 @@ class FormPreview {
 
         if (searchInput) {
             searchInput.value = '';
-            searchInput.placeholder = t('results.search_placeholder', '🔍 Search responses, field names, or values...');
+            searchInput.placeholder = t('results.search_placeholder', 'Search responses, field names, or values...');
         }
 
         // 4. Render Table Rows Helper
@@ -2318,11 +2318,11 @@ class FormPreview {
             currentFiltered.forEach(item => {
                 let statusBadge = '';
                 if (item.isContraindication) {
-                    statusBadge = `<span class="badge-status-alert">${t('results.badge_contraindication', '⚠️ Contraindication')}</span>`;
+                    statusBadge = `<span class="badge-status-alert">${t('results.badge_contraindication', 'Contraindication')}</span>`;
                 } else if (item.isComplete) {
-                    statusBadge = `<span class="badge-status-completed">${t('results.badge_complete', '✓ Complete')}</span>`;
+                    statusBadge = `<span class="badge-status-completed">${t('results.badge_complete', 'Complete')}</span>`;
                 } else if (item.isRequired) {
-                    statusBadge = `<span class="badge-status-required">${t('results.badge_required', '⚠️ Required')}</span>`;
+                    statusBadge = `<span class="badge-status-required">${t('results.badge_required', 'Required')}</span>`;
                 } else {
                     statusBadge = `<span class="badge-status-optional">${t('results.badge_optional', 'Optional')}</span>`;
                 }
@@ -2499,7 +2499,7 @@ class FormPreview {
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.75rem;">
                     <div>
                         <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="font-size: 1.1rem;">📈</span>
+                            <span style="font-size: 1.1rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trend-up></use></svg></span>
                             <h4 style="margin: 0; font-size: 0.95rem; font-weight: 700; color: #0f172a;">
                                 ${t('results.trend_title', '30-Day Client Intake & Submission Velocity Trend')}
                             </h4>
