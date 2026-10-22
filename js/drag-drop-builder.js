@@ -217,7 +217,7 @@ class FormBuilder {
 
             if (buttonEl) {
                 const originalHtml = buttonEl.innerHTML;
-                buttonEl.innerHTML = '✓ Copied JSON!';
+                buttonEl.innerHTML = 'Copied JSON!';
                 buttonEl.classList.add('copied-success');
                 setTimeout(() => {
                     if (buttonEl) {
@@ -358,7 +358,7 @@ class FormBuilder {
 
         snapBadge.style.top = `${Math.max(2, relativeTop - 20)}px`;
         snapBadge.style.left = `${relativeLeft + 8}px`;
-        snapBadge.innerHTML = '🧲 Smart Snap Aligned';
+        snapBadge.innerHTML = 'Smart Snap Aligned';
         snapBadge.style.display = 'block';
     }
 
@@ -459,7 +459,7 @@ class FormBuilder {
             const timerEl = document.getElementById(`del-timer-${item.id}`);
             const progressEl = document.getElementById(`del-progress-${item.id}`);
             if (timerEl) {
-                timerEl.textContent = TP("x.s_left", "⏳ {0}s left", secondsLeft);
+                timerEl.textContent = TP("x.s_left", "{0}s left", secondsLeft);
             }
             if (progressEl) {
                 const percent = Math.max(0, Math.min(100, (secondsLeft / 60) * 100));
@@ -488,7 +488,7 @@ class FormBuilder {
         listEl.innerHTML = this.recentlyDeleted.map(item => {
             const secondsLeft = Math.max(0, Math.ceil((item.expiresAt - now) / 1000));
             const percent = Math.max(0, Math.min(100, (secondsLeft / 60) * 100));
-            const icon = item.type === 'section' ? '📑' : (item.type === 'multiple_fields' ? '📦' : this.getFieldTypeIcon(item.fieldType || 'text'));
+            const icon = item.type === 'section' ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg>' : (item.type === 'multiple_fields' ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-box></use></svg>' : this.getFieldTypeIcon(item.fieldType || 'text'));
             const typeLabel = item.type === 'section' ? 'Section' : (item.type === 'multiple_fields' ? `${item.count} Fields Block` : (item.fieldType || 'Field'));
             const originInfo = item.type === 'section' ? 'Top-level Canvas Section' : `From: ${this.escapeHtml(item.sectionTitle || 'Section')}`;
 
@@ -500,11 +500,11 @@ class FormBuilder {
                             <strong class="deleted-item-label" title="${this.escapeHtml(item.label)}">${this.escapeHtml(item.label)}</strong>
                             <span class="deleted-item-tag">${typeLabel}</span>
                         </div>
-                        <button type="button" class="btn-dismiss-deleted-item" onclick="window.FormBuilderApp.dismissRecentlyDeleted('${item.id}')" title="Dismiss from recovery bin">✕</button>
+                        <button type="button" class="btn-dismiss-deleted-item" onclick="window.FormBuilderApp.dismissRecentlyDeleted('${item.id}')" title="Dismiss from recovery bin"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
                     </div>
                     <div class="deleted-item-meta">
                         <span class="deleted-item-origin" title="${this.escapeHtml(originInfo)}">${this.escapeHtml(originInfo)}</span>
-                        <span class="deleted-item-timer" id="del-timer-${item.id}">⏳ ${secondsLeft}s left</span>
+                        <span class="deleted-item-timer" id="del-timer-${item.id}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clock></use></svg> ${secondsLeft}s left</span>
                     </div>
                     <div class="deleted-item-actions">
                         <button type="button" class="btn-restore-item" onclick="window.FormBuilderApp.restoreRecentlyDeleted('${item.id}')" title="Restore back to canvas">
@@ -1176,11 +1176,11 @@ class FormBuilder {
         // 2. Render Category Filter Tabs
         const categories = [
             { id: 'all', label: `${t('integrity.tab_all', {}, 'All Issues')} (${audit.stats.total})` },
-            { id: 'logic', label: `🔀 ${t('integrity.tab_logic', {}, 'Circular & Logic')} (${audit.issues.filter(i => i.category === 'logic').length})` },
-            { id: 'options', label: `📋 ${t('integrity.tab_options', {}, 'Option Lists')} (${audit.issues.filter(i => i.category === 'options').length})` },
-            { id: 'validation', label: `🛡️ ${t('integrity.tab_validation', {}, 'Validation')} (${audit.issues.filter(i => i.category === 'validation').length})` },
-            { id: 'label', label: `🏷️ ${t('integrity.tab_label', {}, 'Missing Labels')} (${audit.issues.filter(i => i.category === 'label').length})` },
-            { id: 'alias', label: `🔑 ${t('integrity.tab_alias', {}, 'CRM Aliases')} (${audit.issues.filter(i => i.category === 'alias').length})` }
+            { id: 'logic', label: `${t('integrity.tab_logic', {}, 'Circular & Logic')} (${audit.issues.filter(i => i.category === 'logic').length})` },
+            { id: 'options', label: `${t('integrity.tab_options', {}, 'Option Lists')} (${audit.issues.filter(i => i.category === 'options').length})` },
+            { id: 'validation', label: `${t('integrity.tab_validation', {}, 'Validation')} (${audit.issues.filter(i => i.category === 'validation').length})` },
+            { id: 'label', label: `${t('integrity.tab_label', {}, 'Missing Labels')} (${audit.issues.filter(i => i.category === 'label').length})` },
+            { id: 'alias', label: `${t('integrity.tab_alias', {}, 'CRM Aliases')} (${audit.issues.filter(i => i.category === 'alias').length})` }
         ];
 
         tabsEl.innerHTML = categories.map(cat => `
@@ -1198,7 +1198,7 @@ class FormBuilder {
             if (audit.issues.length === 0) {
                 issuesEl.innerHTML = `
                     <div class="integrity-perfect-state">
-                        <div class="integrity-perfect-icon">🎉</div>
+                        <div class="integrity-perfect-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-spark></use></svg></div>
                         <h4 class="integrity-perfect-title">${t('integrity.perfect_title', {}, 'Form Data Integrity 100% Verified')}</h4>
                         <p class="integrity-perfect-desc">${t('integrity.perfect_desc', {}, 'No circular logic dependencies, missing options, inverted validation limits, or duplicate CRM aliases detected. Your form is production ready for client intake and PDF exports!')}</p>
                     </div>
@@ -1233,7 +1233,7 @@ class FormBuilder {
                         <strong style="font-size: 0.72rem; color: #ef4444; width: 100%; margin-bottom: 2px;">${deadlockLabel}</strong>
                         ${issue.cycleChain.map((node, nIdx) => `
                             <span class="integrity-loop-node">${this.escapeHtml(node)}</span>
-                            ${nIdx < issue.cycleChain.length - 1 ? '<span class="integrity-loop-arrow">➔</span>' : ''}
+                            ${nIdx < issue.cycleChain.length - 1 ? '<span class="integrity-loop-arrow"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-arrow></use></svg></span>' : ''}
                         `).join('')}
                     </div>
                 `;
@@ -1253,17 +1253,17 @@ class FormBuilder {
                     </div>
                     ${loopChainHtml}
                     <div class="integrity-card-recommendation" style="font-size: 0.78rem; padding: 6px 10px; border-radius: 4px;">
-                        💡 <strong>${recommendationLabel}</strong> ${this.escapeHtml(issue.recommendation)}
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-bulb></use></svg> <strong>${recommendationLabel}</strong> ${this.escapeHtml(issue.recommendation)}
                     </div>
                     <div class="integrity-card-actions">
                         ${issue.fieldId ? `
                             <button type="button" class="btn-integrity-jump" onclick="window.FormBuilderApp.jumpToFieldAndFix('${issue.fieldId}', '${issue.targetProperty || 'label'}')">
-                                🔍 ${jumpBtnLabel}
+                                <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-search></use></svg> ${jumpBtnLabel}
                             </button>
                         ` : ''}
                         ${issue.quickFix ? `
                             <button type="button" class="btn-integrity-quickfix" onclick="window.FormBuilderApp.quickFixSingleIssue('${issue.id}')">
-                                ⚡ ${quickFixBtnLabel}
+                                <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-bolt></use></svg> ${quickFixBtnLabel}
                             </button>
                         ` : ''}
                     </div>
@@ -1349,14 +1349,14 @@ class FormBuilder {
             this.recordState(`Auto-fixed integrity issue: ${issue.title}`);
             this.renderCanvas();
             this.renderIntegrityModalContent(this.currentIntegrityFilter || 'all');
-            this.showToast(TP('live.resolved_toast', "✨ Resolved \"{0}\" successfully!", issue.title), 'success');
+            this.showToast(TP('live.resolved_toast', "Resolved \"{0}\" successfully!", issue.title), 'success');
         }
     }
 
     autoFixIntegrityIssues() {
         const audit = this.runDataIntegrityCheck();
         if (audit.issues.length === 0) {
-            this.showToast(TP('live.no_issues_toast', "✓ No issues to fix! Form is 100% valid."), 'success');
+            this.showToast(TP('live.no_issues_toast', "No issues to fix! Form is 100% valid."), 'success');
             return;
         }
 
@@ -1400,7 +1400,7 @@ class FormBuilder {
             this.recordState(`Auto-fixed ${fixedCount} data integrity issue(s)`);
             this.renderCanvas();
             this.renderIntegrityModalContent(this.currentIntegrityFilter || 'all');
-            this.showToast(fixedCount === 1 ? TP('live.repaired_one', "✨ Automatically repaired {0} issue!", fixedCount) : TP('live.repaired_many', "✨ Automatically repaired {0} issues!", fixedCount), 'success');
+            this.showToast(fixedCount === 1 ? TP('live.repaired_one', "Automatically repaired {0} issue!", fixedCount) : TP('live.repaired_many', "Automatically repaired {0} issues!", fixedCount), 'success');
         } else {
             this.showToast(TP('live.manual_review_toast', "Remaining issues require manual review in the property editor."), 'info');
         }
@@ -1424,7 +1424,7 @@ class FormBuilder {
         report += `**Status:** ${audit.stats.total} total issue(s) (${audit.stats.critical} Critical, ${audit.stats.error} Errors, ${audit.stats.warning} Warnings)\n\n`;
 
         if (audit.issues.length === 0) {
-            report += `✓ 100% Passed. All choice options, labels, and conditional logic dependencies are valid.\n`;
+            report += `100% Passed. All choice options, labels, and conditional logic dependencies are valid.\n`;
         } else {
             audit.issues.forEach((issue, idx) => {
                 report += `${idx + 1}. [${issue.severity}] ${issue.title} (Field: "${issue.fieldName}" [${issue.fieldType}])\n`;
@@ -1434,7 +1434,7 @@ class FormBuilder {
         }
 
         navigator.clipboard.writeText(report).then(() => {
-            this.showToast(TP('live.report_copied_toast', "📋 Data Integrity Report copied to clipboard!"), 'success');
+            this.showToast(TP('live.report_copied_toast', "Data Integrity Report copied to clipboard!"), 'success');
         }).catch(() => {
             this.showToast(TP('live.report_console_toast', "Report generated in console log."), 'info');
             console.log(report);
@@ -1476,7 +1476,7 @@ class FormBuilder {
             statusEl.className = `canvas-validation-status-pill ${hasCriticalOrError ? 'val-warning' : 'val-info'}`;
             statusEl.title = TP("x.data_integrity_diagnostic_issue_s_detected", "Data Integrity: {0} diagnostic issue(s) detected. Click to inspect.", audit.stats.total);
             statusEl.innerHTML = `
-                <span class="val-status-icon">${hasCriticalOrError ? '⚠️' : 'ℹ️'}</span>
+                <span class="val-status-icon">${hasCriticalOrError ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-warn></use></svg>' : '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-info></use></svg>'}</span>
                 <span class="val-status-text">${audit.stats.total === 1 ? TP('live.health_issue1', "Health: {0}% ({1} Issue)", audit.score, audit.stats.total) : TP('live.health_issues', "Health: {0}% ({1} Issues)", audit.score, audit.stats.total)}</span>
             `;
             statusEl.onclick = () => {
@@ -1486,7 +1486,7 @@ class FormBuilder {
             statusEl.className = 'canvas-validation-status-pill val-ok';
             statusEl.title = TP('live.integrity_ok_title', "Form Integrity 100%: All choice lists, labels, and logic dependencies are valid");
             statusEl.innerHTML = `
-                <span class="val-status-icon">🛡️</span>
+                <span class="val-status-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-shield></use></svg></span>
                 <span class="val-status-text">${TP('x.health_all_valid', 'Health: 100% (All Valid)')}</span>
             `;
             statusEl.onclick = () => {
@@ -1557,7 +1557,7 @@ class FormBuilder {
         }
 
         const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        toast.innerHTML = TP("x.auto_saved_2", "<span class=\"autosave-toast-icon\">💾</span> <span>Auto-saved <small style=\"opacity:0.75; font-size:0.75rem; margin-left:3px;\">{0}</small></span>", timeStr);
+        toast.innerHTML = TP("x.auto_saved_2", "<span class=\"autosave-toast-icon\"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-save></use></svg></span> <span>Auto-saved <small style=\"opacity:0.75; font-size:0.75rem; margin-left:3px;\">{0}</small></span>", timeStr);
         toast.classList.add('show');
 
         if (this.autoSaveToastTimeout) clearTimeout(this.autoSaveToastTimeout);
@@ -1724,7 +1724,7 @@ class FormBuilder {
         if (!skipIntegrityPrompt) {
             const audit = this.runDataIntegrityCheck();
             if (audit.stats.critical > 0 || audit.stats.error > 0) {
-                const proceed = confirm(TP('live.export_confirm', "⚠️ Data Integrity Notice: Your form has {0} critical and {1} error diagnostic(s) (such as circular logic deadlock or missing select/radio choices).\n\nClick \"Cancel\" to inspect with the Data Integrity Checker, or \"OK\" to proceed with export anyway.", audit.stats.critical, audit.stats.error));
+                const proceed = confirm(TP('live.export_confirm', "Data Integrity Notice: Your form has {0} critical and {1} error diagnostic(s) (such as circular logic deadlock or missing select/radio choices).\n\nClick \"Cancel\" to inspect with the Data Integrity Checker, or \"OK\" to proceed with export anyway.", audit.stats.critical, audit.stats.error));
                 if (!proceed) {
                     this.openDataIntegrityModal();
                     return;
@@ -1828,7 +1828,7 @@ class FormBuilder {
                         propSearch.focus();
                         propSearch.select();
                         propSearch.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                        this.showToast(TP('live.search_focused_toast', "🔍 Field Property Search focused (Ctrl+F)"), 'info');
+                        this.showToast(TP('live.search_focused_toast', "Field Property Search focused (Ctrl+F)"), 'info');
                         return;
                     }
                 }
@@ -1969,7 +1969,7 @@ class FormBuilder {
                     const canvasItem = this.dom.canvas.querySelector(`[data-field-id="${this.selectedFieldId}"]`);
                     if (canvasItem) {
                         canvasItem.focus();
-                        this.showToast(TP('live.focus_returned_toast', "🎯 Focus returned to canvas field"), 'info');
+                        this.showToast(TP('live.focus_returned_toast', "Focus returned to canvas field"), 'info');
                     }
                 } else {
                     this.deselectField();
@@ -1993,7 +1993,7 @@ class FormBuilder {
             hud.className = 'canvas-nudge-hud';
             hud.innerHTML = `
                 <div class="canvas-nudge-coords">
-                    <span id="canvas-nudge-info">📐 Pos: X: 0px, Y: 0px</span>
+                    <span id="canvas-nudge-info"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-ruler></use></svg> Pos: X: 0px, Y: 0px</span>
                     <span class="canvas-nudge-hint" style="color: rgba(255,255,255,0.6); font-size: 0.72rem; margin-left: 8px;">${TP('x.arrow_keys_hint', '(Arrow Keys: ±5px | Shift: ±20px | 0: Reset)')}</span>
                 </div>
             `;
@@ -2006,7 +2006,7 @@ class FormBuilder {
         const info = document.getElementById('canvas-nudge-info');
         if (!hud || !info) return;
 
-        info.innerHTML = TP("x.x_px_y_px", "<strong>{0}</strong> ➔ X: {1}{2}px, Y: {3}{4}px", this.escapeHtml(fieldLabel), x > 0 ? '+' : '', x, y > 0 ? '+' : '', y);
+        info.innerHTML = TP("x.x_px_y_px", "<strong>{0}</strong> <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-arrow></use></svg> X: {1}{2}px, Y: {3}{4}px", this.escapeHtml(fieldLabel), x > 0 ? '+' : '', x, y > 0 ? '+' : '', y);
         hud.classList.add('show');
 
         clearTimeout(this._nudgeHudTimeout);
@@ -2077,7 +2077,7 @@ class FormBuilder {
         });
 
         this.recordState('Reset Field Position Offset');
-        this.showToast(TP('live.position_reset_toast', "📐 Field position offset reset to standard layout"), 'info');
+        this.showToast(TP('live.position_reset_toast', "Field position offset reset to standard layout"), 'info');
         this.showCanvasNudgeHUD(targetIds.length > 1 ? `${targetIds.length} Fields` : 'Field', 0, 0);
     }
 
@@ -2121,7 +2121,7 @@ class FormBuilder {
             target.focus();
             if (target.select) target.select();
             target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            this.showToast(TP('live.prop_focused_toast', "⌨️ Property Editor focused. Use Tab to cycle settings, Esc to return."), 'info');
+            this.showToast(TP('live.prop_focused_toast', "Property Editor focused. Use Tab to cycle settings, Esc to return."), 'info');
         }
     }
 
@@ -2295,7 +2295,7 @@ class FormBuilder {
         return [
             { 
                 type: 'text', 
-                icon: '📝', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-note></use></svg>', 
                 badgeClass: 'badge-type-text', 
                 label: t('palette.field_labels.text', 'Short Text'), 
                 desc: t('palette.field_descriptions.text', 'Single-line text input'),
@@ -2303,7 +2303,7 @@ class FormBuilder {
             },
             { 
                 type: 'textarea', 
-                icon: '📄', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-doc></use></svg>', 
                 badgeClass: 'badge-type-text', 
                 label: t('palette.field_labels.textarea', 'Paragraph / Long Text'), 
                 desc: t('palette.field_descriptions.textarea', 'Multi-line notes and details'),
@@ -2311,7 +2311,7 @@ class FormBuilder {
             },
             { 
                 type: 'email', 
-                icon: '📧', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-mail></use></svg>', 
                 badgeClass: 'badge-type-contact', 
                 label: t('palette.field_labels.email', 'Email Address'), 
                 desc: t('palette.field_descriptions.email', 'Email validation pattern'),
@@ -2319,7 +2319,7 @@ class FormBuilder {
             },
             { 
                 type: 'tel', 
-                icon: '📱', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-phone></use></svg>', 
                 badgeClass: 'badge-type-contact', 
                 label: t('palette.field_labels.tel', 'Phone Number'), 
                 desc: t('palette.field_descriptions.tel', 'Phone format validation'),
@@ -2327,7 +2327,7 @@ class FormBuilder {
             },
             { 
                 type: 'date', 
-                icon: '📅', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calendar></use></svg>', 
                 badgeClass: 'badge-type-datetime', 
                 label: t('palette.field_labels.date', 'Date Picker'), 
                 desc: t('palette.field_descriptions.date', 'Date picker calendar'),
@@ -2335,7 +2335,7 @@ class FormBuilder {
             },
             { 
                 type: 'number', 
-                icon: '🔢', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-type></use></svg>', 
                 badgeClass: 'badge-type-number', 
                 label: t('palette.field_labels.number', 'Number / Quantity'), 
                 desc: t('palette.field_descriptions.number', 'Numeric values'),
@@ -2343,7 +2343,7 @@ class FormBuilder {
             },
             { 
                 type: 'checkbox', 
-                icon: '☑️', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg>', 
                 badgeClass: 'badge-type-choice', 
                 label: t('palette.field_labels.checkbox', 'Checkbox'), 
                 desc: t('palette.field_descriptions.checkbox', 'Single confirmation toggle'),
@@ -2351,7 +2351,7 @@ class FormBuilder {
             },
             { 
                 type: 'checkbox_group', 
-                icon: '📑', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg>', 
                 badgeClass: 'badge-type-choice', 
                 label: t('palette.field_labels.checkbox_group', 'Checkbox Group'), 
                 desc: t('palette.field_descriptions.checkbox_group', 'Multi-choice checklist'),
@@ -2359,7 +2359,7 @@ class FormBuilder {
             },
             { 
                 type: 'radio', 
-                icon: '🔘', 
+                icon: '<svg class=ti-i width=.7em height=.7em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-dot-grey></use></svg>', 
                 badgeClass: 'badge-type-choice', 
                 label: t('palette.field_labels.radio', 'Radio Choices'), 
                 desc: t('palette.field_descriptions.radio', 'Single choice selector'),
@@ -2367,7 +2367,7 @@ class FormBuilder {
             },
             { 
                 type: 'select', 
-                icon: '📋', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg>', 
                 badgeClass: 'badge-type-choice', 
                 label: t('palette.field_labels.select', 'Dropdown Menu'), 
                 desc: t('palette.field_descriptions.select', 'Dropdown select menu'),
@@ -2375,7 +2375,7 @@ class FormBuilder {
             },
             { 
                 type: 'section_header', 
-                icon: '📑', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg>', 
                 badgeClass: 'badge-type-layout', 
                 label: t('palette.field_labels.section_header', 'Section Header'), 
                 desc: t('palette.field_descriptions.section_header', 'Visual group header with title & description'),
@@ -2383,7 +2383,7 @@ class FormBuilder {
             },
             { 
                 type: 'container', 
-                icon: '🗂️', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-folder></use></svg>', 
                 badgeClass: 'badge-type-layout', 
                 label: t('palette.field_labels.container', 'Container / Panel'), 
                 desc: t('palette.field_descriptions.container', 'Group fields inside a box'),
@@ -2391,7 +2391,7 @@ class FormBuilder {
             },
             { 
                 type: 'section_group', 
-                icon: '📦', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-box></use></svg>', 
                 badgeClass: 'badge-type-layout', 
                 label: t('palette.field_labels.section_group', 'Section / Group'), 
                 desc: t('palette.field_descriptions.section_group', 'Group & toggle canvas sections'),
@@ -2399,7 +2399,7 @@ class FormBuilder {
             },
             { 
                 type: 'header', 
-                icon: '📌', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pin></use></svg>', 
                 badgeClass: 'badge-type-notice', 
                 label: t('palette.field_labels.header', 'Notice / Header'), 
                 desc: t('palette.field_descriptions.header', 'Important notice & instructions'),
@@ -2407,7 +2407,7 @@ class FormBuilder {
             },
             { 
                 type: 'signature', 
-                icon: '✍️', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pen></use></svg>', 
                 badgeClass: 'badge-type-legal', 
                 label: t('palette.field_labels.signature', 'Digital Signature'), 
                 desc: t('palette.field_descriptions.signature', 'Digital drawing pad'),
@@ -2415,7 +2415,7 @@ class FormBuilder {
             },
             { 
                 type: 'body_map', 
-                icon: '🗺️', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-compass></use></svg>', 
                 badgeClass: 'badge-type-clinical', 
                 label: t('palette.field_labels.body_map', 'Anatomical Placement Map'), 
                 desc: t('palette.field_descriptions.body_map', 'Interactive body, ear & face placement diagram'),
@@ -2423,7 +2423,7 @@ class FormBuilder {
             },
             { 
                 type: 'photo_id', 
-                icon: '🪪', 
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-id></use></svg>', 
                 badgeClass: 'badge-type-contact', 
                 label: t('palette.field_labels.photo_id', 'Photo ID & Reference Upload'), 
                 desc: t('palette.field_descriptions.photo_id', 'Client ID & reference photo upload zone'),
@@ -2496,31 +2496,31 @@ class FormBuilder {
             {
                 key: 'basic',
                 title: window.i18n ? window.i18n.t('palette.categories.basic') : 'Basic Input Fields',
-                icon: '✏️',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pen></use></svg>',
                 types: ['text', 'email', 'tel', 'number', 'date', 'textarea']
             },
             {
                 key: 'choices',
                 title: window.i18n ? window.i18n.t('palette.categories.choices') : 'Choice & Options',
-                icon: '☑️',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg>',
                 types: ['checkbox', 'checkbox_group', 'radio', 'select']
             },
             {
                 key: 'layout',
                 title: window.i18n ? window.i18n.t('palette.categories.layout') : 'Layout & Structure',
-                icon: '📐',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-ruler></use></svg>',
                 types: ['section_header', 'container', 'section_group']
             },
             {
                 key: 'legal',
                 title: window.i18n ? window.i18n.t('palette.categories.legal') : 'Notices & Legal',
-                icon: '⚖️',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-scale></use></svg>',
                 types: ['header', 'signature']
             },
             {
                 key: 'clinical_media',
                 title: window.i18n ? window.i18n.t('palette.categories.clinical_media', 'Anatomy & Media Upload') : 'Anatomy & Media Upload',
-                icon: '🗺️',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-compass></use></svg>',
                 types: ['body_map', 'photo_id']
             }
         ];
@@ -2611,9 +2611,9 @@ class FormBuilder {
                 const useCaseHtml = this.escapeHtml(ft.useCase || ft.desc || '');
                 const addLabel = window.i18n ? window.i18n.t('palette.add_btn') : 'Add';
                 const quickAddTitle = window.i18n ? window.i18n.t('palette.quick_add_title', { label: ft.label }) : ('Quick add / Duplicate ' + ft.label + ' to form');
-                const tooltipHint = window.i18n ? window.i18n.t('palette.tooltip_hint') : '💡 Hover icon for use case • Click / Drag to add';
+                const tooltipHint = window.i18n ? window.i18n.t('palette.tooltip_hint') : 'Hover icon for use case • Click / Drag to add';
 
-                el.innerHTML = '<div class="palette-icon-wrapper"><div class="palette-icon-badge ' + (ft.badgeClass || '') + '" tabindex="0" role="img" aria-label="' + ft.label + ' use case: ' + useCaseHtml + '" title="💡 ' + ft.label + ' — ' + useCaseHtml + '"><span class="palette-icon-symbol">' + ft.icon + '</span><div class="palette-icon-tooltip" role="tooltip"><div class="palette-tooltip-header"><span class="palette-tooltip-icon">' + ft.icon + '</span><span class="palette-tooltip-title">' + this.escapeHtml(ft.label) + '</span></div><div class="palette-tooltip-usecase">' + useCaseHtml + '</div><div class="palette-tooltip-hint">' + tooltipHint + '</div></div></div></div><div class="palette-info"><span class="palette-label">' + labelHtml + '</span><span class="palette-desc">' + descHtml + '</span></div><button type="button" class="palette-duplicate-btn" title="' + quickAddTitle + '" data-action="quick-add" aria-label="' + quickAddTitle + '"><span class="palette-dup-icon">＋</span><span class="palette-dup-label">' + addLabel + '</span></button>';
+                el.innerHTML = '<div class="palette-icon-wrapper"><div class="palette-icon-badge ' + (ft.badgeClass || '') + '" tabindex="0" role="img" aria-label="' + ft.label + ' use case: ' + useCaseHtml + '" title="' + ft.label + ' — ' + useCaseHtml + '"><span class="palette-icon-symbol">' + ft.icon + '</span><div class="palette-icon-tooltip" role="tooltip"><div class="palette-tooltip-header"><span class="palette-tooltip-icon">' + ft.icon + '</span><span class="palette-tooltip-title">' + this.escapeHtml(ft.label) + '</span></div><div class="palette-tooltip-usecase">' + useCaseHtml + '</div><div class="palette-tooltip-hint">' + tooltipHint + '</div></div></div></div><div class="palette-info"><span class="palette-label">' + labelHtml + '</span><span class="palette-desc">' + descHtml + '</span></div><button type="button" class="palette-duplicate-btn" title="' + quickAddTitle + '" data-action="quick-add" aria-label="' + quickAddTitle + '"><span class="palette-dup-icon">＋</span><span class="palette-dup-label">' + addLabel + '</span></button>';
 
                 const dupBtn = el.querySelector('.palette-duplicate-btn');
                 if (dupBtn) {
@@ -2687,7 +2687,7 @@ class FormBuilder {
         if (hasName && !hasDOB) {
             recommendations.push({
                 type: 'date',
-                icon: '📅',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calendar></use></svg>',
                 label: 'Date of Birth',
                 reason: 'Commonly paired with Full Name',
                 required: true,
@@ -2698,7 +2698,7 @@ class FormBuilder {
         if (hasName && !hasPhone) {
             recommendations.push({
                 type: 'tel',
-                icon: '📱',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-phone></use></svg>',
                 label: 'Phone Number',
                 reason: 'Commonly paired with Full Name',
                 required: true,
@@ -2709,7 +2709,7 @@ class FormBuilder {
         if (hasName && !hasEmail) {
             recommendations.push({
                 type: 'email',
-                icon: '📧',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-mail></use></svg>',
                 label: 'Email Address',
                 reason: 'Commonly paired with Full Name',
                 required: true,
@@ -2720,7 +2720,7 @@ class FormBuilder {
         if ((hasEmail || hasPhone) && !hasName) {
             recommendations.push({
                 type: 'text',
-                icon: '📝',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-note></use></svg>',
                 label: 'Full Legal Name',
                 reason: 'Core Identity Requirement',
                 required: true,
@@ -2731,7 +2731,7 @@ class FormBuilder {
         if (allFields.length > 0 && !hasSignature) {
             recommendations.push({
                 type: 'signature',
-                icon: '✍️',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pen></use></svg>',
                 label: 'Digital Client Signature',
                 reason: 'Essential for Legal Consent',
                 required: true,
@@ -2742,7 +2742,7 @@ class FormBuilder {
         if ((hasDOB || hasName) && !hasEmergency) {
             recommendations.push({
                 type: 'text',
-                icon: '🚨',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-siren></use></svg>',
                 label: 'Emergency Contact (Name & Phone)',
                 reason: 'Pairs with Intake Profile',
                 required: false,
@@ -2753,7 +2753,7 @@ class FormBuilder {
         if (hasAddress && !hasZip) {
             recommendations.push({
                 type: 'text',
-                icon: '📍',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pin></use></svg>',
                 label: 'Postal / Zip Code',
                 reason: 'Pairs with Street Address',
                 required: false,
@@ -2764,7 +2764,7 @@ class FormBuilder {
         if (allFields.length > 2 && !hasMedical) {
             recommendations.push({
                 type: 'checkbox_group',
-                icon: '🩺',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-health></use></svg>',
                 label: 'Known Medical Conditions & Allergies',
                 reason: 'Safety Best Practice',
                 required: true,
@@ -2776,7 +2776,7 @@ class FormBuilder {
         if (allFields.length > 1 && !hasConsent) {
             recommendations.push({
                 type: 'checkbox',
-                icon: '☑️',
+                icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg>',
                 label: 'I confirm all information provided is accurate and agree to studio policies.',
                 reason: 'Legal Consent Shield',
                 required: true,
@@ -2789,7 +2789,7 @@ class FormBuilder {
             if (!hasName) {
                 recommendations.push({
                     type: 'text',
-                    icon: '📝',
+                    icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-note></use></svg>',
                     label: 'Full Legal Name',
                     reason: 'Intake Essential',
                     required: true,
@@ -2799,7 +2799,7 @@ class FormBuilder {
             if (!hasDOB) {
                 recommendations.push({
                     type: 'date',
-                    icon: '📅',
+                    icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calendar></use></svg>',
                     label: 'Date of Birth',
                     reason: 'Intake Essential',
                     required: true,
@@ -2809,7 +2809,7 @@ class FormBuilder {
             if (!hasSignature) {
                 recommendations.push({
                     type: 'signature',
-                    icon: '✍️',
+                    icon: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pen></use></svg>',
                     label: 'Digital Client Signature',
                     reason: 'Consent Essential',
                     required: true,
@@ -2837,7 +2837,7 @@ class FormBuilder {
         container.innerHTML = '';
 
         if (recs.length === 0) {
-            const allIncludedText = window.i18n ? window.i18n.t('palette.all_standard_included') : '✓ All recommended standard fields included!';
+            const allIncludedText = window.i18n ? window.i18n.t('palette.all_standard_included') : 'All recommended standard fields included!';
             container.innerHTML = `
                 <div style="font-size:0.72rem; color:#94a3b8; text-align:center; padding:0.4rem 0;">
                     ${allIncludedText}
@@ -2861,7 +2861,7 @@ class FormBuilder {
             card.innerHTML = `
                 <div class="rec-card-top">
                     <div class="rec-card-label-wrap">
-                        <span class="rec-card-icon">${rec.icon || '➕'}</span>
+                        <span class="rec-card-icon">${rec.icon || '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-plus></use></svg>'}</span>
                         <span class="rec-card-label">${this.escapeHtml(translatedLabel)}</span>
                     </div>
                     <button type="button" class="rec-card-add-btn" title="${addThisTitle}">${addBtnText}</button>
@@ -2964,7 +2964,7 @@ class FormBuilder {
             toggleRawBtn.addEventListener('click', () => {
                 const isHidden = rawContainer.style.display === 'none';
                 rawContainer.style.display = isHidden ? 'block' : 'none';
-                toggleRawBtn.textContent = isHidden ? 'Hide Raw CSV' : '✍️ Paste Raw CSV';
+                toggleRawBtn.textContent = isHidden ? 'Hide Raw CSV' : 'Paste Raw CSV';
             });
         }
 
@@ -3075,7 +3075,7 @@ class FormBuilder {
 
         const newSecOpt = document.createElement('option');
         newSecOpt.value = 'new_section';
-        newSecOpt.textContent = '➕ Create New Section ("Imported CSV Fields")';
+        newSecOpt.textContent = 'Create New Section ("Imported CSV Fields")';
         if (select.options.length === 0) newSecOpt.selected = true;
         select.appendChild(newSecOpt);
     }
@@ -3469,11 +3469,11 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                     <span>${t('canvas.multi_fields_selected', 'Fields Selected (Shift+Click Block)', { count: this.selectedFieldIds.size })}</span>
                 </div>
                 <div class="canvas-multi-action-bar-buttons">
-                    <button type="button" class="btn-secondary btn-sm" id="canvas-btn-multi-req" title="${t('canvas.toggle_required_title', 'Toggle required status for selected fields')}">★ ${t('canvas.toggle_required', 'Toggle Required')}</button>
-                    <button type="button" class="btn-secondary btn-sm" id="canvas-btn-multi-hide" title="${t('canvas.toggle_hidden_title', 'Toggle hidden visibility for selected fields')}">🚫 ${t('canvas.toggle_hidden', 'Toggle Hidden')}</button>
-                    <button type="button" class="btn-secondary btn-sm" id="canvas-btn-multi-dup" title="Duplicate selected fields block (Ctrl+D)">📋 ${t('canvas.duplicate_block', 'Duplicate Block')}</button>
-                    <button type="button" class="btn-danger btn-sm" id="canvas-btn-multi-del" title="Delete selected fields (Delete)">🗑️ ${t('canvas.delete', 'Delete')} (${this.selectedFieldIds.size})</button>
-                    <button type="button" class="btn-icon" id="canvas-btn-multi-close" title="Clear Selection (Esc)" style="color:white; font-size:1rem; padding:2px 6px;">✕</button>
+                    <button type="button" class="btn-secondary btn-sm" id="canvas-btn-multi-req" title="${t('canvas.toggle_required_title', 'Toggle required status for selected fields')}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-star></use></svg> ${t('canvas.toggle_required', 'Toggle Required')}</button>
+                    <button type="button" class="btn-secondary btn-sm" id="canvas-btn-multi-hide" title="${t('canvas.toggle_hidden_title', 'Toggle hidden visibility for selected fields')}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-ban></use></svg> ${t('canvas.toggle_hidden', 'Toggle Hidden')}</button>
+                    <button type="button" class="btn-secondary btn-sm" id="canvas-btn-multi-dup" title="Duplicate selected fields block (Ctrl+D)"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> ${t('canvas.duplicate_block', 'Duplicate Block')}</button>
+                    <button type="button" class="btn-danger btn-sm" id="canvas-btn-multi-del" title="Delete selected fields (Delete)"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg> ${t('canvas.delete', 'Delete')} (${this.selectedFieldIds.size})</button>
+                    <button type="button" class="btn-icon" id="canvas-btn-multi-close" title="Clear Selection (Esc)" style="color:white; font-size:1rem; padding:2px 6px;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
                 </div>
             `;
 
@@ -3549,7 +3549,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
             const collapseAllText = t('section.collapse_all', 'Collapse All');
             const sectionsCountText = this.currentForm.sections.length + ' ' + (this.currentForm.sections.length === 1 ? 'section' : 'sections');
 
-            bulkControlsEl.innerHTML = '<span style="font-weight: 700; color: #475569; font-size: 0.78rem; display: flex; align-items: center; gap: 4px;">📑 Sections:</span><button type="button" class="btn-canvas-section-toggle" onclick="window.FormBuilderApp.expandAllSections()" title="Expand all sections on canvas">▼ ' + expandAllText + '</button><button type="button" class="btn-canvas-section-toggle" onclick="window.FormBuilderApp.collapseAllSections()" title="Collapse all sections on canvas">▶ ' + collapseAllText + '</button><span style="margin-left: auto; font-size: 0.74rem; color: #94a3b8;">' + sectionsCountText + '</span>';
+            bulkControlsEl.innerHTML = '<span style="font-weight: 700; color: #475569; font-size: 0.78rem; display: flex; align-items: center; gap: 4px;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> Sections:</span><button type="button" class="btn-canvas-section-toggle" onclick="window.FormBuilderApp.expandAllSections()" title="Expand all sections on canvas">▼ ' + expandAllText + '</button><button type="button" class="btn-canvas-section-toggle" onclick="window.FormBuilderApp.collapseAllSections()" title="Collapse all sections on canvas">▶ ' + collapseAllText + '</button><span style="margin-left: auto; font-size: 0.74rem; color: #94a3b8;">' + sectionsCountText + '</span>';
             this.dom.canvas.appendChild(bulkControlsEl);
         }
 
@@ -3584,22 +3584,22 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                                 ${isCollapsed ? '▶' : '▼'}
                             </button>
                             <span class="section-drag-handle" title="${sectionDragTooltip}">⠿</span>
-                            <span class="section-group-icon-badge" title="${sectionGroupingTooltip}">📦</span>
+                            <span class="section-group-icon-badge" title="${sectionGroupingTooltip}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-box></use></svg></span>
                             <input type="text" class="section-title-input" value="${this.escapeHtml(section.title)}" placeholder="Section Title..." ${isMedical ? 'readonly' : ''} onclick="event.stopPropagation(); window.FormBuilderApp.selectSection('${section.id}')">
-                            ${isMedical ? '<span class="medical-badge" title="Auto-injected medical safety check module">' + TP('x.medical_safety_module', '⚕️ Medical Safety Module') + '</span>' : ''}
-                            ${isHidden ? '<span class="badge-hidden-section" title="This section is currently hidden from client preview">🚫 Hidden</span>' : ''}
+                            ${isMedical ? '<span class="medical-badge" title="Auto-injected medical safety check module">' + TP('x.medical_safety_module', 'Medical Safety Module') + '</span>' : ''}
+                            ${isHidden ? '<span class="badge-hidden-section" title="This section is currently hidden from client preview"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-ban></use></svg> Hidden</span>' : ''}
                             <span class="section-field-counter" title="${fieldCount} fields contained in this section">${fieldCount} ${TP('x.fields_word', 'fields')}</span>
-                            ${isCollapsed ? ('<span class="section-collapsed-summary" onclick="event.stopPropagation(); window.FormBuilderApp.toggleSectionCollapse(\'' + section.id + '\')">📦 ' + (window.i18n ? window.i18n.t('section.collapsed_summary', { count: fieldCount }) : (fieldCount + ' fields collapsed (Click to expand)')) + '</span>') : ''}
+                            ${isCollapsed ? ('<span class="section-collapsed-summary" onclick="event.stopPropagation(); window.FormBuilderApp.toggleSectionCollapse(\'' + section.id + '\')"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-box></use></svg> ' + (window.i18n ? window.i18n.t('section.collapsed_summary', { count: fieldCount }) : (fieldCount + ' fields collapsed (Click to expand)')) + '</span>') : ''}
                         </div>
                         <div class="section-actions" onclick="event.stopPropagation()">
                             <button type="button" class="btn-sec-action ${isHidden ? 'btn-sec-active' : ''}" onclick="window.FormBuilderApp.toggleSectionVisibility('${section.id}')" title="${isHidden ? sectionShowTooltip : sectionHideTooltip}">
-                                ${isHidden ? '👁️ Show' : '👁️ Hide'}
+                                ${isHidden ? 'Show' : 'Hide'}
                             </button>
                             ${!isMedical ? `
-                                <button type="button" class="btn-sec-action" onclick="window.FormBuilderApp.duplicateSection('${section.id}')" title="${sectionDuplicateTooltip}">📋 ${duplicateText}</button>
-                                <button type="button" class="btn-sec-action" onclick="window.FormBuilderApp.moveSection(${sIdx}, -1)" title="Move section up" ${sIdx === 0 ? 'disabled' : ''}>⬆️</button>
-                                <button type="button" class="btn-sec-action" onclick="window.FormBuilderApp.moveSection(${sIdx}, 1)" title="Move section down" ${sIdx === this.currentForm.sections.length - 1 ? 'disabled' : ''}>⬇️</button>
-                                <button type="button" class="btn-sec-action btn-danger" onclick="window.FormBuilderApp.deleteSection('${section.id}')" title="${sectionDeleteTooltip}">🗑️</button>
+                                <button type="button" class="btn-sec-action" onclick="window.FormBuilderApp.duplicateSection('${section.id}')" title="${sectionDuplicateTooltip}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> ${duplicateText}</button>
+                                <button type="button" class="btn-sec-action" onclick="window.FormBuilderApp.moveSection(${sIdx}, -1)" title="Move section up" ${sIdx === 0 ? 'disabled' : ''}><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-upload></use></svg></button>
+                                <button type="button" class="btn-sec-action" onclick="window.FormBuilderApp.moveSection(${sIdx}, 1)" title="Move section down" ${sIdx === this.currentForm.sections.length - 1 ? 'disabled' : ''}><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-download></use></svg></button>
+                                <button type="button" class="btn-sec-action btn-danger" onclick="window.FormBuilderApp.deleteSection('${section.id}')" title="${sectionDeleteTooltip}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg></button>
                             ` : ''}
                         </div>
                     </div>
@@ -3620,7 +3620,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 fieldList.dataset.sectionId = section.id;
 
                 if (isMedical) {
-                    const medTitle = t('medical.standard_module_title', '⚕️ Standardized Medical Questions Module');
+                    const medTitle = t('medical.standard_module_title', 'Standardized Medical Questions Module');
                     const medDesc = t('medical.standard_module_desc', 'Allergies, Blood Thinners, Chronic Conditions, Pregnancy, and Alcohol/Food check are dynamically validated and rendered here.');
                     fieldList.innerHTML = `
                         <div class="medical-module-notice">
@@ -3656,15 +3656,15 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                                         <div class="container-header-title-wrap">
                                             <span class="field-drag-handle" title="${this.escapeHtml(dragGroupTooltip)}">⠿</span>
                                             ${isMultiSelected ? `<span class="multi-select-badge" title="${this.escapeHtml(t('canvas.selected_multi_block', 'Selected in multi-block'))}">${multiIdx}</span>` : ''}
-                                            <span class="container-badge-icon">${isGroup ? '📦' : '🗂️'}</span>
+                                            <span class="container-badge-icon">${isGroup ? '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-box></use></svg>' : '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-folder></use></svg>'}</span>
                                             <strong class="container-name">${this.escapeHtml(field.label || defaultGroupLabel)}</strong>
                                             <span class="container-child-count">${this.escapeHtml(questionsCountText)}</span>
                                             ${field.alias ? `<span class="badge-alias" title="CRM Mapping: ${this.escapeHtml(field.alias)}">${this.escapeHtml(field.alias)}</span>` : ''}
                                         </div>
                                         <div class="field-actions" onclick="event.stopPropagation()">
                                             <button type="button" class="btn-field-action" onclick="window.FormBuilderApp.addField('text', '${section.id}', '${field.id}')" title="${this.escapeHtml(t('canvas.add_question_into_group', 'Add question into this group'))}">${this.escapeHtml(addQText)}</button>
-                                            <button type="button" class="btn-field-action" onclick="window.FormBuilderApp.duplicateField('${field.id}')" title="${this.escapeHtml(dupGroupTooltip)}">📋</button>
-                                            <button type="button" class="btn-field-action btn-field-delete" onclick="window.FormBuilderApp.deleteField('${field.id}')" title="${this.escapeHtml(delGroupTooltip)}">🗑️</button>
+                                            <button type="button" class="btn-field-action" onclick="window.FormBuilderApp.duplicateField('${field.id}')" title="${this.escapeHtml(dupGroupTooltip)}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></button>
+                                            <button type="button" class="btn-field-action btn-field-delete" onclick="window.FormBuilderApp.deleteField('${field.id}')" title="${this.escapeHtml(delGroupTooltip)}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg></button>
                                         </div>
                                     </div>
                                     ${field.helperText || field.helpText ? `<div class="container-help-text">${this.escapeHtml(field.helperText || field.helpText)}</div>` : ''}
@@ -3693,13 +3693,13 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                                                     <span class="field-type-tag">${childField.type}</span>
                                                     <span class="field-label-text">${this.escapeHtml(childField.label || t('canvas.untitled_field', 'Untitled Field'))}</span>
                                                     ${childField.required ? `<span class="required-asterisk" title="${this.escapeHtml(t('canvas.required_field', 'Required field'))}">*</span>` : ''}
-                                                    ${childField.hidden ? `<span class="badge-hidden-field" title="${this.escapeHtml(t('canvas.hidden_from_client', 'Hidden from client intake'))}">${this.escapeHtml(t('canvas.badge_hidden', '🚫 Hidden'))}</span>` : ''}
-                                                    ${childField.conditional ? `<span class="conditional-indicator" title="${this.escapeHtml(t('canvas.conditional_logic_enabled', 'Conditional logic enabled'))}">🔀</span>` : ''}
+                                                    ${childField.hidden ? `<span class="badge-hidden-field" title="${this.escapeHtml(t('canvas.hidden_from_client', 'Hidden from client intake'))}">${this.escapeHtml(t('canvas.badge_hidden', 'Hidden'))}</span>` : ''}
+                                                    ${childField.conditional ? `<span class="conditional-indicator" title="${this.escapeHtml(t('canvas.conditional_logic_enabled', 'Conditional logic enabled'))}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-shuffle></use></svg></span>` : ''}
                                                     ${childField.alias ? `<span class="badge-alias">${this.escapeHtml(childField.alias)}</span>` : ''}
                                                 </div>
                                                 <div class="field-actions" onclick="event.stopPropagation()">
-                                                    <button type="button" class="btn-field-action" onclick="window.FormBuilderApp.duplicateField('${childField.id}')" title="${this.escapeHtml(t('canvas.duplicate', 'Duplicate'))}">📋</button>
-                                                    <button type="button" class="btn-field-action btn-field-delete" onclick="window.FormBuilderApp.deleteField('${childField.id}')" title="${this.escapeHtml(t('canvas.delete', 'Delete'))}">🗑️</button>
+                                                    <button type="button" class="btn-field-action" onclick="window.FormBuilderApp.duplicateField('${childField.id}')" title="${this.escapeHtml(t('canvas.duplicate', 'Duplicate'))}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></button>
+                                                    <button type="button" class="btn-field-action btn-field-delete" onclick="window.FormBuilderApp.deleteField('${childField.id}')" title="${this.escapeHtml(t('canvas.delete', 'Delete'))}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg></button>
                                                 </div>
                                             </div>
                                         `;
@@ -3719,16 +3719,16 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                                         <div class="field-card-main">
                                             <span class="field-drag-handle" title="${this.escapeHtml(t('canvas.drag_to_reorder_header', 'Drag to reorder header'))}">⠿</span>
                                             ${isMultiSelected ? `<span class="multi-select-badge">${multiIdx}</span>` : ''}
-                                            <span class="field-type-icon">📑</span>
+                                            <span class="field-type-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></span>
                                             <span class="field-type-tag">${this.escapeHtml(t('canvas.header_tag', 'Header'))}</span>
                                             <strong class="canvas-section-header-title">${this.escapeHtml(field.label || t('canvas.section_header', 'Section Header'))}</strong>
-                                            ${field.hidden ? `<span class="badge-hidden-field" title="${this.escapeHtml(t('canvas.hidden_from_client', 'Hidden from client intake'))}">${this.escapeHtml(t('canvas.badge_hidden', '🚫 Hidden'))}</span>` : ''}
-                                            ${field.collapsible ? `<span class="badge-collapsible-pill">${this.escapeHtml(t('canvas.collapsible_badge', '📂 Collapsible'))}</span>` : ''}
+                                            ${field.hidden ? `<span class="badge-hidden-field" title="${this.escapeHtml(t('canvas.hidden_from_client', 'Hidden from client intake'))}">${this.escapeHtml(t('canvas.badge_hidden', 'Hidden'))}</span>` : ''}
+                                            ${field.collapsible ? `<span class="badge-collapsible-pill">${this.escapeHtml(t('canvas.collapsible_badge', 'Collapsible'))}</span>` : ''}
                                             ${field.alias ? `<span class="badge-alias">${this.escapeHtml(field.alias)}</span>` : ''}
                                         </div>
                                         <div class="field-actions" onclick="event.stopPropagation()">
-                                            <button type="button" class="btn-field-action" onclick="window.FormBuilderApp.duplicateField('${field.id}')" title="${this.escapeHtml(t('canvas.duplicate', 'Duplicate'))}">📋</button>
-                                            <button type="button" class="btn-field-action btn-field-delete" onclick="window.FormBuilderApp.deleteField('${field.id}')" title="${this.escapeHtml(t('canvas.delete', 'Delete'))}">🗑️</button>
+                                            <button type="button" class="btn-field-action" onclick="window.FormBuilderApp.duplicateField('${field.id}')" title="${this.escapeHtml(t('canvas.duplicate', 'Duplicate'))}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></button>
+                                            <button type="button" class="btn-field-action btn-field-delete" onclick="window.FormBuilderApp.deleteField('${field.id}')" title="${this.escapeHtml(t('canvas.delete', 'Delete'))}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg></button>
                                         </div>
                                     </div>
                                     ${field.helpText ? `<div class="section-header-desc-preview">${this.escapeHtml(field.helpText)}</div>` : ''}
@@ -3750,13 +3750,13 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                                             <span class="field-type-tag">${field.type}</span>
                                             <span class="field-label-text">${this.escapeHtml(field.label || t('canvas.untitled_field', 'Untitled Field'))}</span>
                                             ${field.required ? `<span class="required-asterisk" title="${this.escapeHtml(t('canvas.required_field', 'Required field'))}">*</span>` : ''}
-                                            ${field.hidden ? `<span class="badge-hidden-field" title="${this.escapeHtml(t('canvas.hidden_from_client', 'Hidden from client intake'))}">${this.escapeHtml(t('canvas.badge_hidden', '🚫 Hidden'))}</span>` : ''}
-                                            ${field.conditional ? `<span class="conditional-indicator" title="${this.escapeHtml(t('canvas.conditional_logic_enabled', 'Conditional logic enabled'))}">🔀</span>` : ''}
+                                            ${field.hidden ? `<span class="badge-hidden-field" title="${this.escapeHtml(t('canvas.hidden_from_client', 'Hidden from client intake'))}">${this.escapeHtml(t('canvas.badge_hidden', 'Hidden'))}</span>` : ''}
+                                            ${field.conditional ? `<span class="conditional-indicator" title="${this.escapeHtml(t('canvas.conditional_logic_enabled', 'Conditional logic enabled'))}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-shuffle></use></svg></span>` : ''}
                                             ${field.alias ? `<span class="badge-alias">${this.escapeHtml(field.alias)}</span>` : ''}
                                         </div>
                                         <div class="field-actions" onclick="event.stopPropagation()">
-                                            <button type="button" class="btn-field-action" onclick="window.FormBuilderApp.duplicateField('${field.id}')" title="${this.escapeHtml(t('canvas.duplicate', 'Duplicate'))}">📋</button>
-                                            <button type="button" class="btn-field-action btn-field-delete" onclick="window.FormBuilderApp.deleteField('${field.id}')" title="${this.escapeHtml(t('canvas.delete', 'Delete'))}">🗑️</button>
+                                            <button type="button" class="btn-field-action" onclick="window.FormBuilderApp.duplicateField('${field.id}')" title="${this.escapeHtml(t('canvas.duplicate', 'Duplicate'))}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></button>
+                                            <button type="button" class="btn-field-action btn-field-delete" onclick="window.FormBuilderApp.deleteField('${field.id}')" title="${this.escapeHtml(t('canvas.delete', 'Delete'))}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg></button>
                                         </div>
                                     </div>
                                 `;
@@ -3789,7 +3789,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
         addSecBtnWrap.className = 'canvas-add-section-wrap';
         addSecBtnWrap.innerHTML = `
             <button type="button" class="btn-add-new-section" onclick="window.FormBuilderApp.addSection()">
-                ➕ ${t('canvas.add_new_section', 'Add New Section')}
+                <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-plus></use></svg> ${t('canvas.add_new_section', 'Add New Section')}
             </button>
         `;
         this.dom.canvas.appendChild(addSecBtnWrap);
@@ -3954,25 +3954,25 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
 
     getFieldTypeIcon(type) {
         const icons = {
-            text: '📝',
-            email: '📧',
-            tel: '📱',
-            date: '📅',
-            number: '🔢',
-            textarea: '📄',
-            checkbox: '☑️',
-            checkbox_group: '☑️☑️',
-            radio: '🔘',
-            select: '📋',
-            section_header: '📑',
-            container: '🗂️',
-            section_group: '📦',
-            header: '📌',
-            signature: '✍️',
-            body_map: '🗺️',
-            photo_id: '🪪'
+            text: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-note></use></svg>',
+            email: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-mail></use></svg>',
+            tel: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-phone></use></svg>',
+            date: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calendar></use></svg>',
+            number: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-type></use></svg>',
+            textarea: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-doc></use></svg>',
+            checkbox: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg>',
+            checkbox_group: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg>',
+            radio: '<svg class=ti-i width=.7em height=.7em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-dot-grey></use></svg>',
+            select: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg>',
+            section_header: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg>',
+            container: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-folder></use></svg>',
+            section_group: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-box></use></svg>',
+            header: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pin></use></svg>',
+            signature: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-pen></use></svg>',
+            body_map: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-compass></use></svg>',
+            photo_id: '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-id></use></svg>'
         };
-        return icons[type] || '📝';
+        return icons[type] || '<svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-note></use></svg>';
     }
 
     selectField(fieldId, isMulti = false, isShift = false) {
@@ -4255,16 +4255,16 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 <div class="prop-group" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
                     <label style="font-weight: 700; color: #1e293b;">${t('canvas.bulk_actions_heading', 'Bulk Actions')}</label>
                     <button type="button" id="prop-btn-bulk-toggle-req" class="btn-secondary" style="width: 100%; justify-content: flex-start;">
-                        <span>★</span> <span>${reqCount === total ? t('canvas.set_all_optional', 'Set All Optional') : t('canvas.set_all_required', 'Set All Required')}</span>
+                        <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-star></use></svg></span> <span>${reqCount === total ? t('canvas.set_all_optional', 'Set All Optional') : t('canvas.set_all_required', 'Set All Required')}</span>
                     </button>
                     <button type="button" id="prop-btn-bulk-toggle-hide" class="btn-secondary" style="width: 100%; justify-content: flex-start;">
-                        <span>👁️</span> <span>${hiddenCount === total ? t('canvas.set_all_visible', 'Show All in Client Intake') : t('canvas.set_all_hidden', 'Hide All from Client Intake')}</span>
+                        <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-eye></use></svg></span> <span>${hiddenCount === total ? t('canvas.set_all_visible', 'Show All in Client Intake') : t('canvas.set_all_hidden', 'Hide All from Client Intake')}</span>
                     </button>
                     <button type="button" id="prop-btn-bulk-dup" class="btn-secondary" style="width: 100%; justify-content: flex-start;">
-                        <span>📋</span> <span>${t('canvas.duplicate_block', 'Duplicate Block')} (${total})</span>
+                        <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></span> <span>${t('canvas.duplicate_block', 'Duplicate Block')} (${total})</span>
                     </button>
                     <button type="button" id="prop-btn-bulk-del" class="btn-danger" style="width: 100%; justify-content: flex-start;">
-                        <span>🗑️</span> <span>${t('canvas.delete', 'Delete')} (${total})</span>
+                        <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg></span> <span>${t('canvas.delete', 'Delete')} (${total})</span>
                     </button>
                 </div>
 
@@ -4455,7 +4455,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
         navigator.clipboard.writeText(jsonStr).then(() => {
             if (targetBtn) {
                 const orig = targetBtn.textContent;
-                targetBtn.textContent = '✅ Copied!';
+                targetBtn.textContent = 'Copied!';
                 setTimeout(() => { targetBtn.textContent = orig; }, 1500);
             }
             this.showToast(TP('live.field_copied_toast', "Field configuration JSON copied to clipboard."), 'success');
@@ -4468,7 +4468,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
         const t = (k, fb) => (window.i18n ? window.i18n.t(k, fb) : fb);
         return `
             <div class="prop-search-filter-box" style="padding: 8px 16px; border-bottom: 1px solid #e2e8f0; background: #f8fafc;">
-                <input type="text" id="prop-filter-input" class="prop-filter-input" placeholder="🔍 ${t('properties.search_props_placeholder', 'Search ' + title + '...')}" style="width:100%; font-size:0.78rem; padding:5px 10px; border-radius:6px; border:1px solid #cbd5e1; background:white;">
+                <input type="text" id="prop-filter-input" class="prop-filter-input" placeholder="${t('properties.search_props_placeholder', 'Search ' + title + '...')}" style="width:100%; font-size:0.78rem; padding:5px 10px; border-radius:6px; border:1px solid #cbd5e1; background:white;">
             </div>
         `;
     }
@@ -4510,7 +4510,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
             <div class="properties-header">
                 <div class="prop-title-row">
                     <h3>${t('properties.section_properties', 'Section Properties')}</h3>
-                    <span class="prop-type-badge">📑 Section</span>
+                    <span class="prop-type-badge"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> Section</span>
                 </div>
                 <p class="prop-subtitle">${t('properties.section_subtitle', 'Configure section title, visibility, and group settings')}</p>
             </div>
@@ -4560,8 +4560,8 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
 
                 <!-- Section Actions -->
                 <div class="prop-actions-bar" style="margin-top:20px;">
-                    <button type="button" class="btn-prop-action" id="btn-prop-sec-dup" title="Duplicate entire section">📋 ${t('canvas.duplicate', 'Duplicate')}</button>
-                    <button type="button" class="btn-prop-action btn-danger" id="btn-prop-sec-del" title="Delete section">🗑️ ${t('canvas.delete', 'Delete')}</button>
+                    <button type="button" class="btn-prop-action" id="btn-prop-sec-dup" title="Duplicate entire section"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> ${t('canvas.duplicate', 'Duplicate')}</button>
+                    <button type="button" class="btn-prop-action btn-danger" id="btn-prop-sec-del" title="Delete section"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg> ${t('canvas.delete', 'Delete')}</button>
                 </div>
             </div>
         `;
@@ -4629,7 +4629,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 <div class="properties-header">
                     <div class="prop-title-row">
                         <h3>${isGroup ? t('properties.section_group_block', 'Section Group Block') : t('properties.container_properties', 'Container Properties')}</h3>
-                        <span class="prop-type-badge">${isGroup ? t('properties.section_group_badge', '📦 Section Group') : t('properties.container_panel_badge', '🗂️ Container Panel')}</span>
+                        <span class="prop-type-badge">${isGroup ? t('properties.section_group_badge', 'Section Group') : t('properties.container_panel_badge', 'Container Panel')}</span>
                     </div>
                     <p class="prop-subtitle">${isGroup ? t('properties.section_group_subtitle', 'Move, duplicate, or delete logical blocks of related questions as a single unit') : t('properties.container_panel_subtitle', 'Group related fields into a structured section box')}</p>
                 </div>
@@ -4709,21 +4709,21 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                     <div class="prop-group" data-prop-category="layout" data-prop-keywords="add child questions insert field elements">
                         <label>${t('properties.quick_add_group_title', 'Quick Add Field into this Group')}</label>
                         <div class="quick-add-grid">
-                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('text', null, '${field.id}')">📝 ${t('palette.field_labels.text', 'Text')}</button>
-                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('tel', null, '${field.id}')">📱 ${t('palette.field_labels.tel', 'Phone')}</button>
-                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('email', null, '${field.id}')">📧 ${t('palette.field_labels.email', 'Email')}</button>
-                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('date', null, '${field.id}')">📅 ${t('palette.field_labels.date', 'Date')}</button>
-                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('number', null, '${field.id}')">🔢 ${t('palette.field_labels.number', 'Number')}</button>
-                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('select', null, '${field.id}')">📋 ${t('palette.field_labels.select', 'Select')}</button>
-                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('checkbox', null, '${field.id}')">☑️ ${t('palette.field_labels.checkbox', 'Checkbox')}</button>
+                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('text', null, '${field.id}')"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-note></use></svg> ${t('palette.field_labels.text', 'Text')}</button>
+                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('tel', null, '${field.id}')"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-phone></use></svg> ${t('palette.field_labels.tel', 'Phone')}</button>
+                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('email', null, '${field.id}')"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-mail></use></svg> ${t('palette.field_labels.email', 'Email')}</button>
+                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('date', null, '${field.id}')"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calendar></use></svg> ${t('palette.field_labels.date', 'Date')}</button>
+                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('number', null, '${field.id}')"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-type></use></svg> ${t('palette.field_labels.number', 'Number')}</button>
+                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('select', null, '${field.id}')"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg> ${t('palette.field_labels.select', 'Select')}</button>
+                            <button type="button" class="btn-quick-add" onclick="window.FormBuilderApp.addField('checkbox', null, '${field.id}')"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg> ${t('palette.field_labels.checkbox', 'Checkbox')}</button>
                         </div>
                     </div>
 
                     <!-- Actions -->
                     <div class="prop-actions-bar" style="margin-top:16px;">
-                        <button type="button" class="btn-prop-action btn-copy-json" id="btn-prop-copy-json" title="${t('properties.copy_json_title', 'Copy field JSON configuration metadata')}">${t('properties.copy_json_btn', '📋 Copy JSON')}</button>
-                        <button type="button" class="btn-prop-action" id="btn-prop-dup" title="${t('properties.dup_group_block', 'Duplicate Group Block')}">${t('properties.dup_group_block', '📋 Duplicate Group Block')}</button>
-                        <button type="button" class="btn-prop-action btn-danger" id="btn-prop-del" title="${t('properties.del_group_block', 'Delete Group Block')}">${t('properties.del_group_block', '🗑️ Delete Group Block')}</button>
+                        <button type="button" class="btn-prop-action btn-copy-json" id="btn-prop-copy-json" title="${t('properties.copy_json_title', 'Copy field JSON configuration metadata')}">${t('properties.copy_json_btn', 'Copy JSON')}</button>
+                        <button type="button" class="btn-prop-action" id="btn-prop-dup" title="${t('properties.dup_group_block', 'Duplicate Group Block')}">${t('properties.dup_group_block', 'Duplicate Group Block')}</button>
+                        <button type="button" class="btn-prop-action btn-danger" id="btn-prop-del" title="${t('properties.del_group_block', 'Delete Group Block')}">${t('properties.del_group_block', 'Delete Group Block')}</button>
                     </div>
                 </div>
             `;
@@ -4828,7 +4828,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 <div class="properties-header">
                     <div class="prop-title-row">
                         <h3>${t('properties.section_header_title', 'Section Header')}</h3>
-                        <span class="prop-type-badge">${t('properties.section_header_badge', '📑 Section Header')}</span>
+                        <span class="prop-type-badge">${t('properties.section_header_badge', 'Section Header')}</span>
                     </div>
                     <p class="prop-subtitle">${t('properties.section_header_subtitle', 'Visual group header with a bold title and guidance description')}</p>
                 </div>
@@ -4884,9 +4884,9 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
 
                     <!-- Actions -->
                     <div class="prop-actions-bar" style="margin-top:16px;">
-                        <button type="button" class="btn-prop-action btn-copy-json" id="btn-prop-copy-json" title="${t('properties.copy_json_title', 'Copy header JSON configuration metadata')}">${t('properties.copy_json_btn', '📋 Copy JSON')}</button>
-                        <button type="button" class="btn-prop-action" id="btn-prop-dup" title="${t('properties.duplicate_title', 'Duplicate Field')}">${t('properties.duplicate_btn', '📋 Duplicate')}</button>
-                        <button type="button" class="btn-prop-action btn-danger" id="btn-prop-del" title="${t('properties.delete_title', 'Delete Field')}">${t('properties.delete_btn', '🗑️ Delete')}</button>
+                        <button type="button" class="btn-prop-action btn-copy-json" id="btn-prop-copy-json" title="${t('properties.copy_json_title', 'Copy header JSON configuration metadata')}">${t('properties.copy_json_btn', 'Copy JSON')}</button>
+                        <button type="button" class="btn-prop-action" id="btn-prop-dup" title="${t('properties.duplicate_title', 'Duplicate Field')}">${t('properties.duplicate_btn', 'Duplicate')}</button>
+                        <button type="button" class="btn-prop-action btn-danger" id="btn-prop-del" title="${t('properties.delete_title', 'Delete Field')}">${t('properties.delete_btn', 'Delete')}</button>
                     </div>
                 </div>
             `;
@@ -5111,13 +5111,13 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                     <label for="prop-label-align">${t('properties.label_align', 'Label Alignment')}</label>
                     <div class="alignment-btn-group">
                         <button type="button" class="btn-align ${(field.labelAlign || 'top') === 'top' ? 'active' : ''}" data-align="top" title="${t('properties.align_top_title', 'Top Aligned (Standard)')}">
-                            ⬆️ ${t('properties.align_top', 'Top')}
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-upload></use></svg> ${t('properties.align_top', 'Top')}
                         </button>
                         <button type="button" class="btn-align ${field.labelAlign === 'left' ? 'active' : ''}" data-align="left" title="${t('properties.align_left_title', 'Left Aligned (Horizontal)')}">
-                            ⬅️ ${t('properties.align_left', 'Left')}
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-arrow-left></use></svg> ${t('properties.align_left', 'Left')}
                         </button>
                         <button type="button" class="btn-align ${field.labelAlign === 'right' ? 'active' : ''}" data-align="right" title="${t('properties.align_right_title', 'Right Aligned (Horizontal)')}">
-                            ➡️ ${t('properties.align_right', 'Right')}
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-arrow></use></svg> ${t('properties.align_right', 'Right')}
                         </button>
                     </div>
                 </div>
@@ -5128,13 +5128,13 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                         <label for="prop-validation-pattern">${t('properties.validation_pattern', 'Validation Rule / Pattern')}</label>
                         <select id="prop-validation-pattern" class="prop-input">
                             <option value="none" ${(field.validation || 'none') === 'none' ? 'selected' : ''}>${t('properties.val_none', 'None (Standard Text)')}</option>
-                            <option value="email" ${field.validation === 'email' ? 'selected' : ''}>${t('properties.val_email', '📧 Email Address Format')}</option>
-                            <option value="phone" ${field.validation === 'phone' ? 'selected' : ''}>${t('properties.val_phone', '📱 Phone Number Format')}</option>
-                            <option value="date" ${field.validation === 'date' ? 'selected' : ''}>${t('properties.val_date', '📅 Date (YYYY-MM-DD)')}</option>
-                            <option value="alphanumeric" ${field.validation === 'alphanumeric' ? 'selected' : ''}>${t('properties.val_alphanumeric', '🔤 Alphanumeric (Letters & Numbers)')}</option>
-                            <option value="numeric" ${field.validation === 'numeric' ? 'selected' : ''}>${t('properties.val_numeric', '🔢 Numeric Only')}</option>
-                            <option value="postal" ${field.validation === 'postal' ? 'selected' : ''}>${t('properties.val_postal', '📮 Postal / ZIP Code')}</option>
-                            <option value="custom" ${field.validation === 'custom' ? 'selected' : ''}>${t('properties.val_custom', '⚙️ Custom Regex Pattern')}</option>
+                            <option value="email" ${field.validation === 'email' ? 'selected' : ''}>${t('properties.val_email', 'Email Address Format')}</option>
+                            <option value="phone" ${field.validation === 'phone' ? 'selected' : ''}>${t('properties.val_phone', 'Phone Number Format')}</option>
+                            <option value="date" ${field.validation === 'date' ? 'selected' : ''}>${t('properties.val_date', 'Date (YYYY-MM-DD)')}</option>
+                            <option value="alphanumeric" ${field.validation === 'alphanumeric' ? 'selected' : ''}>${t('properties.val_alphanumeric', 'Alphanumeric (Letters & Numbers)')}</option>
+                            <option value="numeric" ${field.validation === 'numeric' ? 'selected' : ''}>${t('properties.val_numeric', 'Numeric Only')}</option>
+                            <option value="postal" ${field.validation === 'postal' ? 'selected' : ''}>${t('properties.val_postal', 'Postal / ZIP Code')}</option>
+                            <option value="custom" ${field.validation === 'custom' ? 'selected' : ''}>${t('properties.val_custom', 'Custom Regex Pattern')}</option>
                         </select>
 
                         <div id="custom-regex-wrap" style="display: ${field.validation === 'custom' ? 'block' : 'none'}; margin-top: 8px;">
@@ -5181,7 +5181,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                                     <button type="button" class="btn-icon btn-move-opt-up" title="${t('properties.move_option_up', 'Move option up')}" ${oIdx === 0 ? 'disabled' : ''}>▲</button>
                                     <button type="button" class="btn-icon btn-move-opt-down" title="${t('properties.move_option_down', 'Move option down')}" ${oIdx === (field.options || []).length - 1 ? 'disabled' : ''}>▼</button>
                                     <input type="text" class="prop-input opt-val-input" value="${this.escapeHtml(opt)}">
-                                    <button type="button" class="btn-icon btn-remove-opt" title="${t('properties.remove_option_title', 'Remove option')}">✕</button>
+                                    <button type="button" class="btn-icon btn-remove-opt" title="${t('properties.remove_option_title', 'Remove option')}"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
                                 </div>
                             `).join('')}
                         </div>
@@ -5196,7 +5196,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 <div class="prop-group conditional-box" data-prop-category="logic" data-prop-keywords="conditional logic dependency dependency show if rules branch visible hidden trigger parent equals">
                     <label class="conditional-header">
                         <input type="checkbox" id="prop-conditional-toggle" ${field.conditional ? 'checked' : ''}>
-                        <span>${t('properties.conditional_logic', '🔀 Dependency & Conditional Logic')}</span>
+                        <span>${t('properties.conditional_logic', 'Dependency & Conditional Logic')}</span>
                     </label>
                     
                     <div id="conditional-config-panel" style="display: ${field.conditional ? 'block' : 'none'}; margin-top: 10px;">
@@ -5237,9 +5237,9 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
 
                 <!-- Field Action Buttons -->
                 <div class="prop-actions-bar">
-                    <button type="button" class="btn-prop-action btn-copy-json" id="btn-prop-copy-json" title="${t('properties.copy_json_title', 'Copy field JSON configuration metadata for debugging or re-use')}">${t('properties.copy_json_btn', '📋 Copy JSON')}</button>
-                    <button type="button" class="btn-prop-action" id="btn-prop-dup" title="${t('properties.duplicate_title', 'Duplicate Field (Ctrl+D)')}">${t('properties.duplicate_btn', '📋 Duplicate')}</button>
-                    <button type="button" class="btn-prop-action btn-danger" id="btn-prop-del" title="${t('properties.delete_title', 'Delete Field (Delete)')}">${t('properties.delete_btn', '🗑️ Delete')}</button>
+                    <button type="button" class="btn-prop-action btn-copy-json" id="btn-prop-copy-json" title="${t('properties.copy_json_title', 'Copy field JSON configuration metadata for debugging or re-use')}">${t('properties.copy_json_btn', 'Copy JSON')}</button>
+                    <button type="button" class="btn-prop-action" id="btn-prop-dup" title="${t('properties.duplicate_title', 'Duplicate Field (Ctrl+D)')}">${t('properties.duplicate_btn', 'Duplicate')}</button>
+                    <button type="button" class="btn-prop-action btn-danger" id="btn-prop-del" title="${t('properties.delete_title', 'Delete Field (Delete)')}">${t('properties.delete_btn', 'Delete')}</button>
                 </div>
             </div>
         `;
@@ -5656,7 +5656,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 <!-- PDF & Automation Settings -->
                 <div class="prop-group toggle-group" style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 10px 12px; border-radius: 8px; margin-top: 14px;">
                     <div class="toggle-info">
-                        <label for="prop-form-print-after-sig" class="toggle-label" style="color: #166534; font-weight: 700;">${t('overview.print_after_sig', '🖨️ Print after Signature')}</label>
+                        <label for="prop-form-print-after-sig" class="toggle-label" style="color: #166534; font-weight: 700;">${t('overview.print_after_sig', 'Print after Signature')}</label>
                         <small class="toggle-desc" style="color: #15803d;">${t('overview.print_after_sig_desc', "Automatically trigger the browser's print dialog once a client completes their signature capture")}</small>
                     </div>
                     <label class="switch">
@@ -5666,7 +5666,7 @@ Digital Client Signature,signature,true,Legally binding digital signature attest
                 </div>
 
                 <div class="quick-tips-card">
-                    <h4>${t('overview.studio_tips_title', '💡 Professional Studio Tips')}</h4>
+                    <h4>${t('overview.studio_tips_title', 'Professional Studio Tips')}</h4>
                     <ul>
                         <li><strong>${t('overview.tip_validation_title', 'Validation:')}</strong> ${t('overview.tip_validation', 'Configure email, phone, and date checks to prevent client input mistakes.')}</li>
                         <li><strong>${t('overview.tip_logic_title', 'Dependency Logic:')}</strong> ${t('overview.tip_logic', 'Show/hide fields conditionally when a preceding radio or select option is chosen.')}</li>
