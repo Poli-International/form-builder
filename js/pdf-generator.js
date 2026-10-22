@@ -1141,9 +1141,9 @@ const PDFGenerator = {
                 }
 
                 if (window.formBuilder && typeof window.formBuilder.showToast === 'function') {
-                    window.formBuilder.showToast(`PDF settings saved! Layout: ${density}, Ink: ${selectedInk}.`, 'success');
+                    window.formBuilder.showToast((window.i18n ? window.i18n.t('messages.pdf_saved', { layout: density, ink: selectedInk }, `PDF settings saved! Layout: ${density}, Ink: ${selectedInk}.`) : `PDF settings saved! Layout: ${density}, Ink: ${selectedInk}.`), 'success');
                 } else if (window.FormBuilderApp && typeof window.FormBuilderApp.showToast === 'function') {
-                    window.FormBuilderApp.showToast(`PDF settings saved! Layout: ${density}, Ink: ${selectedInk}.`, 'success');
+                    window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.pdf_saved', { layout: density, ink: selectedInk }, `PDF settings saved! Layout: ${density}, Ink: ${selectedInk}.`) : `PDF settings saved! Layout: ${density}, Ink: ${selectedInk}.`), 'success');
                 }
             });
         }
