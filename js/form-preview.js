@@ -517,7 +517,7 @@ class FormPreview {
                     const settings = (window.PDFGenerator && window.PDFGenerator.getSettings) ? window.PDFGenerator.getSettings() : {};
                     if (settings.printAfterSignature) {
                         if (window.FormBuilderApp) {
-                            window.FormBuilderApp.showToast('Signature captured! Opening browser print dialog...', 'info');
+                            window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.sig_print', {}, 'Signature captured! Opening browser print dialog...') : 'Signature captured! Opening browser print dialog...'), 'info');
                         }
                         setTimeout(() => {
                             window.print();
@@ -706,7 +706,7 @@ class FormPreview {
 
         Array.from(files).forEach(file => {
             if (file.size > 10 * 1024 * 1024) {
-                if (window.FormBuilderApp) window.FormBuilderApp.showToast(`"${file.name}" exceeds 10MB limit`, 'error');
+                if (window.FormBuilderApp) window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.file_too_big', { name: file.name }, `"${file.name}" exceeds 10MB limit`) : `"${file.name}" exceeds 10MB limit`), 'error');
                 return;
             }
 
@@ -725,7 +725,7 @@ class FormPreview {
                 this.renderPhotoGallery(fieldId);
                 this.updateProgress();
                 if (window.FormBuilderApp) {
-                    window.FormBuilderApp.showToast(`Uploaded "${file.name}"`, 'success');
+                    window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.uploaded', { name: file.name }, `Uploaded "${file.name}"`) : `Uploaded "${file.name}"`), 'success');
                 }
             };
             reader.readAsDataURL(file);
@@ -818,7 +818,7 @@ class FormPreview {
             this.formData = JSON.parse(JSON.stringify(window.FormBuilderApp.currentForm));
         }
         if (!this.formData) {
-            if (window.FormBuilderApp) window.FormBuilderApp.showToast('Please load or create a form first', 'warning');
+            if (window.FormBuilderApp) window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.load_form_first', {}, 'Please load or create a form first') : 'Please load or create a form first'), 'warning');
             return;
         }
         this.isKioskMode = true;
@@ -1230,7 +1230,7 @@ class FormPreview {
             autoPopBtn.addEventListener('click', () => {
                 const count = this.autoPopulateStudioDefaults(true);
                 if (window.FormBuilderApp) {
-                    window.FormBuilderApp.showToast(`Auto-populated ${count} studio & system date fields!`, 'success');
+                    window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.autofilled', { count }, `Auto-populated ${count} studio & system date fields!`) : `Auto-populated ${count} studio & system date fields!`), 'success');
                 }
             });
         }
@@ -1240,7 +1240,7 @@ class FormPreview {
         if (resetBtn) {
             resetBtn.addEventListener('click', () => {
                 this.render(this.formData);
-                if (window.FormBuilderApp) window.FormBuilderApp.showToast('Form reset', 'info');
+                if (window.FormBuilderApp) window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.form_reset', {}, 'Form reset') : 'Form reset'), 'info');
             });
         }
     }
@@ -1458,7 +1458,7 @@ class FormPreview {
             case 'email':
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(str)) {
-                    return { isValid: false, message: customMessage || 'Please enter a valid email address (e.g. name@example.com)' };
+                    return { isValid: false, message: customMessage || (window.i18n ? window.i18n.t('messages.v_email', {}, 'Please enter a valid email address (e.g. name@example.com)') : 'Please enter a valid email address (e.g. name@example.com)') };
                 }
                 break;
 
@@ -1466,31 +1466,31 @@ class FormPreview {
                 // Flexible phone pattern allowing +, dashes, spaces, parentheses, 7-16 digits
                 const digits = str.replace(/\D/g, '');
                 if (digits.length < 7 || digits.length > 15) {
-                    return { isValid: false, message: customMessage || 'Please enter a valid phone number (min 7-10 digits)' };
+                    return { isValid: false, message: customMessage || (window.i18n ? window.i18n.t('messages.v_phone', {}, 'Please enter a valid phone number (min 7-10 digits)') : 'Please enter a valid phone number (min 7-10 digits)') };
                 }
                 break;
 
             case 'date':
                 if (isNaN(Date.parse(str))) {
-                    return { isValid: false, message: customMessage || 'Please enter a valid date' };
+                    return { isValid: false, message: customMessage || (window.i18n ? window.i18n.t('messages.v_date', {}, 'Please enter a valid date') : 'Please enter a valid date') };
                 }
                 break;
 
             case 'alphanumeric':
                 if (!/^[a-zA-Z0-9\s.,'#\/-]+$/.test(str)) {
-                    return { isValid: false, message: customMessage || 'Only letters, numbers, and basic punctuation allowed' };
+                    return { isValid: false, message: customMessage || (window.i18n ? window.i18n.t('messages.v_text', {}, 'Only letters, numbers, and basic punctuation allowed') : 'Only letters, numbers, and basic punctuation allowed') };
                 }
                 break;
 
             case 'numeric':
                 if (!/^-?\d+(\.\d+)?$/.test(str)) {
-                    return { isValid: false, message: customMessage || 'Please enter numeric digits only' };
+                    return { isValid: false, message: customMessage || (window.i18n ? window.i18n.t('messages.v_number', {}, 'Please enter numeric digits only') : 'Please enter numeric digits only') };
                 }
                 break;
 
             case 'postal':
                 if (!/^[A-Za-z0-9\s-]{3,10}$/.test(str)) {
-                    return { isValid: false, message: customMessage || 'Please enter a valid postal or ZIP code' };
+                    return { isValid: false, message: customMessage || (window.i18n ? window.i18n.t('messages.v_postal', {}, 'Please enter a valid postal or ZIP code') : 'Please enter a valid postal or ZIP code') };
                 }
                 break;
 
@@ -1499,7 +1499,7 @@ class FormPreview {
                     try {
                         const reg = new RegExp(customRegex);
                         if (!reg.test(str)) {
-                            return { isValid: false, message: customMessage || `Value does not match required format (${customRegex})` };
+                            return { isValid: false, message: customMessage || (window.i18n ? window.i18n.t('messages.v_format', { format: customRegex }, `Value does not match required format (${customRegex})`) : `Value does not match required format (${customRegex})`) };
                         }
                     } catch (e) {
                         console.warn('Invalid custom regex:', e);
@@ -1915,7 +1915,7 @@ class FormPreview {
         URL.revokeObjectURL(url);
 
         if (window.FormBuilderApp) {
-            window.FormBuilderApp.showToast(`Exported "${filename}"`, 'success');
+            window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.exported', { name: filename }, `Exported "${filename}"`) : `Exported "${filename}"`), 'success');
         }
     }
 
@@ -1929,7 +1929,7 @@ class FormPreview {
         if (errors.length > 0) {
             this.renderValidationSummary(errors);
             if (window.FormBuilderApp) {
-                window.FormBuilderApp.showToast(`Please complete the ${errors.length} mandatory field(s) listed in the summary`, 'error');
+                window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.complete_required', { count: errors.length }, `Please complete the ${errors.length} mandatory field(s) listed in the summary`) : `Please complete the ${errors.length} mandatory field(s) listed in the summary`), 'error');
             }
             return;
         }
