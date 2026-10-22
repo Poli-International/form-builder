@@ -204,7 +204,7 @@ class BodyMapAnnotator {
         const clearBtn = document.getElementById(`btn-bm-clear-${this.fieldId}`);
         if (clearBtn) {
             clearBtn.addEventListener('click', () => {
-                if (confirm('Clear all anatomical markers and drawings for this diagram?')) {
+                if (confirm((window.i18n ? window.i18n.t('messages.clear_bodymap', {}, 'Clear all anatomical markers and drawings for this diagram?') : 'Clear all anatomical markers and drawings for this diagram?'))) {
                     this.pins = [];
                     this.strokes = [];
                     this.redraw();
