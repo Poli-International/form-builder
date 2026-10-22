@@ -137,7 +137,7 @@ class SignatureManager {
                 hour: '2-digit', minute: '2-digit', second: '2-digit'
             });
             badgeEl.style.display = 'inline-flex';
-            badgeEl.innerHTML = TP("x.digitally_signed_amp_timestamped", "<span class=\"sig-verified-icon\">✓</span> Digitally Signed &amp; Timestamped: <strong>{0}</strong>", timeStr);
+            badgeEl.innerHTML = TP("x.digitally_signed_amp_timestamped", "<span class=\"sig-verified-icon\"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg></span> Digitally Signed &amp; Timestamped: <strong>{0}</strong>", timeStr);
         } else {
             badgeEl.style.display = 'none';
             badgeEl.innerHTML = '';
