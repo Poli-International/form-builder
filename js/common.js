@@ -422,7 +422,7 @@ function initApp() {
                 if (draft && draft.form && draft.form.sections && draft.form.sections.length > 0) {
                     window.FormBuilderApp.loadForm(draft.form, 'Restore Auto-save Draft');
                     const savedAt = new Date(draft.timestamp).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' });
-                    window.FormBuilderApp.showToast(`Your changes to "${draft.form.name || (tmpl && tmpl.name) || 'this form'}" from ${savedAt} were restored`, 'info');
+                    window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.draft_restored_named', { name: draft.form.name || (tmpl && tmpl.name) || (window.i18n ? window.i18n.t('messages.this_form', {}, 'this form') : 'this form'), date: savedAt }, `Your changes to "${draft.form.name || (tmpl && tmpl.name) || 'this form'}" from ${savedAt} were restored`) : `Your changes to "${draft.form.name || (tmpl && tmpl.name) || 'this form'}" from ${savedAt} were restored`), 'info');
                     return;
                 }
                 if (window.FormBuilderApp && tmpl) {
@@ -448,7 +448,7 @@ function initApp() {
                 if (autoSaved && autoSaved.form && autoSaved.form.sections && autoSaved.form.sections.length > 0) {
                     window.FormBuilderApp.loadForm(autoSaved.form, 'Restore Auto-save Draft');
                     const savedDate = new Date(autoSaved.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                    window.FormBuilderApp.showToast(`Restored auto-saved draft from ${savedDate}`, 'info');
+                    window.FormBuilderApp.showToast((window.i18n ? window.i18n.t('messages.draft_restored_at', { date: savedDate }, `Restored auto-saved draft from ${savedDate}`) : `Restored auto-saved draft from ${savedDate}`), 'info');
                     loaded = true;
 
                     // Match template select if known template
@@ -705,7 +705,7 @@ async function copyTextToClipboard(text, btnElement, successLabel = 'Copied to C
     }
 
     if (window.FormBuilderApp && typeof window.FormBuilderApp.showToast === 'function') {
-        window.FormBuilderApp.showToast(copied ? message : 'Failed to copy text', copied ? 'success' : 'error');
+        window.FormBuilderApp.showToast(copied ? message : (window.i18n ? window.i18n.t('messages.copy_failed', {}, 'Failed to copy text') : 'Failed to copy text'), copied ? 'success' : 'error');
     }
     return copied;
 }
