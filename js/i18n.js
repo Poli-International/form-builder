@@ -185,7 +185,7 @@
                         trCat = catTr;
                     }
                 }
-                opt.textContent = `📋 ${trTitle}${trCat ? ` (${trCat})` : ''}`;
+                opt.textContent = `${trTitle}${trCat ? ` (${trCat})` : ''}`;
                 tmplSelect.appendChild(opt);
             });
 
