@@ -205,18 +205,18 @@ body.dark-mode .breadcrumb-nav strong {
             
             <div class="header-dropdown-wrap" style="position:relative; display:inline-block;">
                 <button type="button" id="btn-import-menu" class="btn-secondary btn-header" title="Import JSON template or Bulk Import CSV fields" data-i18n-title="header.import_title">
-                    <span>📥</span> <span data-i18n="header.import">Import</span> <span style="font-size:0.6rem; margin-left:2px; opacity:0.8;">▼</span>
+                    <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-download></use></svg></span> <span data-i18n="header.import">Import</span> <span style="font-size:0.6rem; margin-left:2px; opacity:0.8;">▼</span>
                 </button>
                 <div id="import-dropdown-menu" class="header-dropdown-menu" style="display:none;">
                     <button type="button" id="btn-import-json-action" class="dropdown-item-btn">
-                        <span style="font-size:1.05rem;">📄</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-doc></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.import_dropdown_json">Import JSON Template</strong>
                             <small data-i18n="header.import_dropdown_json_desc">Load complete form schema JSON</small>
                         </div>
                     </button>
                     <button type="button" id="btn-import-csv-action" class="dropdown-item-btn">
-                        <span style="font-size:1.05rem;">📊</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-chart></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.import_dropdown_csv">Bulk Import Fields (CSV)</strong>
                             <small data-i18n="header.import_dropdown_csv_desc">Generate fields from spreadsheet</small>
@@ -227,32 +227,32 @@ body.dark-mode .breadcrumb-nav strong {
 
             <div class="header-dropdown-wrap" style="position:relative; display:inline-block;">
                 <button type="button" id="btn-export-menu" class="btn-secondary btn-header" title="Export form schema, CSV template, or schema mapping PDF" data-i18n-title="header.export_title">
-                    <span>📤</span> <span data-i18n="header.export">Export</span> <span style="font-size:0.6rem; margin-left:2px; opacity:0.8;">▼</span>
+                    <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-upload></use></svg></span> <span data-i18n="header.export">Export</span> <span style="font-size:0.6rem; margin-left:2px; opacity:0.8;">▼</span>
                 </button>
                 <div id="export-dropdown-menu" class="header-dropdown-menu" style="display:none;">
                     <button type="button" id="btn-export-json" class="dropdown-item-btn" title="Export form configuration as JSON (Ctrl+S)" data-i18n-title="header.export_json_title">
-                        <span style="font-size:1.05rem;">💾</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-save></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.export_dropdown_json">Export JSON Template</strong>
                             <small data-i18n="header.export_dropdown_json_desc">Save full form schema file (Ctrl+S)</small>
                         </div>
                     </button>
                     <button type="button" id="btn-export-csv-template" class="dropdown-item-btn" title="Download CSV Template with form field labels as column headers for CRM migration" data-i18n-title="header.export_csv_template_title">
-                        <span style="font-size:1.05rem;">📋</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.export_dropdown_csv">Download CSV Template</strong>
                             <small data-i18n="header.export_dropdown_csv_desc">Field headers for CRM migration</small>
                         </div>
                     </button>
                     <button type="button" id="btn-export-schema-mapping" class="dropdown-item-btn" title="Download Schema Mapping PDF Guide explaining form structure and validation rules for clients" data-i18n-title="header.export_schema_mapping_title">
-                        <span style="font-size:1.05rem;">📑</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-clipboard></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.export_dropdown_schema">Schema PDF Guide</strong>
                             <small data-i18n="header.export_dropdown_schema_desc">Visual structure and validation map</small>
                         </div>
                     </button>
                     <button type="button" id="btn-export-field-ids" class="dropdown-item-btn" title="Generate interactive visual map of all Field IDs and labels for CRM / Webhook integration" data-i18n-title="header.export_field_ids_title">
-                        <span style="font-size:1.05rem;">🗺️</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-compass></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.export_dropdown_field_ids">Export Field IDs &amp; CRM Map</strong>
                             <small data-i18n="header.export_dropdown_field_ids_desc">Visual variable map for HubSpot, Salesforce &amp; Webhooks</small>
@@ -264,53 +264,53 @@ body.dark-mode .breadcrumb-nav strong {
             <!-- Settings / Options Overflow Menu -->
             <div class="header-dropdown-wrap" style="position:relative; display:inline-block;">
                 <button type="button" id="btn-options-menu" class="btn-secondary btn-header" title="Form builder options, PDF print setup, embed code, and theme customizer" data-i18n-title="header.options_title">
-                    <span>⚙️</span> <span data-i18n="header.options">Options</span> <span style="font-size:0.6rem; margin-left:2px; opacity:0.8;">▼</span>
+                    <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-gear></use></svg></span> <span data-i18n="header.options">Options</span> <span style="font-size:0.6rem; margin-left:2px; opacity:0.8;">▼</span>
                 </button>
                 <div id="options-dropdown-menu" class="header-dropdown-menu" style="display:none;">
                     <button type="button" id="btn-header-kiosk" onclick="window.openTabletKioskMode && window.openTabletKioskMode()" class="dropdown-item-btn" title="Open Touch-Optimized Step-by-Step Tablet Kiosk Mode for client intake" data-i18n-title="header.kiosk_title">
-                        <span style="font-size:1.05rem;">📱</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-phone></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.kiosk_mode">Tablet Kiosk Mode</strong>
                             <small data-i18n="header.kiosk_mode_desc">Touch client check-in wizard &amp; step navigation</small>
                         </div>
                     </button>
                     <button type="button" id="btn-open-pdf-settings" class="dropdown-item-btn" title="PDF &amp; Print Automation and Watermark Logo Settings" data-i18n-title="header.pdf_settings_title">
-                        <span style="font-size:1.05rem;">🖨️</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-print></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.pdf_settings">PDF Settings</strong>
                             <small data-i18n="header.pdf_settings_desc">Print layout, page sizing &amp; studio logo</small>
                         </div>
                     </button>
                     <button type="button" id="btn-theme-customizer" class="dropdown-item-btn" title="Customize primary colors, font sizes, and border-radius settings" data-i18n-title="header.theme_customizer_title">
-                        <span style="font-size:1.05rem;">🎨</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-machine></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.theme_customizer">Theme Customizer</strong>
                             <small data-i18n="header.theme_customizer_desc">Studio palette &amp; visual styles</small>
                         </div>
                     </button>
                     <button type="button" id="btn-multisession-planner" class="dropdown-item-btn" title="Multi-Session Project Iterations &amp; Draft Versions" data-i18n-title="header.multisession_planner_title">
-                        <span style="font-size:1.05rem;">📅</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calendar></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.multisession_planner">Multi-Session Planner</strong>
                             <small data-i18n="header.multisession_planner_desc">Phased projects &amp; appointment history</small>
                         </div>
                     </button>
                     <button type="button" id="btn-embed" onclick="showEmbedCode()" class="dropdown-item-btn" title="Embed form on your website or print intake QR placard" data-i18n-title="header.embed_title">
-                        <span style="font-size:1.05rem;">🔗</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-link></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.embed">Embed &amp; QR Placard</strong>
                             <small data-i18n="header.embed_desc">Website iframe code &amp; desk placard</small>
                         </div>
                     </button>
                     <a id="link-documentation" class="dropdown-item-btn" href="/tools/form-builder/documentation.html" target="_top" title="Full guide: templates, logic, PDF, embedding" data-i18n-title="header.documentation_title">
-                        <span style="font-size:1.05rem;">📖</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-book></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.documentation">Documentation</strong>
                             <small data-i18n="header.documentation_desc">Full guide: templates, logic, PDF, embedding</small>
                         </div>
                     </a>
                     <button type="button" id="btn-shortcuts" class="dropdown-item-btn" title="Keyboard Shortcuts" data-i18n-title="header.shortcuts_title">
-                        <span style="font-size:1.05rem;">⌨️</span>
+                        <span style="font-size:1.05rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-keyboard></use></svg></span>
                         <div class="dropdown-item-text">
                             <strong data-i18n="header.shortcuts">Keyboard Shortcuts</strong>
                             <small data-i18n="header.shortcuts_desc">Ctrl+Z, Ctrl+D, Shift+Click, Delete</small>
@@ -320,10 +320,10 @@ body.dark-mode .breadcrumb-nav strong {
             </div>
 
             <button type="button" id="btn-preview" class="btn-primary btn-header" data-i18n="header.preview">
-                <span>👁️</span> Preview Form
+                <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-eye></use></svg></span> Preview Form
             </button>
             <button type="button" id="theme-toggle" class="btn-icon-square" title="Toggle Light / Dark Mode" data-i18n-title="header.toggle_theme">
-                🌙
+                <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-moon></use></svg>
             </button>
         </div>
     </header>
@@ -333,13 +333,13 @@ body.dark-mode .breadcrumb-nav strong {
         <!-- Mobile Builder Segmented Panel Tabs -->
         <nav id="mobile-panel-tabs" class="mobile-panel-tabs" aria-label="Mobile Builder Navigation" data-i18n-aria="x.mobile_builder_navigation">
             <button type="button" class="mobile-tab-btn" data-panel="left-panel" id="mobile-tab-palette">
-                <span>📦</span> <span data-i18n="palette.title">Fields</span>
+                <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-box></use></svg></span> <span data-i18n="palette.title">Fields</span>
             </button>
             <button type="button" class="mobile-tab-btn active" data-panel="center-canvas" id="mobile-tab-canvas">
-                <span>📝</span> <span data-i18n="header.canvas_tab">Canvas</span>
+                <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-note></use></svg></span> <span data-i18n="header.canvas_tab">Canvas</span>
             </button>
             <button type="button" class="mobile-tab-btn" data-panel="right-panel" id="mobile-tab-properties">
-                <span>⚙️</span> <span data-i18n="properties.title">Properties</span>
+                <span><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-gear></use></svg></span> <span data-i18n="properties.title">Properties</span>
             </button>
         </nav>
 
@@ -362,10 +362,10 @@ body.dark-mode .breadcrumb-nav strong {
                         </div>
                     </div>
                     <div class="palette-search-box">
-                        <span class="palette-search-icon">🔍</span>
+                        <span class="palette-search-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-search></use></svg></span>
                         <input type="text" id="palette-search-input" class="palette-search-input" placeholder="Filter fields... (Ctrl+F)" autocomplete="off" aria-label="Filter field types" data-i18n-placeholder="palette.search_placeholder" data-i18n-aria-label="palette.search_aria_label">
                         <kbd class="palette-search-shortcut-badge" title="Press Ctrl+F or ⌘+F to jump to field filtering" data-i18n-title="palette.search_shortcut_title">Ctrl+F</kbd>
-                        <button type="button" id="btn-palette-search-clear" class="palette-search-clear" style="display:none;" title="Clear search" data-i18n-title="palette.clear_search">✕</button>
+                        <button type="button" id="btn-palette-search-clear" class="palette-search-clear" style="display:none;" title="Clear search" data-i18n-title="palette.clear_search"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
                     </div>
                     <div id="palette-search-results-count" class="palette-search-results-count" style="display:none;" aria-live="polite"></div>
                 </div>
@@ -374,7 +374,7 @@ body.dark-mode .breadcrumb-nav strong {
                 <div id="recommended-fields-section" class="recommended-fields-section">
                     <div class="recommended-header">
                         <div class="recommended-title">
-                            <span class="rec-sparkle-icon">✨</span>
+                            <span class="rec-sparkle-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-spark></use></svg></span>
                             <span class="rec-heading-text" data-i18n="palette.recommended_fields">Recommended Fields</span>
                         </div>
                         <span class="recommended-badge" title="Dynamically recommended based on current form contents" data-i18n="palette.smart_suggest" data-i18n-title="palette.recommended_badge_title">Smart Suggest</span>
@@ -399,29 +399,29 @@ body.dark-mode .breadcrumb-nav strong {
                 <div class="canvas-top-toolbar" id="canvas-top-toolbar">
                     <div class="canvas-toolbar-left">
                         <button type="button" id="btn-toggle-canvas-grid" class="btn-canvas-util" title="Toggle background alignment grid pattern for precision drag-and-drop alignment" data-i18n-title="canvas.grid_toggle_title" aria-pressed="false">
-                            <span class="grid-icon">📐</span>
+                            <span class="grid-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-ruler></use></svg></span>
                             <span id="grid-toggle-text" data-i18n="canvas.grid_off">Grid: Off</span>
                         </button>
                         <button type="button" id="btn-toggle-smart-snap" class="btn-canvas-util btn-smart-snap-active" title="Toggle Smart Snap magnetic alignment guidelines when dragging fields" data-i18n-title="canvas.smart_snap_title" aria-pressed="true">
-                            <span class="snap-icon">🧲</span>
+                            <span class="snap-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-link></use></svg></span>
                             <span id="smart-snap-toggle-text" data-i18n="canvas.snap_on">Smart Snap: ON</span>
                         </button>
                         <button type="button" id="btn-auto-sort-fields" class="btn-canvas-util" title="Auto-sort fields alphabetically by label (A-Z) within all sections" data-i18n-title="canvas.auto_sort_title">
-                            <span class="sort-icon">🔤</span>
+                            <span class="sort-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-type></use></svg></span>
                             <span data-i18n="canvas.auto_sort">Auto-Sort</span>
                         </button>
                         <button type="button" id="btn-validate-form" class="btn-canvas-util btn-canvas-validate" title="Open Data Integrity Checker: Scan form for circular logic dependencies, missing mandatory options, and validation bounds" data-i18n-title="canvas.validate_form_title">
-                            <span class="validate-icon">🛡️</span>
+                            <span class="validate-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-shield></use></svg></span>
                             <span data-i18n="canvas.validate_form">Integrity Checker</span>
                         </button>
                     </div>
                     <div class="canvas-toolbar-right">
                         <div id="canvas-field-count-badge" class="canvas-field-count-badge" title="Total count of fields currently placed in the form" data-i18n-title="canvas.fields_placed_title">
-                            <span class="field-count-icon">📊</span>
+                            <span class="field-count-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-chart></use></svg></span>
                             <span id="canvas-field-count-text" data-i18n="canvas.fields_placed">0 Fields Placed</span>
                         </div>
                         <div id="canvas-validation-status" class="canvas-validation-status-pill" title="Live field configuration validation status" data-i18n-title="canvas.validation_status_title">
-                            <span class="val-status-icon">✓</span>
+                            <span class="val-status-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-check></use></svg></span>
                             <span class="val-status-text" data-i18n="canvas.all_configured">All Fields Configured</span>
                         </div>
                     </div>
@@ -472,7 +472,7 @@ body.dark-mode .breadcrumb-nav strong {
         <aside id="recently-deleted-bin" class="recently-deleted-bin" style="display:none;" aria-live="polite" aria-label="Recently Deleted Fields" data-i18n-aria="x.recently_deleted_fields">
             <div class="recently-deleted-header" id="recently-deleted-header">
                 <div class="deleted-header-title-wrap">
-                    <span class="deleted-bin-icon">🗑️</span>
+                    <span class="deleted-bin-icon"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-trash></use></svg></span>
                     <strong class="deleted-bin-title" data-i18n="bin.title">Recently Deleted</strong>
                     <span id="deleted-bin-count" class="deleted-bin-count-badge">0</span>
                 </div>
@@ -501,8 +501,8 @@ body.dark-mode .breadcrumb-nav strong {
     <div id="restore-session-modal" class="modal-overlay" style="display:none;">
         <div class="modal-card">
             <div class="modal-header">
-                <h3 data-i18n="autosave.restore_title">💾 Restore Previous Session?</h3>
-                <button type="button" id="close-restore-modal" class="modal-close-btn">✕</button>
+                <h3><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-save></use></svg><span data-i18n="autosave.restore_title" style="color:inherit">Restore Previous Session?</span></h3>
+                <button type="button" id="close-restore-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body">
                 <p id="restore-session-desc" style="margin-bottom: 1rem; color: #475569;" data-i18n="autosave.restore_desc">
@@ -525,10 +525,10 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-card modal-large">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 1.25rem;">📊</span>
+                    <span style="font-size: 1.25rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-chart></use></svg></span>
                     <h3 data-i18n="results.modal_title">Form Results Dashboard</h3>
                 </div>
-                <button type="button" id="close-results-modal" class="modal-close-btn">✕</button>
+                <button type="button" id="close-results-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body">
                 <div class="results-dashboard-summary" id="results-summary-cards">
@@ -543,7 +543,7 @@ body.dark-mode .breadcrumb-nav strong {
                 <!-- Results Filter & Search Toolbar -->
                 <div class="results-filter-toolbar" style="display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 220px; position: relative;">
-                        <input type="text" id="results-search-input" placeholder="🔍 Search responses, field names, or values..." data-i18n-placeholder="results.search_placeholder" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.88rem;">
+                        <input type="text" id="results-search-input" placeholder="Search responses, field names, or values..." data-i18n-placeholder="results.search_placeholder" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.88rem;">
                     </div>
                     <div style="min-width: 160px;">
                         <select id="results-section-filter" class="form-control" style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.88rem;">
@@ -571,19 +571,19 @@ body.dark-mode .breadcrumb-nav strong {
             <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
                 <div style="display: flex; gap: 0.5rem; align-items: center;">
                     <button type="button" id="btn-results-back" class="btn-secondary" data-i18n="results.back">Back to Form</button>
-                    <button type="button" id="btn-results-clear-all" class="btn-secondary" style="color: #dc2626; border-color: #fecaca; background: #fff5f5;" title="Securely purge all captured responses from local cache" data-i18n-title="results.clear_all_title" data-i18n="results.clear_all">
-                        🗑️ Clear All Responses
+                    <button type="button" id="btn-results-clear-all" class="btn-secondary" style="color: #dc2626; border-color: #fecaca; background: #fff5f5;" title="Securely purge all captured responses from local cache" data-i18n-title="results.clear_all_title">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-trash></use></svg><span data-i18n="results.clear_all" style="color:inherit">Clear All Responses</span>
                     </button>
                 </div>
                 <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                    <button type="button" id="btn-results-download-json" class="btn-secondary" title="Export current filtered responses as a structured JSON backup file" data-i18n-title="results.export_filtered_json_title" data-i18n="results.export_filtered_json">
-                        💾 Export Filtered JSON
+                    <button type="button" id="btn-results-download-json" class="btn-secondary" title="Export current filtered responses as a structured JSON backup file" data-i18n-title="results.export_filtered_json_title">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-save></use></svg><span data-i18n="results.export_filtered_json" style="color:inherit">Export Filtered JSON</span>
                     </button>
-                    <button type="button" id="btn-results-download-csv" class="btn-secondary" data-i18n="results.download_csv">
-                        📊 Download CSV
+                    <button type="button" id="btn-results-download-csv" class="btn-secondary">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-chart></use></svg><span data-i18n="results.download_csv" style="color:inherit">Download CSV</span>
                     </button>
-                    <button type="button" id="btn-results-download-pdf" class="btn-primary" data-i18n="results.download_pdf">
-                        📄 Download PDF
+                    <button type="button" id="btn-results-download-pdf" class="btn-primary">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-doc></use></svg><span data-i18n="results.download_pdf" style="color:inherit">Download PDF</span>
                     </button>
                 </div>
             </div>
@@ -595,10 +595,10 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-card" style="max-width: 480px; border-top: 5px solid #dc2626;">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 1.3rem;">⚠️</span>
+                    <span style="font-size: 1.3rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-warn></use></svg></span>
                     <h3 style="color: #991b1b; margin: 0;" data-i18n="results.purge_modal_title">Purge All Responses?</h3>
                 </div>
-                <button type="button" id="btn-cancel-clear-modal" class="modal-close-btn">✕</button>
+                <button type="button" id="btn-cancel-clear-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body" style="padding: 1.25rem 1.5rem;">
                 <div id="clear-step-1">
@@ -606,7 +606,7 @@ body.dark-mode .breadcrumb-nav strong {
                         You are about to securely purge <strong data-i18n="x.all_stored_client_responses_and_form">all stored client responses and form entries</strong> from your browser's local cache.
                     </p>
                     <div style="background: #fef2f2; border: 1px solid #fee2e2; border-radius: 8px; padding: 0.85rem; margin: 1rem 0; font-size: 0.84rem; color: #991b1b;" data-i18n="results.purge_step1_warn">
-                        <strong data-i18n="x.warning">⚠️ Warning:</strong> This action cannot be undone. Make sure you have exported any required CSV, JSON, or PDF records before continuing.
+                        <strong><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-warn></use></svg><span data-i18n="x.warning" style="color:inherit">Warning:</span></strong> This action cannot be undone. Make sure you have exported any required CSV, JSON, or PDF records before continuing.
                     </div>
                     <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.25rem;">
                         <button type="button" id="btn-step1-cancel" class="btn-secondary" data-i18n="results.purge_step1_cancel">Cancel</button>
@@ -636,10 +636,10 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-card modal-large qr-modal-card">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 1.25rem;">📱</span>
+                    <span style="font-size: 1.25rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-phone></use></svg></span>
                     <h3 id="embed-modal-title" data-i18n="embed_modal.title">Studio Intake QR Code &amp; Website Embed</h3>
                 </div>
-                <button type="button" id="close-embed-modal" class="modal-close-btn">✕</button>
+                <button type="button" id="close-embed-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body" style="padding: 1.25rem; overflow-y: auto; max-height: calc(88vh - 120px);">
                 <div class="embed-modal-layout">
@@ -650,36 +650,36 @@ body.dark-mode .breadcrumb-nav strong {
                             <canvas id="studio-qr-canvas" width="180" height="180" style="border: 1px solid #e2e8f0; border-radius: 8px; background: white; max-width: 100%; height: auto;"></canvas>
                         </div>
                         <p style="font-size: 0.75rem; color: #475569; margin: 0.4rem 0 0.75rem 0; line-height: 1.3;" data-i18n="embed_modal.scan_instructions">Scan with iPad or phone camera to complete consultation &amp; consent form</p>
-                        <button type="button" id="btn-print-qr-placard" class="btn-secondary" style="font-size: 0.78rem; width: 100%; padding: 0.4rem 0.5rem; justify-content: center;" data-i18n="embed_modal.print_placard">🖨️ Print Desk Placard</button>
+                        <button type="button" id="btn-print-qr-placard" class="btn-secondary" style="font-size: 0.78rem; width: 100%; padding: 0.4rem 0.5rem; justify-content: center;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-print></use></svg><span data-i18n="embed_modal.print_placard" style="color:inherit">Print Desk Placard</span></button>
                     </div>
 
                     <!-- Right: Links & Embed Code -->
                     <div class="embed-details-box" style="display: flex; flex-direction: column; gap: 0.9rem; min-width: 0;">
                         <div>
-                            <label style="display: block; font-size: 0.84rem; font-weight: 600; color: #1e293b; margin-bottom: 0.35rem;" data-i18n="embed_modal.direct_url_label">
-                                🌐 Direct Client Intake URL:
+                            <label style="display: block; font-size: 0.84rem; font-weight: 600; color: #1e293b; margin-bottom: 0.35rem;">
+                                <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-globe></use></svg><span data-i18n="embed_modal.direct_url_label" style="color:inherit">Direct Client Intake URL:</span>
                             </label>
                             <div style="display: flex; gap: 0.5rem; align-items: center;">
                                 <input type="text" id="direct-intake-url" readonly style="flex: 1; min-width: 0; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #f8fafc;" aria-label="Direct Client Intake URL" data-i18n-aria="x.direct_client_intake_url">
-                                <button type="button" id="btn-copy-direct-url" class="btn-primary" style="white-space: nowrap; flex-shrink: 0; font-size: 0.82rem; padding: 0.5rem 0.85rem; font-weight: 600;" title="Copy direct intake URL to clipboard" data-i18n-title="embed_modal.copy_link" data-i18n="embed_modal.copy_clipboard">
-                                    📋 Copy to Clipboard
+                                <button type="button" id="btn-copy-direct-url" class="btn-primary" style="white-space: nowrap; flex-shrink: 0; font-size: 0.82rem; padding: 0.5rem 0.85rem; font-weight: 600;" title="Copy direct intake URL to clipboard" data-i18n-title="embed_modal.copy_link">
+                                    <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-clipboard></use></svg><span data-i18n="embed_modal.copy_clipboard" style="color:inherit">Copy to Clipboard</span>
                                 </button>
                             </div>
                         </div>
 
                         <div>
-                            <label style="display: block; font-size: 0.84rem; font-weight: 600; color: #1e293b; margin-bottom: 0.35rem;" data-i18n="embed_modal.iframe_label">
-                                💻 Responsive Website Embed Code (&lt;iframe&gt;):
+                            <label style="display: block; font-size: 0.84rem; font-weight: 600; color: #1e293b; margin-bottom: 0.35rem;">
+                                <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-screen></use></svg><span data-i18n="embed_modal.iframe_label" style="color:inherit">Responsive Website Embed Code (&lt;iframe&gt;):</span>
                             </label>
                             <textarea id="embed-iframe-code" readonly rows="3" style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-family: monospace; font-size: 0.8rem; background: #f8fafc; resize: none; word-break: break-all;"></textarea>
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
                                 <span style="font-size: 0.75rem; color: #64748b;" data-i18n="embed_modal.embed_code_desc">Place this code on your studio website or booking portal.</span>
-                                <button type="button" id="btn-copy-embed-code" class="btn-secondary" style="font-size: 0.78rem; padding: 0.3rem 0.65rem; white-space: nowrap;" data-i18n="embed_modal.copy_iframe">📋 Copy Iframe Code</button>
+                                <button type="button" id="btn-copy-embed-code" class="btn-secondary" style="font-size: 0.78rem; padding: 0.3rem 0.65rem; white-space: nowrap;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-clipboard></use></svg><span data-i18n="embed_modal.copy_iframe" style="color:inherit">Copy Iframe Code</span></button>
                             </div>
                         </div>
 
                         <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.82rem; color: #1e40af; line-height: 1.45;" data-i18n-html="embed_modal.reception_tip_html">
-                            💡 <strong data-i18n="x.in_studio_reception_tip">In-Studio Reception Tip:</strong> Print the desk placard and place it on your studio front counter so clients can scan and complete their health history and consent waivers directly on their mobile device before their session.
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-bulb></use></svg> <strong data-i18n="x.in_studio_reception_tip">In-Studio Reception Tip:</strong> Print the desk placard and place it on your studio front counter so clients can scan and complete their health history and consent waivers directly on their mobile device before their session.
                         </div>
                     </div>
                 </div>
@@ -694,8 +694,8 @@ body.dark-mode .breadcrumb-nav strong {
     <div id="shortcuts-modal" class="modal-overlay" style="display:none;">
         <div class="modal-card">
             <div class="modal-header">
-                <h3 data-i18n="shortcuts.modal_title">⌨️ Form Builder Keyboard Shortcuts</h3>
-                <button type="button" id="close-shortcuts-modal" class="modal-close-btn">✕</button>
+                <h3><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-keyboard></use></svg><span data-i18n="shortcuts.modal_title" style="color:inherit">Form Builder Keyboard Shortcuts</span></h3>
+                <button type="button" id="close-shortcuts-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body">
                 <div class="shortcuts-grid">
@@ -752,18 +752,18 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-card modal-large">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 1.25rem;">📅</span>
+                    <span style="font-size: 1.25rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-calendar></use></svg></span>
                     <div>
                         <h3 style="margin: 0;" data-i18n="multisession.modal_title">Multi-Session Planner &amp; Project Iterations</h3>
                         <p style="margin: 0.2rem 0 0 0; font-size: 0.78rem; color: #64748b;" data-i18n="multisession.modal_subtitle">Save, switch, restore, and compare multiple draft versions of your studio form configurations.</p>
                     </div>
                 </div>
-                <button type="button" id="close-multisession-modal" class="modal-close-btn">✕</button>
+                <button type="button" id="close-multisession-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body" style="display: flex; flex-direction: column; gap: 1.25rem;">
                 <!-- Snapshot Creation Box -->
                 <div class="multisession-create-box" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; padding: 1rem 1.25rem;">
-                    <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #1e293b; font-weight: 700;" data-i18n="multisession.snapshot_title">📸 Snapshot Current Form as a New Project Version</h4>
+                    <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #1e293b; font-weight: 700;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-camera></use></svg><span data-i18n="multisession.snapshot_title" style="color:inherit">Snapshot Current Form as a New Project Version</span></h4>
                     <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 0.75rem; align-items: end;">
                         <div>
                             <label style="display: block; font-size: 0.78rem; font-weight: 600; color: #475569; margin-bottom: 0.25rem;" data-i18n="multisession.version_name_label">
@@ -778,7 +778,7 @@ body.dark-mode .breadcrumb-nav strong {
                             <input type="text" id="new-version-notes-input" placeholder="e.g. Stencil approved, shading scheduled for next visit" data-i18n-placeholder="planner.version_notes_placeholder" class="form-control" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px;">
                         </div>
                         <div>
-                            <button type="button" id="btn-save-new-version" class="btn-primary" style="white-space: nowrap; padding: 0.45rem 0.9rem; font-size: 0.85rem;" data-i18n="multisession.save_version">💾 Save Version</button>
+                            <button type="button" id="btn-save-new-version" class="btn-primary" style="white-space: nowrap; padding: 0.45rem 0.9rem; font-size: 0.85rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-save></use></svg><span data-i18n="multisession.save_version" style="color:inherit">Save Version</span></button>
                         </div>
                     </div>
                 </div>
@@ -792,11 +792,11 @@ body.dark-mode .breadcrumb-nav strong {
                         </span>
                     </div>
                     <div style="display: flex; gap: 0.5rem; align-items: center;">
-                        <button type="button" id="btn-open-multisession-compare" class="btn-secondary" style="font-size: 0.82rem; padding: 0.35rem 0.75rem; display: flex; align-items: center; gap: 0.35rem;" title="Compare changes between two form iterations" data-i18n-title="multisession.compare_btn_title" data-i18n="multisession.compare_btn">
-                            🔍 Compare Iterations
+                        <button type="button" id="btn-open-multisession-compare" class="btn-secondary" style="font-size: 0.82rem; padding: 0.35rem 0.75rem; display: flex; align-items: center; gap: 0.35rem;" title="Compare changes between two form iterations" data-i18n-title="multisession.compare_btn_title">
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-search></use></svg><span data-i18n="multisession.compare_btn" style="color:inherit">Compare Iterations</span>
                         </button>
                         <div style="width: 220px;">
-                            <input type="text" id="multisession-search-input" placeholder="🔍 Search versions..." data-i18n-placeholder="multisession.search_placeholder" class="form-control" style="width: 100%; padding: 0.4rem 0.65rem; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                            <input type="text" id="multisession-search-input" placeholder="Search versions..." data-i18n-placeholder="multisession.search_placeholder" class="form-control" style="width: 100%; padding: 0.4rem 0.65rem; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 6px;">
                         </div>
                     </div>
                 </div>
@@ -807,8 +807,8 @@ body.dark-mode .breadcrumb-nav strong {
                 </div>
             </div>
             <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 0.78rem; color: #64748b;" data-i18n="x.draft_snapshots_are_persisted_securely_to">
-                    💡 Draft snapshots are persisted securely to your browser storage.
+                <span style="font-size: 0.78rem; color: #64748b;">
+                    <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-bulb></use></svg><span data-i18n="x.draft_snapshots_are_persisted_securely_to" style="color:inherit">Draft snapshots are persisted securely to your browser storage.</span>
                 </span>
                 <button type="button" id="btn-close-multisession-done" class="btn-primary" data-i18n="multisession.done">Done</button>
             </div>
@@ -820,13 +820,13 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-card modal-large" style="max-width: 860px;">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 1.3rem;">🔍</span>
+                    <span style="font-size: 1.3rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-search></use></svg></span>
                     <div>
                         <h3 style="margin: 0; font-size: 1.15rem; color: #0f172a;" data-i18n="multisession.compare_modal_title">Compare Form Iterations</h3>
                         <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #64748b;" data-i18n="multisession.compare_modal_subtitle">Diff view highlighting fields added, modified, or removed across versions</p>
                     </div>
                 </div>
-                <button type="button" id="btn-close-compare-modal" class="modal-close-btn">✕</button>
+                <button type="button" id="btn-close-compare-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body" style="padding: 1.25rem 1.5rem;">
                 <!-- Comparison Selectors -->
@@ -841,7 +841,7 @@ body.dark-mode .breadcrumb-nav strong {
                     </div>
 
                     <div style="font-size: 1.2rem; color: #64748b; font-weight: 700; padding: 0 0.5rem;">
-                        ➔
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-arrow></use></svg>
                     </div>
 
                     <div>
@@ -876,21 +876,21 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-card" style="max-width: 540px;">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 1.3rem;">⚙️</span>
+                    <span style="font-size: 1.3rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-gear></use></svg></span>
                     <div>
                         <h3 style="margin: 0; font-size: 1.15rem; color: #0f172a;" data-i18n="pdf_settings.modal_title">PDF &amp; Print Automation Settings</h3>
                         <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #64748b;" data-i18n="pdf_settings.modal_subtitle">Configure studio watermark branding, automated printing, and export layout</p>
                     </div>
                 </div>
-                <button type="button" id="btn-close-pdf-settings" class="modal-close-btn">✕</button>
+                <button type="button" id="btn-close-pdf-settings" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body" style="padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 1.15rem;">
                 
                 <!-- Studio Logo Watermark Upload -->
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                        <label style="font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0;" data-i18n="pdf_settings.logo_title">
-                            🖼️ Studio Logo &amp; Watermark
+                        <label style="font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0;">
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-image></use></svg><span data-i18n="pdf_settings.logo_title" style="color:inherit">Studio Logo &amp; Watermark</span>
                         </label>
                         <span style="font-size: 0.7rem; color: #0284c7; background: #e0f2fe; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="pdf_settings.branding_badge">BRANDING</span>
                     </div>
@@ -915,7 +915,7 @@ body.dark-mode .breadcrumb-nav strong {
                     <!-- Dropzone & Upload Box -->
                     <div id="pdf-logo-dropzone" class="pdf-logo-dropzone" style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 0.9rem; text-align: center; background: #ffffff; cursor: pointer; transition: all 0.2s ease;">
                         <div id="pdf-logo-empty-view">
-                            <span style="font-size: 1.5rem; display: block; margin-bottom: 3px;">📤</span>
+                            <span style="font-size: 1.5rem; display: block; margin-bottom: 3px;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-upload></use></svg></span>
                             <div style="font-size: 0.82rem; font-weight: 600; color: #1e293b;" data-i18n="pdf_settings.drag_logo">Click or Drag &amp; Drop Studio Logo</div>
                             <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;" data-i18n="pdf_settings.logo_formats">PNG, JPEG, WebP, SVG (Transparent PNG recommended)</div>
                         </div>
@@ -927,7 +927,7 @@ body.dark-mode .breadcrumb-nav strong {
                                 </div>
                                 <div style="text-align: left; min-width: 0;">
                                     <div id="pdf-logo-filename" style="font-size: 0.82rem; font-weight: 700; color: #1e293b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" >studio_logo.png</div>
-                                    <div id="pdf-logo-status" style="font-size: 0.72rem; color: #16a34a; font-weight: 600;" data-i18n="pdf_settings.active_logo">✓ Active watermark logo</div>
+                                    <div id="pdf-logo-status" style="font-size: 0.72rem; color: #16a34a; font-weight: 600;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-check></use></svg><span data-i18n="pdf_settings.active_logo" style="color:inherit">Active watermark logo</span></div>
                                 </div>
                             </div>
                             <div style="display: flex; gap: 0.35rem; flex-shrink: 0;">
@@ -966,8 +966,8 @@ body.dark-mode .breadcrumb-nav strong {
                 <!-- Print After Signature Toggle -->
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
                     <div>
-                        <label for="pdf-setting-print-after-sig" style="display: block; font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 3px; cursor: pointer;" data-i18n="pdf_settings.print_after_sig_title">
-                            🖨️ Print after Signature
+                        <label for="pdf-setting-print-after-sig" style="display: block; font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 3px; cursor: pointer;">
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-print></use></svg><span data-i18n="pdf_settings.print_after_sig_title" style="color:inherit">Print after Signature</span>
                         </label>
                         <p style="margin: 0; font-size: 0.8rem; color: #64748b; line-height: 1.4;" data-i18n="pdf_settings.print_after_sig_desc">
                             Automatically open the browser's system print dialog as soon as a client completes their digital signature capture on screen.
@@ -981,8 +981,8 @@ body.dark-mode .breadcrumb-nav strong {
 
                 <!-- Studio Paper Size & Layout Preference -->
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
-                    <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #1e293b; margin-bottom: 0.4rem;" data-i18n="pdf_settings.paper_format_label">
-                        📄 PDF Standard Paper Format
+                    <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #1e293b; margin-bottom: 0.4rem;">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-doc></use></svg><span data-i18n="pdf_settings.paper_format_label" style="color:inherit">PDF Standard Paper Format</span>
                     </label>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
                         <select id="pdf-setting-paper-size" class="form-control" style="width: 100%; padding: 0.45rem 0.65rem; font-size: 0.85rem; border-radius: 6px; border: 1px solid #cbd5e1;">
@@ -999,8 +999,8 @@ body.dark-mode .breadcrumb-nav strong {
                 <!-- PDF Layout Options (Spacing & Density Toggle) -->
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
-                        <label style="font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0;" data-i18n="pdf_settings.density_title">
-                            📐 PDF Layout Options (Spacing &amp; Density)
+                        <label style="font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0;">
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-ruler></use></svg><span data-i18n="pdf_settings.density_title" style="color:inherit">PDF Layout Options (Spacing &amp; Density)</span>
                         </label>
                         <span style="font-size: 0.7rem; color: #059669; background: #dcfce7; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="pdf_settings.efficiency_badge">PAGE EFFICIENCY</span>
                     </div>
@@ -1028,8 +1028,8 @@ body.dark-mode .breadcrumb-nav strong {
                 <!-- Signature Styling Section (Ink Color & Line Thickness) -->
                 <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
-                        <label style="font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0;" data-i18n="pdf_settings.sig_styling_title">
-                            ✒️ Signature Styling &amp; Ink Branding
+                        <label style="font-size: 0.88rem; font-weight: 700; color: #1e293b; margin-bottom: 0;">
+                            <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-pen></use></svg><span data-i18n="pdf_settings.sig_styling_title" style="color:inherit">Signature Styling &amp; Ink Branding</span>
                         </label>
                         <span style="font-size: 0.7rem; color: #7c3aed; background: #ede9fe; padding: 2px 6px; border-radius: 4px; font-weight: 600;" data-i18n="pdf_settings.sig_badge">STUDIO INK</span>
                     </div>
@@ -1095,13 +1095,13 @@ body.dark-mode .breadcrumb-nav strong {
                     <div id="sig-styling-preview-box" style="background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 0.6rem 0.85rem; display: flex; align-items: center; justify-content: space-between;">
                         <span style="font-size: 0.75rem; color: #64748b;" data-i18n="pdf_settings.sig_preview_sample">Signature Stroke Preview:</span>
                         <div id="sig-sample-stroke-render" style="font-family: 'Brush Script MT', 'Dancing Script', cursive, sans-serif; font-size: 1.3rem; color: #1d4ed8; transform: rotate(-2deg); letter-spacing: 0.5px;" data-i18n="x.alex_morgan">
-                            Alex Morgan ✍️
+                            Alex Morgan
                         </div>
                     </div>
                 </div>
 
                 <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.8rem; color: #1e40af;" data-i18n-html="pdf_settings.workflow_tip_html">
-                    💡 <strong data-i18n="x.studio_workflow_tip">Studio Workflow Tip:</strong> Uploaded watermark logos and print automation preferences persist automatically across all client consultations.
+                    <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-bulb></use></svg> <strong data-i18n="x.studio_workflow_tip">Studio Workflow Tip:</strong> Uploaded watermark logos and print automation preferences persist automatically across all client consultations.
                 </div>
             </div>
             <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 0.5rem;">
@@ -1115,13 +1115,13 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-card modal-large" style="max-width: 780px;">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 1.35rem;">📊</span>
+                    <span style="font-size: 1.35rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-chart></use></svg></span>
                     <div>
                         <h3 style="margin: 0; font-size: 1.15rem; color: #0f172a;" data-i18n="bulk_csv.modal_title">Bulk Import Fields via CSV</h3>
                         <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #64748b;" data-i18n="bulk_csv.modal_subtitle">Rapidly generate form structures by importing spreadsheets containing field labels and types</p>
                     </div>
                 </div>
-                <button type="button" id="btn-close-csv-modal" class="modal-close-btn">✕</button>
+                <button type="button" id="btn-close-csv-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body" style="padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 1.2rem;">
                 
@@ -1129,7 +1129,7 @@ body.dark-mode .breadcrumb-nav strong {
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                     <!-- Dropzone -->
                     <div id="csv-import-dropzone" class="csv-import-dropzone" style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 1.2rem; text-align: center; background: #f8fafc; cursor: pointer; transition: all 0.2s ease;">
-                        <span style="font-size: 1.75rem; display: block; margin-bottom: 4px;">📁</span>
+                        <span style="font-size: 1.75rem; display: block; margin-bottom: 4px;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-folder></use></svg></span>
                         <strong style="font-size: 0.88rem; color: #1e293b; display: block;" data-i18n="bulk_csv.drag_csv">Click or Drag &amp; Drop CSV File</strong>
                         <span style="font-size: 0.74rem; color: #64748b; margin-top: 2px; display: block;" data-i18n="bulk_csv.csv_supports">Supports .csv files with headers like Label, Type, Required, HelperText</span>
                         <input type="file" id="bulk-csv-file-input" accept=".csv,text/csv" style="display: none;">
@@ -1147,11 +1147,11 @@ body.dark-mode .breadcrumb-nav strong {
                             </select>
                         </div>
                         <div style="margin-top: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
-                            <button type="button" id="btn-download-sample-csv" class="btn-secondary" style="font-size: 0.78rem; padding: 0.35rem 0.65rem;" title="Download a pre-formatted sample CSV file" data-i18n-title="csv_importer.download_sample_tooltip" data-i18n="bulk_csv.download_sample_btn">
-                                📥 Download Sample CSV
+                            <button type="button" id="btn-download-sample-csv" class="btn-secondary" style="font-size: 0.78rem; padding: 0.35rem 0.65rem;" title="Download a pre-formatted sample CSV file" data-i18n-title="csv_importer.download_sample_tooltip">
+                                <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-download></use></svg><span data-i18n="bulk_csv.download_sample_btn" style="color:inherit">Download Sample CSV</span>
                             </button>
-                            <button type="button" id="btn-toggle-raw-csv" class="btn-secondary" style="font-size: 0.78rem; padding: 0.35rem 0.65rem;" data-i18n="bulk_csv.paste_raw_btn">
-                                ✍️ Paste Raw CSV
+                            <button type="button" id="btn-toggle-raw-csv" class="btn-secondary" style="font-size: 0.78rem; padding: 0.35rem 0.65rem;">
+                                <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-pen></use></svg><span data-i18n="bulk_csv.paste_raw_btn" style="color:inherit">Paste Raw CSV</span>
                             </button>
                         </div>
                     </div>
@@ -1203,7 +1203,7 @@ body.dark-mode .breadcrumb-nav strong {
                 </div>
 
                 <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.78rem; color: #166534;">
-                    💡 <strong data-i18n="x.column_header_auto_detection">Column Header Auto-Detection:</strong> <span data-i18n="x.csv_supports">Supports standard CSV columns:</span> <code data-i18n="x.label">Label</code> (or <code data-i18n="x.name">Name</code>), <code data-i18n="x.type">Type</code> (text, email, tel, date, number, select, radio, checkbox, textarea), <code data-i18n="x.required">Required</code> (true/false), <code data-i18n="x.helpertext">HelperText</code>, and <code data-i18n="x.options">Options</code> <span data-i18n="x.csv_separated_semicolons">(separated by semicolons).</span>
+                    <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-bulb></use></svg> <strong data-i18n="x.column_header_auto_detection">Column Header Auto-Detection:</strong> <span data-i18n="x.csv_supports">Supports standard CSV columns:</span> <code data-i18n="x.label">Label</code> (or <code data-i18n="x.name">Name</code>), <code data-i18n="x.type">Type</code> (text, email, tel, date, number, select, radio, checkbox, textarea), <code data-i18n="x.required">Required</code> (true/false), <code data-i18n="x.helpertext">HelperText</code>, and <code data-i18n="x.options">Options</code> <span data-i18n="x.csv_separated_semicolons">(separated by semicolons).</span>
                 </div>
             </div>
             <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
@@ -1220,7 +1220,7 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-content theme-customizer-modal-content" style="max-width: 640px;">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span style="font-size: 1.35rem;">🎨</span>
+                    <span style="font-size: 1.35rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-machine></use></svg></span>
                     <div>
                         <h3 style="margin:0; font-size: 1.15rem; font-weight: 700;" data-i18n="theme.modal_title">Theme & Styling Customization</h3>
                         <p style="margin: 0; font-size: 0.8rem; color: #64748b;" data-i18n="theme.modal_subtitle">Customize primary accent colors, font sizes, and border-radius settings</p>
@@ -1357,7 +1357,7 @@ body.dark-mode .breadcrumb-nav strong {
                 <button type="button" id="btn-reset-theme-defaults" class="btn-secondary" style="font-size: 0.85rem;" data-i18n="theme.reset_defaults">Reset to Studio Defaults</button>
                 <div style="display: flex; gap: 0.5rem;">
                     <button type="button" id="btn-cancel-theme-modal" class="btn-secondary" style="font-size: 0.85rem;" data-i18n="theme.cancel">Cancel</button>
-                    <button type="button" id="btn-apply-theme-modal" class="btn-primary" style="font-size: 0.85rem;" data-i18n="theme.apply_theme">✨ Apply Theme</button>
+                    <button type="button" id="btn-apply-theme-modal" class="btn-primary" style="font-size: 0.85rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-spark></use></svg><span data-i18n="theme.apply_theme" style="color:inherit">Apply Theme</span></button>
                 </div>
             </div>
         </div>
@@ -1368,13 +1368,13 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-card modal-large" style="max-width: 840px;">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.6rem;">
-                    <span style="font-size: 1.4rem;">🛡️</span>
+                    <span style="font-size: 1.4rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-shield></use></svg></span>
                     <div>
                         <h3 style="margin: 0; font-size: 1.15rem;" id="data-integrity-modal-title" data-i18n="integrity.modal_title">Form Data Integrity &amp; Logic Checker</h3>
                         <p style="margin: 2px 0 0 0; font-size: 0.8rem; color: #64748b;" id="data-integrity-modal-subtitle" data-i18n="integrity.modal_subtitle">Comprehensive diagnostic scan for circular logic loops, missing choice options, and validation bounds</p>
                     </div>
                 </div>
-                <button type="button" id="btn-close-integrity-modal" class="modal-close-btn">✕</button>
+                <button type="button" id="btn-close-integrity-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body" style="padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 1.15rem; max-height: 70vh; overflow-y: auto;">
                 
@@ -1395,16 +1395,16 @@ body.dark-mode .breadcrumb-nav strong {
             </div>
             <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; padding: 0.9rem 1.25rem; border-top: 1px solid #e2e8f0;">
                 <div style="display: flex; gap: 0.5rem; align-items: center;">
-                    <button type="button" id="btn-auto-fix-integrity" class="btn-primary" style="font-size: 0.85rem; background: #059669; border-color: #059669;" data-i18n="integrity.autofix_btn">
-                        ✨ Auto-Fix Safe Issues
+                    <button type="button" id="btn-auto-fix-integrity" class="btn-primary" style="font-size: 0.85rem; background: #059669; border-color: #059669;">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-spark></use></svg><span data-i18n="integrity.autofix_btn" style="color:inherit">Auto-Fix Safe Issues</span>
                     </button>
-                    <button type="button" id="btn-copy-integrity-report" class="btn-secondary" style="font-size: 0.85rem;" data-i18n="integrity.copy_report_btn">
-                        📋 Copy Report
+                    <button type="button" id="btn-copy-integrity-report" class="btn-secondary" style="font-size: 0.85rem;">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-clipboard></use></svg><span data-i18n="integrity.copy_report_btn" style="color:inherit">Copy Report</span>
                     </button>
                 </div>
                 <div style="display: flex; gap: 0.5rem; align-items: center;">
-                    <button type="button" id="btn-recheck-integrity" class="btn-secondary" style="font-size: 0.85rem;" data-i18n="integrity.rescan_btn">
-                        🔄 Re-scan Form
+                    <button type="button" id="btn-recheck-integrity" class="btn-secondary" style="font-size: 0.85rem;">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-refresh></use></svg><span data-i18n="integrity.rescan_btn" style="color:inherit">Re-scan Form</span>
                     </button>
                     <button type="button" id="btn-close-integrity-done" class="btn-primary" style="font-size: 0.85rem;" data-i18n="integrity.done_btn">
                         Done
@@ -1419,7 +1419,7 @@ body.dark-mode .breadcrumb-nav strong {
         <div class="modal-card modal-xl">
             <div class="modal-header">
                 <div style="display: flex; align-items: center; gap: 0.6rem;">
-                    <span style="font-size: 1.35rem;">🗺️</span>
+                    <span style="font-size: 1.35rem;"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-compass></use></svg></span>
                     <div>
                         <h3 style="margin: 0;" data-i18n="field_ids_map.modal_title">Field IDs &amp; CRM Integration Map</h3>
                         <p style="margin: 0.2rem 0 0 0; font-size: 0.8rem; color: #64748b;" data-i18n="field_ids_map.modal_subtitle">
@@ -1427,7 +1427,7 @@ body.dark-mode .breadcrumb-nav strong {
                         </p>
                     </div>
                 </div>
-                <button type="button" id="btn-close-field-ids-modal" class="modal-close-btn">✕</button>
+                <button type="button" id="btn-close-field-ids-modal" class="modal-close-btn"><svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none><use href=../shared/icons.svg#i-x></use></svg></button>
             </div>
             <div class="modal-body" style="display: flex; flex-direction: column; gap: 1rem;">
                 <!-- Summary Metrics Bar & Search -->
@@ -1436,7 +1436,7 @@ body.dark-mode .breadcrumb-nav strong {
                         <!-- Stats dynamically generated -->
                     </div>
                     <div style="display: flex; gap: 0.5rem; align-items: center; min-width: 240px;">
-                        <input type="text" id="field-ids-search-input" placeholder="🔍 Search field ID, label, or section..." data-i18n-placeholder="field_ids_map.search_placeholder" class="form-control" style="width: 100%; padding: 0.4rem 0.65rem; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                        <input type="text" id="field-ids-search-input" placeholder="Search field ID, label, or section..." data-i18n-placeholder="field_ids_map.search_placeholder" class="form-control" style="width: 100%; padding: 0.4rem 0.65rem; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 6px;">
                     </div>
                 </div>
 
@@ -1447,17 +1447,17 @@ body.dark-mode .breadcrumb-nav strong {
             </div>
             <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
                 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-                    <button type="button" id="btn-copy-field-ids-json" class="btn-secondary" style="font-size: 0.82rem;" data-i18n="field_ids_map.btn_copy_json">
-                        📋 Copy JSON Map
+                    <button type="button" id="btn-copy-field-ids-json" class="btn-secondary" style="font-size: 0.82rem;">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-clipboard></use></svg><span data-i18n="field_ids_map.btn_copy_json" style="color:inherit">Copy JSON Map</span>
                     </button>
-                    <button type="button" id="btn-download-field-ids-json" class="btn-secondary" style="font-size: 0.82rem;" data-i18n="field_ids_map.btn_download_json">
-                        💾 Download JSON Map
+                    <button type="button" id="btn-download-field-ids-json" class="btn-secondary" style="font-size: 0.82rem;">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-save></use></svg><span data-i18n="field_ids_map.btn_download_json" style="color:inherit">Download JSON Map</span>
                     </button>
-                    <button type="button" id="btn-copy-webhook-payload" class="btn-secondary" style="font-size: 0.82rem;" data-i18n="field_ids_map.btn_copy_webhook">
-                        ⚡ Copy Sample Payload
+                    <button type="button" id="btn-copy-webhook-payload" class="btn-secondary" style="font-size: 0.82rem;">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-bolt></use></svg><span data-i18n="field_ids_map.btn_copy_webhook" style="color:inherit">Copy Sample Payload</span>
                     </button>
-                    <button type="button" id="btn-download-field-ids-csv" class="btn-primary" style="font-size: 0.82rem; background: #0284c7; border-color: #0284c7;" data-i18n="field_ids_map.btn_download_csv">
-                        📥 Download CSV Map
+                    <button type="button" id="btn-download-field-ids-csv" class="btn-primary" style="font-size: 0.82rem; background: #0284c7; border-color: #0284c7;">
+                        <svg class=ti-i width=1.15em height=1.15em aria-hidden=true style=vertical-align:-.18em;flex:none;margin-inline-end:.35em><use href=../shared/icons.svg#i-download></use></svg><span data-i18n="field_ids_map.btn_download_csv" style="color:inherit">Download CSV Map</span>
                     </button>
                 </div>
                 <button type="button" id="btn-close-field-ids-done" class="btn-primary" style="font-size: 0.82rem;" data-i18n="field_ids_map.btn_done">
