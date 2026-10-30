@@ -689,6 +689,23 @@ const TemplateManager = {
         }));
     },
 
+    // The studio's own forms (made from "Blank Custom Form" or imported): every saved draft whose id
+    // is not a sample template. Listed in the template menu under their own names (Henry, 2026-10-30).
+    getSavedForms: () => {
+        const out = [];
+        try {
+            for (let i = 0; i < localStorage.length; i++) {
+                const m = /^poli_form_builder_autosave:(.+)$/.exec(localStorage.key(i) || '');
+                if (!m || formTemplates[m[1]] || templateAliases[m[1]]) continue;
+                try {
+                    const f = JSON.parse(localStorage.getItem(m[0])).form;
+                    if (f && Array.isArray(f.sections)) out.push({ id: m[1], name: f.name || m[1], category: f.category || 'Custom' });
+                } catch (e) { /* a damaged draft is left out */ }
+            }
+        } catch (e) { /* storage blocked */ }
+        return out.sort((a, b) => a.name.localeCompare(b.name));
+    },
+
     cloneTemplate: (id) => {
         const template = TemplateManager.getTemplate(id);
         if (template) {
