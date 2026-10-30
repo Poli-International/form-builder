@@ -1569,21 +1569,9 @@ class FormBuilder {
     // Writes the form being edited to the "last worked on" slot and to its own slot.
     saveDraftNow() {
         if (!this.currentForm) return;
-        // a form just started from "Blank Custom Form" is kept once something is changed in it,
-        // so opening Blank by mistake does not add an empty form to the menu
-        if (this.freshForm) {
-            if (JSON.stringify(this.currentForm) === this.freshForm) return;
-            this.freshForm = null;
-        }
         const payload = JSON.stringify({ timestamp: Date.now(), form: this.currentForm });
         localStorage.setItem(this.autoSaveKey, payload);
         if (this.currentForm.id) localStorage.setItem(this.autoSaveKey + ':' + this.currentForm.id, payload);
-        // the menu shows the studio's own forms under their current name
-        const sel = document.getElementById('template-select');
-        if (sel && window.i18n && typeof window.i18n.updateTemplateSelectOptions === 'function') {
-            window.i18n.updateTemplateSelectOptions();
-            if (Array.from(sel.options).some(o => o.value === this.currentForm.id)) sel.value = this.currentForm.id;
-        }
     }
 
     // The draft of one form (formId given), or the form last worked on.
