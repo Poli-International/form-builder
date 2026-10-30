@@ -1027,9 +1027,7 @@
       "v_text": "Only letters, numbers, and basic punctuation allowed",
       "v_number": "Please enter numeric digits only",
       "v_postal": "Please enter a valid postal or ZIP code",
-      "v_format": "Value does not match required format ({format})",
-      "new_custom_form": "New custom form",
-      "new_custom_form_toast": "New form started: give it a name, it is saved as soon as you change something"
+      "v_format": "Value does not match required format ({format})"
     },
     "integrity": {
       "modal_title": "Form Data Integrity & Logic Checker",
@@ -2501,9 +2499,7 @@
       "v_text": "Lettres, chiffres et ponctuation simple uniquement",
       "v_number": "Saisissez uniquement des chiffres",
       "v_postal": "Saisissez un code postal valide",
-      "v_format": "La valeur ne respecte pas le format requis ({format})",
-      "new_custom_form": "Nouveau formulaire",
-      "new_custom_form_toast": "Nouveau formulaire : donnez-lui un nom, il est enregistré dès la première modification"
+      "v_format": "La valeur ne respecte pas le format requis ({format})"
     },
     "bin": {
       "title": "Récemment supprimé",
@@ -3991,9 +3987,7 @@
       "v_text": "Solo lettere, numeri e punteggiatura semplice",
       "v_number": "Inserisci solo cifre",
       "v_postal": "Inserisci un codice postale valido",
-      "v_format": "Il valore non corrisponde al formato richiesto ({format})",
-      "new_custom_form": "Nuovo modulo personalizzato",
-      "new_custom_form_toast": "Nuovo modulo creato: dagli un nome, viene salvato alla prima modifica"
+      "v_format": "Il valore non corrisponde al formato richiesto ({format})"
     },
     "bin": {
       "title": "Eliminati di recente",
@@ -5481,9 +5475,7 @@
       "v_text": "Nur Buchstaben, Zahlen und einfache Satzzeichen erlaubt",
       "v_number": "Bitte nur Ziffern eingeben",
       "v_postal": "Bitte geben Sie eine gültige Postleitzahl ein",
-      "v_format": "Der Wert entspricht nicht dem verlangten Format ({format})",
-      "new_custom_form": "Neues eigenes Formular",
-      "new_custom_form_toast": "Neues Formular erstellt: Geben Sie ihm einen Namen, es wird bei der ersten Änderung gespeichert"
+      "v_format": "Der Wert entspricht nicht dem verlangten Format ({format})"
     },
     "bin": {
       "title": "Kürzlich gelöscht",
@@ -6971,9 +6963,7 @@
       "v_text": "Solo letras, números y puntuación básica",
       "v_number": "Introduzca solo dígitos",
       "v_postal": "Introduzca un código postal válido",
-      "v_format": "El valor no coincide con el formato requerido ({format})",
-      "new_custom_form": "Nuevo formulario personalizado",
-      "new_custom_form_toast": "Nuevo formulario creado: ponle un nombre, se guarda en cuanto cambias algo"
+      "v_format": "El valor no coincide con el formato requerido ({format})"
     },
     "bin": {
       "title": "Eliminados recientemente",
@@ -8461,9 +8451,7 @@
       "v_text": "Alleen letters, cijfers en eenvoudige leestekens",
       "v_number": "Vul alleen cijfers in",
       "v_postal": "Vul een geldige postcode in",
-      "v_format": "De waarde past niet bij het vereiste formaat ({format})",
-      "new_custom_form": "Nieuw eigen formulier",
-      "new_custom_form_toast": "Nieuw formulier gestart: geef het een naam, het wordt opgeslagen zodra u iets wijzigt"
+      "v_format": "De waarde past niet bij het vereiste formaat ({format})"
     },
     "bin": {
       "title": "Onlangs verwijderd",
@@ -9951,9 +9939,7 @@
       "v_text": "Apenas letras, números e pontuação básica",
       "v_number": "Introduza apenas dígitos",
       "v_postal": "Introduza um código postal válido",
-      "v_format": "O valor não corresponde ao formato exigido ({format})",
-      "new_custom_form": "Novo formulário personalizado",
-      "new_custom_form_toast": "Novo formulário criado: dê-lhe um nome, é guardado assim que alterar algo"
+      "v_format": "O valor não corresponde ao formato exigido ({format})"
     },
     "bin": {
       "title": "Excluídos recentemente",
@@ -11457,9 +11443,7 @@
       "v_text": "ใช้ได้เฉพาะตัวอักษร ตัวเลข และเครื่องหมายวรรคตอนพื้นฐาน",
       "v_number": "โปรดกรอกตัวเลขเท่านั้น",
       "v_postal": "โปรดกรอกรหัสไปรษณีย์ที่ถูกต้อง",
-      "v_format": "ค่าไม่ตรงกับรูปแบบที่กำหนด ({format})",
-      "new_custom_form": "แบบฟอร์มใหม่ของคุณ",
-      "new_custom_form_toast": "สร้างแบบฟอร์มใหม่แล้ว: ตั้งชื่อได้เลย ระบบจะบันทึกทันทีที่คุณแก้ไข"
+      "v_format": "ค่าไม่ตรงกับรูปแบบที่กำหนด ({format})"
     },
     "integrity": {
       "modal_title": "เครื่องมือตรวจสอบความสมบูรณ์และตรรกะข้อมูลฟอร์ม",
