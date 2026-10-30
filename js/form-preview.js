@@ -360,12 +360,12 @@ class FormPreview {
 
         let html = `
             <div class="preview-field-group label-align-${labelAlign}" id="field-wrapper-${field.id}" data-field-id="${field.id}" data-type="${field.type}" data-required="${isRequired}" data-min-length="${field.minLength || ''}" data-max-length="${field.maxLength || ''}" data-custom-err-msg="${this.escapeHtml(customErrMsg)}" data-validation="${field.validation || 'none'}" data-custom-regex="${this.escapeHtml(field.customRegex || '')}" data-val-msg="${this.escapeHtml(customErrMsg)}">
-                <div class="field-label-container">
+                ${field.type === 'checkbox' ? '' /* its label is the text beside the box; a second copy above read as a duplicate (Henry, 2026-10-28) */ : `<div class="field-label-container">
                     <label class="preview-field-label" for="input-${field.id}">
                         ${this.escapeHtml(field.label || 'Field')} ${requiredMark}
                     </label>
                     ${helperText ? `<span class="preview-field-help">${this.escapeHtml(helperText)}</span>` : ''}
-                </div>
+                </div>`}
                 <div class="field-control-container">
         `;
 
@@ -425,7 +425,7 @@ class FormPreview {
                 html += `
                     <label class="preview-checkbox-label">
                         <input type="checkbox" ${commonAttrs} class="form-preview-interactive">
-                        <span>${this.escapeHtml(field.label || 'I acknowledge and agree to this term.')}</span>
+                        <span>${this.escapeHtml(field.label || 'I acknowledge and agree to this term.')} ${requiredMark}</span>
                     </label>
                     ${helperText ? `<span class="preview-field-help preview-checkbox-help">${this.escapeHtml(helperText)}</span>` : ''}
                 `;
@@ -1095,7 +1095,7 @@ class FormPreview {
         (modal ? [...modal.querySelectorAll('.preview-field-group[data-required="true"]')] : []).forEach((group) => {
             if (!group.offsetParent) return;   // a question hidden by a condition
             const id = group.dataset.fieldId, type = group.dataset.type, val = this.responses[id];
-            const labelEl = group.querySelector('.preview-field-label');
+            const labelEl = group.querySelector('.preview-field-label, .preview-checkbox-label span');
             const fieldLabel = labelEl ? labelEl.textContent.replace('*', '').trim() : id;
             let empty;
             if (type === 'signature') { const m = this.signatureManagers[id]; empty = !m || m.isEmpty(); }
@@ -1538,7 +1538,7 @@ class FormPreview {
             const secHeadingEl = parentSec ? parentSec.querySelector('.preview-section-heading') : null;
             const sectionTitle = secHeadingEl ? secHeadingEl.textContent.replace(/^[^\w\s]+/g, '').trim() : 'General Section';
 
-            const labelEl = group.querySelector('.preview-field-label');
+            const labelEl = group.querySelector('.preview-field-label, .preview-checkbox-label span');
             const fieldLabel = labelEl ? labelEl.textContent.replace('*', '').trim() : fieldId;
 
             const val = this.responses[fieldId];
