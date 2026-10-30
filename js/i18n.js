@@ -166,10 +166,7 @@
             const tmplSelect = document.getElementById('template-select');
             if (!tmplSelect || !window.FormTemplates || !window.FormTemplates.TemplateManager) return;
 
-            const all = window.FormTemplates.TemplateManager.getAllTemplates();
-            const saved = window.FormTemplates.TemplateManager.getSavedForms ? window.FormTemplates.TemplateManager.getSavedForms() : [];
-            // the sample forms, then the studio's own, then "Blank Custom Form" last to start another one
-            const templates = all.filter(t => t.id !== 'blank').concat(saved, all.filter(t => t.id === 'blank'));
+            const templates = window.FormTemplates.TemplateManager.getAllTemplates();
             const currentVal = tmplSelect.value;
             tmplSelect.innerHTML = '';
 
