@@ -397,25 +397,6 @@ function initApp() {
             // That only surfaced for a visitor with no autosaved draft, since
             // `!loaded` short-circuits the check for everyone else.
             const templates = window.FormTemplates.TemplateManager.getAllTemplates();
-            // Up to 1.0.38 a form made from "Blank Custom Form" was saved as the Blank form itself, so it never
-            // showed under its own name and the next Blank overwrote it (Henry, 2026-10-30). Such a draft becomes
-            // a form of its own, once (the fixed id makes a second run overwrite the same copy, never add one).
-            const AS = 'poli_form_builder_autosave', OLD = 'custom_from_blank';
-            try {
-                const oldBlank = JSON.parse(localStorage.getItem(AS + ':blank') || 'null');
-                const sample = window.FormTemplates.TemplateManager.getTemplate('blank');
-                const shape = (f) => JSON.stringify((f.sections || []).map(s => [s.title, (s.fields || []).map(x => x.label)]));
-                if (oldBlank && oldBlank.form && !localStorage.getItem(AS + ':' + OLD) &&
-                    (oldBlank.form.name !== sample.name || shape(oldBlank.form) !== shape(sample))) {
-                    oldBlank.form.id = OLD;
-                    localStorage.setItem(AS + ':' + OLD, JSON.stringify(oldBlank));
-                }
-                const last = JSON.parse(localStorage.getItem(AS) || 'null');
-                if (last && last.form && last.form.id === 'blank' && localStorage.getItem(AS + ':' + OLD)) {
-                    last.form.id = OLD;
-                    localStorage.setItem(AS, JSON.stringify(last));
-                }
-            } catch (err) { /* storage blocked or a damaged draft: nothing to move */ }
             if (window.i18n && typeof window.i18n.updateTemplateSelectOptions === 'function') {
                 window.i18n.updateTemplateSelectOptions();
             } else {
@@ -430,25 +411,12 @@ function initApp() {
             }
 
             templateSelect.addEventListener('change', (e) => {
-                const chosen = e.target.value;
-                const tmpl = window.FormTemplates.TemplateManager.getTemplate(chosen);
+                const tmpl = window.FormTemplates.TemplateManager.getTemplate(e.target.value);
                 // Keep the changes made to the form being left (an edit from the last half second
                 // is not saved yet), and come back to this form's own draft if it has one.
                 if (window.FormBuilderApp && window.FormBuilderApp.autoSaveTimer) {
                     clearTimeout(window.FormBuilderApp.autoSaveTimer);
                     try { window.FormBuilderApp.saveDraftNow(); } catch (err) { /* storage full or blocked */ }
-                    templateSelect.value = chosen; // saving rebuilt the menu on the form being left
-                }
-                // "Blank Custom Form" starts a NEW form with its own id: it is listed under its own name
-                // once something is changed in it, and Blank stays there to start the next one.
-                if (chosen === 'blank' && tmpl && window.FormBuilderApp) {
-                    const tr = (k, fb) => (window.i18n ? window.i18n.t(k, {}, fb) : fb);
-                    tmpl.id = 'custom_' + Date.now();
-                    tmpl.name = tr('messages.new_custom_form', 'New custom form');
-                    window.FormBuilderApp.loadForm(tmpl, 'New custom form');
-                    window.FormBuilderApp.freshForm = JSON.stringify(window.FormBuilderApp.currentForm);
-                    window.FormBuilderApp.showToast(tr('messages.new_custom_form_toast', 'New form started: give it a name, it is saved as soon as you change something'), 'info');
-                    return;
                 }
                 const draft = window.FormBuilderApp ? window.FormBuilderApp.getAutoSavedData(e.target.value) : null;
                 if (draft && draft.form && draft.form.sections && draft.form.sections.length > 0) {
